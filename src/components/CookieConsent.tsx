@@ -33,6 +33,21 @@ const CookieConsent = () => {
     setMounted(true);
   }, []);
   
+  // Дополнительная проверка для гарантии отображения мини-иконки
+  useEffect(() => {
+    if (!mounted) return;
+    
+    // Если согласие дано, но мини-иконка не отображается и баннер скрыт,
+    // то показываем мини-иконку
+    if (consentGiven && !showMinimized && !isVisible) {
+      const timer = setTimeout(() => {
+        setShowMinimized(true);
+      }, 1000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [consentGiven, showMinimized, isVisible, mounted]);
+  
   // Состояние для различных типов cookie
   const [cookiePreferences, setCookiePreferences] = useState<CookieTypes>({
     essential: true, // Всегда включены
@@ -58,16 +73,24 @@ const CookieConsent = () => {
         const thirtyDaysInMs = 30 * 24 * 60 * 60 * 1000;
         if (Date.now() - consentData.timestamp > thirtyDaysInMs) {
           setIsVisible(true);
+          setShowMinimized(false); // Убедимся, что мини-иконка не показывается, когда отображается баннер
         } else {
-          setShowMinimized(true);
+          setIsVisible(false); // Убедимся, что баннер не показывается
+          // Добавляем небольшую задержку для лучшего UX
+          setTimeout(() => {
+            setShowMinimized(true); // Показываем мини-иконку
+          }, 1000);
         }
-      } catch {
+      } catch (error) {
         // Если произошла ошибка при парсинге, показываем баннер
+        console.error('Error parsing cookie consent:', error);
         setIsVisible(true);
+        setShowMinimized(false);
       }
     } else {
       // Если согласие еще не было дано, показываем баннер
       setIsVisible(true);
+      setShowMinimized(false);
     }
   }, [mounted]);
   
@@ -135,6 +158,11 @@ const CookieConsent = () => {
     // Обновляем состояние компонента
     setConsentGiven(true);
     setIsVisible(false);
+    
+    // Добавляем небольшую задержку перед показом мини-иконки для лучшего UX
+    setTimeout(() => {
+      setShowMinimized(true);
+    }, 500);
     
     // Применяем настройки согласия
     applyConsentSettings(preferences);
@@ -400,7 +428,7 @@ const CookieConsent = () => {
       )}
       
       {/* Мини-кнопка для вызова настроек cookie */}
-      {showMinimized && !isVisible && consentGiven && (
+      {(showMinimized && !isVisible && consentGiven) && (
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -410,16 +438,16 @@ const CookieConsent = () => {
         >
           <button
             onClick={openCookieSettings}
-            className="p-3 rounded-full shadow-lg transition-all duration-300 ease-out transform hover:scale-110 bg-white/80 backdrop-blur-xl text-gray-800 hover:bg-white border border-white/20"
+            className="p-3 rounded-full shadow-lg transition-all duration-300 ease-out transform hover:scale-110 bg-white/90 backdrop-blur-xl text-gray-800 hover:bg-white border border-white/20 hover:shadow-xl"
             style={{
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
             }}
             aria-label="Cookie settings"
             title="Cookie settings"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#e59500" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
               <path d="M8.5 8.5v.01" />
               <path d="M16 15.5v.01" />
