@@ -105,7 +105,7 @@ return (
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ fontFamily: "var(--font-unbounded)" }}>
-            We'll perform analytics and thoroughly study your business to develop an effective 
+            We&apos;ll perform analytics and thoroughly study your business to develop an effective 
           </h2>
         </div>
       </div>
@@ -147,7 +147,7 @@ return (
             <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold mb-4 gradient-text">Initial Consultation and Task Discussion</h3>
               <p className="text-lg">
-                Website development cooperation begins with your inquiry. To utilize our services and order turnkey web application development, submit a request through any form on our website, call us directly, or contact us via your preferred messenger. Upon receiving your request, we'll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we'll issue an invoice for an initial payment.
+                Website development cooperation begins with your inquiry. To utilize our services and order turnkey web application development, submit a request through any form on our website, call us directly, or contact us via your preferred messenger. Upon receiving your request, we&apos;ll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we&apos;ll issue an invoice for an initial payment.
               </p>
             </div>
           </div>
@@ -162,7 +162,7 @@ return (
             <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold mb-4 gradient-text">Analysis, Information Gathering, Design, and Planning</h3>
               <p className="text-lg">
-                We analyze competitors' websites to identify their strengths and weaknesses. Using this data, we develop detailed technical specifications and gather essential business information. Next, we create a website prototype and define user scenarios, followed by designing the concept and all necessary design mockups. Your website should clearly represent the content relevant to your market niche, making it easy for customers to recognize your official resource.
+                We analyze competitors&apos; websites to identify their strengths and weaknesses. Using this data, we develop detailed technical specifications and gather essential business information. Next, we create a website prototype and define user scenarios, followed by designing the concept and all necessary design mockups. Your website should clearly represent the content relevant to your market niche, making it easy for customers to recognize your official resource.
               </p>
             </div>
           </div>
@@ -207,7 +207,7 @@ return (
             <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold mb-4 gradient-text">Website Promotion</h3>
               <p className="text-lg">
-                Website promotion is handled by our trusted partners, whose quality results we're confident in. Numerous proven methods are available to refine your website's details to achieve successful and effective sales.
+                Website promotion is handled by our trusted partners, whose quality results we&apos;re confident in. Numerous proven methods are available to refine your website&apos;s details to achieve successful and effective sales.
               </p>
             </div>
           </div>

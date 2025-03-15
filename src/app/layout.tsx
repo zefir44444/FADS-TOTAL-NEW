@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Tektur } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -8,16 +7,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import Header from "@/components/Header";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const tektur = Tektur({
   subsets: ["latin"],
