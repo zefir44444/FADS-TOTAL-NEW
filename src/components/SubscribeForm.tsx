@@ -114,123 +114,85 @@ const SubscribeForm = () => {
   if (!mounted) return null;
 
   return (
-    <form 
-      onSubmit={onSubmit} 
-      className="w-full flex flex-col gap-4 transition-all duration-300 ease-out"
-      autoComplete="on"
-    >
-      <div className="mb-2">
-        <h3 className="text-xl font-bold mb-2 gradient-text">
-          Subscribe to our newsletter
-        </h3>
-        <p className="text-sm opacity-80">Get the latest news and updates directly to your inbox</p>
-      </div>
+    <div className="w-full max-w-md mx-auto">
+      <h3 className="text-xl md:text-2xl font-bold mb-3 gradient-text">Subscribe to our newsletter</h3>
+      <p className="text-sm mb-4">
+        Get the latest news and updates directly to your inbox
+      </p>
       
-      <style jsx>{`
-        .gradient-text {
-          background-size: 200% auto;
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: gradient 5s ease-in-out infinite;
-          background-image: linear-gradient(to right, #ff8a00, #e52e71, #ff8a00);
-          text-shadow: 0 0 2px rgba(0,0,0,0.1);
-        }
-
-        @keyframes gradient {
-          0% {
-            background-position: 0% center;
-          }
-          50% {
-            background-position: 100% center;
-          }
-          100% {
-            background-position: 0% center;
-          }
-        }
-      `}</style>
-      
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-col sm:flex-row gap-2">
+      <form onSubmit={onSubmit} className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <input
-            className="flex-grow p-3 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
+            type="text"
+            placeholder="First Name"
             value={formData.firstName}
             onChange={handleChange}
-            type="text"
             name="firstName"
-            placeholder="First Name"
-            autoComplete="given-name"
-          />
-          <input
-            className="flex-grow p-3 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
-            value={formData.lastName}
-            onChange={handleChange}
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            autoComplete="family-name"
-          />
-        </div>
-        
-        <div className="flex flex-col sm:flex-row gap-2">
-          <input
-            className="flex-grow p-3 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
-            value={formData.email}
-            onChange={handleChange}
-            type="email"
-            name="email"
-            placeholder="Your email"
-            autoComplete="email"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]/50"
             required
           />
-          <button
-            type="submit"
-            className={`p-3 rounded-md transition-all duration-300 ease-out font-semibold border-2 border-black bg-size-200 text-black hover:bg-pos-100 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm relative top-0 hover:top-[-4px] active:top-0 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
-            disabled={loading}
-          >
-            {loading ? "Sending..." : "Subscribe"}
-          </button>
+          
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={formData.lastName}
+            onChange={handleChange}
+            name="lastName"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]/50"
+            required
+          />
         </div>
         
-        <div className="flex items-start gap-2 mt-1">
+        <input
+          type="email"
+          placeholder="Your email"
+          value={formData.email}
+          onChange={handleChange}
+          name="email"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]/50"
+          required
+        />
+        
+        <div className="flex items-start mt-2">
           <input
             type="checkbox"
-            id="privacy-policy-subscribe"
+            id="privacy-policy"
             ref={checkboxRef}
             checked={formData.consent}
             onChange={handleChange}
             name="consent"
-            className={`mt-1 accent-black ${isCheckboxBlinking ? 'checkbox-blink' : ''}`}
+            className={`mt-1 mr-2 ${isCheckboxBlinking ? 'checkbox-blink' : ''}`}
             required
           />
-          <label 
-            htmlFor="privacy-policy-subscribe" 
-            className={`text-xs ${isCheckboxBlinking ? 'text-red-500 font-semibold' : ''}`}
-          >
+          <label htmlFor="privacy-policy" className="text-xs">
             I agree to the processing of my personal data in accordance with the{" "}
-            <Link 
-              href="/privacy" 
-              className="font-semibold relative text-[#840032] hover:text-[#e59500] transition-colors duration-300 no-underline"
-              target="_blank"
-            >
+            <Link href="/privacy" className="text-[#e59500] hover:underline">
               Privacy Policy
             </Link>
           </label>
         </div>
-      </div>
-      
-      {success && (
-        <div className="p-3 bg-green-100 border border-green-400 text-green-700 rounded-md text-sm">
-          Thank you for subscribing! We&apos;ll keep you updated with our latest news.
-        </div>
-      )}
-      
-      {error && (
-        <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded-md text-sm">
-          {error}
-        </div>
-      )}
-    </form>
+        
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-gradient-to-r from-[#e59500] to-[#d48700] text-white font-medium py-2 px-4 rounded-md hover:shadow-lg transition-all duration-300 border border-black active:translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+        >
+          {loading ? "Subscribing..." : "Subscribe"}
+        </button>
+        
+        {success && (
+          <p className="text-green-600 text-sm">
+            Thank you for subscribing! We&apos;ll keep you updated with our latest news.
+          </p>
+        )}
+        
+        {error && (
+          <p className="text-red-600 text-sm">
+            {error}
+          </p>
+        )}
+      </form>
+    </div>
   );
 };
 

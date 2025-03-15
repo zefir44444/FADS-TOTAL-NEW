@@ -32,13 +32,24 @@ const Header = () => {
   if (!mounted) return null;
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-40 pointer-events-none">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-4">
+        <div 
+          className={`
+            flex items-center justify-between 
+            bg-white/70 backdrop-blur-xl 
+            rounded-full shadow-lg 
+            py-2 px-4 md:px-6 
+            transition-all duration-300 
+            pointer-events-auto
+            border border-white/20
+            ${scrolled ? "mx-4 md:mx-8 lg:mx-16" : "mx-0"}
+          `}
+          style={{
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)"
+          }}
+        >
           {/* Логотип */}
           <Link href="/" className="flex items-center">
             <div className="relative h-10 w-24">
@@ -56,7 +67,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               href="/contact" 
-              className="floating-button font-tektur bg-[#e59500] text-white px-4 py-2 rounded-md hover:bg-[#d48700] transition-colors duration-300"
+              className="floating-button font-tektur bg-gradient-to-r from-[#e59500] to-[#d48700] text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
             >
               Contact Us
             </Link>
@@ -64,9 +75,13 @@ const Header = () => {
 
           {/* Кнопка мобильного меню */}
           <button 
-            className="md:hidden flex items-center" 
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/80 shadow-md" 
             onClick={toggleMenu}
             aria-label="Toggle menu"
+            style={{
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)"
+            }}
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -97,11 +112,17 @@ const Header = () => {
 
         {/* Мобильное меню */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-4 animate-fadeIn">
+          <div 
+            className="md:hidden mx-4 mt-2 bg-white/70 rounded-2xl shadow-lg py-6 px-6 animate-fadeIn pointer-events-auto border border-white/20" 
+            style={{
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)"
+            }}
+          >
             <nav className="flex flex-col space-y-4">
               <Link 
                 href="/contact" 
-                className="floating-button font-tektur bg-[#e59500] text-white px-4 py-2 rounded-md hover:bg-[#d48700] transition-colors duration-300 inline-block"
+                className="floating-button font-tektur bg-gradient-to-r from-[#e59500] to-[#d48700] text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact Us

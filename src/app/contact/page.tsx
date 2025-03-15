@@ -1,5 +1,5 @@
 import React from "react";
-import ContactForm from "../../../public/components/ContactForm";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Contact Us | FADS",

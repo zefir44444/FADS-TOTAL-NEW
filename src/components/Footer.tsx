@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import SubscribeForm from "./SubscribeForm";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
@@ -15,50 +16,68 @@ export default function Footer() {
   if (!mounted) return null;
 
   return (
-    <footer className="w-full py-12 px-6 md:px-12 font-medium bg-white text-black" style={{ fontWeight: 500 }}>
-      <style jsx>{`
-        /* Локальные стили, если потребуются */
-        .heading-gradient {
-          background: linear-gradient(to right, #3b82f6, #10b981);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-        }
-      `}</style>
+    <footer className="w-full py-16 px-6 md:px-12 font-medium relative overflow-hidden">
+      {/* Декоративные элементы фона */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <div className="absolute bottom-0 left-0 w-[120%] h-[120%] rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl transform -translate-x-1/4 translate-y-1/4"></div>
+        <div className="absolute top-1/3 right-1/3 w-64 h-64 rounded-full bg-[#e59500]/10 blur-2xl"></div>
+        
+        {/* Плавающие геометрические фигуры */}
+        <div className="absolute bottom-1/4 right-1/4 w-12 h-12 border-2 border-[#e59500] rounded-lg opacity-30 animate-float-slow"></div>
+        <div className="absolute top-1/3 left-1/4 w-8 h-8 border-2 border-[#840032] rounded-full opacity-30 animate-float-medium"></div>
+      </div>
 
       {/* Основной контент футера */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
         {/* Левая колонка - Форма подписки */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg p-6 border border-white/20 transition-all duration-300 hover:shadow-xl overflow-hidden"
+          style={{
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)"
+          }}
+        >
           <SubscribeForm />
         </div>
 
-        {/* Разделитель */}
-        <div className="border-t pt-8 mt-8 border-opacity-100 border-t-2 border-black md:hidden"></div>
+        {/* Разделитель для мобильных устройств */}
+        <div className="border-t pt-8 mt-8 border-opacity-100 border-t-2 border-black/20 md:hidden"></div>
 
         {/* Средняя колонка (пустая для создания пространства) */}
         <div className="hidden md:block"></div>
 
         {/* Правая колонка с остальным содержимым */}
-        <div className="md:ml-auto w-full md:w-auto flex flex-col items-end text-right">
-       
-          
+        <div className="md:ml-auto w-full md:w-auto flex flex-col items-end text-right bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg p-6 border border-white/20 transition-all duration-300 hover:shadow-xl"
+          style={{
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)"
+          }}
+        >
           <div className="flex flex-col gap-4 mb-8 items-end">
-            <a href="/contact" className="font-medium">contact</a>
+            <Link href="/contact" className="font-medium text-lg hover:text-[#e59500] transition-all duration-300 transform hover:translate-x-[-5px]">
+              contact
+            </Link>
           </div>
           
           <div className="flex flex-col gap-4 mb-8 items-end">
             <nav className="flex flex-col gap-2 text-2lg items-end">
               <div className="flex items-center gap-3 justify-end">
-                <a href="/privacy">privacy policy</a>
+                <Link href="/privacy" className="hover:text-[#e59500] transition-colors duration-300">
+                  privacy policy
+                </Link>
                 <span className="opacity-90 font-medium">|</span>
-                <a href="/cookies">cookie policy</a>
+                <Link href="/cookies" className="hover:text-[#e59500] transition-colors duration-300">
+                  cookie policy
+                </Link>
               </div>
             </nav>
             <nav className="flex items-center justify-end gap-2 mt-1">
               <span className="text-sm opacity-90 font-medium">We use</span>
-              <a href="https://stripe.com/en-fi" target="_blank" rel="noopener noreferrer" className="no-underline">
+              <a 
+                href="https://stripe.com/en-fi" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="no-underline transform transition-transform duration-300 hover:scale-105"
+              >
                 <Image 
                   src="/pictures/Stripe/Stripe wordmark - blurple (large).png" 
                   alt="Stripe" 
@@ -76,7 +95,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/denisfateev/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-colors duration-300"
+                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -87,7 +106,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@fadsmarketing" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-colors duration-300"
+                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
                 aria-label="YouTube"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -98,7 +117,7 @@ export default function Footer() {
                 href="https://t.me/zeisch" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-colors duration-300"
+                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
                 aria-label="Telegram"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
@@ -107,7 +126,7 @@ export default function Footer() {
               </a>
               <a 
                 href="mailto:info@fads.fi" 
-                className="text-black hover:text-[#e59500] transition-colors duration-300"
+                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
                 aria-label="Email"
                 data-email="true"
               >
@@ -127,10 +146,17 @@ export default function Footer() {
       </div>
       
       {/* Логотип и копирайт */}
-      <div className="mt-12 flex flex-col items-center justify-center text-center">
-        <p className="mt-4 text-sm">
-          © {new Date().getFullYear()} FADS. All rights reserved.
-        </p>
+      <div className="mt-12 flex flex-col items-center justify-center text-center relative z-10">
+        <div className="bg-white/70 backdrop-blur-xl rounded-full px-8 py-3 shadow-md border border-white/20 transition-all duration-300 hover:shadow-lg"
+          style={{
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)"
+          }}
+        >
+          <p className="text-sm">
+            © {new Date().getFullYear()} FADS. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

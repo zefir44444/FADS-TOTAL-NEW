@@ -4,10 +4,10 @@ import { Tektur } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import Breadcrumbs from "../../public/components/Breadcrumbs";
-import Footer from "../../public/components/Footer";
-import CookieConsent from "../../public/components/CookieConsent";
-import Header from "../../public/components/Header";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,7 +95,7 @@ export default function RootLayout({
         className={`${tektur.variable} ${spaceGrotesk.variable} antialiased`}
       >
          <Header />
-         <div className="pt-20">
+         <div className="pt-26">
            <Breadcrumbs />
            {children}
          </div>

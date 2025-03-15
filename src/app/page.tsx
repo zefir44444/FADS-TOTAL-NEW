@@ -52,29 +52,47 @@ return (
             Start now
           </Link>
           
-          <Link 
-            href="/work" 
-            className="text-center px-8 py-3 text-lg border-2 border-black rounded-full hover:bg-black hover:text-white transition-all duration-300 min-w-[180px] inline-flex justify-center items-center"
-          >
-            View our work
-          </Link>
         </div>
         
         {/* Доверительные элементы */}
         <div className="mt-16 pt-8 border-t border-gray-200">
           <p className="text-sm text-gray-500 mb-4">Trusted by companies in Finland</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
-            <div className="w-24 h-12 flex items-center justify-center">
-              <div className="w-full h-8 bg-gray-300 rounded-md"></div>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <div className="w-48 h-16 flex items-center justify-center">
+              <Image 
+                src="/pictures/Clients/Bemu.png" 
+                alt="Bemuhuolto" 
+                width={180} 
+                height={60}
+                priority
+                quality={100}
+                className="object-contain transition-opacity duration-300"
+                style={{ mixBlendMode: 'multiply' }}
+              />
             </div>
-            <div className="w-24 h-12 flex items-center justify-center">
-              <div className="w-full h-8 bg-gray-300 rounded-md"></div>
+            <div className="w-48 h-16 flex items-center justify-center">
+              <Image 
+                src="/pictures/Clients/Volk.png" 
+                alt="Volkkarihuolto" 
+                width={180} 
+                height={60}
+                priority
+                quality={100}
+                className="object-contain transition-opacity duration-300"
+                style={{ mixBlendMode: 'multiply' }}
+              />
             </div>
-            <div className="w-24 h-12 flex items-center justify-center">
-              <div className="w-full h-8 bg-gray-300 rounded-md"></div>
-            </div>
-            <div className="w-24 h-12 flex items-center justify-center">
-              <div className="w-full h-8 bg-gray-300 rounded-md"></div>
+            <div className="w-48 h-16 flex items-center justify-center">
+              <Image 
+                src="/pictures/Clients/espoonkumi.png" 
+                alt="Espoonkumi" 
+                width={180} 
+                height={60}
+                priority
+                quality={100}
+                className="object-contain transition-opacity duration-300"
+                style={{ mixBlendMode: 'multiply' }}
+              />
             </div>
           </div>
         </div>
@@ -244,7 +262,7 @@ return (
               </h3>
               
               <p className="text-lg mb-6 pl-14">
-                Before starting any work, we create a Telegram working chat and add everyone involved in the project. This ensures immediate communication and quick resolution of any questions.
+                Before starting any work, we create a Telegram working chat and add team leader and client in the project. This ensures immediate communication and quick resolution of any questions.
               </p>
               
               <div className="mt-6 pl-14 flex flex-col space-y-3">
