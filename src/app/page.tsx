@@ -56,7 +56,7 @@ return (
         
         {/* Доверительные элементы */}
         <div className="mt-16 pt-8 border-t border-gray-200">
-          <p className="text-sm text-gray-500 mb-4">Trusted by companies in Finland</p>
+          <p className="text-sm text-gray-500 mb-4">Trusted by brands in Finland</p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="w-48 h-16 flex items-center justify-center">
               <Image 

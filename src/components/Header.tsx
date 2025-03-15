@@ -69,7 +69,7 @@ const Header = () => {
               href="/contact" 
               className="floating-button font-tektur bg-gradient-to-r from-[#e59500] to-[#d48700] text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
             >
-              Contact Us
+              Contact us
             </Link>
           </nav>
 
@@ -125,7 +125,7 @@ const Header = () => {
                 className="floating-button font-tektur bg-gradient-to-r from-[#e59500] to-[#d48700] text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact Us
+                Contact us
               </Link>
             </nav>
           </div>
