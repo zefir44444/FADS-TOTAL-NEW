@@ -350,6 +350,203 @@ return (
         </div>
       </div>
     </section>
+
+    {/* Development Plans Section */}
+    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+      {/* Декоративные элементы фона */}
+      <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"></div>
+        
+        {/* Плавающие геометрические фигуры */}
+        <div className="absolute top-1/4 right-1/4 w-10 h-10 border-2 border-[#e59500] rounded-lg opacity-30 animate-float-slow"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-8 h-8 border-2 border-[#840032] rounded-full opacity-30 animate-float-medium"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#840032]/10 text-[#840032] font-medium text-sm">
+            Our Services
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Development Plans in Helsinki</h2>
+          <p className="text-xl max-w-3xl mx-auto">
+            Choose the perfect solution for your business needs with our comprehensive development plans
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Corporate Website */}
+          <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+            <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold mb-3">Corporate Website</h3>
+              <p className="text-gray-600 mb-4 flex-grow">
+                Represents your company online, providing comprehensive information about your services, team, and achievements. It helps strengthen your brand and establish communication with clients and partners.
+              </p>
+              <div className="flex items-center text-sm text-gray-500 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#e59500]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Development time: from 1 month
+              </div>
+              <a 
+                href="/contact" 
+                className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
+              >
+                <span className="flex items-center justify-center">
+                  Submit a request
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Landing Page */}
+          <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+            <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold mb-3">Landing Page</h3>
+              <p className="text-gray-600 mb-4 flex-grow">
+                A one-page website designed to promote a specific product and increase conversions. It focuses on capturing attention and encouraging visitors to take action, such as making a purchase, placing an order, or subscribing.
+              </p>
+              <div className="flex items-center text-sm text-gray-500 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#e59500]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Development time: from 2 weeks
+              </div>
+              <a 
+                href="/contact" 
+                className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
+              >
+                <span className="flex items-center justify-center">
+                  Submit a request
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          
+          {/* E-commerce Website */}
+          <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+            <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold mb-3">E-commerce Website</h3>
+              <p className="text-gray-600 mb-4 flex-grow">
+                Enables online sales of products and services by providing a convenient platform for managing orders and customers. The website includes secure functionality, integration with payment systems, and more.
+              </p>
+              <div className="flex items-center text-sm text-gray-500 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#e59500]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Development time: 2-5 months
+              </div>
+              <a 
+                href="/contact" 
+                className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
+              >
+                <span className="flex items-center justify-center">
+                  Submit a request
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Catalog Website */}
+          <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+            <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold mb-3">Catalog Website</h3>
+              <p className="text-gray-600 mb-4 flex-grow">
+                Designed to showcase your product range without online purchasing capabilities. It helps attract potential customers and increase interest in your products.
+              </p>
+              <div className="flex items-center text-sm text-gray-500 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#e59500]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Development time: 1-2 months
+              </div>
+              <a 
+                href="/contact" 
+                className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
+              >
+                <span className="flex items-center justify-center">
+                  Submit a request
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Blogs, Content Websites */}
+          <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+            <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold mb-3">Blogs & Content Websites</h3>
+              <p className="text-gray-600 mb-4 flex-grow">
+                We create web portals and user-friendly platforms for content management and reader engagement. These platforms are designed for publishing articles, news, and other materials.
+              </p>
+              <div className="flex items-center text-sm text-gray-500 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#e59500]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Development time: 3-4 weeks
+              </div>
+              <a 
+                href="/contact" 
+                className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
+              >
+                <span className="flex items-center justify-center">
+                  Submit a request
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Web Applications */}
+          <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+            <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold mb-3">Custom and Tailor-Made Solutions</h3>
+              <p className="text-gray-600 mb-4 flex-grow">
+                Developed according to unique client requirements and business processes. We offer a full-cycle development process, from concept to final implementation.
+              </p>
+              <div className="flex items-center text-sm text-gray-500 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#e59500]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Development time: discussed individually
+              </div>
+              <div className="md:self-center">
+                <a 
+                  href="/contact" 
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-[#e59500] to-[#840032] text-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 whitespace-nowrap"
+                >
+                  <span className="flex items-center justify-center">
+                    Submit a request
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 );
 } 

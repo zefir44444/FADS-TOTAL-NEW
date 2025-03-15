@@ -434,11 +434,11 @@ const CookieConsent = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-4 right-4 z-50"
+          className="fixed bottom-4 right-4 z-50 cookie-pulse"
         >
           <button
             onClick={openCookieSettings}
-            className="p-3 rounded-full shadow-lg transition-all duration-300 ease-out transform hover:scale-110 bg-white/90 backdrop-blur-xl text-gray-800 hover:bg-white border border-white/20 hover:shadow-xl"
+            className="p-3 rounded-full shadow-lg transition-all duration-300 ease-out transform hover:scale-110 hover:rotate-12 bg-white/90 backdrop-blur-xl text-gray-800 hover:bg-gradient-to-r hover:from-white hover:to-[#fff8e6] border border-white/20 hover:border-[#e59500]/30 hover:shadow-xl group relative overflow-hidden"
             style={{
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
@@ -447,7 +447,21 @@ const CookieConsent = () => {
             aria-label="Cookie settings"
             title="Cookie settings"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#e59500" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            {/* Эффект свечения при наведении */}
+            <span className="absolute inset-0 bg-gradient-to-r from-[#e59500]/0 via-[#e59500]/10 to-[#e59500]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
+            
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="#e59500" 
+              stroke="currentColor" 
+              strokeWidth="1.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+              className="transition-all duration-300 group-hover:fill-[#d48700] relative z-10 cookie-glow group-hover:cookie-rotate"
+            >
               <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
               <path d="M8.5 8.5v.01" />
               <path d="M16 15.5v.01" />
@@ -455,6 +469,12 @@ const CookieConsent = () => {
               <path d="M11 17v.01" />
               <path d="M7 14v.01" />
             </svg>
+            
+            {/* Индикатор уведомления - показываем его периодически даже без наведения */}
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#e59500] rounded-full opacity-30 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></span>
+            
+            {/* Дополнительный эффект при наведении */}
+            <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/10 transition-all duration-300"></span>
           </button>
         </motion.div>
       )}
