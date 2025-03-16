@@ -80,6 +80,7 @@ export default function RootLayout({
         />
         {/* Мета-тег для корректного отображения на мобильных устройствах */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, height=device-height" />
+        <Analytics/>
       </head>
       <body
         className={`${tektur.variable} ${spaceGrotesk.variable} antialiased`}
