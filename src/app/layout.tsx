@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import Header from "@/components/Header";
+import { Analytics } from "@vercel/analytics/react"
 
 const tektur = Tektur({
   subsets: ["latin"],
