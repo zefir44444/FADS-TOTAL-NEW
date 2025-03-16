@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 export default function WebsitesOverview() {
-  // Приоритизация рендеринга основного контента
+  // Приоритизация рендеринга основного контента и оптимизация сторонних скриптов
   useEffect(() => {
     // Предварительная загрузка изображений и шрифтов
     const links = document.querySelectorAll('a');
@@ -18,6 +18,26 @@ export default function WebsitesOverview() {
         preloadLink.as = 'document';
         document.head.appendChild(preloadLink);
       }
+    });
+
+    // Добавляем preconnect для доменов HubSpot
+    const preconnectDomains = [
+      'js-na1.hs-scripts.com',
+      'js.hscollectedforms.net',
+      'js.hs-banner.com',
+      'js.hs-analytics.net'
+    ];
+
+    preconnectDomains.forEach(domain => {
+      const preconnect = document.createElement('link');
+      preconnect.rel = 'preconnect';
+      preconnect.href = `https://${domain}`;
+      document.head.appendChild(preconnect);
+
+      const dnsPrefetch = document.createElement('link');
+      dnsPrefetch.rel = 'dns-prefetch';
+      dnsPrefetch.href = `https://${domain}`;
+      document.head.appendChild(dnsPrefetch);
     });
   }, []);
 

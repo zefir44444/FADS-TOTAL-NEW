@@ -62,22 +62,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-            <head>
-        {/* HubSpot Tracking Code */}
-        <Script
-          id="hubspot-tracking"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(d,s,i,r) {
-                if (d.getElementById(i)){return;}
-                var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
-                n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/49357637.js';
-                e.parentNode.insertBefore(n,e);
-              })(document,"script","hs-analytics",300000);
-            `,
-          }}
-        />
+      <head>
+        {/* Предварительное соединение с доменами HubSpot */}
+        <link rel="preconnect" href="https://js-na1.hs-scripts.com" />
+        <link rel="dns-prefetch" href="https://js-na1.hs-scripts.com" />
+        <link rel="preconnect" href="https://js.hscollectedforms.net" />
+        <link rel="dns-prefetch" href="https://js.hscollectedforms.net" />
+        <link rel="preconnect" href="https://js.hs-banner.com" />
+        <link rel="dns-prefetch" href="https://js.hs-banner.com" />
+        <link rel="preconnect" href="https://js.hs-analytics.net" />
+        <link rel="dns-prefetch" href="https://js.hs-analytics.net" />
         {/* Мета-тег для корректного отображения на мобильных устройствах */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, height=device-height" />
         <Analytics/>
@@ -95,6 +89,13 @@ export default function RootLayout({
          <Footer />
             
         <CookieConsent />
+        {/* HubSpot скрипт с оптимизированной загрузкой */}
+        <Script
+          id="hubspot-script"
+          strategy="lazyOnload"
+          defer
+          src="//js-na1.hs-scripts.com/49357637.js"
+        />
       </body>
     </html>
   );
