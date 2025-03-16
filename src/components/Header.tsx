@@ -32,16 +32,16 @@ const Header = () => {
   if (!mounted) return null;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-40">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-4">
         <div 
           className={`
             flex items-center justify-between 
-            bg-white/70 backdrop-blur-xl 
+            bg-white/70
             rounded-full shadow-lg 
             py-2 px-4 md:px-6 
             transition-all duration-300 
-            pointer-events-auto
+            backdrop-blur-xl
             border border-white/20
             ${scrolled ? "mx-4 md:mx-8 lg:mx-16" : "mx-0"}
           `}
@@ -140,13 +140,9 @@ const Header = () => {
 
           {/* Кнопка мобильного меню */}
           <button 
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/80 shadow-md" 
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/80 shadow-md backdrop-blur-xl" 
             onClick={toggleMenu}
             aria-label="Toggle menu"
-            style={{
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)"
-            }}
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -178,11 +174,7 @@ const Header = () => {
         {/* Мобильное меню */}
         {isMenuOpen && (
           <div 
-            className="md:hidden mx-4 mt-2 bg-white/70 rounded-2xl shadow-lg py-6 px-6 animate-fadeIn pointer-events-auto border border-white/20" 
-            style={{
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)"
-            }}
+            className="md:hidden mx-4 mt-2 bg-white/70 rounded-2xl shadow-lg py-6 px-6 animate-fadeIn backdrop-blur-xl border border-white/20" 
           >
             <nav className="flex flex-col space-y-4">
               <Link 
