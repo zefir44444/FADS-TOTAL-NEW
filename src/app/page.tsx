@@ -555,9 +555,32 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-16 md:py-24 bg-white relative overflow-hidden">
         {/* Декоративные элементы фона */}
-        <div className="absolute inset-0 z-0 opacity-20">
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"></div>
+        <div className="absolute inset-0 z-0 opacity-50">
+          {/* Градиентный фон */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#e59500]/10 via-white to-[#840032]/10" style={{ backgroundSize: '400% 400%', animation: 'gradient 15s ease infinite' }}></div>
+          
+          {/* Большие градиентные круги */}
+          <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-gradient-to-r from-[#e59500]/30 to-[#840032]/30 blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-gradient-to-r from-[#840032]/30 to-[#e59500]/30 blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          
+          {/* Плавающие геометрические фигуры с более высокой непрозрачностью */}
+          <div className="absolute top-1/4 left-1/4 w-16 h-16 border-4 border-[#e59500] rounded-lg opacity-60 animate-float-slow"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-12 h-12 border-4 border-[#840032] rounded-full opacity-60 animate-float-medium"></div>
+          <div className="absolute top-2/3 right-1/4 w-20 h-20 border-4 border-[#e59500] rounded-xl opacity-50 animate-float-slow" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-14 h-14 border-4 border-[#840032] rounded-lg opacity-60 animate-float-medium" style={{ animationDelay: '1.5s' }}></div>
+          
+          {/* Декоративные линии */}
+          <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent"></div>
+          <div className="absolute top-0 left-1/2 w-1 h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent"></div>
+          
+          {/* Светящиеся точки */}
+          <div className="absolute top-1/3 right-1/5 w-6 h-6 rounded-full bg-[#e59500] opacity-50 animate-ping" style={{ animationDuration: '3s' }}></div>
+          <div className="absolute bottom-1/4 left-1/5 w-4 h-4 rounded-full bg-[#840032] opacity-50 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+          <div className="absolute top-2/3 left-2/3 w-8 h-8 rounded-full bg-[#e59500] opacity-40 animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
+          
+          {/* Дополнительные декоративные элементы */}
+          <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full border-2 border-[#e59500]/40 animate-spin" style={{ animationDuration: '20s' }}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-24 h-24 rounded-full border-2 border-[#840032]/40 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
