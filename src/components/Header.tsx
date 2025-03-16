@@ -201,12 +201,17 @@ const Header = () => {
             </svg>
           </button>
         </div>
-      </div>
 
-      {/* Мобильное меню - вынесено за пределы контейнера с эффектом размытия */}
-      {isMenuOpen && (
-        <div className="md:hidden fixed top-20 left-0 right-0 z-50 px-4">
-          <div className="bg-white rounded-2xl shadow-lg py-6 px-6 animate-fadeIn border border-white/20">
+        {/* Мобильное меню */}
+        {isMenuOpen && (
+          <div 
+            className="md:hidden mx-4 mt-2 bg-white rounded-2xl shadow-lg py-6 px-6 animate-fadeIn border border-white/20" 
+            style={{
+              backdropFilter: "none",
+              WebkitBackdropFilter: "none",
+              backgroundColor: "rgba(255, 255, 255, 1)"
+            }}
+          >
             <nav className="flex flex-col space-y-4">
               <Link 
                 href="/contact" 
@@ -293,8 +298,8 @@ const Header = () => {
               </a>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 };
