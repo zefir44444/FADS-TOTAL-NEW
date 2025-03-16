@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,6 +8,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [policiesOpen, setPoliciesOpen] = useState(false);
+  const policiesRef = useRef(null);
 
   // Предотвращаем гидратацию
   useEffect(() => {
@@ -27,6 +29,10 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const togglePolicies = () => {
+    setPoliciesOpen(!policiesOpen);
   };
 
   if (!mounted) return null;
@@ -63,8 +69,63 @@ const Header = () => {
             </div>
           </Link>
 
+          {/* Навигация для десктопа */}
+        
+          {/* Выпадающее меню с политиками */}
+          <div className="hidden md:flex items-center space-x-8 ml-auto">
+            <div className="relative group">
+              <button 
+                className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                aria-label="Policies"
+                aria-expanded={policiesOpen}
+              >
+                Policies
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="transition-transform duration-300 group-hover:rotate-180"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              
+              <div className="absolute top-full left-0 mt-2 bg-white/90 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[150px] border border-white/20 
+                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                            transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+                <div className="flex flex-col gap-2">
+                  <Link 
+                    href="/privacy" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Privacy policy
+                  </Link>
+                  <Link 
+                    href="/cookies" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Cookie policy
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <Link 
+              href="/contact" 
+              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+            >
+              Contact us
+            </Link>
+          </div>
+
           {/* Социальные ссылки */}
-          <div className="hidden md:flex items-center gap-4 ml-auto mr-8">
+          <div className="hidden md:flex items-center gap-4 ml-4 mr-0">
             <a 
               href="https://www.linkedin.com/in/denisfateev/" 
               target="_blank" 
@@ -115,29 +176,6 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Ссылки на политики */}
-          <div className="hidden md:flex flex-col gap-2 mr-4">
-            <nav className="flex items-center gap-3 justify-end text-sm">
-              <Link href="/privacy" className="hover:text-[#e59500] transition-colors duration-300">
-                privacy policy
-              </Link>
-              <span className="opacity-90 font-medium">|</span>
-              <Link href="/cookies" className="hover:text-[#e59500] transition-colors duration-300">
-                cookie policy
-              </Link>
-            </nav>
-          </div>
-
-          {/* Навигация для десктопа */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link 
-              href="/contact" 
-              className="floating-button font-tektur bg-gradient-to-r from-[#e59500] to-[#d48700] text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
-            >
-              Contact us
-            </Link>
-          </nav>
-
           {/* Кнопка мобильного меню */}
           <button 
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/80 shadow-md backdrop-blur-xl" 
@@ -179,28 +217,30 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <Link 
                 href="/contact" 
-                className="floating-button font-tektur bg-gradient-to-r from-[#e59500] to-[#d48700] text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 text-center"
+                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact us
               </Link>
               
-              <div className="flex items-center gap-3 justify-center mt-4 pt-4 border-t border-gray-200">
-                <Link 
-                  href="/privacy" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  privacy policy
-                </Link>
-                <span className="opacity-90 font-medium">|</span>
-                <Link 
-                  href="/cookies" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  cookie policy
-                </Link>
+              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
+                <p className="text-sm font-medium">Policies:</p>
+                <div className="flex flex-col gap-2">
+                  <Link 
+                    href="/privacy" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Privacy policy
+                  </Link>
+                  <Link 
+                    href="/cookies" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Cookie policy
+                  </Link>
+                </div>
               </div>
             </nav>
           </div>

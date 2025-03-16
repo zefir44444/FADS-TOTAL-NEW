@@ -431,7 +431,7 @@ main {
 }
 
 .word-rotation::after {
-  content: "Landing Page";
+  content: "Portfolio Website";
   position: absolute;
   left: 0;
   right: 0;
@@ -439,103 +439,141 @@ main {
   color: #e59500;
   text-align: center;
   width: 100%;
-  animation: wordChange 15s ease-in-out infinite;
+  animation: wordChange 20s ease-in-out infinite;
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 @keyframes wordChange {
   0% {
-    content: "Landing Page";
+    content: "Portfolio Website";
     opacity: 0;
     transform: translateY(10px);
   }
-  3% {
+  2% {
     opacity: 1;
     transform: translateY(0);
+  }
+  13% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  15% {
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "Portfolio Website";
+  }
+  
+  15.1% {
+    content: "Corporate Website";
+    opacity: 0;
+    transform: translateY(10px);
   }
   17% {
     opacity: 1;
     transform: translateY(0);
   }
-  20% {
-    opacity: 0;
-    transform: translateY(-10px);
-    content: "Landing Page";
-  }
-  
-  20.1% {
-    content: "Corporate Website";
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  23% {
+  28% {
     opacity: 1;
     transform: translateY(0);
   }
-  37% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  40% {
+  30% {
     opacity: 0;
     transform: translateY(-10px);
     content: "Corporate Website";
   }
   
-  40.1% {
+  30.1% {
     content: "E-commerce Website";
     opacity: 0;
     transform: translateY(10px);
+  }
+  32% {
+    opacity: 1;
+    transform: translateY(0);
   }
   43% {
     opacity: 1;
     transform: translateY(0);
   }
-  57% {
+  45% {
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "E-commerce Website";
+  }
+  
+  45.1% {
+    content: "Catalog Website";
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  47% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  58% {
     opacity: 1;
     transform: translateY(0);
   }
   60% {
     opacity: 0;
     transform: translateY(-10px);
-    content: "E-commerce Website";
+    content: "Catalog Website";
   }
   
   60.1% {
-    content: "Catalog Website";
+    content: "Blogs";
     opacity: 0;
     transform: translateY(10px);
   }
-  63% {
+  62% {
     opacity: 1;
     transform: translateY(0);
+  }
+  73% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "Blogs";
+  }
+  
+  75.1% {
+    content: "Content Websites";
+    opacity: 0;
+    transform: translateY(10px);
   }
   77% {
     opacity: 1;
     transform: translateY(0);
   }
-  80% {
-    opacity: 0;
-    transform: translateY(-10px);
-    content: "Catalog Website";
-  }
-  
-  80.1% {
-    content: "Blogs & Content Websites";
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  83% {
+  88% {
     opacity: 1;
     transform: translateY(0);
   }
-  97% {
+  90% {
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "Content Websites";
+  }
+  
+  90.1% {
+    content: "Portfolio Website";
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  92% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  98% {
     opacity: 1;
     transform: translateY(0);
   }
   100% {
     opacity: 0;
     transform: translateY(-10px);
-    content: "Blogs & Content Websites";
+    content: "Portfolio Website";
   }
 }
