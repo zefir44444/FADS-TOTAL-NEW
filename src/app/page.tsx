@@ -284,7 +284,7 @@ export default function Home() {
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#0088cc]/10 text-[#0088cc] font-medium text-sm">
+                <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#0066aa]/20 text-[#0066aa] font-semibold text-sm">
                   Communication & Transparency
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">How We Work With You</h2>
@@ -298,7 +298,7 @@ export default function Home() {
                   <div className="absolute -right-4 -top-4 w-20 h-20 bg-[#0088cc]/10 rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
                   
                   <h3 className="text-2xl font-bold mb-4 gradient-text flex items-center">
-                    <span className="w-10 h-10 rounded-full bg-[#0088cc] flex items-center justify-center text-white mr-3 shadow-md transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    <span className="w-10 h-10 rounded-full bg-[#0066aa] flex items-center justify-center text-white mr-3 shadow-md transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
                       </svg>
@@ -312,7 +312,7 @@ export default function Home() {
                   
                   <div className="mt-6 pl-14 flex flex-col space-y-3">
                     <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-[#0088cc]/20 flex items-center justify-center text-[#0088cc]">
+                      <div className="w-6 h-6 rounded-full bg-[#0066aa]/30 flex items-center justify-center text-[#0066aa]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                         </svg>
@@ -320,7 +320,7 @@ export default function Home() {
                       <span className="ml-3 text-base">Instant communication</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-[#0088cc]/20 flex items-center justify-center text-[#0088cc]">
+                      <div className="w-6 h-6 rounded-full bg-[#0066aa]/30 flex items-center justify-center text-[#0066aa]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                         </svg>
@@ -328,7 +328,7 @@ export default function Home() {
                       <span className="ml-3 text-base">Quick response time</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-[#0088cc]/20 flex items-center justify-center text-[#0088cc]">
+                      <div className="w-6 h-6 rounded-full bg-[#0066aa]/30 flex items-center justify-center text-[#0066aa]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                         </svg>
@@ -342,7 +342,7 @@ export default function Home() {
                   <div className="absolute -left-4 -top-4 w-20 h-20 bg-[#e59500]/10 rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
                   
                   <h3 className="text-2xl font-bold mb-4 gradient-text flex items-center">
-                    <span className="w-10 h-10 rounded-full bg-[#e59500] flex items-center justify-center text-white mr-3 shadow-md transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    <span className="w-10 h-10 rounded-full bg-[#d17800] flex items-center justify-center text-white mr-3 shadow-md transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.5 6.5l-3.5 3.5 3.5 3.5 1.5-1.5-2-2 2-2-1.5-1.5zm3 0l-1.5 1.5 2 2-2 2 1.5 1.5 3.5-3.5-3.5-3.5z"/>
                       </svg>
@@ -356,7 +356,7 @@ export default function Home() {
                   
                   <div className="mt-6 pl-14 flex flex-col space-y-3">
                     <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-[#e59500]/20 flex items-center justify-center text-[#e59500]">
+                      <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                         </svg>
@@ -364,7 +364,7 @@ export default function Home() {
                       <span className="ml-3 text-base">Regular progress reports</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-[#e59500]/20 flex items-center justify-center text-[#e59500]">
+                      <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                         </svg>
@@ -372,7 +372,7 @@ export default function Home() {
                       <span className="ml-3 text-base">Access to development environment</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-[#e59500]/20 flex items-center justify-center text-[#e59500]">
+                      <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                         </svg>
@@ -628,7 +628,7 @@ export default function Home() {
           
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
+              <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#d17800]/20 text-[#d17800] font-semibold text-sm">
                 Get Answers
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h2>
