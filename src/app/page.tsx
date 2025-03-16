@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -10,6 +10,29 @@ export default function Home() {
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
+  // Добавляем эффект параллакса при прокрутке
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      
+      // Устанавливаем CSS переменные для разных скоростей параллакса
+      document.documentElement.style.setProperty('--parallax-offset-slow', String(scrollY * 0.03));
+      document.documentElement.style.setProperty('--parallax-offset-medium', String(scrollY * 0.05));
+      document.documentElement.style.setProperty('--parallax-offset-fast', String(scrollY * 0.08));
+    };
+
+    // Добавляем обработчик события прокрутки
+    window.addEventListener('scroll', handleScroll);
+    
+    // Вызываем обработчик один раз для инициализации
+    handleScroll();
+    
+    // Очищаем обработчик при размонтировании компонента
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -153,7 +176,7 @@ export default function Home() {
               <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <h3 className="text-2xl font-bold mb-4 gradient-text">Initial Consultation and Task Discussion</h3>
                 <p className="text-lg">
-                  Website development cooperation begins with your inquiry. To utilize our services and order turnkey web application development, submit a request through any form on our website, call us directly, or contact us via your preferred messenger. Upon receiving your request, we&apos;ll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we&apos;ll issue an invoice for an initial payment.
+                  Website development cooperation begins with your inquiry. To utilize our services and order custom website development, submit a request through any form on our website, call us directly, or contact us via your preferred messenger. Upon receiving your request, we&apos;ll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we&apos;ll issue an invoice for an initial payment.
                 </p>
               </div>
             </div>
@@ -554,6 +577,33 @@ export default function Home() {
 
       {/* FAQ Section */}
       <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+        {/* Динамичный фон с линиями */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full parallax-container">
+            {/* Горизонтальные линии */}
+            <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-[20%] transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-slow) * -0.5px))' }}></div>
+            <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-1/4 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-medium) * 0.7px))' }}></div>
+            <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-1/3 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-fast) * -0.3px))' }}></div>
+            <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-2/4 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-slow) * 0.6px))' }}></div>
+            <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-2/3 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-medium) * -0.4px))' }}></div>
+            <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-3/4 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-fast) * 0.5px))' }}></div>
+            <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-[83%] transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-slow) * -0.7px))' }}></div>
+            
+            {/* Вертикальные линии */}
+            <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-[16%] transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-medium) * 0.4px))' }}></div>
+            <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-1/4 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-fast) * -0.6px))' }}></div>
+            <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-1/3 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-slow) * 0.3px))' }}></div>
+            <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-2/4 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-medium) * -0.5px))' }}></div>
+            <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-2/3 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-fast) * 0.7px))' }}></div>
+            <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-3/4 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-slow) * -0.4px))' }}></div>
+            <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-[83%] transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-medium) * 0.5px))' }}></div>
+            
+            {/* Диагональные линии */}
+            <div className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-[#e59500]/40 to-transparent top-0 left-0 origin-top-left rotate-45 parallax-line" style={{ transform: 'rotate(45deg) translateY(calc(var(--parallax-offset-slow) * 0.8px))' }}></div>
+            <div className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-[#840032]/40 to-transparent bottom-0 left-0 origin-bottom-left rotate-[-45deg] parallax-line" style={{ transform: 'rotate(-45deg) translateY(calc(var(--parallax-offset-fast) * -0.8px))' }}></div>
+          </div>
+        </div>
+        
         {/* Декоративные элементы фона */}
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>

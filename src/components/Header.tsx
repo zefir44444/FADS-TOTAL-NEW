@@ -8,6 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
 
   // Предотвращаем гидратацию
   useEffect(() => {
@@ -27,6 +28,11 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setOpenMobileSubmenu(null); // Сбрасываем открытое подменю при закрытии/открытии основного меню
+  };
+
+  const toggleMobileSubmenu = (submenu: string) => {
+    setOpenMobileSubmenu(openMobileSubmenu === submenu ? null : submenu);
   };
 
   if (!mounted) return null;
@@ -364,113 +370,177 @@ const Header = () => {
               
               {/* Websites меню для мобильных */}
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
-                <p className="text-sm font-medium text-center">Websites</p>
-                <div className="flex flex-col gap-2 items-center">
-                  <Link 
-                    href="/websites/corporate" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
+                <button 
+                  className="text-sm font-medium text-center flex items-center justify-center gap-1"
+                  onClick={() => toggleMobileSubmenu('websites')}
+                >
+                  Websites
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className={`transition-transform duration-300 ${openMobileSubmenu === 'websites' ? 'rotate-180' : ''}`}
                   >
-                    Corporate Websites
-                  </Link>
-                  <Link 
-                    href="/websites/landing" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Landing Page
-                  </Link>
-                  <Link 
-                    href="/websites/multi-page" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Multi-page Website
-                  </Link>
-                  <Link 
-                    href="/websites/showcases" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Showcases
-                  </Link>
-                  <Link 
-                    href="/websites/business-card" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Business Card Website
-                  </Link>
-                  <Link 
-                    href="/websites/blogs" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Blogs
-                  </Link>
-                  <Link 
-                    href="/websites/customization" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Website Customization
-                  </Link>
-                </div>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                {openMobileSubmenu === 'websites' && (
+                  <div className="flex flex-col gap-2 items-center mt-2 animate-fadeIn">
+                    <Link 
+                      href="/websites/corporate" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Corporate Websites
+                    </Link>
+                    <Link 
+                      href="/websites/landing" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Landing Page
+                    </Link>
+                    <Link 
+                      href="/websites/multi-page" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Multi-page Website
+                    </Link>
+                    <Link 
+                      href="/websites/showcases" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Showcases
+                    </Link>
+                    <Link 
+                      href="/websites/business-card" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Business Card Website
+                    </Link>
+                    <Link 
+                      href="/websites/blogs" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Blogs
+                    </Link>
+                    <Link 
+                      href="/websites/customization" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Website Customization
+                    </Link>
+                  </div>
+                )}
               </div>
               
               {/* Website Promotion меню для мобильных */}
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
-                <p className="text-sm font-medium text-center">Website Promotion</p>
-                <div className="flex flex-col gap-2 items-center">
-                  <Link 
-                    href="/promotion/website-audits" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
+                <button 
+                  className="text-sm font-medium text-center flex items-center justify-center gap-1"
+                  onClick={() => toggleMobileSubmenu('promotion')}
+                >
+                  Website Promotion
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className={`transition-transform duration-300 ${openMobileSubmenu === 'promotion' ? 'rotate-180' : ''}`}
                   >
-                    Website Audits
-                  </Link>
-                  <Link 
-                    href="/promotion/seo" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    SEO Optimization & Promotion
-                  </Link>
-                  <Link 
-                    href="/promotion/google-ads" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Google Ads Setup & Management
-                  </Link>
-                  <Link 
-                    href="/promotion/youtube" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    YouTube Advertising
-                  </Link>
-                </div>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                {openMobileSubmenu === 'promotion' && (
+                  <div className="flex flex-col gap-2 items-center mt-2 animate-fadeIn">
+                    <Link 
+                      href="/promotion/website-audits" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Website Audits
+                    </Link>
+                    <Link 
+                      href="/promotion/seo" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      SEO Optimization & Promotion
+                    </Link>
+                    <Link 
+                      href="/promotion/google-ads" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Google Ads Setup & Management
+                    </Link>
+                    <Link 
+                      href="/promotion/youtube" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      YouTube Advertising
+                    </Link>
+                  </div>
+                )}
               </div>
               
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-2">
-                  <Link 
-                    href="/privacy" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
+                <button 
+                  className="text-sm font-medium text-center flex items-center justify-center gap-1"
+                  onClick={() => toggleMobileSubmenu('policies')}
+                >
+                  Policies
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className={`transition-transform duration-300 ${openMobileSubmenu === 'policies' ? 'rotate-180' : ''}`}
                   >
-                    Privacy policy
-                  </Link>
-                  <span className="text-gray-300">|</span>
-                  <Link 
-                    href="/cookies" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Cookie policy
-                  </Link>
-                </div>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                {openMobileSubmenu === 'policies' && (
+                  <div className="flex items-center justify-center gap-2 mt-2 animate-fadeIn">
+                    <Link 
+                      href="/privacy" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Privacy policy
+                    </Link>
+                    <span className="text-gray-300">|</span>
+                    <Link 
+                      href="/cookies" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Cookie policy
+                    </Link>
+                  </div>
+                )}
               </div>
             </nav>
             

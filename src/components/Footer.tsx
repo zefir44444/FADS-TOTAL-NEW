@@ -80,24 +80,106 @@ export default function Footer() {
             </div>
           </div>
           
-          <nav className="flex items-center justify-end gap-2 mt-2 mb-4">
-            <span className="text-sm opacity-90 font-medium">We use</span>
-            <a 
-              href="https://stripe.com/en-fi" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="no-underline transform transition-transform duration-300 hover:scale-105"
-            >
+          <div className="flex flex-col items-end mt-4 mb-4">
+            <span className="text-sm opacity-90 font-medium mb-2">We use for secure payments:</span>
+            <div className="flex items-center gap-4 mt-1">
+              <a 
+                href="https://stripe.com/en-fi" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="no-underline transform transition-transform duration-300 hover:scale-105"
+              >
+                <Image 
+                  src="/pictures/partners/Stripe/Stripe wordmark - blurple (large).png" 
+                  alt="Stripe" 
+                  width={60} 
+                  height={25} 
+                  className="inline-block" 
+                />
+              </a>
+              <a 
+                href="https://www.revolut.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="no-underline transform transition-transform duration-300 hover:scale-105"
+              >
+                <Image 
+                  src="/pictures/partners/Revolut/Revolut-01-retail-wordmark-FINAL-01.svg" 
+                  alt="Revolut" 
+                  width={60} 
+                  height={25} 
+                  className="inline-block" 
+                />
+              </a>
+              <a 
+                href="https://www.ukko.fi" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="no-underline transform transition-transform duration-300 hover:scale-105"
+              >
+                <Image 
+                  src="/pictures/partners/Ukko/UKKO.fi_logo_blue.png" 
+                  alt="UKKO.fi" 
+                  width={60} 
+                  height={25} 
+                  className="inline-block" 
+                />
+              </a>
+            </div>
+            
+            {/* Платежные системы */}
+            <div className="flex flex-wrap items-center justify-end gap-3 mt-4">
               <Image 
-                src="/pictures/Stripe/Stripe wordmark - blurple (large).png" 
-                alt="Stripe" 
-                width={60} 
+                src="/pictures/payment-logos/cards/visa.svg" 
+                alt="Visa" 
+                width={40} 
                 height={25} 
                 className="inline-block" 
               />
-            </a>
-            <span className="text-sm opacity-90 font-medium">for secure payments</span>
-          </nav>
+              <Image 
+                src="/pictures/payment-logos/cards/mastercard.svg" 
+                alt="Mastercard" 
+                width={40} 
+                height={25} 
+                className="inline-block" 
+              />
+              <Image 
+                src="/pictures/payment-logos/cards/american-express.svg" 
+                alt="American Express" 
+                width={40} 
+                height={25} 
+                className="inline-block" 
+              />
+              <Image 
+                src="/pictures/payment-logos/cards/maestro.svg" 
+                alt="Maestro" 
+                width={40} 
+                height={25} 
+                className="inline-block" 
+              />
+              <Image 
+                src="/pictures/payment-logos/cards/diners.svg" 
+                alt="Diners Club" 
+                width={40} 
+                height={25} 
+                className="inline-block" 
+              />
+              <Image 
+                src="/pictures/payment-logos/cards/discover.svg" 
+                alt="Discover" 
+                width={40} 
+                height={25} 
+                className="inline-block" 
+              />
+              <Image 
+                src="/pictures/payment-logos/cards/unionpay.svg" 
+                alt="UnionPay" 
+                width={40} 
+                height={25} 
+                className="inline-block" 
+              />
+            </div>
+          </div>
           
           {/* Социальные ссылки */}
           <div className="flex items-center gap-6 mt-2 justify-end">
