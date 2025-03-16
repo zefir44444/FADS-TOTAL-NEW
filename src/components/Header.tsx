@@ -45,10 +45,7 @@ const Header = () => {
             border border-white/20
             ${scrolled ? "mx-4 md:mx-8 lg:mx-16" : "mx-0"}
           `}
-          style={{
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)"
-          }}
+      
         >
           {/* Логотип */}
           <Link href="/" className="flex items-center">
@@ -65,8 +62,85 @@ const Header = () => {
 
           {/* Навигация для десктопа */}
         
-          {/* Выпадающее меню с политиками */}
+          {/* Выпадающее меню */}
           <div className="hidden md:flex items-center space-x-8 ml-auto">
+            <div className="relative group">
+              <button 
+                className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                aria-label="Websites"
+              >
+                Websites
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="transition-transform duration-300 group-hover:rotate-180"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              
+              <div className="absolute top-full left-0 mt-2 bg-white/90 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[200px] border border-white/20 
+                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                            transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
+                   style={{
+                     backdropFilter: "blur(12px)",
+                     WebkitBackdropFilter: "blur(12px)"
+                   }}
+              >
+                <div className="flex flex-col gap-2">
+                  <Link 
+                    href="/websites/corporate" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Corporate Websites
+                  </Link>
+                  <Link 
+                    href="/websites/landing" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Landing Page
+                  </Link>
+                  <Link 
+                    href="/websites/multi-page" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Multi-page Website
+                  </Link>
+                  <Link 
+                    href="/websites/showcases" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Showcases
+                  </Link>
+                  <Link 
+                    href="/websites/business-card" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Business Card Website
+                  </Link>
+                  <Link 
+                    href="/websites/blogs" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Blogs
+                  </Link>
+                  <Link 
+                    href="/websites/customization" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Website Customization
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
             <div className="relative group">
               <button 
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
@@ -91,7 +165,12 @@ const Header = () => {
               
               <div className="absolute top-full left-0 mt-2 bg-white/90 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[150px] border border-white/20 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                            transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+                            transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
+                   style={{
+                     backdropFilter: "blur(12px)",
+                     WebkitBackdropFilter: "blur(12px)"
+                   }}
+              >
                 <div className="flex flex-col gap-2">
                   <Link 
                     href="/privacy" 
@@ -220,6 +299,62 @@ const Header = () => {
               >
                 Contact us
               </Link>
+              
+              {/* Websites меню для мобильных */}
+              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
+                <p className="text-sm font-medium text-center">Websites</p>
+                <div className="flex flex-col gap-2 items-center">
+                  <Link 
+                    href="/websites/corporate" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Corporate Websites
+                  </Link>
+                  <Link 
+                    href="/websites/landing" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Landing Page
+                  </Link>
+                  <Link 
+                    href="/websites/multi-page" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Multi-page Website
+                  </Link>
+                  <Link 
+                    href="/websites/showcases" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Showcases
+                  </Link>
+                  <Link 
+                    href="/websites/business-card" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Business Card Website
+                  </Link>
+                  <Link 
+                    href="/websites/blogs" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Blogs
+                  </Link>
+                  <Link 
+                    href="/websites/customization" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Website Customization
+                  </Link>
+                </div>
+              </div>
               
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
                 <div className="flex items-center justify-center gap-2">
