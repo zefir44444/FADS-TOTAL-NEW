@@ -685,6 +685,9 @@ export default function Home() {
                     <li>Testing and debugging</li>
                     <li>Initial content setup</li>
                   </ul>
+                  <p className="mt-3 text-gray-700">
+                    We&apos;ll discuss your requirements and offer the best solution within your budget.
+                  </p>
                 </div>
               </div>
               
@@ -869,7 +872,7 @@ export default function Home() {
                     <li>More advanced websites, such as e-commerce stores or corporate portals, start from €2,000+.</li>
                   </ul>
                   <p className="mt-3 text-gray-700">
-                    We'll discuss your requirements and offer the best solution within your budget.
+                    We&apos;ll discuss your requirements and offer the best solution within your budget.
                   </p>
                 </div>
               </div>
