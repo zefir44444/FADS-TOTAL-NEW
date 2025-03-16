@@ -52,13 +52,13 @@ export default function Footer() {
             WebkitBackdropFilter: "blur(12px)"
           }}
         >
-          <div className="flex flex-col gap-4 mb-8 items-end">
+          <div className="flex flex-col gap-4 mb-4 items-end">
             <Link href="/contact" className="font-medium text-lg hover:text-[#e59500] transition-all duration-300 transform hover:translate-x-[-5px]">
               contact
             </Link>
           </div>
           
-          <div className="flex flex-col gap-4 mb-8 items-end">
+          <div className="flex flex-col gap-4 mb-4 items-end">
             <nav className="flex flex-col gap-2 text-2lg items-end">
               <div className="flex items-center gap-3 justify-end">
                 <Link href="/privacy" className="hover:text-[#e59500] transition-colors duration-300">
@@ -70,77 +70,86 @@ export default function Footer() {
                 </Link>
               </div>
             </nav>
-            <nav className="flex items-center justify-end gap-2 mt-1">
-              <span className="text-sm opacity-90 font-medium">We use</span>
-              <a 
-                href="https://stripe.com/en-fi" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="no-underline transform transition-transform duration-300 hover:scale-105"
-              >
-                <Image 
-                  src="/pictures/Stripe/Stripe wordmark - blurple (large).png" 
-                  alt="Stripe" 
-                  width={60} 
-                  height={25} 
-                  className="inline-block" 
-                />
-              </a>
-              <span className="text-sm opacity-90 font-medium">for secure payments</span>
-            </nav>
-            
-            {/* Социальные ссылки */}
-            <div className="flex items-center gap-6 mt-8 justify-end">
-              <a 
-                href="https://www.linkedin.com/in/denisfateev/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-              <a 
-                href="https://www.youtube.com/@fadsmarketing" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                aria-label="YouTube"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                </svg>
-              </a>
-              <a 
-                href="https://t.me/zeisch" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                aria-label="Telegram"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                  <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
-                </svg>
-              </a>
-              <a 
-                href="mailto:info@fads.fi" 
-                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                aria-label="Email"
-                data-email="true"
-              >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width={26} 
-                  height={26} 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
-                </svg>
-              </a>
+
+            {/* Бизнес-часы */}
+            <div className="text-right mt-2">
+              <h3 className="font-medium mb-2">Business Hours</h3>
+              <p className="text-sm">Mon-Fri: 9:00 AM - 6:00 PM</p>
+              <p className="text-sm">Sat-Sun: Closed</p>
+              <p className="text-sm mt-2"><strong>VAT ID:</strong> <span className="select-text cursor-text">FI33641998</span></p>
             </div>
+          </div>
+          
+          <nav className="flex items-center justify-end gap-2 mt-2 mb-4">
+            <span className="text-sm opacity-90 font-medium">We use</span>
+            <a 
+              href="https://stripe.com/en-fi" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="no-underline transform transition-transform duration-300 hover:scale-105"
+            >
+              <Image 
+                src="/pictures/Stripe/Stripe wordmark - blurple (large).png" 
+                alt="Stripe" 
+                width={60} 
+                height={25} 
+                className="inline-block" 
+              />
+            </a>
+            <span className="text-sm opacity-90 font-medium">for secure payments</span>
+          </nav>
+          
+          {/* Социальные ссылки */}
+          <div className="flex items-center gap-6 mt-2 justify-end">
+            <a 
+              href="https://www.linkedin.com/in/denisfateev/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+              aria-label="LinkedIn"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a 
+              href="https://www.youtube.com/@fadsmarketing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+              aria-label="YouTube"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+              </svg>
+            </a>
+            <a 
+              href="https://t.me/zeisch" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+              aria-label="Telegram"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
+              </svg>
+            </a>
+            <a 
+              href="mailto:info@fads.fi" 
+              className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+              aria-label="Email"
+              data-email="true"
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width={26} 
+                height={26} 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
+              >
+                <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>

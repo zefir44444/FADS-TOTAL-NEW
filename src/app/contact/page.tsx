@@ -25,7 +25,7 @@ export default function ContactPage() {
               <li>
                 <strong>Email:</strong>{" "}
                 <a href="mailto:info@fads.fi">
-                  info@fads.fi
+                <span className="select-text cursor-text">info@fads.fi</span>
                 </a>
               </li>
             </ul>
