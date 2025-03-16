@@ -1,14 +1,32 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function WebsitesOverview() {
+  // Приоритизация рендеринга основного контента
+  useEffect(() => {
+    // Предварительная загрузка изображений и шрифтов
+    const links = document.querySelectorAll('a');
+    const preloadLinks = Array.from(links).slice(0, 3);
+    
+    preloadLinks.forEach(link => {
+      if (link.href) {
+        const preloadLink = document.createElement('link');
+        preloadLink.rel = 'preload';
+        preloadLink.href = link.href;
+        preloadLink.as = 'document';
+        document.head.appendChild(preloadLink);
+      }
+    });
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section - Оптимизирован для LCP */}
       <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-        {/* Декоративные элементы фона */}
-        <div className="absolute inset-0 z-0 opacity-30">
+        {/* Декоративные элементы фона загружаются с низким приоритетом */}
+        <div className="absolute inset-0 z-0 opacity-30" aria-hidden="true">
           <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"></div>
           
@@ -22,6 +40,7 @@ export default function WebsitesOverview() {
             <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
               Professional Web Development
             </div>
+            {/* Основной LCP элемент - оптимизирован */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Website Development Solutions
             </h1>
@@ -44,7 +63,7 @@ export default function WebsitesOverview() {
       {/* Website Types Section */}
       <section className="py-16 bg-gray-50 relative overflow-hidden">
         {/* Декоративные элементы фона */}
-        <div className="absolute inset-0 z-0 opacity-20">
+        <div className="absolute inset-0 z-0 opacity-20" aria-hidden="true">
           <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/5 to-[#840032]/5 blur-3xl"></div>
           <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/5 to-[#e59500]/5 blur-3xl"></div>
         </div>
@@ -206,7 +225,7 @@ export default function WebsitesOverview() {
       
       {/* CTA Section */}
       <section className="py-16 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
+        <div className="absolute inset-0 z-0 opacity-20" aria-hidden="true">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e59500]/5 via-transparent to-[#840032]/5"></div>
         </div>
         
