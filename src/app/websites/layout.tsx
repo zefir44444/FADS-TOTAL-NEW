@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Website Development Services | FADS',
     description: 'Professional web development services in Finland. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.',
-    url: 'https://fads-total-new.vercel.app/websites',
+    url: 'https://fads.fi/websites',
     siteName: 'FADS',
     locale: 'en_US',
     type: 'website',
@@ -22,18 +22,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://fads-total-new.vercel.app/websites',
+    canonical: 'https://fads.fi/websites',
   }
-}
-
-// Добавляем HTTP-заголовки для кеширования статических ресурсов
-export function generateMetadata(): Metadata {
-  return {
-    ...metadata,
-    other: {
-      'Cache-Control': 'public, max-age=31536000, immutable',
-    },
-  };
 }
 
 export default function WebsitesLayout({
