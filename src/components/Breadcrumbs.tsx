@@ -30,7 +30,7 @@ export default function Breadcrumbs() {
   if (!mounted) return null;
   
   return (
-    <nav className="text-sm pt-6 px-4 md:px-6 lg:px-8" aria-label="Breadcrumb">
+    <nav className="text-sm pt-6" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
         {breadcrumbs.map((breadcrumb, index) => (
           <li key={breadcrumb.path} className="inline-flex items-center">
