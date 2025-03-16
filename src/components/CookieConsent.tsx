@@ -330,7 +330,7 @@ const CookieConsent = () => {
                             disabled={true}
                             className="sr-only"
                           />
-                          <div className="w-12 h-6 rounded-full bg-[#ffaa22] transition-colors"></div>
+                          <div className="w-12 h-6 rounded-full bg-[#840032] transition-colors"></div>
                           <span 
                             className={`absolute top-1 right-1 w-4 h-4 rounded-full bg-white shadow-md ${
                               essentialAnimation ? 'toggle-bounce' : ''

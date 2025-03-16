@@ -115,6 +115,19 @@ const Header = () => {
             </a>
           </div>
 
+          {/* Ссылки на политики */}
+          <div className="hidden md:flex flex-col gap-2 mr-4">
+            <nav className="flex items-center gap-3 justify-end text-sm">
+              <Link href="/privacy" className="hover:text-[#e59500] transition-colors duration-300">
+                privacy policy
+              </Link>
+              <span className="opacity-90 font-medium">|</span>
+              <Link href="/cookies" className="hover:text-[#e59500] transition-colors duration-300">
+                cookie policy
+              </Link>
+            </nav>
+          </div>
+
           {/* Навигация для десктопа */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
@@ -179,6 +192,24 @@ const Header = () => {
               >
                 Contact us
               </Link>
+              
+              <div className="flex items-center gap-3 justify-center mt-4 pt-4 border-t border-gray-200">
+                <Link 
+                  href="/privacy" 
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  privacy policy
+                </Link>
+                <span className="opacity-90 font-medium">|</span>
+                <Link 
+                  href="/cookies" 
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  cookie policy
+                </Link>
+              </div>
             </nav>
           </div>
         )}
