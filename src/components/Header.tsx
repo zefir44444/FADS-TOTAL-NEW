@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,8 +8,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [policiesOpen, setPoliciesOpen] = useState(false);
-  const policiesRef = useRef(null);
 
   // Предотвращаем гидратацию
   useEffect(() => {
@@ -29,10 +27,6 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const togglePolicies = () => {
-    setPoliciesOpen(!policiesOpen);
   };
 
   if (!mounted) return null;
@@ -77,7 +71,6 @@ const Header = () => {
               <button 
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
                 aria-label="Policies"
-                aria-expanded={policiesOpen}
               >
                 Policies
                 <svg 
