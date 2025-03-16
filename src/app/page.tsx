@@ -595,7 +595,7 @@ export default function Home() {
                   className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 0 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                   <p className="text-gray-700">
-                    Our specialists work with various popular content management systems (CMS), such as WordPress, and we can consider other platforms based on your request. If necessary, we can also develop a custom solution tailored to your project's needs.
+                    Our specialists work with various popular content management systems (CMS), such as WordPress, and we can consider other platforms based on your request. If necessary, we can also develop a custom solution tailored to your project&apos;s needs.
                   </p>
                 </div>
               </div>
@@ -710,7 +710,7 @@ export default function Home() {
                   className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 4 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                   <p className="text-gray-700">
-                    The timeline depends on the project's complexity. On average, a new website takes 4 to 12 weeks to complete. More complex sites may require additional time.
+                    The timeline depends on the project&apos;s complexity. On average, a new website takes 4 to 12 weeks to complete. More complex sites may require additional time.
                   </p>
                 </div>
               </div>
@@ -808,7 +808,7 @@ export default function Home() {
                   className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 7 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                   <p className="text-gray-700">
-                    We offer SEO optimization services to improve your site's visibility. However, no agency can guarantee first-page rankings, as search rankings depend on various factors, including competition in your niche and search engine algorithms. Our approach includes content optimization, technical improvements, and link-building strategies to increase your website's ranking.
+                    We offer SEO optimization services to improve your site&apos;s visibility. However, no agency can guarantee first-page rankings, as search rankings depend on various factors, including competition in your niche and search engine algorithms. Our approach includes content optimization, technical improvements, and link-building strategies to increase your website&apos;s ranking.
                   </p>
                 </div>
               </div>
@@ -896,7 +896,7 @@ export default function Home() {
                   className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 10 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                   <p className="text-gray-700">
-                    Yes, we continuously monitor and improve website loading speed at every stage of development. The code is optimized and tested to ensure fast performance. You can also participate in the process if you'd like.
+                    Yes, we continuously monitor and improve website loading speed at every stage of development. The code is optimized and tested to ensure fast performance. You can also participate in the process if you&apos;d like.
                   </p>
                 </div>
               </div>
@@ -923,7 +923,7 @@ export default function Home() {
                   className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 11 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                   <p className="text-gray-700">
-                    Yes, but full automation of content migration can be challenging. In most cases, manual data transfer may be necessary. However, we have developed various scripts to facilitate efficient and cost-effective content migration from different platforms. Let's discuss the best approach for your project.
+                    Yes, but full automation of content migration can be challenging. In most cases, manual data transfer may be necessary. However, we have developed various scripts to facilitate efficient and cost-effective content migration from different platforms. Let&apos;s discuss the best approach for your project.
                   </p>
                 </div>
               </div>
