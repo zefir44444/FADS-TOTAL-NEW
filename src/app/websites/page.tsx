@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function WebsitesOverview() {
   return (
@@ -68,7 +67,7 @@ export default function WebsitesOverview() {
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3">Corporate Website</h3>
                 <p className="text-gray-600 mb-4">
-                  Establish your brand's online presence with a professional corporate website that reflects your company's values and services.
+                  Establish your brand&apos;s online presence with a professional corporate website that reflects your company&apos;s values and services.
                 </p>
                 <Link 
                   href="/websites/corporate" 
