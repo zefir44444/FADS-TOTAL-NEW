@@ -205,11 +205,7 @@ const Header = () => {
         {/* Мобильное меню */}
         {isMenuOpen && (
           <div 
-            className="md:hidden mx-4 mt-2 bg-white/90 rounded-2xl shadow-lg py-6 px-6 animate-fadeIn border border-white/20" 
-            style={{
-              backdropFilter: "none",
-              WebkitBackdropFilter: "none"
-            }}
+            className="md:hidden mx-4 mt-2 bg-white rounded-2xl shadow-lg py-6 px-6 animate-fadeIn border border-white/20" 
           >
             <nav className="flex flex-col space-y-4">
               <Link 
@@ -221,8 +217,7 @@ const Header = () => {
               </Link>
               
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
-                <p className="text-sm font-medium">Policies:</p>
-                <div className="flex flex-col gap-2">
+                <div className="flex items-center justify-center gap-2">
                   <Link 
                     href="/privacy" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
@@ -230,6 +225,7 @@ const Header = () => {
                   >
                     Privacy policy
                   </Link>
+                  <span className="text-gray-300">|</span>
                   <Link 
                     href="/cookies" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
