@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function CorporateWebsites() {
   return (
@@ -23,7 +22,7 @@ export default function CorporateWebsites() {
               Corporate Websites
             </h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-600">
-              Establish your brand's online presence with a professional corporate website that reflects your company's values and services.
+              Establish your brand&apos;s online presence with a professional corporate website that reflects your company&apos;s values and services.
             </p>
           </div>
           
@@ -43,7 +42,7 @@ export default function CorporateWebsites() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold">Coming Soon</h2>
-            <p className="text-gray-600 mt-4">We're currently working on this page. Please check back later.</p>
+            <p className="text-gray-600 mt-4">We&apos;re currently working on this page. Please check back later.</p>
           </div>
         </div>
       </section>

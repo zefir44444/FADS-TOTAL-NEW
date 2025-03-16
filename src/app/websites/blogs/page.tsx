@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function BlogWebsites() {
   return (
@@ -43,7 +42,7 @@ export default function BlogWebsites() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold">Coming Soon</h2>
-            <p className="text-gray-600 mt-4">We're currently working on this page. Please check back later.</p>
+            <p className="text-gray-600 mt-4">We&apos;re currently working on this page. Please check back later.</p>
           </div>
         </div>
       </section>

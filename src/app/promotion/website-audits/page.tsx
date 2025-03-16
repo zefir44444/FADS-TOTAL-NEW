@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function ShowcaseWebsites() {
+export default function WebsiteAudits() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -16,13 +16,13 @@ export default function ShowcaseWebsites() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
-              Product Display Solutions
+              Website Analysis
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Showcase Websites
+              Website Audits
             </h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-600">
-              Elegant showcase websites that highlight your products and services with stunning visuals and intuitive browsing.
+              Comprehensive website analysis to identify issues and opportunities for improvement in performance, SEO, and user experience.
             </p>
           </div>
           
