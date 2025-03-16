@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const Breadcrumbs = () => {
-  const [mounted] = useState(false);
+export default function Breadcrumbs() {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
   
   // Если мы на главной странице, не показываем хлебные крошки
   if (pathname === '/') {
@@ -54,6 +54,4 @@ const Breadcrumbs = () => {
       </ol>
     </nav>
   );
-}
-
-export default Breadcrumbs; 
+} 

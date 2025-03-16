@@ -232,59 +232,310 @@ main {
   animation: gradient-flow 5s ease-in-out infinite;
 }
 
-/* Анимация пульсации для иконки cookie */
-@keyframes cookie-pulse {
-  0% {
-    transform: scale(1);
+@keyframes word-cycle {
+  0%, 15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  20%, 100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.animate-word-cycle {
+  animation: word-cycle 15s infinite;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.animate-slide-up-fade > span {
+  position: relative;
+}
+
+@keyframes text-cycle {
+  0%, 15% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20%, 35% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  40%, 100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.animate-text-cycle {
+  animation: text-cycle 15s linear infinite;
+  white-space: nowrap;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+.typewriter-container {
+  display: inline-block;
+  min-width: 300px;
+  min-height: 1.5em;
+  position: relative;
+}
+
+.typewriter-text {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.typewriter-text span {
+  display: none;
+  position: relative;
+}
+
+.typewriter-text span:first-child {
+  display: inline-block;
+  animation: typewriter-first 15s infinite;
+}
+
+@keyframes typewriter-first {
+  0%, 16% {
+    width: 0;
+    opacity: 0;
+  }
+  2%, 14% {
+    width: 100%;
     opacity: 1;
   }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
+  16%, 100% {
+    width: 0;
+    opacity: 0;
+    display: none;
   }
-  100% {
-    transform: scale(1);
+}
+
+.typewriter-text span:nth-child(2) {
+  animation: typewriter-second 10s infinite;
+  animation-delay: 2s;
+}
+
+.typewriter-text span:nth-child(3) {
+  animation: typewriter-third 10s infinite;
+  animation-delay: 4s;
+}
+
+.typewriter-text span:nth-child(4) {
+  animation: typewriter-fourth 10s infinite;
+  animation-delay: 6s;
+}
+
+.typewriter-text span:nth-child(5) {
+  animation: typewriter-fifth 10s infinite;
+  animation-delay: 8s;
+}
+
+@keyframes typewriter-second {
+  0%, 16% {
+    display: none;
+    width: 0;
+    opacity: 0;
+  }
+  16.1% {
+    display: inline-block;
+  }
+  18%, 30% {
+    width: 100%;
     opacity: 1;
   }
+  32%, 100% {
+    width: 0;
+    opacity: 0;
+  }
 }
 
-.cookie-pulse {
-  animation: cookie-pulse 2s ease-in-out infinite;
+@keyframes typewriter-third {
+  0%, 36% {
+    display: none;
+    width: 0;
+    opacity: 0;
+  }
+  36.1% {
+    display: inline-block;
+  }
+  38%, 50% {
+    width: 100%;
+    opacity: 1;
+  }
+  52%, 100% {
+    width: 0;
+    opacity: 0;
+  }
 }
 
-/* Анимация вращения для иконки cookie */
-@keyframes cookie-rotate {
+@keyframes typewriter-fourth {
+  0%, 56% {
+    display: none;
+    width: 0;
+    opacity: 0;
+  }
+  56.1% {
+    display: inline-block;
+  }
+  58%, 70% {
+    width: 100%;
+    opacity: 1;
+  }
+  72%, 100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes typewriter-fifth {
+  0%, 76% {
+    display: none;
+    width: 0;
+    opacity: 0;
+  }
+  76.1% {
+    display: inline-block;
+  }
+  78%, 90% {
+    width: 100%;
+    opacity: 1;
+  }
+  92%, 100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.word-rotation {
+  display: block;
+  position: relative;
+  min-height: 1.5em;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.word-rotation span {
+  visibility: hidden;
+}
+
+.word-rotation::after {
+  content: "Landing Page";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  color: #e59500;
+  text-align: center;
+  width: 100%;
+  animation: wordChange 15s ease-in-out infinite;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+@keyframes wordChange {
   0% {
-    transform: rotate(0deg);
+    content: "Landing Page";
+    opacity: 0;
+    transform: translateY(10px);
   }
-  25% {
-    transform: rotate(5deg);
+  3% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  75% {
-    transform: rotate(-5deg);
+  17% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "Landing Page";
+  }
+  
+  20.1% {
+    content: "Corporate Website";
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  23% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  37% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "Corporate Website";
+  }
+  
+  40.1% {
+    content: "E-commerce Website";
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  43% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  57% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "E-commerce Website";
+  }
+  
+  60.1% {
+    content: "Catalog Website";
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  63% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  77% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "Catalog Website";
+  }
+  
+  80.1% {
+    content: "Blogs & Content Websites";
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  83% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  97% {
+    opacity: 1;
+    transform: translateY(0);
   }
   100% {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-10px);
+    content: "Blogs & Content Websites";
   }
-}
-
-.cookie-rotate {
-  animation: cookie-rotate 3s ease-in-out infinite;
-}
-
-/* Анимация свечения для иконки cookie */
-@keyframes cookie-glow {
-  0% {
-    filter: drop-shadow(0 0 2px rgba(229, 149, 0, 0.3));
-  }
-  50% {
-    filter: drop-shadow(0 0 5px rgba(229, 149, 0, 0.6));
-  }
-  100% {
-    filter: drop-shadow(0 0 2px rgba(229, 149, 0, 0.3));
-  }
-}
-
-.cookie-glow {
-  animation: cookie-glow 2s ease-in-out infinite;
 }

@@ -434,7 +434,7 @@ const CookieConsent = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-4 right-4 z-50 cookie-pulse"
+          className="fixed bottom-4 right-4 z-50"
         >
           <button
             onClick={openCookieSettings}
@@ -470,8 +470,8 @@ const CookieConsent = () => {
               <path d="M7 14v.01" />
             </svg>
             
-            {/* Индикатор уведомления - показываем его периодически даже без наведения */}
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#e59500] rounded-full opacity-30 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></span>
+            {/* Индикатор уведомления */}
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#e59500] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></span>
             
             {/* Дополнительный эффект при наведении */}
             <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/10 transition-all duration-300"></span>

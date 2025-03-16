@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import SubscribeForm from "./SubscribeForm";
+import SubscribeForm from "@/components/SubscribeForm";
 import Image from "next/image";
 import Link from "next/link";
 

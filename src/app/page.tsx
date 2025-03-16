@@ -104,8 +104,11 @@ return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ fontFamily: "var(--font-unbounded)" }}>
-            We&apos;ll perform analytics and thoroughly study your business to develop an effective 
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 relative" style={{ fontFamily: "var(--font-unbounded)" }}>
+            We&apos;ll perform analytics and thoroughly study your business to develop an effective
+            <span className="text-[#e59500] word-rotation">
+              <span>Landing Page</span>
+            </span>
           </h2>
         </div>
       </div>
@@ -128,9 +131,6 @@ return (
             Our Approach
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Development Process</h2>
-          <p className="text-xl max-w-3xl mx-auto">
-            We analyze your business thoroughly to build an effective website, online store, or application
-          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-12 relative">
