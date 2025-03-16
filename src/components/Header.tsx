@@ -105,6 +105,13 @@ const Header = () => {
               >
                 <div className="flex flex-col gap-2">
                   <Link 
+                    href="/websites" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    All Website Services
+                  </Link>
+                  <div className="w-full h-px bg-gray-100 my-1"></div>
+                  <Link 
                     href="/websites/corporate" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
@@ -392,6 +399,14 @@ const Header = () => {
                 </button>
                 {openMobileSubmenu === 'websites' && (
                   <div className="flex flex-col gap-2 items-center mt-2 animate-fadeIn">
+                    <Link 
+                      href="/websites" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      All Website Services
+                    </Link>
+                    <div className="w-full h-px bg-gray-100 my-1"></div>
                     <Link 
                       href="/websites/corporate" 
                       className="text-sm hover:text-[#e59500] transition-colors duration-300"
