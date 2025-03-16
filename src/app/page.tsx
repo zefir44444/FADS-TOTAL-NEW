@@ -529,19 +529,17 @@ return (
                 </svg>
                 Development time: discussed individually
               </div>
-              <div className="md:self-center">
-                <a 
-                  href="/contact" 
-                  className="block w-full px-6 py-3 bg-gradient-to-r from-[#e59500] to-[#840032] text-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 whitespace-nowrap"
-                >
-                  <span className="flex items-center justify-center">
-                    Submit a request
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </a>
-              </div>
+              <a 
+                href="/contact" 
+                className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
+              >
+                <span className="flex items-center justify-center">
+                  Submit a request
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </a>
             </div>
           </div>
         </div>
