@@ -7,25 +7,9 @@ import { useState, useEffect } from 'react';
 export default function Breadcrumbs() {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
-  const [is404Page, setIs404Page] = useState(false);
   
   useEffect(() => {
     setMounted(true);
-    
-    // Проверяем, является ли текущая страница страницей 404
-    // Используем window.location.pathname для получения полного пути
-    const currentPath = window.location.pathname;
-    
-    // Проверяем, содержит ли текущий URL строку "404" или "not-found"
-    // или проверяем специальный параметр, который можно добавить на страницу 404
-    const is404 = 
-      document.title.includes("404") || 
-      document.title.includes("Not Found") ||
-      currentPath.includes("not-found") || 
-      currentPath.includes("404") ||
-      document.body.classList.contains("not-found-page");
-      
-    setIs404Page(is404);
   }, [pathname]);
   
   // Если мы на главной странице или страница еще не смонтирована, не показываем хлебные крошки
@@ -33,7 +17,11 @@ export default function Breadcrumbs() {
     return null;
   }
   
-  // Если это страница 404, показываем специальные хлебные крошки с "404 Not Found"
+  // Проверяем, является ли текущая страница страницей 404
+  // Обновлено: проверяем как стандартный путь /not-found, так и любой некорректный URL
+  const is404Page = pathname === '/not-found' || pathname.includes('%');
+  
+  // Если это страница 404, показываем специальные хлебные крошки с "404"
   if (is404Page) {
     return (
       <nav className="text-sm pt-6" aria-label="Breadcrumb">
@@ -49,7 +37,7 @@ export default function Breadcrumbs() {
           <li className="inline-flex items-center">
             <span className="mx-2 text-gray-500">/</span>
             <span className="text-gray-700 font-medium">
-              404 Not Found
+              404
             </span>
           </li>
         </ol>

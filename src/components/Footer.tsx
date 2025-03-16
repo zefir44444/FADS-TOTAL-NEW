@@ -184,7 +184,7 @@ export default function Footer() {
           {/* Социальные ссылки */}
           <div className="flex items-center gap-6 mt-2 justify-end">
             <a 
-              href="https://www.linkedin.com/in/denisfateev/" 
+              href="https://www.linkedin.com/company/fadsfi/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"

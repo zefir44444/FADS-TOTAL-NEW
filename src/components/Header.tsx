@@ -274,7 +274,7 @@ const Header = () => {
           {/* Социальные ссылки */}
           <div className="hidden md:flex items-center gap-4 ml-4 mr-0">
             <a 
-              href="https://www.linkedin.com/in/denisfateev/" 
+              href="https://www.linkedin.com/company/fadsfi/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
@@ -562,7 +562,7 @@ const Header = () => {
             {/* Социальные сети в мобильном меню */}
             <div className="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-gray-200">
               <a 
-                href="https://www.linkedin.com/in/denisfateev/" 
+                href="https://www.linkedin.com/company/fadsfi/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"

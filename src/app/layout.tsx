@@ -62,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-            <head>
+      <head>
         {/* HubSpot Tracking Code */}
         <Script
           id="hubspot-tracking"
@@ -81,6 +81,39 @@ export default function RootLayout({
         {/* Мета-тег для корректного отображения на мобильных устройствах */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, height=device-height" />
         <Analytics/>
+        
+        {/* Структурированные данные JSON-LD для организации */}
+        <Script
+          id="schema-org-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "FADS",
+                "url": "https://fads.fi",
+                "logo": "https://fads.fi/fads-black.svg",
+                "description": "We create innovative digital solutions to help your business grow and succeed in the digital world.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "Finland"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "email": "info@fads.fi",
+                  "contactType": "customer service"
+                },
+                "sameAs": [
+                  "https://www.linkedin.com/company/fadsfi/",
+                  "https://www.linkedin.com/in/denisfateev/",
+                  "https://www.youtube.com/@fadsmarketing",
+                  "https://t.me/zeisch"
+                ]
+              }
+            `
+          }}
+        />
       </head>
       <body
         className={`${tektur.variable} ${spaceGrotesk.variable} antialiased`}
