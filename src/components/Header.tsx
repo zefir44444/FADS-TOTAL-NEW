@@ -89,7 +89,7 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/90 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[200px] border border-white/20 
+              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[200px] border border-white/20 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
                    style={{
@@ -166,7 +166,7 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/90 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/20 
+              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/20 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
                    style={{
@@ -225,7 +225,7 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/90 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[150px] border border-white/20 
+              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[150px] border border-white/20 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
                    style={{
