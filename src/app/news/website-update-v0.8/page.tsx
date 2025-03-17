@@ -15,6 +15,18 @@ export default function WebsiteUpdatePage() {
 
   return (
     <div className="prose prose-lg max-w-none">
+      <div className="text-center mb-12">
+        <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
+          March 17, 2025
+        </div>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#e59500] to-[#840032]">
+          Website Update v0.8
+        </h1>
+        <p className="text-xl max-w-3xl mx-auto text-gray-600">
+          Major improvements in website structure and user experience. Enhanced navigation, improved accessibility, and updated content organization.
+        </p>
+      </div>
+
       <div className="relative h-64 md:h-96 w-full group mb-8">
         <Image 
           src="/fads-black.svg" 
@@ -89,12 +101,7 @@ export default function WebsiteUpdatePage() {
             </svg>
             Improved content structure with clear service descriptions
           </li>
-          <li className="flex items-center">
-            <svg className="w-5 h-5 text-[#e59500] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            Updated portfolio examples showcasing our recent work
-          </li>
+          
           <li className="flex items-center">
             <svg className="w-5 h-5 text-[#e59500] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
@@ -150,12 +157,6 @@ export default function WebsiteUpdatePage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
             Expanded service descriptions with detailed information
-          </li>
-          <li className="flex items-center">
-            <svg className="w-5 h-5 text-[#e59500] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            New case studies showcasing successful client projects
           </li>
           <li className="flex items-center">
             <svg className="w-5 h-5 text-[#e59500] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

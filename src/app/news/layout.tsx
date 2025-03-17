@@ -61,34 +61,10 @@ export default function NewsLayout({
           })
         }}
       />
-      <div className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-          {/* Декоративные элементы фона */}
-          <div className="absolute inset-0 z-0 opacity-30">
-            <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl animate-pulse delay-1000"></div>
-          </div>
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-12">
-              <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm animate-fade-in">
-                March 17, 2025
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#e59500] to-[#840032] animate-fade-in-up">
-                Website Update v0.8
-              </h1>
-              <p className="text-xl max-w-3xl mx-auto text-gray-600 animate-fade-in-up delay-200">
-                Major improvements in website structure and user experience. Enhanced navigation, improved accessibility, and updated content organization.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Article Content */}
         <section className="py-16">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="p-8">
                   {children}
@@ -155,7 +131,6 @@ export default function NewsLayout({
             </div>
           </div>
         </section>
-      </div>
     </>
   );
 } 
