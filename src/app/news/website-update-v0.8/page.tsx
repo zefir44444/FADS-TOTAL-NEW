@@ -33,7 +33,7 @@ export default function UpdatePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-6">What's New</h2>
+              <h2 className="text-2xl font-bold mb-6">What&apos;s New</h2>
               
               <div className="space-y-6">
                 <div>
@@ -58,7 +58,7 @@ export default function UpdatePage() {
                   <h3 className="text-xl font-semibold mb-3">Content Updates</h3>
                   <ul className="list-disc list-inside space-y-2 text-gray-600">
                     <li>Added new service descriptions</li>
-                    <li>Updated website customization section to "Custom Website Development"</li>
+                    <li>Updated website customization section to &quot;Custom Website Development&quot;</li>
                     <li>Improved content organization across all pages</li>
                   </ul>
                 </div>
