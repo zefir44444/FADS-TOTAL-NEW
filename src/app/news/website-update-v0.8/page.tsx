@@ -59,20 +59,20 @@ export default function WebsiteUpdatePage() {
               <div className="p-8 md:p-10">
                 <div className="prose prose-lg max-w-none">
                   <p className="lead text-xl text-gray-700 mb-6">
-                    We're excited to announce the release of version 0.8 of our website, featuring significant improvements to enhance your browsing experience and make our services more accessible.
+                    We&apos;re excited to announce the release of version 0.8 of our website, featuring significant improvements to enhance your browsing experience and make our services more accessible.
                   </p>
                   
-                  <h2>What's New in v0.8</h2>
+                  <h2>What&apos;s New in v0.8</h2>
                   
                   <h3>Redesigned Navigation</h3>
                   <p>
-                    We've completely revamped our navigation system to make it more intuitive and user-friendly. The new menu structure provides clearer pathways to our services and resources, helping you find exactly what you're looking for with fewer clicks.
+                    We&apos;ve completely revamped our navigation system to make it more intuitive and user-friendly. The new menu structure provides clearer pathways to our services and resources, helping you find exactly what you&apos;re looking for with fewer clicks.
                   </p>
                   
                   <ul>
                     <li>Streamlined main menu with logical grouping of services</li>
                     <li>Improved dropdown menus with enhanced visual cues</li>
-                    <li>New "Digital Hub" section for quick access to our core offerings</li>
+                    <li>New &quot;Digital Hub&quot; section for quick access to our core offerings</li>
                     <li>Mobile-optimized navigation for seamless browsing on all devices</li>
                   </ul>
                   
@@ -90,7 +90,7 @@ export default function WebsiteUpdatePage() {
                   
                   <h3>Improved Performance</h3>
                   <p>
-                    We've made significant behind-the-scenes improvements to enhance the website's performance:
+                    We&apos;ve made significant behind-the-scenes improvements to enhance the website&apos;s performance:
                   </p>
                   
                   <ul>
@@ -102,7 +102,7 @@ export default function WebsiteUpdatePage() {
                   
                   <h3>New Content and Resources</h3>
                   <p>
-                    We've added new content to provide more value to our visitors:
+                    We&apos;ve added new content to provide more value to our visitors:
                   </p>
                   
                   <ul>
@@ -112,9 +112,9 @@ export default function WebsiteUpdatePage() {
                     <li>This news section to keep you informed about our latest updates</li>
                   </ul>
                   
-                  <h2>What's Coming Next</h2>
+                  <h2>What&apos;s Coming Next</h2>
                   <p>
-                    This update lays the groundwork for even more exciting features in the future. Here's a sneak peek at what we're working on for upcoming releases:
+                    This update lays the groundwork for even more exciting features in the future. Here&apos;s a sneak peek at what we&apos;re working on for upcoming releases:
                   </p>
                   
                   <ul>
@@ -126,7 +126,7 @@ export default function WebsiteUpdatePage() {
                   
                   <h2>Your Feedback Matters</h2>
                   <p>
-                    We value your input and would love to hear your thoughts on our website update. If you have any feedback, suggestions, or encounter any issues, please don't hesitate to <Link href="/contact" className="text-[#e59500] hover:underline">contact us</Link>.
+                    We value your input and would love to hear your thoughts on our website update. If you have any feedback, suggestions, or encounter any issues, please don&apos;t hesitate to <Link href="/contact" className="text-[#e59500] hover:underline">contact us</Link>.
                   </p>
                   
                   <p>
