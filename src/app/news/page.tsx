@@ -47,14 +47,14 @@ export default function NewsPage() {
               <div className="bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
                 <div className="relative h-48 w-full">
                   <Image 
-                    src="public/fads-black.svg" 
+                    src="/fads-black.svg" 
                     alt="Website Update v0.8" 
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "contain" }}
                     className="transition-transform duration-500 hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = "https://placehold.co/600x400/e59500/ffffff?text=Website+Update";
+                      target.src = "/fads-black.svg";
                     }}
                   />
                 </div>
