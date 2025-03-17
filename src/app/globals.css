@@ -208,7 +208,7 @@ main {
   justify-content: center;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -233,7 +233,7 @@ main {
   background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   color: #000;
 }
 
@@ -243,7 +243,7 @@ main {
 
 .glass-button:active {
   transform: translateY(1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Вариант с градиентной рамкой */
@@ -261,7 +261,7 @@ main {
   text-align: center;
   position: relative;
   z-index: 1;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
@@ -301,7 +301,7 @@ main {
 
 .glass-button-gradient:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   color: #000;
 }
 
@@ -311,7 +311,7 @@ main {
 
 .glass-button-gradient:active {
   transform: translateY(1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Анимация градиента */
@@ -585,7 +585,7 @@ main {
   }
   
   15.1% {
-    content: "Business Website";
+    content: "Corporate Website";
     opacity: 0;
     transform: translateY(10px);
   }
@@ -600,7 +600,7 @@ main {
   30% {
     opacity: 0;
     transform: translateY(-10px);
-    content: "Business Website";
+    content: "Corporate Website";
   }
   
   30.1% {

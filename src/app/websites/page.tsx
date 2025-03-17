@@ -70,7 +70,7 @@ export default function WebsitesOverview() {
                   Establish your brand&apos;s online presence with a professional business website that reflects your company&apos;s values and services.
                 </p>
                 <Link 
-                  href="/websites/business" 
+                  href="/websites/corporate" 
                   className="inline-flex items-center text-[#e59500] hover:text-[#840032] transition-colors duration-300"
                 >
                   Learn more
@@ -91,26 +91,6 @@ export default function WebsitesOverview() {
                 </p>
                 <Link 
                   href="/websites/landing" 
-                  className="inline-flex items-center text-[#e59500] hover:text-[#840032] transition-colors duration-300"
-                >
-                  Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-            
-            {/* E-commerce Websites */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
-              <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">E-commerce Websites</h3>
-                <p className="text-gray-600 mb-4">
-                  Sell products and services online with a powerful e-commerce website designed for seamless transactions and customer experience.
-                </p>
-                <Link 
-                  href="/websites/ecommerce" 
                   className="inline-flex items-center text-[#e59500] hover:text-[#840032] transition-colors duration-300"
                 >
                   Learn more
@@ -161,6 +141,26 @@ export default function WebsitesOverview() {
               </div>
             </div>
             
+            {/* Business Card Websites */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+              <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-3">Business Card Websites</h3>
+                <p className="text-gray-600 mb-4">
+                  Establish a simple yet effective online presence with a business card website that provides essential information about your company.
+                </p>
+                <Link 
+                  href="/websites/business-card" 
+                  className="inline-flex items-center text-[#e59500] hover:text-[#840032] transition-colors duration-300"
+                >
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            
             {/* Blog Websites */}
             <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
               <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
@@ -181,36 +181,16 @@ export default function WebsitesOverview() {
               </div>
             </div>
             
-            {/* Personal Websites */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+            {/* Website Customizations */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group md:col-span-2 lg:col-span-3">
               <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">Personal Websites</h3>
-                <p className="text-gray-600 mb-4">
-                  Establish a simple yet effective online presence with a personal website that provides essential information about your company.
-                </p>
-                <Link 
-                  href="/websites/personal" 
-                  className="inline-flex items-center text-[#e59500] hover:text-[#840032] transition-colors duration-300"
-                >
-                  Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-            
-            {/* Custom Website Development */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
-              <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">Custom Website Development</h3>
+                <h3 className="text-2xl font-bold mb-3">Website Customizations</h3>
                 <p className="text-gray-600 mb-4">
                   Enhance your existing website with custom features, improved design, or additional functionality to better meet your business needs.
                 </p>
                 <Link 
-                  href="/websites/custom" 
+                  href="/websites/customization" 
                   className="inline-flex items-center text-[#e59500] hover:text-[#840032] transition-colors duration-300"
                 >
                   Learn more

@@ -57,14 +57,6 @@ export default function Footer() {
               contact
             </Link>
             
-            {/* Бизнес-часы */}
-            <div className="text-right mt-2">
-              <h3 className="font-medium mb-2">Business Hours</h3>
-              <p className="text-sm">Mon-Fri: 9:00 AM - 6:00 PM</p>
-              <p className="text-sm">Sat-Sun: Closed</p>
-              <p className="text-sm mt-2"><strong>VAT ID:</strong> <span className="select-text cursor-text">FI33641998</span></p>
-            </div>
-            
             {/* Социальные ссылки */}
             <div className="flex items-center gap-6 mt-2 justify-end">
               <a 
@@ -131,6 +123,14 @@ export default function Footer() {
                 </Link>
               </div>
             </nav>
+
+            {/* Бизнес-часы */}
+            <div className="text-right mt-2">
+              <h3 className="font-medium mb-2">Business Hours</h3>
+              <p className="text-sm">Mon-Fri: 9:00 AM - 6:00 PM</p>
+              <p className="text-sm">Sat-Sun: Closed</p>
+              <p className="text-sm mt-2"><strong>VAT ID:</strong> <span className="select-text cursor-text">FI33641998</span></p>
+            </div>
           </div>
           
           <div className="flex flex-col items-end mt-4 mb-4">
