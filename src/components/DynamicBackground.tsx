@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { ChevronDown } from "lucide-react"
 
 // Простая функция для объединения классов
 const cn = (...classes: (string | undefined)[]) => classes.filter(Boolean).join(' ')
@@ -13,6 +14,7 @@ interface DynamicBackgroundProps {
   color1?: string
   color2?: string
   color3?: string
+  showControls?: boolean
 }
 
 export function DynamicBackground({
@@ -21,9 +23,11 @@ export function DynamicBackground({
   color1 = "rgba(132, 0, 50, 0.5)",  // #840032 (бордовый)
   color2 = "rgba(229, 149, 0, 0.5)", // #e59500 (оранжевый)
   color3 = "rgba(0, 38, 66, 0.5)",   // #002642 (темно-синий)
+  showControls = false
 }: DynamicBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [currentType, setCurrentType] = useState<BackgroundType>(type)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // Particles animation
   useEffect(() => {
@@ -326,9 +330,64 @@ export function DynamicBackground({
     }
   }, [currentType, color1, color2, color3])
 
+  // Простое выпадающее меню для переключения типа фона
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const selectBackgroundType = (type: BackgroundType) => {
+    setCurrentType(type)
+    setIsMenuOpen(false)
+  }
+
   return (
     <div className={cn("relative h-full w-full overflow-hidden", className)}>
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+      
+      {showControls && (
+        <div className="absolute right-4 top-4 z-10">
+          <div className="relative">
+            <button 
+              onClick={toggleMenu}
+              className="flex items-center justify-between px-4 py-2 bg-white/80 backdrop-blur-sm rounded-md shadow-sm text-gray-700 hover:bg-white/90 transition-colors"
+            >
+              <span>Фон</span>
+              <ChevronDown className="ml-2 h-4 w-4" />
+            </button>
+            
+            {isMenuOpen && (
+              <div className="absolute right-0 mt-1 w-40 bg-white rounded-md shadow-lg overflow-hidden z-20">
+                <div className="py-1">
+                  <button 
+                    onClick={() => selectBackgroundType("particles")}
+                    className={`block w-full text-left px-4 py-2 text-sm ${currentType === "particles" ? "bg-gray-100 text-gray-900" : "text-gray-700 hover:bg-gray-50"}`}
+                  >
+                    Частицы
+                  </button>
+                  <button 
+                    onClick={() => selectBackgroundType("gradient")}
+                    className={`block w-full text-left px-4 py-2 text-sm ${currentType === "gradient" ? "bg-gray-100 text-gray-900" : "text-gray-700 hover:bg-gray-50"}`}
+                  >
+                    Градиент
+                  </button>
+                  <button 
+                    onClick={() => selectBackgroundType("waves")}
+                    className={`block w-full text-left px-4 py-2 text-sm ${currentType === "waves" ? "bg-gray-100 text-gray-900" : "text-gray-700 hover:bg-gray-50"}`}
+                  >
+                    Волны
+                  </button>
+                  <button 
+                    onClick={() => selectBackgroundType("grid")}
+                    className={`block w-full text-left px-4 py-2 text-sm ${currentType === "grid" ? "bg-gray-100 text-gray-900" : "text-gray-700 hover:bg-gray-50"}`}
+                  >
+                    Сетка
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 } 
