@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Website Development Services | FADS",
-  description: "Professional web development services in Finland. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
-  keywords: "web development services, website design, business websites, e-commerce development, corporate websites, landing pages, web design Finland, custom website development",
+  title: "Website Development Services | FADS Digital Hub",
+  description: "Professional web development services from FADS Digital Hub. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
+  keywords: "web development services, website design, business websites, e-commerce development, corporate websites, landing pages, web design Finland, custom website development, digital hub",
   openGraph: {
-    title: "Website Development Services | FADS",
-    description: "Professional web development services in Finland. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
+    title: "Website Development Services | FADS Digital Hub",
+    description: "Professional web development services from FADS Digital Hub. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
     url: "https://fads.fi/websites",
-    siteName: "FADS",
+    siteName: "FADS Digital Hub",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website Development Services | FADS",
-    description: "Professional web development services in Finland. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
+    title: "Website Development Services | FADS Digital Hub",
+    description: "Professional web development services from FADS Digital Hub. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
   },
   robots: {
     index: true,
@@ -45,9 +45,9 @@ export default function WebsitesLayout({
               "name": "Website Development Services",
               "provider": {
                 "@type": "Organization",
-                "name": "FADS"
+                "name": "FADS Digital Hub"
               },
-              "description": "Professional web development services in Finland. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
+              "description": "Professional web development services from FADS Digital Hub. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
               "areaServed": "Finland",
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",

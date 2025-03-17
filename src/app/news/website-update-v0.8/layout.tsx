@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "FADS | Website Update v0.8",
+  title: "FADS Digital Hub | Website Update v0.8",
   description: "Major improvements in website structure and user experience. Enhanced navigation, improved accessibility, and updated content organization.",
-  keywords: "website update, user experience, navigation, accessibility, web development",
+  keywords: "website update, user experience, navigation, accessibility, web development, digital hub",
   openGraph: {
-    title: "FADS | Website Update v0.8",
+    title: "FADS Digital Hub | Website Update v0.8",
     description: "Major improvements in website structure and user experience. Enhanced navigation, improved accessibility, and updated content organization.",
     url: "https://fads.fi/news/website-update-v0.8",
-    siteName: "FADS",
+    siteName: "FADS Digital Hub",
     images: [
       {
         url: "/fads-black.svg",
         width: 1200,
         height: 630,
-        alt: "FADS - Website Update v0.8",
+        alt: "FADS Digital Hub - Website Update v0.8",
       },
     ],
     locale: "en_US",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FADS | Website Update v0.8",
+    title: "FADS Digital Hub | Website Update v0.8",
     description: "Major improvements in website structure and user experience. Enhanced navigation, improved accessibility, and updated content organization.",
     images: ["/fads-black.svg"],
   },
@@ -56,11 +56,11 @@ export default function UpdateLayout({
                 "datePublished": "2024-03-17T08:00:00+02:00",
                 "author": {
                   "@type": "Organization",
-                  "name": "FADS"
+                  "name": "FADS Digital Hub"
                 },
                 "publisher": {
                   "@type": "Organization",
-                  "name": "FADS",
+                  "name": "FADS Digital Hub",
                   "logo": {
                     "@type": "ImageObject",
                     "url": "https://fads.fi/fads-black.svg"

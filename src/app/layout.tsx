@@ -24,20 +24,20 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "FADS | Digital Solutions for Your Business",
-  description: "We create innovative digital solutions to help your business grow and succeed in the digital world.",
-  keywords: "digital solutions, web development, business growth, innovation",
+  title: "FADS Digital Hub | Digital Solutions for Your Business",
+  description: "FADS Digital Hub creates innovative digital solutions to help your business grow and succeed in the digital world.",
+  keywords: "digital hub, digital solutions, web development, business growth, innovation",
   openGraph: {
-    title: "FADS | Digital Solutions for Your Business",
-    description: "We create innovative digital solutions to help your business grow and succeed in the digital world.",
+    title: "FADS Digital Hub | Digital Solutions for Your Business",
+    description: "FADS Digital Hub creates innovative digital solutions to help your business grow and succeed in the digital world.",
     url: "https://fads.fi",
-    siteName: "FADS",
+    siteName: "FADS Digital Hub",
     images: [
       {
         url: "/fads-black.svg",
         width: 1200,
         height: 630,
-        alt: "FADS - Digital Solutions",
+        alt: "FADS Digital Hub - Digital Solutions",
       },
     ],
     locale: "en_US",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FADS | Digital Solutions for Your Business",
-    description: "We create innovative digital solutions to help your business grow and succeed in the digital world.",
+    title: "FADS Digital Hub | Digital Solutions for Your Business",
+    description: "FADS Digital Hub creates innovative digital solutions to help your business grow and succeed in the digital world.",
     images: ["/fads-black.svg"],
   },
   robots: {
@@ -91,10 +91,10 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Organization",
-                "name": "FADS",
+                "name": "FADS Digital Hub",
                 "url": "https://fads.fi",
                 "logo": "https://fads.fi/fads-black.svg",
-                "description": "We create innovative digital solutions to help your business grow and succeed in the digital world.",
+                "description": "FADS Digital Hub creates innovative digital solutions to help your business grow and succeed in the digital world.",
                 "address": {
                   "@type": "PostalAddress",
                   "addressCountry": "Finland"

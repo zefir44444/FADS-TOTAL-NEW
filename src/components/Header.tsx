@@ -73,6 +73,13 @@ const Header = () => {
         
           {/* Выпадающее меню */}
           <div className="hidden md:flex items-center space-x-8 ml-auto">
+            <Link 
+              href="/" 
+              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+            >
+              Digital Hub
+            </Link>
+            
             <div className="relative group">
               <button 
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
@@ -333,6 +340,14 @@ const Header = () => {
             }}
           >
             <nav className="flex flex-col space-y-4">
+              <Link 
+                href="/" 
+                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Digital Hub
+              </Link>
+              
               <Link 
                 href="/news" 
                 className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"

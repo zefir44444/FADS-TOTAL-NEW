@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "FADS | News & Updates",
-  description: "Stay informed about our latest developments, industry insights, and company announcements.",
-  keywords: "news, updates, digital solutions, web development, business growth",
+  title: "FADS Digital Hub | News & Updates",
+  description: "Stay informed about our latest developments, industry insights, and company announcements from FADS Digital Hub.",
+  keywords: "news, updates, digital solutions, web development, business growth, digital hub",
   openGraph: {
-    title: "FADS | News & Updates",
-    description: "Stay informed about our latest developments, industry insights, and company announcements.",
+    title: "FADS Digital Hub | News & Updates",
+    description: "Stay informed about our latest developments, industry insights, and company announcements from FADS Digital Hub.",
     url: "https://fads.fi/news",
-    siteName: "FADS",
+    siteName: "FADS Digital Hub",
     images: [
       {
         url: "/fads-black.svg",
         width: 1200,
         height: 630,
-        alt: "FADS - News & Updates",
+        alt: "FADS Digital Hub - News & Updates",
       },
     ],
     locale: "en_US",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FADS | News & Updates",
-    description: "Stay informed about our latest developments, industry insights, and company announcements.",
+    title: "FADS Digital Hub | News & Updates",
+    description: "Stay informed about our latest developments, industry insights, and company announcements from FADS Digital Hub.",
     images: ["/fads-black.svg"],
   },
   robots: {
@@ -50,12 +50,12 @@ export default function NewsLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Blog",
-                "name": "FADS News & Updates",
+                "name": "FADS Digital Hub News & Updates",
                 "url": "https://fads.fi/news",
-                "description": "Stay informed about our latest developments, industry insights, and company announcements.",
+                "description": "Stay informed about our latest developments, industry insights, and company announcements from FADS Digital Hub.",
                 "publisher": {
                   "@type": "Organization",
-                  "name": "FADS",
+                  "name": "FADS Digital Hub",
                   "logo": {
                     "@type": "ImageObject",
                     "url": "https://fads.fi/fads-black.svg"
