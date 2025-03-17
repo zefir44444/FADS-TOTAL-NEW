@@ -223,6 +223,13 @@ const Header = () => {
             </div>
             
             <Link 
+              href="/news" 
+              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+            >
+              News
+            </Link>
+            
+            <Link 
               href="/contact" 
               className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
             >
@@ -327,11 +334,11 @@ const Header = () => {
           >
             <nav className="flex flex-col space-y-4">
               <Link 
-                href="/contact" 
+                href="/news" 
                 className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact us
+                News
               </Link>
               
               {/* Websites меню для мобильных */}
@@ -482,6 +489,14 @@ const Header = () => {
                 )}
               </div>
             </nav>
+            
+            <Link 
+              href="/contact" 
+              className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact us
+            </Link>
             
             {/* Социальные сети в мобильном меню */}
             <div className="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-gray-200">
