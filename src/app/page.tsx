@@ -413,7 +413,7 @@ export default function Home() {
               <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#840032]/10 text-[#840032] font-medium text-sm">
                 Our Services
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Development Plans in Helsinki</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Website Solutions</h2>
               <p className="text-xl max-w-3xl mx-auto">
                 Choose the perfect solution for your business needs with our comprehensive development plans
               </p>
