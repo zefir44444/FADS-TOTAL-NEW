@@ -3,6 +3,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const scaleIn = {
+  initial: { scale: 0.9, opacity: 0 },
+  animate: { scale: 1, opacity: 1 },
+  transition: { duration: 0.5 }
+};
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -32,13 +53,9 @@ export default function Home() {
       }
     };
 
-    // Добавляем обработчик события прокрутки с пассивным флагом для улучшения производительности
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Вызываем обработчик один раз для инициализации
     handleScroll();
     
-    // Очищаем обработчик при размонтировании компонента
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -49,104 +66,190 @@ export default function Home() {
       {/* Hero Section - на всю высоту экрана */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* Декоративные элементы фона */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"></div>
+        <motion.div 
+          className="absolute inset-0 z-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div 
+            className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          ></motion.div>
+          <motion.div 
+            className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          ></motion.div>
           
           {/* Плавающие геометрические фигуры */}
-          <div className="absolute top-1/4 left-1/4 w-12 h-12 border-2 border-[#e59500] rounded-lg opacity-30 animate-float-slow"></div>
-          <div className="absolute top-1/3 right-1/4 w-8 h-8 border-2 border-[#840032] rounded-full opacity-30 animate-float-medium"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-16 h-16 border-2 border-[#e59500] rounded-full opacity-30 animate-float-fast"></div>
-          <div className="absolute top-2/3 right-1/3 w-10 h-10 border-2 border-[#840032] rounded-lg opacity-30 animate-float-medium"></div>
+          <motion.div 
+            className="absolute top-1/4 left-1/4 w-12 h-12 border-2 border-[#e59500] rounded-lg opacity-30"
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 5, 0]
+            }}
+            transition={{ 
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          ></motion.div>
+          <motion.div 
+            className="absolute top-1/3 right-1/4 w-8 h-8 border-2 border-[#840032] rounded-full opacity-30"
+            animate={{ 
+              y: [0, 20, 0],
+              rotate: [0, -5, 0]
+            }}
+            transition={{ 
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          ></motion.div>
+          <motion.div 
+            className="absolute bottom-1/4 left-1/3 w-16 h-16 border-2 border-[#e59500] rounded-full opacity-30"
+            animate={{ 
+              y: [0, -15, 0],
+              rotate: [0, 3, 0]
+            }}
+            transition={{ 
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          ></motion.div>
+          <motion.div 
+            className="absolute top-2/3 right-1/3 w-10 h-10 border-2 border-[#840032] rounded-lg opacity-30"
+            animate={{ 
+              y: [0, 15, 0],
+              rotate: [0, -3, 0]
+            }}
+            transition={{ 
+              duration: 4.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          ></motion.div>
           
           {/* Декоративные линии */}
-          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#e59500]/20 to-transparent"></div>
-          <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#840032]/20 to-transparent"></div>
-        </div>
+          <motion.div 
+            className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#e59500]/20 to-transparent"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          ></motion.div>
+          <motion.div 
+            className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#840032]/20 to-transparent"
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          ></motion.div>
+        </motion.div>
         
         <div className="container mx-auto px-6 py-12 md:py-24 text-center relative z-10">
-          <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
+          <motion.div 
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Professional Web Development
-          </div>
+          </motion.div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <motion.h1 
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Website<br />
-            <span 
-              className="gradient-text text-[#e59500] relative inline-block" 
-            >
+            <span className="gradient-text text-[#e59500] relative inline-block">
               Development and Creation
             </span><br />
             in Finland
-          </h1>
+          </motion.h1>
           
-          {/* Оптимизация LCP элемента - добавляем приоритет и предварительную загрузку */}
-          <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-medium">
+          <motion.p 
+            className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             We build websites that help your business grow, achieve high search rankings, and include all the necessary features for effective promotion.
-          </p>
+          </motion.p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <Link 
               href="/contact" 
-              className="gradient-button text-center px-8 py-3 text-lg min-w-[180px] inline-flex justify-center items-center"
+              className="gradient-button text-center px-8 py-3 text-lg min-w-[180px] inline-flex justify-center items-center hover:scale-105 transition-transform duration-300"
             >
               Start now
             </Link>
-            
-          </div>
+          </motion.div>
           
           {/* Доверительные элементы */}
-          <div className="mt-16 pt-8 border-t border-gray-200">
+          <motion.div 
+            className="mt-16 pt-8 border-t border-gray-200"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
             <p className="text-sm text-gray-500 mb-4">Trusted by brands in Finland</p>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              <div className="w-48 h-16 flex items-center justify-center">
-                <Image 
-                  src="/pictures/Clients/Bemu.png" 
-                  alt="Bemuhuolto" 
-                  width={180} 
-                  height={60}
-                  priority
-                  quality={90}
-                  className="object-contain transition-opacity duration-300"
-                  style={{ mixBlendMode: 'multiply' }}
-                  loading="eager"
-                />
-              </div>
-              <div className="w-48 h-16 flex items-center justify-center">
-                <Image 
-                  src="/pictures/Clients/Volk.png" 
-                  alt="Volkkarihuolto" 
-                  width={180} 
-                  height={60}
-                  priority
-                  quality={90}
-                  className="object-contain transition-opacity duration-300"
-                  style={{ mixBlendMode: 'multiply' }}
-                  loading="eager"
-                />
-              </div>
-              <div className="w-48 h-16 flex items-center justify-center">
-                <Image 
-                  src="/pictures/Clients/espoonkumi.png" 
-                  alt="Espoonkumi" 
-                  width={180} 
-                  height={60}
-                  priority
-                  quality={90}
-                  className="object-contain transition-opacity duration-300"
-                  style={{ mixBlendMode: 'multiply' }}
-                  loading="eager"
-                />
-              </div>
-            </div>
-          </div>
+            <motion.div 
+              className="flex flex-wrap justify-center items-center gap-8"
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+            >
+              {[
+                { src: "/pictures/Clients/Bemu.png", alt: "Bemuhuolto" },
+                { src: "/pictures/Clients/Volk.png", alt: "Volkkarihuolto" },
+                { src: "/pictures/Clients/espoonkumi.png", alt: "Espoonkumi" }
+              ].map((client, index) => (
+                <motion.div 
+                  key={index}
+                  className="w-48 h-16 flex items-center justify-center"
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Image 
+                    src={client.src}
+                    alt={client.alt}
+                    width={180}
+                    height={60}
+                    priority
+                    quality={90}
+                    className="object-contain transition-opacity duration-300"
+                    style={{ mixBlendMode: 'multiply' }}
+                    loading="eager"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
-
       </section>
 
       {/* Остальные секции загружаем отложенно */}
       <div className="contents">
         {/* Introduction Section */}
-        <section className="py-16 md:py-20 bg-white">
+        <motion.section 
+          className="py-16 md:py-20 bg-white"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 relative">
@@ -157,132 +260,235 @@ export default function Home() {
               </h2>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Process Section */}
-        <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+        <motion.section 
+          className="py-16 md:py-24 bg-gray-50 relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {/* Декоративные элементы фона */}
-          <div className="absolute inset-0 z-0 opacity-30">
+          <motion.div 
+            className="absolute inset-0 z-0 opacity-30"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.3 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/5 to-[#840032]/5 blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/5 to-[#e59500]/5 blur-3xl"></div>
             
-            {/* Декоративные линии */}
             <div className="absolute left-0 w-full h-px bg-gradient-to-r from-transparent via-[#e59500]/10 to-transparent"></div>
-          </div>
+          </motion.div>
           
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#840032]/10 text-[#840032] font-medium text-sm">
                 Our Approach
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Development Process</h2>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 gap-12 relative">
+            <motion.div 
+              className="grid grid-cols-1 gap-12 relative"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
               {/* Вертикальная линия соединяющая шаги */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#e59500] via-[#840032] to-[#002642] hidden md:block transform -translate-x-1/2 z-0"></div>
+              <motion.div 
+                className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#e59500] via-[#840032] to-[#002642] hidden md:block transform -translate-x-1/2 z-0"
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+              ></motion.div>
 
               {/* Step 1 */}
-              <div className="flex flex-col md:flex-row gap-8 items-center relative">
-                <div className="w-full md:w-1/3 flex justify-center relative z-10">
-                  <div className="w-24 h-24 rounded-full bg-[#e59500] flex items-center justify-center text-white text-4xl font-bold shadow-lg transform transition-transform duration-300 hover:scale-110 hover:rotate-3">
+              <motion.div 
+                className="flex flex-col md:flex-row gap-8 items-center relative"
+                variants={fadeInUp}
+              >
+                <motion.div 
+                  className="w-full md:w-1/3 flex justify-center relative z-10"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="w-24 h-24 rounded-full bg-[#e59500] flex items-center justify-center text-white text-4xl font-bold shadow-lg">
                     1
                   </div>
-                </div>
-                <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                </motion.div>
+                <motion.div 
+                  className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <h3 className="text-2xl font-bold mb-4 gradient-text">Initial Consultation and Task Discussion</h3>
                   <p className="text-lg">
                     Website development cooperation begins with your inquiry. To utilize our services and order custom website development, submit a request through any form on our website, call us directly, or contact us via your preferred messenger. Upon receiving your request, we&apos;ll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we&apos;ll issue an invoice for an initial payment.
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Step 2 */}
-              <div className="flex flex-col md:flex-row gap-8 items-center relative">
-                <div className="w-full md:w-1/3 flex justify-center md:order-last relative z-10">
-                  <div className="w-24 h-24 rounded-full bg-[#840032] flex items-center justify-center text-white text-4xl font-bold shadow-lg transform transition-transform duration-300 hover:scale-110 hover:rotate-3">
+              <motion.div 
+                className="flex flex-col md:flex-row gap-8 items-center relative"
+                variants={fadeInUp}
+              >
+                <motion.div 
+                  className="w-full md:w-1/3 flex justify-center md:order-last relative z-10"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="w-24 h-24 rounded-full bg-[#840032] flex items-center justify-center text-white text-4xl font-bold shadow-lg">
                     2
                   </div>
-                </div>
-                <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                </motion.div>
+                <motion.div 
+                  className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <h3 className="text-2xl font-bold mb-4 gradient-text">Analysis, Information Gathering, Design, and Planning</h3>
                   <p className="text-lg">
                     We analyze competitors&apos; websites to identify their strengths and weaknesses. Using this data, we develop detailed technical specifications and gather essential business information. Next, we create a website prototype and define user scenarios, followed by designing the concept and all necessary design mockups. Your website should clearly represent the content relevant to your market niche, making it easy for customers to recognize your official resource.
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Step 3 */}
-              <div className="flex flex-col md:flex-row gap-8 items-center relative">
-                <div className="w-full md:w-1/3 flex justify-center relative z-10">
-                  <div className="w-24 h-24 rounded-full bg-[#002642] flex items-center justify-center text-white text-4xl font-bold shadow-lg transform transition-transform duration-300 hover:scale-110 hover:rotate-3">
+              <motion.div 
+                className="flex flex-col md:flex-row gap-8 items-center relative"
+                variants={fadeInUp}
+              >
+                <motion.div 
+                  className="w-full md:w-1/3 flex justify-center relative z-10"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="w-24 h-24 rounded-full bg-[#002642] flex items-center justify-center text-white text-4xl font-bold shadow-lg">
                     3
                   </div>
-                </div>
-                <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                </motion.div>
+                <motion.div 
+                  className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <h3 className="text-2xl font-bold mb-4 gradient-text">Website Development – Layout, Coding, Testing, and Content Creation</h3>
                   <p className="text-lg">
                     Responsive website layout, programming functionality on CMS or PHP frameworks, integration with external services, followed by rigorous layout and functionality testing. Finally, we populate the site with content and conduct basic SEO optimization.
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Step 4 */}
-              <div className="flex flex-col md:flex-row gap-8 items-center relative">
-                <div className="w-full md:w-1/3 flex justify-center md:order-last relative z-10">
-                  <div className="w-24 h-24 rounded-full bg-[#e59500] flex items-center justify-center text-white text-4xl font-bold shadow-lg transform transition-transform duration-300 hover:scale-110 hover:rotate-3">
+              <motion.div 
+                className="flex flex-col md:flex-row gap-8 items-center relative"
+                variants={fadeInUp}
+              >
+                <motion.div 
+                  className="w-full md:w-1/3 flex justify-center md:order-last relative z-10"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="w-24 h-24 rounded-full bg-[#e59500] flex items-center justify-center text-white text-4xl font-bold shadow-lg">
                     4
                   </div>
-                </div>
-                <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                </motion.div>
+                <motion.div 
+                  className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <h3 className="text-2xl font-bold mb-4 gradient-text">Website Launch and Support</h3>
                   <p className="text-lg">
                     Deployment of the website to a live server. Submission to search engines, setup of analytics, and integration of other required scripts. Training sessions on managing the admin panel, guaranteed 24-month support, and consultation on any website-related questions.
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Step 5 */}
-              <div className="flex flex-col md:flex-row gap-8 items-center relative">
-                <div className="w-full md:w-1/3 flex justify-center relative z-10">
-                  <div className="w-24 h-24 rounded-full bg-[#840032] flex items-center justify-center text-white text-4xl font-bold shadow-lg transform transition-transform duration-300 hover:scale-110 hover:rotate-3">
+              <motion.div 
+                className="flex flex-col md:flex-row gap-8 items-center relative"
+                variants={fadeInUp}
+              >
+                <motion.div 
+                  className="w-full md:w-1/3 flex justify-center relative z-10"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="w-24 h-24 rounded-full bg-[#840032] flex items-center justify-center text-white text-4xl font-bold shadow-lg">
                     5
                   </div>
-                </div>
-                <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-2xl font-bold mb-4 gradient-text">Website Promotion</h3>
+                </motion.div>
+                <motion.div 
+                  className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <h3 className="text-2xl font-bold mb-4 gradient-text">Website Launch and Support</h3>
                   <p className="text-lg">
-                    Website promotion is handled by our trusted partners, whose quality results we&apos;re confident in. Numerous proven methods are available to refine your website&apos;s details to achieve successful and effective sales.
+                    Deployment of the website to a live server. Submission to search engines, setup of analytics, and integration of other required scripts. Training sessions on managing the admin panel, guaranteed 24-month support, and consultation on any website-related questions.
                   </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center mt-16">
-              <Link 
-                href="/contact" 
-                className="floating-button text-lg"
-              >
-                Start your project
-              </Link>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Always Connected Section */}
-        <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+        <motion.section 
+          className="py-16 md:py-24 bg-white relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {/* Декоративные элементы фона */}
-          <div className="absolute inset-0 z-0 opacity-20">
+          <motion.div 
+            className="absolute inset-0 z-0 opacity-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.2 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#0088cc]/10 to-[#e59500]/10 blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#0088cc]/10 blur-3xl"></div>
             
             {/* Плавающие геометрические фигуры */}
-            <div className="absolute top-1/4 right-1/4 w-10 h-10 border-2 border-[#0088cc] rounded-lg opacity-30 animate-float-slow"></div>
-            <div className="absolute bottom-1/3 left-1/4 w-8 h-8 border-2 border-[#e59500] rounded-full opacity-30 animate-float-medium"></div>
-          </div>
+            <motion.div 
+              className="absolute top-1/4 right-1/4 w-10 h-10 border-2 border-[#0088cc] rounded-lg opacity-30"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            ></motion.div>
+            <motion.div 
+              className="absolute bottom-1/3 left-1/4 w-8 h-8 border-2 border-[#e59500] rounded-full opacity-30"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            ></motion.div>
+          </motion.div>
           
           <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto">
+            <motion.div 
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="text-center mb-12">
                 <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#0066aa]/20 text-[#0066aa] font-semibold text-sm">
                   Communication & Transparency
@@ -293,97 +499,190 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group">
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-12"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <div className="absolute -right-4 -top-4 w-20 h-20 bg-[#0088cc]/10 rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
                   
-                  <h3 className="text-2xl font-bold mb-4 gradient-text flex items-center">
+                  <motion.h3 
+                    className="text-2xl font-bold mb-4 gradient-text flex items-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                  >
                     <span className="w-10 h-10 rounded-full bg-[#0066aa] flex items-center justify-center text-white mr-3 shadow-md transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
                       </svg>
                     </span>
                     Always Connected
-                  </h3>
+                  </motion.h3>
                   
-                  <p className="text-lg mb-6 pl-14">
+                  <motion.p 
+                    className="text-lg mb-6 pl-14"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                  >
                     Before starting any work, we create a Telegram working chat and add team leader and client in the project. This ensures immediate communication and quick resolution of any questions.
-                  </p>
+                  </motion.p>
                   
-                  <div className="mt-6 pl-14 flex flex-col space-y-3">
-                    <div className="flex items-center">
+                  <motion.div 
+                    className="mt-6 pl-14 flex flex-col space-y-3"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                  >
+                    <motion.div 
+                      className="flex items-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      variants={fadeInUp}
+                    >
                       <div className="w-6 h-6 rounded-full bg-[#0066aa]/30 flex items-center justify-center text-[#0066aa]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                          <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
                         </svg>
                       </div>
                       <span className="ml-3 text-base">Instant communication</span>
-                    </div>
-                    <div className="flex items-center">
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      variants={fadeInUp}
+                    >
                       <div className="w-6 h-6 rounded-full bg-[#0066aa]/30 flex items-center justify-center text-[#0066aa]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                         </svg>
                       </div>
                       <span className="ml-3 text-base">Quick response time</span>
-                    </div>
-                    <div className="flex items-center">
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      variants={fadeInUp}
+                    >
                       <div className="w-6 h-6 rounded-full bg-[#0066aa]/30 flex items-center justify-center text-[#0066aa]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                         </svg>
                       </div>
                       <span className="ml-3 text-base">Team collaboration</span>
-                    </div>
-                  </div>
-                </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
                 
-                <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group">
+                <motion.div 
+                  className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <div className="absolute -left-4 -top-4 w-20 h-20 bg-[#e59500]/10 rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
                   
-                  <h3 className="text-2xl font-bold mb-4 gradient-text flex items-center">
+                  <motion.h3 
+                    className="text-2xl font-bold mb-4 gradient-text flex items-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                  >
                     <span className="w-10 h-10 rounded-full bg-[#d17800] flex items-center justify-center text-white mr-3 shadow-md transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.5 6.5l-3.5 3.5 3.5 3.5 1.5-1.5-2-2 2-2-1.5-1.5zm3 0l-1.5 1.5 2 2-2 2 1.5 1.5 3.5-3.5-3.5-3.5z"/>
                       </svg>
                     </span>
                     We Work Transparently
-                  </h3>
+                  </motion.h3>
                   
-                  <p className="text-lg mb-6 pl-14">
+                  <motion.p 
+                    className="text-lg mb-6 pl-14"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                  >
                     At any time, you can check the current status of the development. We provide regular updates and maintain complete transparency about progress, challenges, and solutions.
-                  </p>
+                  </motion.p>
                   
-                  <div className="mt-6 pl-14 flex flex-col space-y-3">
-                    <div className="flex items-center">
+                  <motion.div 
+                    className="mt-6 pl-14 flex flex-col space-y-3"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                  >
+                    <motion.div 
+                      className="flex items-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      variants={fadeInUp}
+                    >
                       <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-8-2h2v-4h4v-2h-4V7h-2v4H7v2h4z"/>
                         </svg>
                       </div>
                       <span className="ml-3 text-base">Regular progress reports</span>
-                    </div>
-                    <div className="flex items-center">
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      variants={fadeInUp}
+                    >
                       <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                          <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
                         </svg>
                       </div>
                       <span className="ml-3 text-base">Access to development environment</span>
-                    </div>
-                    <div className="flex items-center">
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      variants={fadeInUp}
+                    >
                       <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                          <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                         </svg>
                       </div>
                       <span className="ml-3 text-base">Clear milestone tracking</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
               
-              <div className="text-center mt-12 relative">
+              <motion.div 
+                className="text-center mt-12 relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-[#0088cc]/5 to-[#e59500]/5 rounded-full blur-xl"></div>
                 <Link 
                   href="/contact" 
@@ -391,25 +690,53 @@ export default function Home() {
                 >
                   Contact us
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Development Plans Section */}
-        <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+        <motion.section 
+          className="py-16 md:py-24 bg-gray-50 relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {/* Декоративные элементы фона */}
-          <div className="absolute inset-0 z-0 opacity-30">
+          <motion.div 
+            className="absolute inset-0 z-0 opacity-30"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.3 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"></div>
             
             {/* Плавающие геометрические фигуры */}
-            <div className="absolute top-1/4 right-1/4 w-10 h-10 border-2 border-[#e59500] rounded-lg opacity-30 animate-float-slow"></div>
-            <div className="absolute bottom-1/3 left-1/4 w-8 h-8 border-2 border-[#840032] rounded-full opacity-30 animate-float-medium"></div>
-          </div>
+            <motion.div 
+              className="absolute top-1/4 right-1/4 w-10 h-10 border-2 border-[#e59500] rounded-lg opacity-30"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            ></motion.div>
+            <motion.div 
+              className="absolute bottom-1/3 left-1/4 w-8 h-8 border-2 border-[#840032] rounded-full opacity-30"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            ></motion.div>
+          </motion.div>
           
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#840032]/10 text-[#840032] font-medium text-sm">
                 Our Services
               </div>
@@ -417,11 +744,22 @@ export default function Home() {
               <p className="text-xl max-w-3xl mx-auto">
                 Choose the perfect solution for your business needs with our comprehensive development plans
               </p>
-            </div>
+            </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
               {/* Business Website */}
-              <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-3">Business Website</h3>
@@ -434,7 +772,7 @@ export default function Home() {
                     </svg>
                     Development time: from 1 month
                   </div>
-                  <a 
+                  <Link 
                     href="/websites/business" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
@@ -444,12 +782,17 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
               
               {/* Landing Page */}
-              <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-3">Landing Page</h3>
@@ -462,7 +805,7 @@ export default function Home() {
                     </svg>
                     Development time: from 2 weeks
                   </div>
-                  <a 
+                  <Link 
                     href="/websites/landing" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
@@ -472,12 +815,17 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
               
               {/* E-commerce Website */}
-              <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-3">E-commerce Website</h3>
@@ -490,7 +838,7 @@ export default function Home() {
                     </svg>
                     Development time: 2-5 months
                   </div>
-                  <a 
+                  <Link 
                     href="/websites/ecommerce" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
@@ -500,13 +848,18 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
               
               
               {/* Multi-page Website */}
-              <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-3">Multi-page Website</h3>
@@ -519,7 +872,7 @@ export default function Home() {
                     </svg>
                     Development time: 1-3 months
                   </div>
-                  <a 
+                  <Link 
                     href="/websites/multi-page" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
@@ -529,12 +882,17 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
               
               {/* Showcase Website */}
-              <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-3">Showcase Website</h3>
@@ -547,7 +905,7 @@ export default function Home() {
                     </svg>
                     Development time: 1-2 months
                   </div>
-                  <a 
+                  <Link 
                     href="/websites/showcases" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
@@ -557,12 +915,17 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
               
               {/* Blogs, Content Websites */}
-              <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-3">Blogs & Content Websites</h3>
@@ -575,7 +938,7 @@ export default function Home() {
                     </svg>
                     Development time: 3-4 weeks
                   </div>
-                  <a 
+                  <Link 
                     href="/websites/blogs" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
@@ -585,12 +948,17 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
               
               {/* Personal Website */}
-              <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-3">Personal Website</h3>
@@ -603,7 +971,7 @@ export default function Home() {
                     </svg>
                     Development time: 1-2 weeks
                   </div>
-                  <a 
+                  <Link 
                     href="/websites/personal" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
@@ -613,12 +981,17 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
               
               {/* Custom and Tailor-Made Solutions */}
-              <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-3">Custom and Tailor-Made Solutions</h3>
@@ -631,7 +1004,7 @@ export default function Home() {
                     </svg>
                     Development time: discussed individually
                   </div>
-                  <a 
+                  <Link 
                     href="/websites/custom" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
@@ -641,17 +1014,29 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* FAQ Section */}
-        <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+        <motion.section 
+          className="py-16 md:py-24 bg-white relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {/* Динамичный фон с линиями */}
-          <div className="absolute inset-0 z-0 overflow-hidden">
+          <motion.div 
+            className="absolute inset-0 z-0 overflow-hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.3 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             <div className="absolute top-0 left-0 w-full h-full parallax-container">
               {/* Горизонтальные линии */}
               <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-[20%] transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-slow) * -0.5px))' }}></div>
@@ -675,16 +1060,28 @@ export default function Home() {
               <div className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-[#e59500]/40 to-transparent top-0 left-0 origin-top-left rotate-45 parallax-line" style={{ transform: 'rotate(45deg) translateY(calc(var(--parallax-offset-slow) * 0.8px))' }}></div>
               <div className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-[#840032]/40 to-transparent bottom-0 left-0 origin-bottom-left rotate-[-45deg] parallax-line" style={{ transform: 'rotate(-45deg) translateY(calc(var(--parallax-offset-fast) * -0.8px))' }}></div>
             </div>
-          </div>
+          </motion.div>
           
           {/* Декоративные элементы фона */}
-          <div className="absolute inset-0 z-0 opacity-20">
+          <motion.div 
+            className="absolute inset-0 z-0 opacity-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.2 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"></div>
-          </div>
+          </motion.div>
           
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#d17800]/20 text-[#d17800] font-semibold text-sm">
                 Get Answers
               </div>
@@ -692,12 +1089,27 @@ export default function Home() {
               <p className="text-xl max-w-3xl mx-auto">
                 Find answers to common questions about our website development services
               </p>
-            </div>
+            </motion.div>
             
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-4">
+            <motion.div 
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div 
+                className="space-y-4"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
                 {/* Question 1 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(0)}
@@ -721,10 +1133,13 @@ export default function Home() {
                       Our specialists work with various popular content management systems (CMS), such as WordPress, and we can consider other platforms based on your request. If necessary, we can also develop a custom solution tailored to your project&apos;s needs.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 2 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(1)}
@@ -748,10 +1163,13 @@ export default function Home() {
                       Yes, you will be able to update the website content on your own or upload information in bulk using digital methods. If you face any difficulties or need assistance, our team is always ready to help.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 3 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(2)}
@@ -775,10 +1193,13 @@ export default function Home() {
                       Yes, we offer a 12-month (1-year) warranty that includes bug fixes and technical support after the website launch. This ensures that all functionalities work correctly and any technical issues are resolved.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 4 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(3)}
@@ -812,10 +1233,13 @@ export default function Home() {
                       We&apos;ll discuss your requirements and offer the best solution within your budget.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 5 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(4)}
@@ -839,10 +1263,13 @@ export default function Home() {
                       The timeline depends on the project&apos;s complexity. On average, a new website takes 4 to 12 weeks to complete. More complex sites may require additional time.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 6 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(5)}
@@ -873,10 +1300,13 @@ export default function Home() {
                       Our approach is flexible and can be adjusted to align with your business vision.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 7 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(6)}
@@ -910,10 +1340,13 @@ export default function Home() {
                       We always recommend keeping your website modern and effective to enhance conversions and sales.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 8 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(7)}
@@ -937,10 +1370,13 @@ export default function Home() {
                       We offer SEO optimization services to improve your site&apos;s visibility. However, no agency can guarantee first-page rankings, as search rankings depend on various factors, including competition in your niche and search engine algorithms. Our approach includes content optimization, technical improvements, and link-building strategies to increase your website&apos;s ranking.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 9 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(8)}
@@ -964,10 +1400,13 @@ export default function Home() {
                       Yes! We develop responsive websites that ensure optimal display and functionality across all devices, including smartphones and tablets. This means your website will automatically adjust to different screen sizes, providing a seamless user experience and fast loading times.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 10 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(9)}
@@ -998,10 +1437,13 @@ export default function Home() {
                       We&apos;ll discuss your requirements and offer the best solution within your budget.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 11 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(10)}
@@ -1025,10 +1467,13 @@ export default function Home() {
                       Yes, we continuously monitor and improve website loading speed at every stage of development. The code is optimized and tested to ensure fast performance. You can also participate in the process if you&apos;d like.
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Question 12 */}
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                <motion.div 
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
+                  variants={fadeInUp}
+                >
                   <button 
                     className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
                     onClick={() => toggleFaq(11)}
@@ -1052,20 +1497,25 @@ export default function Home() {
                       Yes, but full automation of content migration can be challenging. In most cases, manual data transfer may be necessary. However, we have developed various scripts to facilitate efficient and cost-effective content migration from different platforms. Let&apos;s discuss the best approach for your project.
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
               
-              <div className="text-center mt-12">
+              <motion.div 
+                className="text-center mt-12"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 <Link 
                   href="/contact" 
                   className="floating-button text-lg"
                 >
                   Ask your question
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
       </div>
     </div>
   );
