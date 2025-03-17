@@ -51,12 +51,12 @@ export default function Breadcrumbs() {
       <nav className="text-sm pt-6" aria-label="Breadcrumb">
         <ol className="inline-flex items-center space-x-1 md:space-x-3">
           <li className="inline-flex items-center">
-            <a 
+            <Link 
               href="/"
               className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
             >
               Digital Hub
-            </a>
+            </Link>
           </li>
           <li className="inline-flex items-center">
             <span className="mx-2 text-gray-500">/</span>
@@ -96,12 +96,12 @@ export default function Breadcrumbs() {
                 {breadcrumb.name}
               </span>
             ) : (
-              <a 
+              <Link 
                 href={breadcrumb.path}
                 className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
               >
                 {breadcrumb.name}
-              </a>
+              </Link>
             )}
           </li>
         ))}
