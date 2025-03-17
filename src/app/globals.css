@@ -585,7 +585,7 @@ main {
   }
   
   15.1% {
-    content: "Corporate Website";
+    content: "Business Website";
     opacity: 0;
     transform: translateY(10px);
   }
@@ -600,7 +600,7 @@ main {
   30% {
     opacity: 0;
     transform: translateY(-10px);
-    content: "Corporate Website";
+    content: "Business Website";
   }
   
   30.1% {

@@ -112,10 +112,10 @@ const Header = () => {
                   </Link>
                   <div className="w-full h-px bg-gray-100 my-1"></div>
                   <Link 
-                    href="/websites/corporate" 
+                    href="/websites/business" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
-                    Corporate Websites
+                    Business Websites
                   </Link>
                   <Link 
                     href="/websites/landing" 
@@ -136,10 +136,10 @@ const Header = () => {
                     Showcases
                   </Link>
                   <Link 
-                    href="/websites/business-card" 
+                    href="/websites/ecommerce" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
-                    Business Card Website
+                    E-commerce Website
                   </Link>
                   <Link 
                     href="/websites/blogs" 
@@ -148,10 +148,16 @@ const Header = () => {
                     Blogs
                   </Link>
                   <Link 
-                    href="/websites/customization" 
+                    href="/websites/personal" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
-                    Website Customization
+                    Personal Websites
+                  </Link>
+                  <Link 
+                    href="/websites/custom" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Custom Website Development
                   </Link>
                 </div>
               </div>
@@ -274,7 +280,7 @@ const Header = () => {
           {/* Социальные ссылки */}
           <div className="hidden md:flex items-center gap-4 ml-4 mr-0">
             <a 
-              href="https://www.linkedin.com/company/fadsfi/" 
+              href="https://www.linkedin.com/in/denisfateev/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
@@ -408,11 +414,11 @@ const Header = () => {
                     </Link>
                     <div className="w-full h-px bg-gray-100 my-1"></div>
                     <Link 
-                      href="/websites/corporate" 
+                      href="/websites/business" 
                       className="text-sm hover:text-[#e59500] transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Corporate Websites
+                      Business Websites
                     </Link>
                     <Link 
                       href="/websites/landing" 
@@ -436,11 +442,11 @@ const Header = () => {
                       Showcases
                     </Link>
                     <Link 
-                      href="/websites/business-card" 
+                      href="/websites/ecommerce" 
                       className="text-sm hover:text-[#e59500] transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Business Card Website
+                      E-commerce Website
                     </Link>
                     <Link 
                       href="/websites/blogs" 
@@ -450,11 +456,18 @@ const Header = () => {
                       Blogs
                     </Link>
                     <Link 
-                      href="/websites/customization" 
+                      href="/websites/personal" 
                       className="text-sm hover:text-[#e59500] transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Website Customization
+                      Personal Websites
+                    </Link>
+                    <Link 
+                      href="/websites/custom" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Custom Website Development
                     </Link>
                   </div>
                 )}
@@ -562,7 +575,7 @@ const Header = () => {
             {/* Социальные сети в мобильном меню */}
             <div className="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-gray-200">
               <a 
-                href="https://www.linkedin.com/company/fadsfi/" 
+                href="https://www.linkedin.com/in/denisfateev/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"

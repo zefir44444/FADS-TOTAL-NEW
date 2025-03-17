@@ -22,7 +22,7 @@ export default function LandingPages() {
               Landing Pages
             </h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-600">
-              High-converting landing pages designed to turn visitors into customers and maximize your marketing campaigns.
+              High-converting landing pages designed to turn visitors into customers and achieve your business goals.
             </p>
           </div>
           

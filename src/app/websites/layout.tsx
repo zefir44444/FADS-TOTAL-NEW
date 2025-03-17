@@ -4,7 +4,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Website Development Services | FADS",
   description: "Professional web development services in Finland. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
-  keywords: "web development services, website design, business website, e-commerce development, corporate website, landing page, web design Finland, custom website development",
+  keywords: "web development services, website design, business websites, e-commerce development, corporate websites, landing pages, web design Finland, custom website development",
   openGraph: {
     title: "Website Development Services | FADS",
     description: "Professional web development services in Finland. We create corporate websites, landing pages, e-commerce solutions and custom web designs for businesses.",
@@ -57,21 +57,21 @@ export default function WebsitesLayout({
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Corporate Website Development"
+                      "name": "Business Websites Development"
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "E-commerce Website Development"
+                      "name": "E-commerce Websites Development"
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Landing Page Development"
+                      "name": "Landing Pages Development"
                     }
                   }
                 ]

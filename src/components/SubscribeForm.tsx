@@ -164,9 +164,9 @@ const SubscribeForm = () => {
             className={`mt-1 mr-2 ${isCheckboxBlinking ? 'checkbox-blink' : ''}`}
             required
           />
-          <label htmlFor="privacy-policy" className="text-xs">
+          <label htmlFor="privacy-policy" className="text-xs text-gray-700">
             I agree to the processing of my personal data in accordance with the{" "}
-            <Link href="/privacy" className="text-[#e59500] hover:underline">
+            <Link href="/privacy" className="text-[#b06500] font-medium hover:underline">
               Privacy Policy
             </Link>
           </label>

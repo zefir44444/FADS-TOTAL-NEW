@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function BusinessCardWebsites() {
+export default function BusinessWebsites() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -16,13 +16,13 @@ export default function BusinessCardWebsites() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
-              Simple & Effective
+              Professional Web Development
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Business Card Websites
+              Business Websites
             </h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-600">
-              Compact and effective business card websites that provide essential information about your company and services.
+              Establish your brand&apos;s online presence with a professional business website that reflects your company&apos;s values and services.
             </p>
           </div>
           

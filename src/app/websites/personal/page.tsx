@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function WebsiteCustomization() {
+export default function PersonalWebsites() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -16,13 +16,13 @@ export default function WebsiteCustomization() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
-              Tailored Solutions
+              Simple and Effective
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Website Customization
+              Personal Websites
             </h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-600">
-              Enhance and modify your existing website with custom features, improved design, and optimized functionality.
+              Create a professional online presence with a personal website that showcases your business essentials.
             </p>
           </div>
           
