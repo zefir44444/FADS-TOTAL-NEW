@@ -5,9 +5,6 @@ import Link from "next/link";
 import { motion } from 'framer-motion';
 import { 
   CheckCircleIcon, 
-  DocumentTextIcon, 
-  ChartBarIcon, 
-  GlobeAltIcon,
   BuildingOfficeIcon,
   UserGroupIcon,
   BriefcaseIcon,

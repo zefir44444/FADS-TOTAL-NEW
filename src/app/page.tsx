@@ -19,12 +19,6 @@ const staggerContainer = {
   }
 };
 
-const scaleIn = {
-  initial: { scale: 0.9, opacity: 0 },
-  animate: { scale: 1, opacity: 1 },
-  transition: { duration: 0.5 }
-};
-
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   
