@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'FADS Digital Hub',
     images: [
       {
-        url: 'https://fads.fi/fads-black.svg',
+        url: '/fads-black.svg',
         width: 1200,
         height: 630,
         alt: 'FADS Digital Hub Website Update v0.8',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FADS Digital Hub | Website Update v0.8',
     description: 'Major improvements in website structure and user experience. Enhanced navigation, improved accessibility, and updated content organization.',
-    images: ['https://fads.fi/fads-black.svg'],
+    images: ['/fads-black.svg'],
   },
   alternates: {
     canonical: 'https://fads.fi/news/website-update-v0.8',
@@ -59,7 +59,7 @@ export default function WebsiteUpdateLayout({
             "@type": "NewsArticle",
             "headline": "FADS Digital Hub Website Update v0.8",
             "description": "Major improvements in website structure and user experience. Enhanced navigation, improved accessibility, and updated content organization.",
-            "image": "https://fads.fi/fads-black.svg",
+            "image": "/fads-black.svg",
             "datePublished": "2025-03-17",
             "dateModified": "2025-03-17",
             "author": {
@@ -71,7 +71,7 @@ export default function WebsiteUpdateLayout({
               "name": "FADS Digital Hub",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://fads.fi/fads-black.svg"
+                "url": "/fads-black.svg"
               }
             }
           })

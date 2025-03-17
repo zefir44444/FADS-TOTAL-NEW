@@ -51,7 +51,7 @@ export default function WebsiteUpdatePage() {
                   style={{ objectFit: "contain" }}
                   onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = "https://placehold.co/1200x600/e59500/ffffff?text=Website+Update+v0.8";
+                    target.src = "/fads-black.svg";
                   }}
                 />
               </div>

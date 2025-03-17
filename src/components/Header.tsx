@@ -160,6 +160,12 @@ const Header = () => {
                   >
                     Custom Website Development
                   </Link>
+                  <Link 
+                    href="/websites/ecommerce" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    E-commerce Websites
+                  </Link>
                 </div>
               </div>
             </div>
@@ -422,6 +428,13 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Custom Website Development
+                    </Link>
+                    <Link 
+                      href="/websites/ecommerce" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      E-commerce Website Development
                     </Link>
                   </div>
                 )}
