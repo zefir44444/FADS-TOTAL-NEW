@@ -31,7 +31,7 @@ export default function Breadcrumbs() {
               href="/"
               className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
             >
-              Homepage
+              Digital Hub
             </Link>
           </li>
           <li className="inline-flex items-center">
@@ -50,7 +50,7 @@ export default function Breadcrumbs() {
   
   // Создаем массив хлебных крошек
   const breadcrumbs = [
-    { name: 'Homepage', path: '/' },
+    { name: 'Digital Hub', path: '/' },
     ...segments.map((segment, index) => {
       const path = `/${segments.slice(0, index + 1).join('/')}`;
       // Преобразуем сегмент пути в читаемое название (например, "privacy" -> "Privacy")

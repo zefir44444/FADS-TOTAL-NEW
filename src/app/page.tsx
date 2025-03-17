@@ -561,20 +561,7 @@ export default function Home() {
                       transition={{ duration: 0.5 }}
                       variants={fadeInUp}
                     >
-                      <div className="w-6 h-6 rounded-full bg-[#0066aa]/30 flex items-center justify-center text-[#0066aa]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                        </svg>
-                      </div>
-                      <span className="ml-3 text-base">Quick response time</span>
-                    </motion.div>
-                    <motion.div 
-                      className="flex items-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
-                      variants={fadeInUp}
-                    >
+                     
                       <div className="w-6 h-6 rounded-full bg-[#0066aa]/30 flex items-center justify-center text-[#0066aa]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
@@ -646,20 +633,7 @@ export default function Home() {
                       transition={{ duration: 0.5 }}
                       variants={fadeInUp}
                     >
-                      <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-                        </svg>
-                      </div>
-                      <span className="ml-3 text-base">Access to development environment</span>
-                    </motion.div>
-                    <motion.div 
-                      className="flex items-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
-                      variants={fadeInUp}
-                    >
+                     
                       <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
@@ -1488,7 +1462,7 @@ export default function Home() {
                     className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 11 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <p className="text-gray-700">
-                      Yes, but full automation of content migration can be challenging. In most cases, manual data transfer may be necessary. However, we have developed various scripts to facilitate efficient and cost-effective content migration from different platforms. Let&apos;s discuss the best approach for your project.
+                      Yes, but full automation of content migration can be challenging. In some cases, manual data transfer may be necessary.
                     </p>
                   </div>
                 </motion.div>

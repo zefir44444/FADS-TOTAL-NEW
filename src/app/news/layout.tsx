@@ -62,10 +62,10 @@ export default function NewsLayout({
         }}
       />
         {/* Article Content */}
-        <section className="py-16">
+        <section className="">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="bg-white rounded-2xl overflow-hidden">
                 <div className="p-8">
                   {children}
                   

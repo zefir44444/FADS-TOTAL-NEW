@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   title: "FADS | Digital Solutions for Your Business",
   description: "We create innovative digital solutions to help your business grow and succeed in the digital world.",
   keywords: "digital solutions, web development, business growth, innovation",
+  metadataBase: new URL("https://fads.fi"),
   openGraph: {
     title: "FADS | Digital Solutions for Your Business",
     description: "We create innovative digital solutions to help your business grow and succeed in the digital world.",
