@@ -41,10 +41,10 @@ export default function WebsitesOverview() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       {/* Hero Section */}
       <motion.section 
-        className="py-20 md:py-28 bg-white relative overflow-hidden"
+        className="py-12 sm:py-16 md:py-20 lg:py-28 bg-white relative overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
