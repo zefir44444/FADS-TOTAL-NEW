@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Script from "next/script";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { 
   UserGroupIcon, 
   BriefcaseIcon, 
@@ -13,15 +15,67 @@ import {
   AcademicCapIcon,
   ChartBarIcon,
   GlobeAltIcon,
-  UserPlusIcon,
   PencilSquareIcon,
   BookOpenIcon,
-  CurrencyDollarIcon
+  CurrencyDollarIcon,
+  ChevronDownIcon,
+  ChevronUpIcon
 } from "@heroicons/react/24/outline";
 
 export default function BlogWebsites() {
+  // Added state for accordion functionality
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // Toggle function for FAQ accordion
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  // FAQ data
+  const faqData = [
+    {
+      question: "What features should a blog website have?",
+      answer: "It should include the ability to publish text, photos, and videos, easy navigation, comments, and feedback functions. We will help you determine the key elements for your project."
+    },
+    {
+      question: "Which platforms are best for a blog?",
+      answer: "We work with CMS platform WordPress. We can also develop a custom solution from scratch to meet all your specific requirements."
+    },
+    {
+      question: "Can a blog be useful for a business?",
+      answer: "Absolutely! A blog helps build trust with customers, share updates, and provide valuable content. It is a powerful tool for engaging with your audience."
+    },
+    {
+      question: "What information is needed to start development?",
+      answer: "We need your vision for the blog's structure, topics for posts, target audience, and preferred design. These details will help us create a website that fully meets your expectations."
+    }
+  ];
+
+  // Schema.org JSON-LD data for FAQ
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Schema.org JSON-LD */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+      >
+        {JSON.stringify(faqSchema)}
+      </Script>
+
       {/* Hero Section */}
       <section className="py-20 md:py-28 bg-white relative overflow-hidden">
         {/* Декоративные элементы фона */}
@@ -50,6 +104,128 @@ export default function BlogWebsites() {
             >
               Get a quote
             </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Features Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl font-bold text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Key Benefits of Blog Websites
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div 
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
+                <DocumentTextIcon className="w-6 h-6 text-[#e59500]" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Content Marketing</h3>
+              <p className="text-gray-600">Create valuable content that attracts your audience and improves your search engine rankings.</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
+                <UserGroupIcon className="w-6 h-6 text-[#e59500]" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Audience Engagement</h3>
+              <p className="text-gray-600">Build a community around your brand and strengthen relationships with customers through regular publications.</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
+                <ChartBarIcon className="w-6 h-6 text-[#e59500]" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Monetization</h3>
+              <p className="text-gray-600">Transform your blog into a revenue source through advertising, affiliate marketing, or premium content.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl font-bold text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Our Blog Development Process
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-[#e59500]">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Strategy</h3>
+              <p className="text-gray-600">We define goals, target audience and key topics for your blog</p>
+            </motion.div>
+
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-[#e59500]">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Design</h3>
+              <p className="text-gray-600">We create a visual style that reflects your individuality</p>
+            </motion.div>
+
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-[#e59500]">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Development</h3>
+              <p className="text-gray-600">We build a functional platform with a user-friendly content management system</p>
+            </motion.div>
+
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-[#e59500]">4</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Launch & Support</h3>
+              <p className="text-gray-600">We deploy your blog and provide ongoing technical support</p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -345,6 +521,54 @@ export default function BlogWebsites() {
               Start your blog today with FADS!
             </Link>
           </motion.div>
+        </div>
+      </section>
+      
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            FREQUENTLY ASKED QUESTIONS
+          </h2>
+          
+          <div className="max-w-3xl mx-auto">
+            {faqData.map((faq, index) => (
+              <div 
+                key={index}
+                className="mb-4 border border-gray-200 rounded-lg overflow-hidden"
+              >
+                <button
+                  className="w-full flex justify-between items-center p-5 bg-white hover:bg-gray-50 transition-colors duration-200"
+                  onClick={() => toggleFaq(index)}
+                >
+                  <h3 className="text-left text-lg font-semibold text-black">{faq.question}</h3>
+                  {openFaq === index ? (
+                    <ChevronUpIcon className="w-5 h-5 text-[#e59500]" />
+                  ) : (
+                    <ChevronDownIcon className="w-5 h-5 text-[#e59500]" />
+                  )}
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div 
+                      className="overflow-hidden"
+                      initial={{ height: 0 }}
+                      animate={{ height: "auto" }}
+                      exit={{ height: 0 }}
+                      transition={{ 
+                        duration: 0.3,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <div className="p-5 bg-gray-50">
+                        <p className="text-gray-700">{faq.answer.replace(/'/g, "'")}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

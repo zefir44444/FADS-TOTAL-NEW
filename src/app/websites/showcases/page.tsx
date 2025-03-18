@@ -320,7 +320,7 @@ export default function ShowcaseWebsites() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <p className="text-gray-700 text-lg md:text-xl text-center">
+              <p className="text-gray-700 text-lg md:text-xl text-center font-serif">
                 Even a small startup can afford a professional online presence. A showcase website is an effective and budget-friendly solution that works 24/7 to grow your business.
               </p>
             </motion.div>
