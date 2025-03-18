@@ -81,7 +81,7 @@ export default function RootLayout({
           }}
         />
         {/* Мета-тег для корректного отображения на мобильных устройствах */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, height=device-height" />
         <Analytics/>
         
         {/* Структурированные данные JSON-LD для организации */}
@@ -118,20 +118,18 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${tektur.variable} ${spaceGrotesk.variable} antialiased min-h-screen flex flex-col`}
+        className={`${tektur.variable} ${spaceGrotesk.variable} antialiased`}
       >
-        <Header />
-        <main className="flex-grow w-full">
-          <div className="w-full max-w-[2000px] mx-auto">
-            <div className="px-4 sm:px-6 lg:px-8">
-              <Breadcrumbs />
-              {children}
-            </div>
-          </div>
-        </main>
-        <Footer />
+         <Header />
+         <div className="pt-26">
+           <div className="container mx-auto px-4 md:px-6 lg:px-8">
+             <Breadcrumbs />
+             {children}
+           </div>
+         </div>
+         <Footer />
+            
         <CookieConsent />
-        <SpeedInsights />
       </body>
     </html>
   );
