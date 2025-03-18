@@ -60,7 +60,7 @@ export default function NewsPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center mb-3">
-                    <span className="text-xs text-gray-500">17 March 2025</span>
+                    <span className="text-xs text-gray-500">March 17, 2025</span>
                     <span className="mx-2 text-gray-300">•</span>
                     <span className="text-xs text-[#e59500]">Updates</span>
                   </div>

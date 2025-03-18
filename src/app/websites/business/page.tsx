@@ -69,7 +69,7 @@ export default function BusinessWebsites() {
             transition={{ duration: 0.8 }}
           >
             <motion.div 
-              className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm"
+              className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm shadow-lg shadow-orange-100"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
@@ -92,7 +92,7 @@ export default function BusinessWebsites() {
           >
             <Link 
               href="/contact" 
-              className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300"
+              className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300 shadow-lg shadow-orange-200/50"
             >
               Get a quote
             </Link>
@@ -101,14 +101,14 @@ export default function BusinessWebsites() {
       </section>
       
       {/* Main Content Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <motion.div 
               className="mb-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold mb-6">Business Website Development with FADS</h2>
@@ -121,7 +121,7 @@ export default function BusinessWebsites() {
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 <h3 className="text-2xl font-bold mb-4">Our Solutions</h3>
                 <ul className="space-y-3">
@@ -150,7 +150,7 @@ export default function BusinessWebsites() {
               >
                 <Link 
                   href="/contact" 
-                  className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center"
+                  className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center shadow-lg shadow-orange-200/50"
                 >
                   Discuss Your Project
                 </Link>
@@ -158,10 +158,10 @@ export default function BusinessWebsites() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-2xl shadow-sm p-8 mb-16"
+              className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold mb-6">A Business Website Is More Than Just a Digital Presence</h2>
@@ -174,7 +174,7 @@ export default function BusinessWebsites() {
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 <h3 className="text-2xl font-bold mb-4">Who Needs a Business Website?</h3>
                 <ul className="space-y-3">
@@ -199,10 +199,10 @@ export default function BusinessWebsites() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-2xl shadow-sm p-8 mb-16"
+              className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold mb-6">What&apos;s Included in Development?</h2>
@@ -215,7 +215,7 @@ export default function BusinessWebsites() {
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 {[
                   { icon: LightBulbIcon, title: "Strategy and analytics", text: "Market research, business objectives, and competitor analysis" },
@@ -228,7 +228,7 @@ export default function BusinessWebsites() {
                 ].map((item, index) => (
                   <motion.div 
                     key={index}
-                    className={`bg-gray-50 p-6 rounded-xl ${item.fullWidth ? 'md:col-span-2' : ''}`}
+                    className={`bg-white p-6 rounded-xl border border-gray-100 shadow-md hover:shadow-lg transition-shadow duration-300 ${item.fullWidth ? 'md:col-span-2' : ''}`}
                     variants={scaleIn}
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -243,10 +243,10 @@ export default function BusinessWebsites() {
             
             {/* Остальные секции с аналогичными анимациями */}
             <motion.div 
-              className="bg-white rounded-2xl shadow-sm p-8 mb-16"
+              className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold mb-6">Key Features of a Business Website</h2>
@@ -259,7 +259,7 @@ export default function BusinessWebsites() {
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 {[
                   { title: "Homepage", text: "An impactful first impression that drives conversions" },
@@ -273,7 +273,7 @@ export default function BusinessWebsites() {
                 ].map((item, index) => (
                   <motion.div 
                     key={index}
-                    className="flex items-start"
+                    className="flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md"
                     variants={fadeInUp}
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -289,10 +289,10 @@ export default function BusinessWebsites() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-2xl shadow-sm p-8 mb-16"
+              className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold mb-6">Why Choose FADS?</h2>
@@ -302,7 +302,7 @@ export default function BusinessWebsites() {
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 {[
                   { icon: CodeBracketIcon, text: "Cutting-edge technologies – Next.js, WordPress, Tailwind" },
@@ -314,7 +314,7 @@ export default function BusinessWebsites() {
                 ].map((item, index) => (
                   <motion.div 
                     key={index}
-                    className="flex items-start"
+                    className="flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md"
                     variants={fadeInUp}
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -327,10 +327,10 @@ export default function BusinessWebsites() {
             </motion.div>
             
             <motion.div 
-              className="bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 rounded-2xl shadow-sm p-8 mb-16"
+              className="bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold mb-6">Get a Personalized Business Website Solution</h2>
@@ -346,7 +346,7 @@ export default function BusinessWebsites() {
               >
                 <Link 
                   href="/contact" 
-                  className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center"
+                  className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center shadow-lg shadow-orange-200/50"
                 >
                   Request a personalized quote
                 </Link>
@@ -354,10 +354,10 @@ export default function BusinessWebsites() {
             </motion.div>
             
             <motion.div 
-              className="text-center mb-8"
+              className="text-center mb-8 p-6 rounded-xl shadow-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <p className="text-xl font-medium">

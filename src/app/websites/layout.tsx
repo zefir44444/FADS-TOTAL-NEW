@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import SocialShare from '../../components/SocialShare';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'FADS Digital Hub | Websites Development Solutions',
-  description: 'Explore our range of website development services tailored to meet your business needs and objectives.',
-  keywords: ['website development', 'web design', 'business websites', 'landing pages', 'multi-page websites', 'showcases', 'blogs', 'ecommerce', 'business card websites'],
+  title: 'FADS Digital Hub | Website Development',
+  description: 'Professional website development services for businesses and individuals. We create modern, functional, and user-friendly websites.',
+  keywords: ['website development', 'web design', 'business websites', 'e-commerce websites', 'personal websites', 'custom web development'],
   openGraph: {
-    title: 'FADS Digital Hub | Websites Development Solutions',
-    description: 'Explore our range of website development services tailored to meet your business needs and objectives.',
+    title: 'FADS Digital Hub | Website Development',
+    description: 'Professional website development services for businesses and individuals. We create modern, functional, and user-friendly websites.',
     url: 'https://fads.fi/websites',
     siteName: 'FADS Digital Hub',
     images: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         url: 'https://fads.fi/fads-black.svg',
         width: 1200,
         height: 630,
-        alt: 'FADS Digital Hub Websites',
+        alt: 'FADS Digital Hub Website Development',
       },
     ],
     locale: 'en_US',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FADS Digital Hub | Websites Development Solutions',
-    description: 'Explore our range of website development services tailored to meet your business needs and objectives.',
+    title: 'FADS Digital Hub | Website Development',
+    description: 'Professional website development services for businesses and individuals. We create modern, functional, and user-friendly websites.',
     images: ['https://fads.fi/fads-black.svg'],
   },
   alternates: {
@@ -32,7 +32,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Добавляем структурированные данные для SEO
 export default function WebsitesLayout({
   children,
 }: {
@@ -46,10 +45,10 @@ export default function WebsitesLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "FADS Digital Hub Websites",
-            "description": "Explore our range of website development services tailored to meet your business needs and objectives.",
+            "name": "Website Development Services",
+            "description": "Professional website development services for businesses and individuals. We create modern, functional, and user-friendly websites.",
             "url": "https://fads.fi/websites",
-            "publisher": {
+            "provider": {
               "@type": "Organization",
               "name": "FADS Digital Hub",
               "logo": {
@@ -60,36 +59,8 @@ export default function WebsitesLayout({
           })
         }}
       />
-      {/* Website Content */}
-      <section className="">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white rounded-2xl overflow-hidden">
-              <div className="p-8">
-                {children}
-                
-                <div className="mt-10 pt-8 border-t border-gray-100">
-                  <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div className="flex items-center">
-                      
-                   
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <span className="font-medium text-[#e59500]">Share:</span>
-                      <SocialShare 
-                        url="https://fads.fi/websites"
-                        title="FADS Digital Hub Website Solutions"
-                        text="Check out the website development solutions from FADS Digital Hub!"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {children}
+      
     </>
   );
 } 
