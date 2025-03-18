@@ -508,7 +508,7 @@ export default function Home() {
                     variants={fadeInUp}
                   >
                     <span className="w-10 h-10 rounded-full bg-[#0066aa] flex items-center justify-center text-white mr-3 shadow-md transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" preserveAspectRatio="xMidYMid meet">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
                       </svg>
                     </span>
@@ -580,7 +580,7 @@ export default function Home() {
                     variants={fadeInUp}
                   >
                     <span className="w-10 h-10 rounded-full bg-[#d17800] flex items-center justify-center text-white mr-3 shadow-md transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" preserveAspectRatio="xMidYMid meet">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.5 6.5l-3.5 3.5 3.5 3.5 1.5-1.5-2-2 2-2-1.5-1.5zm3 0l-1.5 1.5 2 2-2 2 1.5 1.5 3.5-3.5-3.5-3.5z"/>
                       </svg>
                     </span>
@@ -612,7 +612,7 @@ export default function Home() {
                       variants={fadeInUp}
                     >
                       <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" preserveAspectRatio="xMidYMid meet">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-8-2h2v-4h4v-2h-4V7h-2v4H7v2h4z"/>
                         </svg>
                       </div>
@@ -627,7 +627,7 @@ export default function Home() {
                     >
                      
                       <div className="w-6 h-6 rounded-full bg-[#d17800]/30 flex items-center justify-center text-[#d17800]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" preserveAspectRatio="xMidYMid meet">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                         </svg>
                       </div>
