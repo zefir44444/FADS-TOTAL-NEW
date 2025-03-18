@@ -10,20 +10,6 @@ import {
   UserGroupIcon
 } from '@heroicons/react/24/outline';
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
 export default function ShowcaseWebsites() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -200,7 +186,7 @@ export default function ShowcaseWebsites() {
           </div>
         </div>
       </section>
-
+      
       {/* Service Inclusions Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
@@ -211,7 +197,7 @@ export default function ShowcaseWebsites() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            What's Included in the Service?
+            What&apos;s Included in the Service?
           </motion.h2>
           
           <motion.div 
@@ -326,24 +312,39 @@ export default function ShowcaseWebsites() {
             </motion.div>
           </motion.div>
           
-          
-          <motion.div 
-            className="text-center bg-white p-8 rounded-xl shadow-md mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <p className="text-gray-700 text-lg mb-6">
-              Even a small startup can afford a professional online presence. <br /> A showcase website is an effective and budget-friendly solution that works 24/7 to grow your business. <br /> Looking for a reliable partner to create a high-converting website at a competitive price?
-            </p>
-            <Link 
-              href="/contact" 
-              className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300 shadow-lg shadow-orange-200/50"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <motion.div 
+              className="bg-white p-6 md:p-8 rounded-2xl shadow-lg flex items-center justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Contact our team
-            </Link>
-          </motion.div>
+              <p className="text-gray-700 text-lg md:text-xl text-center">
+                Even a small startup can afford a professional online presence. A showcase website is an effective and budget-friendly solution that works 24/7 to grow your business.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white p-6 md:p-8 rounded-xl shadow-md flex flex-col justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <p className="text-gray-700 text-lg mb-6 text-center">
+                Looking for a reliable partner to create a high-converting website at a competitive price?
+              </p>
+              <div className="text-center">
+                <Link 
+                  href="/contact" 
+                  className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300 shadow-lg shadow-orange-200/50"
+                >
+                  Contact our team
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
       
@@ -488,13 +489,13 @@ export default function ShowcaseWebsites() {
             <h3 className="text-2xl font-semibold mb-6 text-center text-black">The Key to a High-Performing Showcase Website</h3>
             <div className="space-y-6 text-gray-700">
               <p>
-                Despite its simple structure, the website should immediately grab visitors' attention and guide them through the marketing funnel towards the desired action—whether it's a call, a request, or a subscription.
+                Despite its simple structure, the website should immediately grab visitors&apos; attention and guide them through the marketing funnel towards the desired action—whether it&apos;s a call, a request, or a subscription.
               </p>
               <p>
                 Unlike large websites, where you have unlimited space to present your product, a showcase website must be concise, visually appealing, and conversion-focused. An overload of text or poor navigation will drive potential clients away.
               </p>
               <p>
-                That's why at FADS, we build streamlined, sales-driven websites with:
+                That&apos;s why at FADS, we build streamlined, sales-driven websites with:
               </p>
               
               <motion.ul 
@@ -547,7 +548,7 @@ export default function ShowcaseWebsites() {
               href="/contact" 
               className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300 shadow-lg shadow-orange-200/50"
             >
-              Let's build your website today!
+              Let&apos;s build your website today!
             </Link>
           </motion.div>
         </div>
