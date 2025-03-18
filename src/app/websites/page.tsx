@@ -111,7 +111,7 @@ export default function WebsitesOverview() {
           ></motion.div>
         </motion.div>
         
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center mb-8 sm:mb-12"
             initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ export default function WebsitesOverview() {
           >
             <Link 
               href="/contact" 
-              className="gradient-button text-center px-6 sm:px-8 py-2.5 sm:py-3 text-base sm:text-lg inline-flex justify-center items-center"
+              className="gradient-button text-center px-8 py-3 text-lg min-w-[180px] inline-flex justify-center items-center hover:scale-105 transition-transform duration-300"
             >
               Get a quote
             </Link>
@@ -162,7 +162,7 @@ export default function WebsitesOverview() {
       
       {/* Website Types Section */}
       <motion.section 
-        className="py-12 sm:py-16 bg-gray-50 relative overflow-hidden"
+        className="py-16 md:py-24 bg-gray-50 relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -189,10 +189,10 @@ export default function WebsitesOverview() {
           ></div>
         </motion.div>
         
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
           
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
@@ -347,7 +347,7 @@ export default function WebsitesOverview() {
       
       {/* CTA Section */}
       <motion.section 
-        className="py-12 sm:py-16 bg-white relative overflow-hidden"
+        className="py-16 md:py-24 bg-white relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -362,9 +362,9 @@ export default function WebsitesOverview() {
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e59500]/5 via-transparent to-[#840032]/5"></div>
         </motion.div>
         
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
-            className="max-w-4xl mx-auto bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg"
+            className="max-w-4xl mx-auto bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 rounded-2xl p-8 md:p-12 shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
