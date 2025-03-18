@@ -31,6 +31,8 @@ body {
   -ms-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Разрешаем выделение текста в полях ввода и текстовых областях */
@@ -710,5 +712,28 @@ main {
     opacity: 0;
     transform: translateY(-10px);
     content: "Portfolio Website";
+  }
+}
+
+/* Оптимизация производительности */
+.parallax-line {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Оптимизация прокрутки */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Оптимизация анимаций */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

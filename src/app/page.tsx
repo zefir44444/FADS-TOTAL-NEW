@@ -932,26 +932,26 @@ export default function Home() {
           >
             <div className="absolute top-0 left-0 w-full h-full parallax-container">
               {/* Горизонтальные линии */}
-              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-[20%] transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-slow) * -0.5px))' }}></div>
-              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-1/4 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-medium) * 0.7px))' }}></div>
-              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-1/3 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-fast) * -0.3px))' }}></div>
-              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-2/4 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-slow) * 0.6px))' }}></div>
-              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-2/3 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-medium) * -0.4px))' }}></div>
-              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-3/4 transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-fast) * 0.5px))' }}></div>
-              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-[83%] transform -translate-y-1/2 parallax-line" style={{ transform: 'translateY(calc(-50% + var(--parallax-offset-slow) * -0.7px))' }}></div>
+              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-[20%] transform -translate-y-1/2 parallax-line" data-speed="0.03"></div>
+              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-1/4 transform -translate-y-1/2 parallax-line" data-speed="0.05"></div>
+              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-1/3 transform -translate-y-1/2 parallax-line" data-speed="0.08"></div>
+              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-2/4 transform -translate-y-1/2 parallax-line" data-speed="0.03"></div>
+              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-2/3 transform -translate-y-1/2 parallax-line" data-speed="0.05"></div>
+              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#840032]/50 to-transparent top-3/4 transform -translate-y-1/2 parallax-line" data-speed="0.08"></div>
+              <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-[#e59500]/50 to-transparent top-[83%] transform -translate-y-1/2 parallax-line" data-speed="0.03"></div>
               
               {/* Вертикальные линии */}
-              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-[16%] transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-medium) * 0.4px))' }}></div>
-              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-1/4 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-fast) * -0.6px))' }}></div>
-              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-1/3 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-slow) * 0.3px))' }}></div>
-              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-2/4 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-medium) * -0.5px))' }}></div>
-              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-2/3 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-fast) * 0.7px))' }}></div>
-              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-3/4 transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-slow) * -0.4px))' }}></div>
-              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-[83%] transform -translate-x-1/2 parallax-line" style={{ transform: 'translateX(calc(-50% + var(--parallax-offset-medium) * 0.5px))' }}></div>
+              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-[16%] transform -translate-x-1/2 parallax-line" data-speed="0.05"></div>
+              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-1/4 transform -translate-x-1/2 parallax-line" data-speed="0.08"></div>
+              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-1/3 transform -translate-x-1/2 parallax-line" data-speed="0.03"></div>
+              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-2/4 transform -translate-x-1/2 parallax-line" data-speed="0.05"></div>
+              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-2/3 transform -translate-x-1/2 parallax-line" data-speed="0.08"></div>
+              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#840032]/50 to-transparent left-3/4 transform -translate-x-1/2 parallax-line" data-speed="0.03"></div>
+              <div className="absolute w-[2px] h-full bg-gradient-to-b from-transparent via-[#e59500]/50 to-transparent left-[83%] transform -translate-x-1/2 parallax-line" data-speed="0.05"></div>
               
               {/* Диагональные линии */}
-              <div className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-[#e59500]/40 to-transparent top-0 left-0 origin-top-left rotate-45 parallax-line" style={{ transform: 'rotate(45deg) translateY(calc(var(--parallax-offset-slow) * 0.8px))' }}></div>
-              <div className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-[#840032]/40 to-transparent bottom-0 left-0 origin-bottom-left rotate-[-45deg] parallax-line" style={{ transform: 'rotate(-45deg) translateY(calc(var(--parallax-offset-fast) * -0.8px))' }}></div>
+              <div className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-[#e59500]/40 to-transparent top-0 left-0 origin-top-left rotate-45 parallax-line" data-speed="0.03"></div>
+              <div className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-[#840032]/40 to-transparent bottom-0 left-0 origin-bottom-left rotate-[-45deg] parallax-line" data-speed="0.08"></div>
             </div>
           </motion.div>
           
