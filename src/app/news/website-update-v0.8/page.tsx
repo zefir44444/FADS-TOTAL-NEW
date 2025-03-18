@@ -17,7 +17,7 @@ export default function WebsiteUpdatePage() {
     <div className="prose prose-lg max-w-none">
       <div className="text-center mb-12">
         <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
-          March 17, 2025
+          17 March 2025
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#e59500] to-[#840032]">
           Website Update v0.8
