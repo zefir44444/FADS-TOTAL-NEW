@@ -121,11 +121,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${tektur.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${tektur.variable} ${spaceGrotesk.variable} antialiased overflow-y-auto`}
       >
          <Header />
          <div className="pt-16 md:pt-26">
-           <div className="w-full max-w-[100vw] mx-auto px-2 sm:px-4 md:px-6 lg:px-8 overflow-x-hidden">
+           <div className="w-full max-w-[100vw] mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
              <div className="max-w-7xl mx-auto">
                <Breadcrumbs />
                {children}

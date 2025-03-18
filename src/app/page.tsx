@@ -28,23 +28,15 @@ export default function Home() {
 
   // Добавляем эффект параллакса при прокрутке с оптимизацией производительности
   useEffect(() => {
-    let ticking = false;
-    
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          
-          // Устанавливаем CSS переменные для разных скоростей параллакса
-          document.documentElement.style.setProperty('--parallax-offset-slow', String(scrollY * 0.03));
-          document.documentElement.style.setProperty('--parallax-offset-medium', String(scrollY * 0.05));
-          document.documentElement.style.setProperty('--parallax-offset-fast', String(scrollY * 0.08));
-          
-          ticking = false;
-        });
-        
-        ticking = true;
-      }
+      const scrollY = window.scrollY;
+      const parallaxElements = document.querySelectorAll('.parallax-line');
+      
+      parallaxElements.forEach((element) => {
+        const speed = element.getAttribute('data-speed') || '0.5';
+        const yPos = -(scrollY * parseFloat(speed));
+        (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
