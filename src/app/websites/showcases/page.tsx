@@ -5,12 +5,7 @@ import Link from "next/link";
 import { motion } from 'framer-motion';
 import { 
   CheckCircleIcon,
-  RocketLaunchIcon,
   PresentationChartLineIcon,
-  PhotoIcon,
-  DevicePhoneMobileIcon,
-  ShieldCheckIcon,
-  WrenchScrewdriverIcon,
   EyeIcon,
   UserGroupIcon
 } from '@heroicons/react/24/outline';
