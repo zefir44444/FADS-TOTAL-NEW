@@ -216,7 +216,7 @@ export default function ShowcaseWebsites() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            What's Included in the Service?
+            What&apos;s Included in the Service?
           </motion.h2>
           
           <motion.div 
@@ -508,13 +508,13 @@ export default function ShowcaseWebsites() {
             <h3 className="text-2xl font-semibold mb-6 text-center text-black">The Key to a High-Performing Showcase Website</h3>
             <div className="space-y-6 text-gray-700">
               <p>
-                Despite its simple structure, the website should immediately grab visitors' attention and guide them through the marketing funnel towards the desired action—whether it's a call, a request, or a subscription.
+                Despite its simple structure, the website should immediately grab visitors&apos; attention and guide them through the marketing funnel towards the desired action—whether it&apos;s a call, a request, or a subscription.
               </p>
               <p>
                 Unlike large websites, where you have unlimited space to present your product, a showcase website must be concise, visually appealing, and conversion-focused. An overload of text or poor navigation will drive potential clients away.
               </p>
               <p>
-                That's why at FADS, we build streamlined, sales-driven websites with:
+                That&apos;s why at FADS, we build streamlined, sales-driven websites with:
               </p>
               
               <motion.ul 
@@ -567,7 +567,7 @@ export default function ShowcaseWebsites() {
               href="/contact" 
               className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300 shadow-lg shadow-orange-200/50"
             >
-              Let's build your website today!
+              Let&apos;s build your website today!
             </Link>
           </motion.div>
         </div>
