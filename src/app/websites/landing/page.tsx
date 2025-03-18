@@ -134,7 +134,7 @@ export default function LandingPages() {
                 <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Brand Enhancement</h3>
-              <p className="text-gray-600">Showcase your brand's unique value proposition in a focused, compelling presentation.</p>
+              <p className="text-gray-600">Showcase your brand&apos;s unique value proposition in a focused, compelling presentation.</p>
             </motion.div>
           </div>
         </div>
