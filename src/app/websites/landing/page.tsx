@@ -87,7 +87,7 @@ export default function LandingPages() {
       </section>
       
       {/* Features Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <motion.h2 
             className="text-3xl font-bold text-center mb-12"
@@ -134,7 +134,7 @@ export default function LandingPages() {
                 <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Brand Enhancement</h3>
-              <p className="text-gray-600">Showcase your brand&apos;s unique value proposition in a focused, compelling presentation.</p>
+              <p className="text-gray-600">Showcase your brand's unique value proposition in a focused, compelling presentation.</p>
             </motion.div>
           </div>
         </div>

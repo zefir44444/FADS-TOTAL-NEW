@@ -59,15 +59,17 @@ export default function WebsitesLayout({
           })
         }}
       />
-      <section className="w-full">
+      <section className="w-full min-h-screen">
         <div className="w-full max-w-[100vw] mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="w-full">
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
-              <div className="p-4 sm:p-6 md:p-8">
-                {children}
+              <div className="p-2 sm:p-4 md:p-6 lg:p-8 w-full">
+                <div className="w-full max-w-full">
+                  {children}
+                </div>
                 
-                <div className="mt-6 sm:mt-10 pt-6 sm:pt-8 border-t border-gray-100">
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+                <div className="mt-4 sm:mt-6 md:mt-8 pt-4 sm:pt-6 md:pt-8 border-t border-gray-100">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 md:gap-6">
                     <div className="flex items-center">
                     </div>
                     
