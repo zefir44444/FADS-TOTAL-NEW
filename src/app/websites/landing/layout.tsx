@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import SocialShare from '../../../components/SocialShare';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
