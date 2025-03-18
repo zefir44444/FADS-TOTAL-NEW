@@ -143,12 +143,6 @@ const Header = () => {
                     Blogs
                   </Link>
                   <Link 
-                    href="/websites/personal" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Personal Websites
-                  </Link>
-                  <Link 
                     href="/websites/ecommerce" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
@@ -402,13 +396,6 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Blogs
-                    </Link>
-                    <Link 
-                      href="/websites/personal" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Personal Websites
                     </Link>
                     <Link 
                       href="/websites/ecommerce" 
