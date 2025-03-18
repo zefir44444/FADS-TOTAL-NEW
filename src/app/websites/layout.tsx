@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import SocialShare from '../../components/SocialShare';
 
 export const metadata: Metadata = {
   title: 'FADS Digital Hub | Website Development',
@@ -58,8 +59,34 @@ export default function WebsitesLayout({
           })
         }}
       />
-      {children}
-      
+      <section className="">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-2xl overflow-hidden">
+              <div className="p-8">
+                {children}
+                
+                <div className="mt-10 pt-8 border-t border-gray-100">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div className="flex items-center">
+                    
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <span className="gradient-text text-gray-600">Share:</span>
+                      <SocialShare 
+                        url="https://fads.fi/websites"
+                        title="FADS Digital Hub Website Development"
+                        text="Check out our website development services!"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 } 
