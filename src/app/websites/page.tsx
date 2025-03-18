@@ -181,16 +181,16 @@ export default function WebsitesOverview() {
               </div>
             </div>
             
-            {/* Website Customizations */}
+            {/* Custom Website Development */}
             <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group md:col-span-2 lg:col-span-3">
               <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">Website Customizations</h3>
+                <h3 className="text-2xl font-bold mb-3">Custom Website Development</h3>
                 <p className="text-gray-600 mb-4">
                   Enhance your existing website with custom features, improved design, or additional functionality to better meet your business needs.
                 </p>
                 <Link 
-                  href="/websites/customization" 
+                  href="/websites/custom" 
                   className="inline-flex items-center text-[#e59500] hover:text-[#840032] transition-colors duration-300"
                 >
                   Learn more
