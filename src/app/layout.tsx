@@ -80,8 +80,11 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Мета-тег для корректного отображения на мобильных устройствах */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, height=device-height" />
+        {/* Мета-теги для корректного отображения на мобильных устройствах */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <Analytics/>
         
         {/* Структурированные данные JSON-LD для организации */}
@@ -121,16 +124,15 @@ export default function RootLayout({
         className={`${tektur.variable} ${spaceGrotesk.variable} antialiased`}
       >
          <Header />
-         <div className="pt-26">
-           <div className="container mx-auto px-4 md:px-6 lg:px-8">
+         <div className="pt-16 md:pt-26">
+           <div className="w-full max-w-[100vw] mx-auto px-2 sm:px-4 md:px-6 lg:px-8 overflow-x-hidden">
              <Breadcrumbs />
              {children}
              <SpeedInsights />
            </div>
          </div>
          <Footer />
-            
-        <CookieConsent />
+         <CookieConsent />
       </body>
     </html>
   );
