@@ -60,17 +60,16 @@ export default function WebsitesLayout({
         }}
       />
       <section className="">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto">
+          <div className="mx-auto">
             <div className="bg-white rounded-2xl overflow-hidden">
-              <div className="p-8">
+             
                 {children}
                 
                 <div className="mt-10 pt-8 border-t border-gray-100">
                   <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex items-center">
-                    
-                    </div>
+               
                     
                     <div className="flex items-center gap-2">
                       <span className="gradient-text text-gray-600">Share:</span>
