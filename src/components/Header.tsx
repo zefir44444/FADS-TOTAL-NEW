@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -319,233 +320,280 @@ const Header = () => {
         </div>
 
         {/* Мобильное меню */}
-        {isMenuOpen && (
-          <div 
-            className="md:hidden mx-4 mt-2 bg-white rounded-2xl shadow-lg py-6 px-6 animate-fadeIn border border-white/20" 
-            style={{
-              backdropFilter: "none",
-              WebkitBackdropFilter: "none",
-              backgroundColor: "rgba(255, 255, 255, 1)"
-            }}
-          >
-            <nav className="flex flex-col space-y-4">
-              <Link 
-                href="/" 
-                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                onClick={() => setIsMenuOpen(false)}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden mx-4 mt-2 bg-white rounded-2xl shadow-lg py-6 px-6 border border-white/20 overflow-hidden" 
+              style={{
+                backdropFilter: "none",
+                WebkitBackdropFilter: "none",
+                backgroundColor: "rgba(255, 255, 255, 1)"
+              }}
+            >
+              <motion.nav 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                className="flex flex-col space-y-4"
               >
-                Digital Hub
-              </Link>
-              
-              {/* Websites меню для мобильных */}
-              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
-                <button 
-                  className="text-sm font-medium text-center flex items-center justify-center gap-1"
-                  onClick={() => toggleMobileSubmenu('websites')}
+                <Link 
+                  href="/" 
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  Websites
+                  Digital Hub
+                </Link>
+                
+                {/* Websites меню для мобильных */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                  className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200"
+                >
+                  <button 
+                    className="text-sm font-medium text-center flex items-center justify-center gap-1"
+                    onClick={() => toggleMobileSubmenu('websites')}
+                  >
+                    Websites
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      animate={{ rotate: openMobileSubmenu === 'websites' ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </motion.svg>
+                  </button>
+                  <AnimatePresence>
+                    {openMobileSubmenu === 'websites' && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-2 items-center mt-2 overflow-hidden"
+                      >
+                        <Link 
+                          href="/websites" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          All Website Services
+                        </Link>
+                        <div className="w-full h-px bg-gray-100 my-1"></div>
+                        <Link 
+                          href="/websites/business" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Business Websites
+                        </Link>
+                        <Link 
+                          href="/websites/landing" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Landing Page
+                        </Link>
+                        <Link 
+                          href="/websites/showcases" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Showcases
+                        </Link>
+                        <Link 
+                          href="/websites/blogs" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Blogs
+                        </Link>
+                        <Link 
+                          href="/websites/ecommerce" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          E-commerce Website Development
+                        </Link>
+                        <Link 
+                          href="/websites/custom" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Custom Development
+                        </Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+                
+                {/* Website Promotion меню для мобильных */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
+                  className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200"
+                >
+                  <button 
+                    className="text-sm font-medium text-center flex items-center justify-center gap-1"
+                    onClick={() => toggleMobileSubmenu('promotion')}
+                  >
+                    Website Promotion
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      animate={{ rotate: openMobileSubmenu === 'promotion' ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </motion.svg>
+                  </button>
+                  <AnimatePresence>
+                    {openMobileSubmenu === 'promotion' && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-2 items-center mt-2 overflow-hidden"
+                      >
+                        <Link 
+                          href="/promotion/website-audits" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Website Audits
+                        </Link>
+                        <Link 
+                          href="/promotion/seo" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          SEO Optimization & Promotion
+                        </Link>
+                        <Link 
+                          href="/promotion/google-ads" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Google Ads Setup & Management
+                        </Link>
+                        <Link 
+                          href="/promotion/youtube" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          YouTube Advertising
+                        </Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+                
+                <Link 
+                  href="/news" 
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  News
+                </Link>
+                
+                <Link 
+                  href="/contact" 
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact us
+                </Link>
+              </motion.nav>
+              
+              {/* Социальные сети в мобильном меню */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+                className="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-gray-200"
+              >
+                <a 
+                  href="https://www.linkedin.com/in/denisfateev/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                  aria-label="LinkedIn"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+                <a 
+                  href="https://www.youtube.com/@fadsmarketing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                  aria-label="YouTube"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                  </svg>
+                </a>
+                <a 
+                  href="https://t.me/zeisch" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                  aria-label="Telegram"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
+                  </svg>
+                </a>
+                <a 
+                  href="mailto:info@fads.fi" 
+                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                  aria-label="Email"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    width="12" 
-                    height="12" 
+                    width="20" 
+                    height="20" 
                     viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className={`transition-transform duration-300 ${openMobileSubmenu === 'websites' ? 'rotate-180' : ''}`}
+                    fill="currentColor"
                   >
-                    <polyline points="6 9 12 15 18 9"></polyline>
+                    <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
                   </svg>
-                </button>
-                {openMobileSubmenu === 'websites' && (
-                  <div className="flex flex-col gap-2 items-center mt-2 animate-fadeIn">
-                    <Link 
-                      href="/websites" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      All Website Services
-                    </Link>
-                    <div className="w-full h-px bg-gray-100 my-1"></div>
-                    <Link 
-                      href="/websites/business" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Business Websites
-                    </Link>
-                    <Link 
-                      href="/websites/landing" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Landing Page
-                    </Link>
-                    <Link 
-                      href="/websites/showcases" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Showcases
-                    </Link>
-                    <Link 
-                      href="/websites/blogs" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Blogs
-                    </Link>
-                    <Link 
-                      href="/websites/ecommerce" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      E-commerce Website Development
-                    </Link>
-                    <Link 
-                      href="/websites/custom" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Custom Development
-                    </Link>
-                   
-                  </div>
-                )}
-              </div>
-              
-              {/* Website Promotion меню для мобильных */}
-              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
-                <button 
-                  className="text-sm font-medium text-center flex items-center justify-center gap-1"
-                  onClick={() => toggleMobileSubmenu('promotion')}
-                >
-                  Website Promotion
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="12" 
-                    height="12" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className={`transition-transform duration-300 ${openMobileSubmenu === 'promotion' ? 'rotate-180' : ''}`}
-                  >
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </button>
-                {openMobileSubmenu === 'promotion' && (
-                  <div className="flex flex-col gap-2 items-center mt-2 animate-fadeIn">
-                    <Link 
-                      href="/promotion/website-audits" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Website Audits
-                    </Link>
-                    <Link 
-                      href="/promotion/seo" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      SEO Optimization & Promotion
-                    </Link>
-                    <Link 
-                      href="/promotion/google-ads" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Google Ads Setup & Management
-                    </Link>
-                    <Link 
-                      href="/promotion/youtube" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      YouTube Advertising
-                    </Link>
-                  </div>
-                )}
-              </div>
-              
-              <Link 
-                href="/news" 
-                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                News
-              </Link>
-              
-              <Link 
-                href="/contact" 
-                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact us
-              </Link>
-            </nav>
-            
-            {/* Социальные сети в мобильном меню */}
-            <div className="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-gray-200">
-              <a 
-                href="https://www.linkedin.com/in/denisfateev/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                aria-label="LinkedIn"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-              <a 
-                href="https://www.youtube.com/@fadsmarketing" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                aria-label="YouTube"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                </svg>
-              </a>
-              <a 
-                href="https://t.me/zeisch" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                aria-label="Telegram"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                  <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
-                </svg>
-              </a>
-              <a 
-                href="mailto:info@fads.fi" 
-                className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                aria-label="Email"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="20" 
-                  height="20" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        )}
+                </a>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );
