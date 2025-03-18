@@ -98,22 +98,17 @@ export default function LandingPages() {
           <motion.h2 
             className="text-3xl font-bold text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             Key Benefits of Landing Pages
           </motion.h2>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.1 }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <motion.div 
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
-              variants={scaleIn}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
                 <RocketLaunchIcon className="w-6 h-6 text-[#e59500]" />
@@ -124,7 +119,9 @@ export default function LandingPages() {
 
             <motion.div 
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
-              variants={scaleIn}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
                 <ChartBarIcon className="w-6 h-6 text-[#e59500]" />
@@ -135,7 +132,9 @@ export default function LandingPages() {
 
             <motion.div 
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
-              variants={scaleIn}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
                 <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />
@@ -143,7 +142,7 @@ export default function LandingPages() {
               <h3 className="text-xl font-semibold mb-2 text-black">Brand Enhancement</h3>
               <p className="text-gray-600">Showcase your brand's unique value proposition in a focused, compelling presentation.</p>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -153,23 +152,18 @@ export default function LandingPages() {
           <motion.h2 
             className="text-3xl font-bold text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             Our Landing Page Development Process
           </motion.h2>
           
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.1 }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <motion.div 
               className="text-center"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">1</span>
@@ -180,7 +174,9 @@ export default function LandingPages() {
 
             <motion.div 
               className="text-center"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">2</span>
@@ -191,7 +187,9 @@ export default function LandingPages() {
 
             <motion.div 
               className="text-center"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">3</span>
@@ -202,7 +200,9 @@ export default function LandingPages() {
 
             <motion.div 
               className="text-center"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">4</span>
@@ -210,7 +210,7 @@ export default function LandingPages() {
               <h3 className="text-xl font-semibold mb-2 text-black">Optimization</h3>
               <p className="text-gray-600">Testing, refining, and improving to maximize conversion rates</p>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
       
@@ -223,8 +223,7 @@ export default function LandingPages() {
             <motion.h3 
               className="text-2xl md:text-3xl font-bold mb-10 text-center"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px 0px" }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               Business Challenges Solved by a Landing Page
@@ -235,8 +234,7 @@ export default function LandingPages() {
               <motion.div 
                 className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2, margin: "-50px 0px" }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center mb-4">
@@ -248,8 +246,7 @@ export default function LandingPages() {
                   className="list-disc pl-6 mb-6 space-y-2"
                   variants={staggerContainer}
                   initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.1 }}
+                  animate="animate"
                 >
                   {[
                     "Crafting compelling offers.",
@@ -273,8 +270,7 @@ export default function LandingPages() {
               <motion.div 
                 className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center mb-4">
@@ -286,8 +282,7 @@ export default function LandingPages() {
                   className="list-disc pl-6 mb-6 space-y-2"
                   variants={staggerContainer}
                   initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
+                  animate="animate"
                 >
                   {[
                     "Developing visually appealing landing pages that generate more leads.",
@@ -310,8 +305,7 @@ export default function LandingPages() {
               <motion.div 
                 className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center mb-4">
@@ -323,8 +317,7 @@ export default function LandingPages() {
                   className="list-disc pl-6 mb-6 space-y-2"
                   variants={staggerContainer}
                   initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
+                  animate="animate"
                 >
                   {[
                     "Showcasing your concept, style, philosophy, and principles.",
@@ -345,8 +338,7 @@ export default function LandingPages() {
               <motion.div 
                 className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center mb-4">
@@ -358,8 +350,7 @@ export default function LandingPages() {
                   className="list-disc pl-6 mb-6 space-y-2"
                   variants={staggerContainer}
                   initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
+                  animate="animate"
                 >
                   {[
                     "Ensure seamless communication with customers and partners.",
@@ -383,8 +374,7 @@ export default function LandingPages() {
           <motion.div 
             className="w-full border-t border-gray-300 my-12"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           ></motion.div>
           
@@ -393,8 +383,7 @@ export default function LandingPages() {
             <motion.h3 
               className="text-2xl md:text-3xl font-bold mb-10 text-center"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               Competitive Advantage
@@ -402,8 +391,7 @@ export default function LandingPages() {
             <motion.p 
               className="text-lg text-center mb-12 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               You get the most up-to-date digital asset in your industry.
@@ -415,8 +403,7 @@ export default function LandingPages() {
               <motion.div 
                 className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ scale: 1.01 }}
               >
@@ -428,8 +415,7 @@ export default function LandingPages() {
                   className="list-disc pl-6 mb-6 space-y-2"
                   variants={staggerContainer}
                   initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
+                  animate="animate"
                 >
                   {[
                     "Advertising without a high-quality website is a waste of time and money.",
@@ -449,8 +435,7 @@ export default function LandingPages() {
               <motion.div 
                 className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 h-full"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ scale: 1.01 }}
               >
@@ -462,8 +447,7 @@ export default function LandingPages() {
                   className="list-disc pl-6 mb-6 space-y-2"
                   variants={staggerContainer}
                   initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
+                  animate="animate"
                 >
                   {[
                     "With us, you remain confident in your main sales tool.",
@@ -484,8 +468,7 @@ export default function LandingPages() {
             <motion.div 
               className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 mt-12 mb-12"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               <motion.h3 
@@ -498,13 +481,10 @@ export default function LandingPages() {
                 High-Converting Landing Pages for Businesses
               </motion.h3>
               
-        
-              
               <motion.h4 
                 className="text-xl font-bold mb-4 flex items-center"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <CheckCircleIcon className="w-6 h-6 text-[#e59500] mr-3" />
@@ -515,8 +495,7 @@ export default function LandingPages() {
                 <motion.h5 
                   className="text-lg font-semibold mb-2 text-black"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
                   Expertise and Experience
@@ -524,8 +503,7 @@ export default function LandingPages() {
                 <motion.p 
                   className="mb-4"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
                   Our team consists of professionals with extensive experience in web development and digital marketing. We specialize in creating landing pages that not only look great but also deliver results.
@@ -534,8 +512,7 @@ export default function LandingPages() {
                 <motion.h5 
                   className="text-lg font-semibold mb-2 text-black"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
                   Tailored Approach
@@ -543,8 +520,7 @@ export default function LandingPages() {
                 <motion.p 
                   className="mb-4"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
                   We understand that every business is unique. That's why we analyze your industry, target audience, and competition to create a landing page that aligns with your specific goals.
@@ -553,8 +529,7 @@ export default function LandingPages() {
                 <motion.h5 
                   className="text-lg font-semibold mb-2 text-black"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.7 }}
                 >
                   Design and Content that Convert
@@ -562,8 +537,7 @@ export default function LandingPages() {
                 <motion.p 
                   className="mb-4"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
                 >
                   A landing page is more than just a one-pager. We focus on user experience, visual appeal, and compelling content to ensure your site captures attention and drives conversions.
@@ -573,8 +547,7 @@ export default function LandingPages() {
               <motion.h4 
                 className="text-xl font-bold mb-4 flex items-center"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.9 }}
               >
                 <CommandLineIcon className="w-6 h-6 text-[#e59500] mr-3" />
@@ -585,8 +558,7 @@ export default function LandingPages() {
                 className="list-disc pl-9 mb-8 space-y-2"
                 variants={staggerContainer}
                 initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
+                animate="animate"
               >
                 {[
                   "Consultation – We start with a free consultation to discuss your business goals and requirements.",
@@ -597,7 +569,7 @@ export default function LandingPages() {
                   <motion.li 
                     key={index}
                     variants={fadeInUp}
-                    className="p-1 hover:bg-gray-50 rounded-md transition-colors duration-300 shadow-sm hover:shadow"
+                    className="p-1 hover:bg-gray-50 rounded-md transition-colors duration-300 hover:shadow"
                   >
                     {item}
                   </motion.li>
@@ -608,15 +580,13 @@ export default function LandingPages() {
               <motion.div
                 className="bg-gradient-to-r from-[#840032]/5 to-[#e59500]/5 p-8 rounded-xl mt-10 shadow-inner"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
                 <motion.h4 
                   className="text-xl md:text-2xl font-bold mb-6 text-center text-black flex items-center justify-center"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
                   <LightBulbIcon className="w-6 h-6 text-[#e59500] mr-3" />
@@ -627,8 +597,7 @@ export default function LandingPages() {
                   <motion.div
                     className="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                     initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
                     <div className="flex items-center mb-3">
@@ -641,8 +610,7 @@ export default function LandingPages() {
                   <motion.div
                     className="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                     initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <div className="flex items-center mb-3">
@@ -655,8 +623,7 @@ export default function LandingPages() {
                   <motion.div
                     className="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                     initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                   >
                     <div className="flex items-center mb-3">
@@ -671,10 +638,9 @@ export default function LandingPages() {
             
             {/* CTA */}
             <motion.div 
-              className="text-center  p-6 rounded-xl mt-12"
+              className="text-center p-6 rounded-xl mt-12"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center justify-center mb-4">

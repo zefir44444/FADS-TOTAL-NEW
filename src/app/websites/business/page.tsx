@@ -100,6 +100,128 @@ export default function BusinessWebsites() {
         </div>
       </section>
       
+      {/* Features Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl font-bold text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Key Benefits of Business Websites
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div 
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
+                <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Professional Presence</h3>
+              <p className="text-gray-600">Establish credibility with a polished website that reflects your company's expertise and values.</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
+                <UserGroupIcon className="w-6 h-6 text-[#e59500]" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Customer Engagement</h3>
+              <p className="text-gray-600">Connect with potential clients through intuitive design and compelling content that drives action.</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
+                <MagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Search Visibility</h3>
+              <p className="text-gray-600">Gain visibility in search results with SEO-optimized website structure and content.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl font-bold text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Our Business Website Development Process
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-[#e59500]">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Discovery</h3>
+              <p className="text-gray-600">We analyze your business goals, target audience, and market position</p>
+            </motion.div>
+
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-[#e59500]">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Design</h3>
+              <p className="text-gray-600">We create wireframes and visual designs that align with your brand identity</p>
+            </motion.div>
+
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-[#e59500]">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Development</h3>
+              <p className="text-gray-600">We build your site using cutting-edge technologies and best practices</p>
+            </motion.div>
+
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-[#e59500]">4</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-black">Launch & Support</h3>
+              <p className="text-gray-600">We deploy your site and provide ongoing maintenance and optimization</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
       {/* Main Content Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
@@ -107,8 +229,7 @@ export default function BusinessWebsites() {
             <motion.div 
               className="mb-16"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px 0px" }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold mb-6">Business Website Development with FADS</h2>
@@ -120,7 +241,7 @@ export default function BusinessWebsites() {
                 className="mt-10"
                 variants={staggerContainer}
                 initial="initial"
-                whileInView="animate"
+                animate="animate"
                 viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 <h3 className="text-2xl font-bold mb-4">Our Solutions</h3>
@@ -160,7 +281,7 @@ export default function BusinessWebsites() {
             <motion.div 
               className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
@@ -173,7 +294,7 @@ export default function BusinessWebsites() {
                 className="mb-10"
                 variants={staggerContainer}
                 initial="initial"
-                whileInView="animate"
+                animate="animate"
                 viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 <h3 className="text-2xl font-bold mb-4">Who Needs a Business Website?</h3>
@@ -201,7 +322,7 @@ export default function BusinessWebsites() {
             <motion.div 
               className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
@@ -214,7 +335,7 @@ export default function BusinessWebsites() {
                 className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
                 variants={staggerContainer}
                 initial="initial"
-                whileInView="animate"
+                animate="animate"
                 viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 {[
@@ -245,7 +366,7 @@ export default function BusinessWebsites() {
             <motion.div 
               className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
@@ -258,7 +379,7 @@ export default function BusinessWebsites() {
                 className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
                 variants={staggerContainer}
                 initial="initial"
-                whileInView="animate"
+                animate="animate"
                 viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 {[
@@ -291,7 +412,7 @@ export default function BusinessWebsites() {
             <motion.div 
               className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
@@ -301,7 +422,7 @@ export default function BusinessWebsites() {
                 className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
                 variants={staggerContainer}
                 initial="initial"
-                whileInView="animate"
+                animate="animate"
                 viewport={{ once: true, amount: 0.1, margin: "-50px 0px" }}
               >
                 {[
@@ -329,7 +450,7 @@ export default function BusinessWebsites() {
             <motion.div 
               className="bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
@@ -356,7 +477,7 @@ export default function BusinessWebsites() {
             <motion.div 
               className="text-center mb-8 p-6 rounded-xl shadow-md"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
@@ -364,6 +485,7 @@ export default function BusinessWebsites() {
                 We build business websites that go beyond just being an online presence – they serve as strategic tools to help your business grow and succeed in Finland.
               </p>
             </motion.div>
+
           </div>
         </div>
       </section>
