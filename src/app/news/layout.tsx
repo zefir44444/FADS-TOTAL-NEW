@@ -63,20 +63,20 @@ export default function NewsLayout({
       />
         {/* Article Content */}
         <section className="">
-          <div className="container mx-auto px-6">
+          <div className="w-full max-w-[100vw] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="bg-white rounded-2xl overflow-hidden">
-                <div className="p-8">
+              <div className="bg-white rounded-lg sm:rounded-xl overflow-hidden">
+                <div className="p-4 sm:p-6 md:p-8">
                   {children}
                   
-                  <div className="mt-10 pt-8 border-t border-gray-100">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="mt-6 sm:mt-8 md:mt-10 pt-6 sm:pt-8 border-t border-gray-100">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
                       <div className="flex items-center">
-                        <div className="w-12 h-12 rounded-full bg-[#e59500]/10 flex items-center justify-center mr-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#e59500]/10 flex items-center justify-center mr-3 sm:mr-4">
                           <svg 
                             xmlns="http://www.w3.org/2000/svg" 
-                            width="20" 
-                            height="20" 
+                            width="16" 
+                            height="16" 
                             viewBox="0 0 24 24" 
                             fill="none" 
                             stroke="currentColor" 
@@ -90,8 +90,8 @@ export default function NewsLayout({
                           </svg>
                         </div>
                         <div>
-                          <p className="font-medium text-gray-900">Posted by</p>
-                          <p className="text-gray-600">FADS Digital Hub Team</p>
+                          <p className="text-sm sm:text-base font-medium text-gray-900">Posted by</p>
+                          <p className="text-xs sm:text-sm text-gray-600">FADS Digital Hub Team</p>
                         </div>
                       </div>
                       
@@ -103,10 +103,10 @@ export default function NewsLayout({
                     </div>
                   </div>
 
-                  <div className="text-center mt-8">
+                  <div className="text-center mt-6 sm:mt-8">
                     <Link 
                       href="/news" 
-                      className="inline-flex items-center text-[#e59500] font-medium hover:underline group"
+                      className="inline-flex items-center text-[#e59500] font-medium hover:underline group text-sm sm:text-base"
                     >
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
