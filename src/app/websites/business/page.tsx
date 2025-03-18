@@ -122,7 +122,7 @@ export default function BusinessWebsites() {
                 <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Professional Presence</h3>
-              <p className="text-gray-600">Establish credibility with a polished website that reflects your company's expertise and values.</p>
+              <p className="text-gray-600">Establish credibility with a polished website that reflects your company&apos;s expertise and values.</p>
             </motion.div>
 
             <motion.div 

@@ -102,7 +102,7 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[200px] border border-white/20 
+              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[240px] border border-white/20 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
                    style={{
@@ -131,12 +131,6 @@ const Header = () => {
                     Landing Page
                   </Link>
                   <Link 
-                    href="/websites/multi-page" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Multi-page Website
-                  </Link>
-                  <Link 
                     href="/websites/showcases" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
@@ -155,17 +149,18 @@ const Header = () => {
                     Personal Websites
                   </Link>
                   <Link 
-                    href="/websites/custom" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Custom Website Development
-                  </Link>
-                  <Link 
                     href="/websites/ecommerce" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
                     E-commerce Websites
                   </Link>
+                  <Link 
+                    href="/websites/custom" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Custom Development
+                  </Link>
+                 
                 </div>
               </div>
             </div>
@@ -395,13 +390,6 @@ const Header = () => {
                       Landing Page
                     </Link>
                     <Link 
-                      href="/websites/multi-page" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Multi-page Website
-                    </Link>
-                    <Link 
                       href="/websites/showcases" 
                       className="text-sm hover:text-[#e59500] transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
@@ -423,19 +411,20 @@ const Header = () => {
                       Personal Websites
                     </Link>
                     <Link 
-                      href="/websites/custom" 
-                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Custom Website Development
-                    </Link>
-                    <Link 
                       href="/websites/ecommerce" 
                       className="text-sm hover:text-[#e59500] transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       E-commerce Website Development
                     </Link>
+                    <Link 
+                      href="/websites/custom" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Custom Development
+                    </Link>
+                   
                   </div>
                 )}
               </div>

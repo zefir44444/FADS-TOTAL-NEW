@@ -31,12 +31,6 @@ const staggerContainer = {
   }
 };
 
-const scaleIn = {
-  initial: { scale: 0.9, opacity: 0 },
-  animate: { scale: 1, opacity: 1 },
-  transition: { duration: 0.5 }
-};
-
 export default function LandingPages() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -140,7 +134,7 @@ export default function LandingPages() {
                 <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Brand Enhancement</h3>
-              <p className="text-gray-600">Showcase your brand's unique value proposition in a focused, compelling presentation.</p>
+              <p className="text-gray-600">Showcase your brand&apos;s unique value proposition in a focused, compelling presentation.</p>
             </motion.div>
           </div>
         </div>
@@ -523,7 +517,7 @@ export default function LandingPages() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                  We understand that every business is unique. That's why we analyze your industry, target audience, and competition to create a landing page that aligns with your specific goals.
+                  We understand that every business is unique. That&apos;s why we analyze your industry, target audience, and competition to create a landing page that aligns with your specific goals.
                 </motion.p>
                 
                 <motion.h5 
