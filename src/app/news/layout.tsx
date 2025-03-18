@@ -72,27 +72,7 @@ export default function NewsLayout({
                   <div className="mt-6 sm:mt-8 md:mt-10 pt-6 sm:pt-8 border-t border-gray-100">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
                       <div className="flex items-center">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#e59500]/10 flex items-center justify-center mr-3 sm:mr-4">
-                          <svg 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            width="16" 
-                            height="16" 
-                            viewBox="0 0 24 24" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            strokeWidth="2" 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
-                            className="text-[#e59500]"
-                          >
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                          </svg>
-                        </div>
-                        <div>
-                          <p className="text-sm sm:text-base font-medium text-gray-900">Posted by</p>
-                          <p className="text-xs sm:text-sm text-gray-600">FADS Digital Hub Team</p>
-                        </div>
+                   
                       </div>
                       
                       <SocialShare 
