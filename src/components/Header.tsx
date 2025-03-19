@@ -327,10 +327,11 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden mx-4 mt-2 bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg py-6 px-6 border border-white/20 overflow-hidden" 
+              className="md:hidden mx-4 mt-2 bg-white rounded-2xl shadow-lg py-6 px-6 border border-white/20 overflow-hidden" 
               style={{
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)"
+                backdropFilter: "none",
+                WebkitBackdropFilter: "none",
+                backgroundColor: "rgba(255, 255, 255, 1)"
               }}
             >
               <motion.nav 
