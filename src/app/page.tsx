@@ -878,39 +878,7 @@ export default function Home() {
                 </div>
               </motion.div>
               
-              {/* Personal Website */}
-              <motion.div 
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="h-3 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold mb-3">Personal Website</h3>
-                  <p className="text-gray-600 mb-4 flex-grow">
-                    A compact, single-page website that contains essential information about your business - contact details, services, and brief company description. Perfect for small businesses and professionals who need a simple online presence.
-                  </p>
-                  <div className="flex items-center text-sm text-gray-500 mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#e59500]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Development time: 1-2 weeks
-                  </div>
-                  <Link 
-                    href="/websites/personal" 
-                    className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
-                  >
-                    <span className="flex items-center justify-center">
-                      Learn more
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
-              </motion.div>
-              
+             
               {/* Custom and Tailor-Made Solutions */}
               <motion.div 
                 className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group flex flex-col h-full"
