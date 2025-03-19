@@ -87,7 +87,7 @@ export default function LandingPages() {
       </section>
       
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <motion.h2 
             className="text-3xl font-bold text-center mb-12"
@@ -459,14 +459,9 @@ export default function LandingPages() {
             </div>
             
             {/* Your Path to Success Section */}
-            <motion.div 
-              className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 mt-12 mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+      
               <motion.h3 
-                className="text-2xl md:text-3xl font-bold mb-6 text-center text-black"
+                className="text-2xl md:text-3xl font-bold text-center text-black mt-12 mb-12" 
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -571,12 +566,7 @@ export default function LandingPages() {
               </motion.ul>
               
               {/* Boost Your Business Section */}
-              <motion.div
-                className="bg-gradient-to-r from-[#840032]/5 to-[#e59500]/5 p-8 rounded-xl mt-10 shadow-inner"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-              >
+             
                 <motion.h4 
                   className="text-xl md:text-2xl font-bold mb-6 text-center text-black flex items-center justify-center"
                   initial={{ opacity: 0 }}
@@ -627,8 +617,7 @@ export default function LandingPages() {
                     <p className="text-base">Want to know more about pricing and timelines? Contact us today for a consultation or request a quote.</p>
                   </motion.div>
                 </div>
-              </motion.div>
-            </motion.div>
+       
             
             {/* CTA */}
             <motion.div 

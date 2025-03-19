@@ -279,7 +279,7 @@ export default function BusinessWebsites() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
+             
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
@@ -320,7 +320,6 @@ export default function BusinessWebsites() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
@@ -364,7 +363,6 @@ export default function BusinessWebsites() {
             
             {/* Остальные секции с аналогичными анимациями */}
             <motion.div 
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
@@ -390,7 +388,7 @@ export default function BusinessWebsites() {
                   { title: "Contact and inquiry forms", text: "Seamless communication channels" },
                   { title: "Career and recruitment", text: "Attracting qualified talent" },
                   { title: "Customer testimonials and case studies", text: "Building trust and credibility" },
-                  { title: "Multilingual support", text: "Finnish, Swedish, English, and other languages" }
+                  { title: "Multilingual support", text: "English, Finnish, and other languages" }
                 ].map((item, index) => (
                   <motion.div 
                     key={index}
@@ -410,7 +408,6 @@ export default function BusinessWebsites() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16 hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px 0px" }}
