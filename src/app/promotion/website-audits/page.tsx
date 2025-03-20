@@ -16,7 +16,13 @@ import {
   BuildingStorefrontIcon,
   DocumentDuplicateIcon,
   LightBulbIcon,
-  CloudArrowUpIcon
+  CloudArrowUpIcon,
+  ComputerDesktopIcon,
+  DocumentTextIcon,
+  BuildingOfficeIcon,
+  ShoppingCartIcon,
+  PencilSquareIcon,
+  MegaphoneIcon
 } from '@heroicons/react/24/outline';
 
 const fadeInUp = {
@@ -142,7 +148,7 @@ export default function WebsiteAudits() {
               },
               {
                 title: "SEO Audit",
-                description: "Analysis of over 100 SEO factors to improve your site&apos;s search engine visibility.",
+                description: "Analysis of SEO factors to improve your site&apos;s search engine visibility.",
                 icon: <MagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />
               },
               {
@@ -275,7 +281,7 @@ export default function WebsiteAudits() {
             >
               <h2 className="text-3xl font-bold mb-6">SEO Audit</h2>
               <p className="text-lg text-gray-700 mb-6">
-                We check over 100 SEO factors to identify key issues and opportunities. You&apos;ll receive a detailed report with clear recommendations on how to improve your site&apos;s visibility on search engines.
+                We check SEO factors to identify key issues and opportunities. You&apos;ll receive a detailed report with clear recommendations on how to improve your site&apos;s visibility on search engines.
               </p>
               
               <motion.div 
@@ -421,28 +427,36 @@ export default function WebsiteAudits() {
             viewport={{ once: true, amount: 0.1 }}
           >
             {[
-              { name: "Web Design & Development", url: "/websites" },
-              { name: "Landing Page Creation", url: "/websites/landing" },
-              { name: "Corporate Websites", url: "/websites/business" },
-              { name: "E-commerce Solutions", url: "/websites/ecommerce" },
-              { name: "Website Maintenance", url: "/promotion/website-audits" },
-              { name: "Content & Usability Improvements", url: "/promotion/website-audits" },
-              { name: "SEO Optimization", url: "/promotion/seo" },
-              { name: "Google Ads Management", url: "/promotion/google-ads" }
+              { name: "Web Design & Development", url: "/websites", icon: ComputerDesktopIcon },
+              { name: "Landing Page Creation", url: "/websites/landing", icon: DocumentTextIcon },
+              { name: "Business Websites", url: "/websites/business", icon: BuildingOfficeIcon },
+              { name: "E-commerce Solutions", url: "/websites/ecommerce", icon: ShoppingCartIcon },
+              { name: "Content & Usability Improvements", url: "/promotion/website-audits", icon: PencilSquareIcon },
+              { name: "SEO Optimization", url: "/promotion/seo", icon: MagnifyingGlassIcon },
+              { name: "Google Ads Management", url: "/promotion/google-ads", icon: MegaphoneIcon },
+              { name: "Custom Solution", url: "/contact", icon: Cog6ToothIcon, special: true }
             ].map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
-                className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center"
-                variants={scaleIn}
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                variants={fadeInUp}
+                className={`bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group ${service.special ? 'border-2 border-[#e59500]' : ''}`}
               >
-                <Link 
-                  href={service.url}
-                  className="block h-full w-full text-gray-700 hover:text-[#e59500] transition-colors duration-300"
-                >
-                  {service.name}
-                </Link>
+                <div className={`h-3 ${service.special ? 'bg-[#e59500]' : 'bg-gradient-to-r from-[#e59500] to-[#840032]'}`}></div>
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <service.icon className={`h-8 w-8 ${service.special ? 'text-[#840032]' : 'text-[#e59500]'} mr-3`} />
+                    <h3 className="text-xl font-bold">{service.name}</h3>
+                  </div>
+                  <Link 
+                    href={service.url}
+                    className={`inline-flex items-center ${service.special ? 'text-[#840032] font-semibold' : 'text-[#e59500]'} hover:text-[#840032] transition-colors duration-300`}
+                  >
+                    {service.special ? 'Request custom solution' : 'Learn more'}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -476,7 +490,7 @@ export default function WebsiteAudits() {
               { icon: <DocumentMagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />, text: "Regularly updated, practical checklists" },
               { icon: <ShieldCheckIcon className="w-6 h-6 text-[#e59500]" />, text: "Dedicated testing environment for safe improvements" },
               { icon: <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />, text: "Based in Finland, serving clients throughout Europe" },
-              { icon: <UserGroupIcon className="w-6 h-6 text-[#e59500]" />, text: "Expert team including developers, UX/UI designers, and IT specialists" }
+              { icon: <UserGroupIcon className="w-6 h-6 text-[#e59500]" />, text: "Tailored approach for each client considering their unique business needs" }
             ].map((item, index) => (
               <motion.div 
                 key={index}
