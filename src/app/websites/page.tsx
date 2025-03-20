@@ -49,67 +49,7 @@ export default function WebsitesOverview() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Декоративные элементы фона */}
-        <motion.div className="absolute inset-0 z-0 opacity-30">
-          <motion.div 
-            className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"
-            animate={{ 
-              scale: [1, 1.05, 1],
-              x: [0, -5, 0],
-              y: [0, 5, 0]
-            }}
-            transition={{ 
-              repeat: Infinity, 
-              duration: 8,
-              ease: "easeInOut" 
-            }}
-          ></motion.div>
-          <motion.div 
-            className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"
-            animate={{ 
-              scale: [1, 1.08, 1],
-              x: [0, 5, 0],
-              y: [0, -5, 0]
-            }}
-            transition={{ 
-              repeat: Infinity, 
-              duration: 10,
-              ease: "easeInOut" 
-            }}
-          ></motion.div>
-          
-          {/* Плавающие геометрические фигуры */}
-          <motion.div 
-            className="absolute top-1/4 left-1/4 w-12 h-12 border-2 border-[#e59500] rounded-lg opacity-30"
-            animate={{ 
-              y: [0, -15, 0],
-              rotate: [0, 5, 0]
-            }}
-            transition={{ 
-              repeat: Infinity, 
-              duration: 5,
-              ease: "easeInOut"
-            }}
-            style={{
-              y: scrollY * 0.05
-            }}
-          ></motion.div>
-          <motion.div 
-            className="absolute top-1/3 right-1/4 w-8 h-8 border-2 border-[#840032] rounded-full opacity-30"
-            animate={{ 
-              y: [0, 20, 0],
-              rotate: [0, -5, 0]
-            }}
-            transition={{ 
-              repeat: Infinity, 
-              duration: 7,
-              ease: "easeInOut"
-            }}
-            style={{
-              y: scrollY * -0.03
-            }}
-          ></motion.div>
-        </motion.div>
+    
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
@@ -162,32 +102,13 @@ export default function WebsitesOverview() {
       
       {/* Website Types Section */}
       <motion.section 
-        className="py-16 bg-gray-50 relative overflow-hidden"
+        className="py-16 relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        {/* Декоративные элементы фона */}
-        <motion.div 
-          className="absolute inset-0 z-0 opacity-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.2 }}
-          transition={{ duration: 1 }}
-        >
-          <div 
-            className="absolute top-20 right-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/5 to-[#840032]/5 blur-3xl"
-            style={{
-              transform: `translate(${scrollY * 0.02}px, ${scrollY * -0.02}px)`
-            }}
-          ></div>
-          <div 
-            className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/5 to-[#e59500]/5 blur-3xl"
-            style={{
-              transform: `translate(${scrollY * -0.02}px, ${scrollY * 0.01}px)`
-            }}
-          ></div>
-        </motion.div>
+
         
         <div className="container mx-auto px-6 relative z-10">
           
