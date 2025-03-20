@@ -490,7 +490,7 @@ export default function WebsiteAudits() {
               { icon: <DocumentMagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />, text: "Regularly updated, practical checklists" },
               { icon: <ShieldCheckIcon className="w-6 h-6 text-[#e59500]" />, text: "Dedicated testing environment for safe improvements" },
               { icon: <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />, text: "Based in Finland, serving clients throughout Europe" },
-              { icon: <UserGroupIcon className="w-6 h-6 text-[#e59500]" />, text: "Tailored approach for each client considering their unique business needs" }
+              { icon: <UserGroupIcon className="w-6 h-6 text-[#e59500]" />, text: "Personalized approach for each client considering their unique business needs" }
             ].map((item, index) => (
               <motion.div 
                 key={index}
