@@ -431,7 +431,7 @@ export default function WebsiteAudits() {
               { name: "Landing Page Creation", url: "/websites/landing", icon: DocumentTextIcon },
               { name: "Business Websites", url: "/websites/business", icon: BuildingOfficeIcon },
               { name: "E-commerce Solutions", url: "/websites/ecommerce", icon: ShoppingCartIcon },
-              { name: "Content & Usability Improvements", url: "/promotion/website-audits", icon: PencilSquareIcon },
+              { name: "YouTube Ads", url: "/promotion/youtube", icon: RocketLaunchIcon },
               { name: "SEO Optimization", url: "/promotion/seo", icon: MagnifyingGlassIcon },
               { name: "Google Ads Management", url: "/promotion/google-ads", icon: MegaphoneIcon },
               { name: "Custom Solution", url: "/contact", icon: Cog6ToothIcon, special: true }
