@@ -42,6 +42,19 @@ export default function EcommerceWebsitesPage() {
               Create a powerful online store that drives sales and provides an exceptional shopping experience for your customers.
             </p>
           </motion.div>
+          <motion.div 
+            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Link 
+              href="/contact" 
+              className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300 shadow-lg shadow-orange-200/50"
+            >
+              Get a quote
+            </Link>
+          </motion.div>
         </div>
       </section>
 

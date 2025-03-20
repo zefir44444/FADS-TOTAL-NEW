@@ -74,7 +74,7 @@ export default function RootLayout({
               (function(d,s,i,r) {
                 if (d.getElementById(i)){return;}
                 var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
-                n.id=i;n.src='//js.hs-analytsrc\app\layout.tsxs.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/49357637.js';
+                n.id=i;n.src='//js.hs-analytsrc\\app\\layout.tsxs.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/49357637.js';
                 e.parentNode.insertBefore(n,e);
               })(document,"script","hs-analytics",300000);
             `,
@@ -122,6 +122,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${tektur.variable} ${spaceGrotesk.variable} antialiased overflow-y-auto`}
+        style={{ userSelect: 'none' }}
       >
          <Header />
          <div className="pt-16 md:pt-26">
