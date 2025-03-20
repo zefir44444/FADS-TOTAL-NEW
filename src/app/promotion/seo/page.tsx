@@ -4,18 +4,12 @@ import React from 'react';
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { 
-  CheckCircleIcon,
-  MagnifyingGlassIcon,
-  DocumentTextIcon,
-  GlobeAltIcon,
+  VideoCameraIcon,
+  UserGroupIcon,
+  PlayCircleIcon,
   ChartBarIcon,
-  SparklesIcon,
-  ClipboardDocumentCheckIcon,
-  CodeBracketIcon,
-  ArrowTrendingUpIcon,
-  LinkIcon,
-  FingerPrintIcon,
-  RocketLaunchIcon
+  EyeIcon,
+  CursorArrowRaysIcon
 } from '@heroicons/react/24/outline';
 
 const fadeInUp = {
@@ -83,7 +77,7 @@ export default function SeoOptimization() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Improve your website&apos;s visibility in search engines and drive organic traffic with our comprehensive SEO services.
+              Let&apos;s create a custom SEO strategy that maximizes your organic traffic and conversions.
             </motion.p>
           </motion.div>
           
@@ -125,7 +119,7 @@ export default function SeoOptimization() {
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
-                <MagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />
+                <VideoCameraIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">SEO Audit</h3>
               <p className="text-gray-600">Comprehensive analysis of your website's current SEO status, identifying issues and opportunities.</p>
@@ -139,7 +133,7 @@ export default function SeoOptimization() {
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
-                <DocumentTextIcon className="w-6 h-6 text-[#e59500]" />
+                <UserGroupIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">On-Page SEO</h3>
               <p className="text-gray-600">Optimization of content, meta tags, and structure for better search engine visibility.</p>
@@ -153,7 +147,7 @@ export default function SeoOptimization() {
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
-                <LinkIcon className="w-6 h-6 text-[#e59500]" />
+                <PlayCircleIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Link Building</h3>
               <p className="text-gray-600">Strategic acquisition of high-quality backlinks to improve domain authority.</p>

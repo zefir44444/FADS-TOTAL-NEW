@@ -4,18 +4,12 @@ import React from 'react';
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { 
-  CheckCircleIcon,
-  CursorArrowRaysIcon,
-  ChartBarIcon,
-  PresentationChartLineIcon,
+  VideoCameraIcon,
   UserGroupIcon,
-  GlobeAltIcon,
+  PlayCircleIcon,
+  ChartBarIcon,
   EyeIcon,
-  MegaphoneIcon,
-  RocketLaunchIcon,
-  CreditCardIcon,
-  BanknotesIcon,
-  CubeTransparentIcon
+  CursorArrowRaysIcon
 } from '@heroicons/react/24/outline';
 
 const fadeInUp = {
@@ -30,12 +24,6 @@ const staggerContainer = {
       staggerChildren: 0.1
     }
   }
-};
-
-const scaleIn = {
-  initial: { scale: 0.9, opacity: 0 },
-  animate: { scale: 1, opacity: 1 },
-  transition: { duration: 0.5 }
 };
 
 export default function GoogleAds() {
@@ -139,10 +127,10 @@ export default function GoogleAds() {
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
-                <GlobeAltIcon className="w-6 h-6 text-[#e59500]" />
+                <VideoCameraIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Display Ads</h3>
-              <p className="text-gray-600">Visually engaging ads across Google's network of websites to build brand awareness.</p>
+              <p className="text-gray-600">Visually engaging ads across Google&apos;s network of websites to build brand awareness.</p>
             </motion.div>
 
             <motion.div 
@@ -153,7 +141,7 @@ export default function GoogleAds() {
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
-                <CreditCardIcon className="w-6 h-6 text-[#e59500]" />
+                <PlayCircleIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Shopping Ads</h3>
               <p className="text-gray-600">Showcase your products with images and pricing directly in Google search results.</p>
@@ -258,7 +246,7 @@ export default function GoogleAds() {
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
-                <RocketLaunchIcon className="w-6 h-6 text-[#e59500]" />
+                <VideoCameraIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Immediate Results</h3>
               <p className="text-gray-600">Start generating leads and sales quickly while SEO builds over time.</p>
@@ -315,7 +303,7 @@ export default function GoogleAds() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              Get a personalized Google Ads strategy designed to maximize your return on ad spend and achieve your business objectives.
+              Let&apos;s create a custom Google Ads strategy that maximizes your return on investment.
             </motion.p>
             <motion.div
               whileHover={{ scale: 1.05 }}
