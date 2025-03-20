@@ -421,14 +421,14 @@ export default function WebsiteAudits() {
             viewport={{ once: true, amount: 0.1 }}
           >
             {[
-              "Web Design & Development",
-              "Landing Page Creation",
-              "Corporate Websites",
-              "E-commerce Solutions",
-              "Website Maintenance",
-              "Content & Usability Improvements",
-              "SEO Optimization",
-              "Google Ads Management"
+              { name: "Web Design & Development", url: "/websites" },
+              { name: "Landing Page Creation", url: "/websites/landing" },
+              { name: "Corporate Websites", url: "/websites/business" },
+              { name: "E-commerce Solutions", url: "/websites/ecommerce" },
+              { name: "Website Maintenance", url: "/promotion/website-audits" },
+              { name: "Content & Usability Improvements", url: "/promotion/website-audits" },
+              { name: "SEO Optimization", url: "/promotion/seo" },
+              { name: "Google Ads Management", url: "/promotion/google-ads" }
             ].map((service, index) => (
               <motion.div 
                 key={index}
@@ -437,7 +437,12 @@ export default function WebsiteAudits() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <p className="text-gray-700">{service}</p>
+                <Link 
+                  href={service.url}
+                  className="block h-full w-full text-gray-700 hover:text-[#e59500] transition-colors duration-300"
+                >
+                  {service.name}
+                </Link>
               </motion.div>
             ))}
           </motion.div>

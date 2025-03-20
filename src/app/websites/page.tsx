@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 
 // Варианты анимации для контейнеров с элементами
 const staggerContainer = {
@@ -28,18 +27,6 @@ const fadeInUp = {
 };
 
 export default function WebsitesOverview() {
-  const [, setScrollY] = useState(0);
-
-  // Эффект для отслеживания прокрутки
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -49,8 +36,6 @@ export default function WebsitesOverview() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-    
-        
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center mb-12"
@@ -108,10 +93,7 @@ export default function WebsitesOverview() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-
-        
         <div className="container mx-auto px-6 relative z-10">
-          
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
