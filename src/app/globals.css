@@ -24,13 +24,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
-  /* Предотвращение выделения текста */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
