@@ -217,7 +217,7 @@ const Header = () => {
                   </Link>
              
                   <Link 
-                    href="/growth-engine" 
+                    href="/promotion/growth-engine" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
                     Growth Engine
@@ -517,7 +517,7 @@ const Header = () => {
                         </Link>
                       
                         <Link 
-                          href="/growth-engine" 
+                          href="/promotion/growth-engine" 
                           className="text-sm hover:text-[#e59500] transition-colors duration-300"
                           onClick={() => setIsMenuOpen(false)}
                         >

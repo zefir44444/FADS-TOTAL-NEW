@@ -28,13 +28,12 @@ const fadeInUp = {
 };
 
 export default function WebsitesOverview() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   // Эффект для отслеживания прокрутки
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY;
-      setScrollPosition(scrolled);
+      setScrollY(window.scrollY);
     };
     
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -50,6 +49,8 @@ export default function WebsitesOverview() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
+    
+        
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center mb-12"
@@ -103,15 +104,20 @@ export default function WebsitesOverview() {
       <motion.section 
         className="py-16 relative overflow-hidden"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
       >
+
+        
         <div className="container mx-auto px-6 relative z-10">
+          
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="hidden"
-            animate="show"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
           >
             {/* Business Websites */}
             <motion.div 
@@ -264,14 +270,15 @@ export default function WebsitesOverview() {
       <motion.section 
         className="py-16 bg-white relative overflow-hidden"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
       >
         <motion.div 
           className="absolute inset-0 z-0 opacity-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.2 }}
-          transition={{ duration: 1, delay: 0.9 }}
+          transition={{ duration: 1 }}
         >
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e59500]/5 via-transparent to-[#840032]/5"></div>
         </motion.div>
@@ -280,36 +287,40 @@ export default function WebsitesOverview() {
           <motion.div 
             className="max-w-4xl mx-auto bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 rounded-2xl p-8 md:p-12 shadow-lg"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.02 }}
           >
             <motion.div 
               className="text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.1, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
             >
               <motion.h2 
                 className="text-3xl font-bold mb-4"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 1.2 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
               >
                 Ready to Start Your Project?
               </motion.h2>
               <motion.p 
                 className="text-lg mb-8"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 1.3 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 }}
               >
                 Contact us today to discuss your website needs and get a personalized quote for your project.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 1.4 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

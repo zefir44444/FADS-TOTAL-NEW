@@ -28,28 +28,23 @@ export default function WebsiteUpdatePage() {
       </div>
 
       <div className="relative h-64 md:h-96 w-full group mb-8">
-        <div className="absolute inset-0 w-full h-full">
-          <Image 
-            src="/fads-black.svg" 
-            alt="Website Update v0.8" 
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-            priority
-            className="transition-transform duration-500 group-hover:scale-105"
-            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "/fads-black.svg";
-            }}
-          />
-        </div>
+        <Image 
+          src="/fads-black.svg" 
+          alt="Website Update v0.8" 
+          fill
+          style={{ objectFit: "contain" }}
+          className="transition-transform duration-500 group-hover:scale-105"
+          onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "/fads-black.svg";
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
 
-      <div className="min-h-[200px]">
-        <p className="lead text-xl text-gray-700 mb-8 leading-relaxed">
-          We&apos;re excited to announce the release of version 0.8 of our website, featuring significant improvements to enhance your browsing experience and make our services more accessible.
-        </p>
-      </div>
+      <p className="lead text-xl text-gray-700 mb-8 leading-relaxed">
+        We&apos;re excited to announce the release of version 0.8 of our website, featuring significant improvements to enhance your browsing experience and make our services more accessible.
+      </p>
       
       <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s New in v0.8</h2>
       

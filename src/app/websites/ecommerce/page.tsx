@@ -35,28 +35,12 @@ export default function EcommerceWebsitesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-              <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
-              Sales-Driven Platforms
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               E-commerce Website Development
             </h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-600">
               Create a powerful online store that drives sales and provides an exceptional shopping experience for your customers.
             </p>
-          </motion.div>
-          <motion.div 
-            className="mt-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            <Link 
-              href="/contact" 
-              className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300 shadow-lg shadow-orange-200/50"
-            >
-              Get a quote
-            </Link>
           </motion.div>
         </div>
       </section>
@@ -67,8 +51,9 @@ export default function EcommerceWebsitesPage() {
           <motion.div 
             className="max-w-3xl mx-auto text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl font-bold mb-6">E-commerce Development in Finland</h2>
             <p className="text-xl text-gray-600">
@@ -80,7 +65,8 @@ export default function EcommerceWebsitesPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="initial"
-            animate="animate"
+            whileInView="animate"
+            viewport={{ once: true }}
           >
             <motion.div 
               className="bg-white p-6 rounded-xl shadow-sm"

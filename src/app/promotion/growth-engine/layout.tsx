@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FADS Growth Engine | Smart Website & eCommerce Promotion",
     description: "Complete growth system combining website development, SEO, paid ads, AI-driven optimization, and compliance with industry standards to bring in traffic, increase conversions, and scale your business.",
-    url: "https://fads.fi/growth-engine",
+    url: "https://fads.fi/promotion/growth-engine",
     siteName: "FADS",
     images: [
       {
@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://fads.fi/growth-engine",
+    canonical: "https://fads.fi/promotion/growth-engine",
     languages: {
-      "en-US": "https://fads.fi/growth-engine",
-      "fi-FI": "https://fads.fi/fi/growth-engine",
+      "en-US": "https://fads.fi/promotion/growth-engine",
+      "fi-FI": "https://fads.fi/fi/promotion/growth-engine",
     },
   },
   authors: [{ name: "FADS Team", url: "https://fads.fi" }],
@@ -90,9 +90,6 @@ export default function GrowthEngineLayout({
   return (
     <>
       {children}
-      <div className="fixed bottom-4 right-4 z-50">
-        <SocialShare />
-      </div>
     </>
   );
 } 

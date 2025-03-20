@@ -19,7 +19,7 @@ export default function AIOptimizationPage() {
               AI Search & Agent Optimization
             </h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-600">
-              More visibility, less effort. Tired of outdated optimization methods? We create content that not only looks good but effectively works with AI systems. Our optimization ensures maximum visibility of your content in AI search and AI agents.
+              Больше видимости, меньше усилий. Устали от устаревших методов оптимизации? Мы создаем контент, который не просто выглядит хорошо, но и эффективно работает с AI-системами. Наша оптимизация обеспечивает максимальную видимость вашего контента в AI-поиске и AI-агентах.
             </p>
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function AIOptimizationPage() {
       {/* Why Work With Us Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Почему выбирают нас?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
@@ -36,12 +36,12 @@ export default function AIOptimizationPage() {
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">AI-Compatible Content</h3>
-              <p className="text-gray-600">We don&apos;t just optimize content—we create a structure that AI systems easily understand and use.</p>
+              <h3 className="text-xl font-semibold mb-2">Контент, который работает с AI</h3>
+              <p className="text-gray-600">Мы не просто оптимизируем контент—мы создаем структуру, которую AI-системы легко понимают и используют.</p>
               <ul className="mt-4 space-y-2 text-gray-600">
-                <li>• Intuitive structure for AI agents</li>
-                <li>• Clean, semantically rich content</li>
-                <li>• Optimization for various AI platforms</li>
+                <li>• Интуитивная структура для AI-агентов</li>
+                <li>• Чистый, семантически богатый контент</li>
+                <li>• Оптимизация под различные AI-платформы</li>
               </ul>
             </div>
 
@@ -51,13 +51,13 @@ export default function AIOptimizationPage() {
                   <path d="M12 2v20M2 12h20"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Right Platform for Your Needs</h3>
-              <p className="text-gray-600">Choose the optimal solution for your business:</p>
+              <h3 className="text-xl font-semibold mb-2">Правильная платформа для ваших нужд</h3>
+              <p className="text-gray-600">Выбираем оптимальное решение для вашего бизнеса:</p>
               <ul className="mt-4 space-y-2 text-gray-600">
-                <li>• Headless CMS with AI optimization</li>
-                <li>• Integration with AI search systems</li>
-                <li>• Compatibility with AI agents</li>
-                <li>• Scalable AI solutions</li>
+                <li>• Headless CMS с AI-оптимизацией</li>
+                <li>• Интеграция с AI-поисковыми системами</li>
+                <li>• Совместимость с AI-агентами</li>
+                <li>• Масштабируемые AI-решения</li>
               </ul>
             </div>
 
@@ -67,12 +67,12 @@ export default function AIOptimizationPage() {
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Speed and Performance</h3>
-              <p className="text-gray-600">Optimized structure for AI systems:</p>
+              <h3 className="text-xl font-semibold mb-2">Скорость и производительность</h3>
+              <p className="text-gray-600">Оптимизированная структура для AI-систем:</p>
               <ul className="mt-4 space-y-2 text-gray-600">
-                <li>• Fast processing by AI agents</li>
-                <li>• Optimization for all platforms</li>
-                <li>• Clean code and modern tech stack</li>
+                <li>• Быстрая обработка AI-агентами</li>
+                <li>• Оптимизация для всех платформ</li>
+                <li>• Чистый код и современный стек технологий</li>
               </ul>
             </div>
           </div>
@@ -84,32 +84,32 @@ export default function AIOptimizationPage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">AI Optimization & Marketing</h3>
+              <h3 className="text-xl font-semibold mb-4">AI-оптимизация и маркетинг</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• AI search optimization from day one</li>
-                <li>• Pages optimized for AI visibility</li>
-                <li>• Integration with AI analytics</li>
-                <li>• AI metrics tracking</li>
+                <li>• Оптимизация под AI-поиск с первого дня</li>
+                <li>• Страницы, оптимизированные для AI-видимости</li>
+                <li>• Интеграция с AI-аналитикой</li>
+                <li>• Отслеживание AI-метрик</li>
               </ul>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Content Management</h3>
+              <h3 className="text-xl font-semibold mb-4">Управление контентом</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• User-friendly dashboard</li>
-                <li>• Automatic AI optimization</li>
-                <li>• Real-time analytics</li>
-                <li>• AI-powered improvement recommendations</li>
+                <li>• Удобная панель управления</li>
+                <li>• Автоматическая AI-оптимизация</li>
+                <li>• Аналитика в реальном времени</li>
+                <li>• AI-рекомендации по улучшению</li>
               </ul>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Automation & Growth</h3>
+              <h3 className="text-xl font-semibold mb-4">Автоматизация и рост</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Integration with AI-CRM systems</li>
-                <li>• Automatic AI notifications</li>
-                <li>• Advanced AI analytics</li>
-                <li>• AI-optimized decision making</li>
+                <li>• Интеграция с AI-CRM системами</li>
+                <li>• Автоматические AI-уведомления</li>
+                <li>• Продвинутая AI-аналитика</li>
+                <li>• AI-оптимизация принятия решений</li>
               </ul>
             </div>
           </div>
@@ -119,23 +119,23 @@ export default function AIOptimizationPage() {
       {/* For Whom Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Who Is This For?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Для кого это решение?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <h3 className="text-xl font-semibold mb-4">Small Business</h3>
-              <p className="text-gray-600">Quick start with AI optimization</p>
+              <h3 className="text-xl font-semibold mb-4">Малый бизнес</h3>
+              <p className="text-gray-600">Быстрый старт с AI-оптимизацией</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <h3 className="text-xl font-semibold mb-4">Growing Brands</h3>
-              <p className="text-gray-600">Scalable AI solutions</p>
+              <h3 className="text-xl font-semibold mb-4">Растущие бренды</h3>
+              <p className="text-gray-600">Масштабируемые AI-решения</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <h3 className="text-xl font-semibold mb-4">B2B & B2C Companies</h3>
-              <p className="text-gray-600">Integration with AI systems</p>
+              <h3 className="text-xl font-semibold mb-4">B2B & B2C компании</h3>
+              <p className="text-gray-600">Интеграция с AI-системами</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <h3 className="text-xl font-semibold mb-4">Startups</h3>
-              <p className="text-gray-600">AI-optimized MVPs</p>
+              <h3 className="text-xl font-semibold mb-4">Стартапы</h3>
+              <p className="text-gray-600">AI-оптимизированные MVP</p>
             </div>
           </div>
         </div>
@@ -144,42 +144,42 @@ export default function AIOptimizationPage() {
       {/* Process Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Как это работает</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">1</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Listen</h3>
-              <p className="text-gray-600">We study your business and goals</p>
+              <h3 className="text-xl font-semibold mb-2">Слушаем</h3>
+              <p className="text-gray-600">Изучаем ваш бизнес и цели</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">2</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Plan</h3>
-              <p className="text-gray-600">Create AI strategy</p>
+              <h3 className="text-xl font-semibold mb-2">Планируем</h3>
+              <p className="text-gray-600">Создаем AI-стратегию</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">3</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Develop</h3>
-              <p className="text-gray-600">Optimize for AI</p>
+              <h3 className="text-xl font-semibold mb-2">Разрабатываем</h3>
+              <p className="text-gray-600">Оптимизируем под AI</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">4</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Test</h3>
-              <p className="text-gray-600">Check AI compatibility</p>
+              <h3 className="text-xl font-semibold mb-2">Тестируем</h3>
+              <p className="text-gray-600">Проверяем AI-совместимость</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-[#e59500]">5</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Launch</h3>
-              <p className="text-gray-600">Support and optimization</p>
+              <h3 className="text-xl font-semibold mb-2">Запускаем</h3>
+              <p className="text-gray-600">Поддержка и оптимизация</p>
             </div>
           </div>
         </div>
@@ -189,15 +189,15 @@ export default function AIOptimizationPage() {
       <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="bg-[#e59500] rounded-2xl p-8 md:p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">Ready to Optimize for AI?</h2>
+            <h2 className="text-3xl font-bold mb-4">Готовы оптимизировать для AI?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Let&apos;s create content that effectively works with AI systems and attracts your target audience.
+              Давайте создадим контент, который будет эффективно работать с AI-системами и привлекать вашу целевую аудиторию.
             </p>
             <Link 
               href="/contact" 
               className="inline-block bg-white text-[#e59500] px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
             >
-              Get Started
+              Начать
             </Link>
           </div>
         </div>
