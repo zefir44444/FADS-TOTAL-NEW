@@ -1,8 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useAnimate, stagger } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { 
+  CheckCircleIcon,
+  MagnifyingGlassIcon,
+  DocumentMagnifyingGlassIcon,
+  ChartBarIcon,
+  UserGroupIcon,
+  Cog6ToothIcon,
+  CommandLineIcon,
+  ShieldCheckIcon,
+  WrenchScrewdriverIcon,
+  RocketLaunchIcon,
+  PaintBrushIcon,
+  BuildingStorefrontIcon,
+  DocumentDuplicateIcon,
+  LightBulbIcon,
+  CloudArrowUpIcon
+} from '@heroicons/react/24/outline';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -11,9 +27,7 @@ const fadeInUp = {
 };
 
 const staggerContainer = {
-  initial: { opacity: 0 },
-  animate: { 
-    opacity: 1,
+  animate: {
     transition: {
       staggerChildren: 0.1
     }
@@ -27,29 +41,8 @@ const scaleIn = {
 };
 
 export default function WebsiteAudits() {
-  // Хук для автоматического запуска анимации
-  const [scope, animate] = useAnimate();
-
-  // Эффект для запуска анимаций при монтировании компонента
-  useEffect(() => {
-    // Запускаем анимацию для фона
-    animate(".background-elements", { opacity: 0.3 }, { duration: 0.8 });
-    
-    // Запускаем анимацию для заголовка и описания
-    animate(".hero-content > *", 
-      { opacity: 1, y: 0 }, 
-      { duration: 0.5, delay: stagger(0.1) }
-    );
-    
-    // Запускаем анимацию для кнопки
-    animate(".cta-button", 
-      { opacity: 1, y: 0 }, 
-      { duration: 0.5, delay: 0.5 }
-    );
-  }, [animate]);
-
   return (
-    <div className="flex flex-col min-h-screen" ref={scope}>
+    <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <motion.section 
         className="py-20 md:py-28 bg-white relative overflow-hidden"
@@ -59,7 +52,7 @@ export default function WebsiteAudits() {
       >
         {/* Декоративные элементы фона */}
         <motion.div 
-          className="absolute inset-0 z-0 opacity-0 background-elements"
+          className="absolute inset-0 z-0 opacity-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.3 }}
           transition={{ duration: 1 }}
@@ -69,7 +62,7 @@ export default function WebsiteAudits() {
         </motion.div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-12 hero-content">
+          <div className="text-center mb-12">
             <motion.div 
               className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm shadow-lg shadow-orange-100"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -93,12 +86,12 @@ export default function WebsiteAudits() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Comprehensive website analysis to identify issues and opportunities for improvement in performance, SEO, and user experience.
+              We help you discover how your website is performing and what can be improved. Receive easy-to-follow visual reports and practical recommendations.
             </motion.p>
           </div>
           
           <motion.div 
-            className="mt-12 text-center cta-button"
+            className="mt-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -108,14 +101,14 @@ export default function WebsiteAudits() {
               href="/contact" 
               className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center hover:scale-105 transition-transform duration-300 shadow-lg shadow-orange-200/50"
             >
-              Get a quote
+              Request an Audit Quote
             </Link>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* What We Check Section */}
-      <section className="py-16">
+      {/* Types of Audits Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <motion.div 
             className="max-w-3xl mx-auto text-center mb-12"
@@ -124,9 +117,9 @@ export default function WebsiteAudits() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl font-bold mb-6">What We Check</h2>
+            <h2 className="text-3xl font-bold mb-6">Types of Audits</h2>
             <p className="text-xl text-gray-600">
-              Our comprehensive audit covers all aspects of your website to ensure optimal performance and user experience.
+              Choose the audit type that best suits your needs and goals.
             </p>
           </motion.div>
 
@@ -139,52 +132,29 @@ export default function WebsiteAudits() {
           >
             {[
               {
-                title: "Performance Analysis",
-                description: "We analyze your website's loading speed, server response time, and resource optimization.",
-                features: [
-                  "Page load speed",
-                  "Server response time",
-                  "Resource optimization",
-                  "Caching implementation",
-                  "CDN usage"
-                ],
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-[#e59500]">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
-                  </svg>
-                )
+                title: "Full Website Audit",
+                description: "Comprehensive analysis of marketing effectiveness, technical health, SEO status, and advertising performance.",
+                icon: <DocumentMagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />
+              },
+              {
+                title: "Technical Audit",
+                description: "Detailed review of technical issues affecting your website's performance and functionality.",
+                icon: <Cog6ToothIcon className="w-6 h-6 text-[#e59500]" />
               },
               {
                 title: "SEO Audit",
-                description: "Comprehensive analysis of your website's search engine optimization and visibility.",
-                features: [
-                  "Keyword optimization",
-                  "Meta tags and descriptions",
-                  "URL structure",
-                  "Internal linking",
-                  "Mobile optimization"
-                ],
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-[#e59500]">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197M12 3a9 9 0 110 18 9 9 0 010-18z" />
-                  </svg>
-                )
+                description: "Analysis of over 100 SEO factors to improve your site's search engine visibility.",
+                icon: <MagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />
               },
               {
-                title: "User Experience",
-                description: "Evaluation of your website's usability, accessibility, and overall user experience.",
-                features: [
-                  "Navigation structure",
-                  "Mobile responsiveness",
-                  "Accessibility compliance",
-                  "User flow analysis",
-                  "Conversion optimization"
-                ],
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-[#e59500]">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                )
+                title: "Google Ads Audit",
+                description: "Review of your Google Ads campaigns to enhance performance and ROI.",
+                icon: <ChartBarIcon className="w-6 h-6 text-[#e59500]" />
+              },
+              {
+                title: "Marketing & Usability Audit",
+                description: "Analysis of user interaction, conversion pathways, and overall website effectiveness.",
+                icon: <UserGroupIcon className="w-6 h-6 text-[#e59500]" />
               }
             ].map((item, index) => (
               <motion.div 
@@ -198,22 +168,284 @@ export default function WebsiteAudits() {
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <ul className="space-y-2 text-gray-600">
-                  {item.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-[#e59500] mr-2">•</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Audit Process Section */}
+      {/* Detailed Audit Types Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            {/* Full Website Audit */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold mb-6">Full Website Audit</h2>
+              <p className="text-lg text-gray-700 mb-6">
+                We review your website's marketing effectiveness, technical health, SEO status, and advertising performance. You'll receive a clear, visual report highlighting the most important issues to fix, along with recommendations for improvement.
+              </p>
+              
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                {[
+                  { icon: <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />, text: "Marketing effectiveness analysis" },
+                  { icon: <UserGroupIcon className="w-6 h-6 text-[#e59500]" />, text: "Usability assessment" },
+                  { icon: <Cog6ToothIcon className="w-6 h-6 text-[#e59500]" />, text: "Technical health review" },
+                  { icon: <MagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />, text: "SEO status evaluation" },
+                  { icon: <ChartBarIcon className="w-6 h-6 text-[#e59500]" />, text: "Advertising performance analysis" }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex items-start p-3 rounded-lg hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md"
+                    variants={fadeInUp}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="w-8 h-8 bg-[#e59500]/10 rounded-lg flex items-center justify-center mr-3">
+                      {item.icon}
+                    </div>
+                    <p className="text-gray-700">{item.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Technical Audit */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold mb-6">Technical Website Audit</h2>
+              <p className="text-lg text-gray-700 mb-6">
+                We'll find technical issues that affect your website's performance, providing you with a clear report and practical solutions.
+              </p>
+              
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                {[
+                  { icon: <CommandLineIcon className="w-6 h-6 text-[#e59500]" />, text: "Site indexing and crawling analysis" },
+                  { icon: <RocketLaunchIcon className="w-6 h-6 text-[#e59500]" />, text: "Page loading speed optimization" },
+                  { icon: <DocumentDuplicateIcon className="w-6 h-6 text-[#e59500]" />, text: "Duplicate content detection" },
+                  { icon: <Cog6ToothIcon className="w-6 h-6 text-[#e59500]" />, text: "CMS and platform review" },
+                  { icon: <ShieldCheckIcon className="w-6 h-6 text-[#e59500]" />, text: "Security assessment" },
+                  { icon: <WrenchScrewdriverIcon className="w-6 h-6 text-[#e59500]" />, text: "Technical architecture analysis" }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex items-start p-3 rounded-lg hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md"
+                    variants={fadeInUp}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="w-8 h-8 bg-[#e59500]/10 rounded-lg flex items-center justify-center mr-3">
+                      {item.icon}
+                    </div>
+                    <p className="text-gray-700">{item.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* SEO Audit */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold mb-6">SEO Audit</h2>
+              <p className="text-lg text-gray-700 mb-6">
+                We check over 100 SEO factors to identify key issues and opportunities. You'll receive a detailed report with clear recommendations on how to improve your site's visibility on search engines.
+              </p>
+              
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                {[
+                  { icon: <MagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />, text: "Technical SEO analysis" },
+                  { icon: <LightBulbIcon className="w-6 h-6 text-[#e59500]" />, text: "Keyword effectiveness review" },
+                  { icon: <ChartBarIcon className="w-6 h-6 text-[#e59500]" />, text: "Traffic quality assessment" },
+                  { icon: <DocumentDuplicateIcon className="w-6 h-6 text-[#e59500]" />, text: "Content quality analysis" },
+                  { icon: <CloudArrowUpIcon className="w-6 h-6 text-[#e59500]" />, text: "Link quality evaluation" }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex items-start p-3 rounded-lg hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md"
+                    variants={fadeInUp}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="w-8 h-8 bg-[#e59500]/10 rounded-lg flex items-center justify-center mr-3">
+                      {item.icon}
+                    </div>
+                    <p className="text-gray-700">{item.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Google Ads Audit */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold mb-6">Google Ads Audit</h2>
+              <p className="text-lg text-gray-700 mb-6">
+                We review your Google Ads campaigns by understanding your business goals, current challenges, and desired outcomes. You'll get practical recommendations to enhance campaign performance.
+              </p>
+              
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                {[
+                  { icon: <ChartBarIcon className="w-6 h-6 text-[#e59500]" />, text: "Campaign performance analysis" },
+                  { icon: <MagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />, text: "Keyword quality review" },
+                  { icon: <DocumentDuplicateIcon className="w-6 h-6 text-[#e59500]" />, text: "Ad campaign structure evaluation" },
+                  { icon: <LightBulbIcon className="w-6 h-6 text-[#e59500]" />, text: "Ad effectiveness assessment" },
+                  { icon: <Cog6ToothIcon className="w-6 h-6 text-[#e59500]" />, text: "Campaign settings optimization" }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex items-start p-3 rounded-lg hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md"
+                    variants={fadeInUp}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="w-8 h-8 bg-[#e59500]/10 rounded-lg flex items-center justify-center mr-3">
+                      {item.icon}
+                    </div>
+                    <p className="text-gray-700">{item.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Marketing & Usability Audit */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold mb-6">Marketing & Usability Audit</h2>
+              <p className="text-lg text-gray-700 mb-6">
+                We help clarify your website's goals and analyze how your audience interacts with your site. We'll highlight important marketing and usability issues and give you actionable recommendations.
+              </p>
+              
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                {[
+                  { icon: <UserGroupIcon className="w-6 h-6 text-[#e59500]" />, text: "User interaction analysis" },
+                  { icon: <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />, text: "Competitiveness assessment" },
+                  { icon: <PaintBrushIcon className="w-6 h-6 text-[#e59500]" />, text: "Design effectiveness review" },
+                  { icon: <ChartBarIcon className="w-6 h-6 text-[#e59500]" />, text: "Conversion pathway analysis" },
+                  { icon: <LightBulbIcon className="w-6 h-6 text-[#e59500]" />, text: "Content clarity evaluation" }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex items-start p-3 rounded-lg hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md"
+                    variants={fadeInUp}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="w-8 h-8 bg-[#e59500]/10 rounded-lg flex items-center justify-center mr-3">
+                      {item.icon}
+                    </div>
+                    <p className="text-gray-700">{item.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.div 
+            className="max-w-3xl mx-auto text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold mb-6">Related Services</h2>
+            <p className="text-xl text-gray-600">
+              Discover our comprehensive range of website services to help your business grow.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {[
+              "Web Design & Development",
+              "Landing Page Creation",
+              "Corporate Websites",
+              "E-commerce Solutions",
+              "Website Maintenance",
+              "Content & Usability Improvements",
+              "SEO Optimization",
+              "Google Ads Management"
+            ].map((service, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center"
+                variants={scaleIn}
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <p className="text-gray-700">{service}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Work With Us Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <motion.div 
@@ -223,53 +455,36 @@ export default function WebsiteAudits() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl font-bold mb-6">Our Audit Process</h2>
+            <h2 className="text-3xl font-bold mb-6">Why Work With Us</h2>
             <p className="text-xl text-gray-600">
-              We follow a systematic approach to ensure thorough analysis and actionable recommendations.
+              We provide comprehensive website audits with practical recommendations and expert support.
             </p>
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.1 }}
           >
             {[
-              {
-                step: "01",
-                title: "Initial Analysis",
-                description: "We start with a comprehensive scan of your website using advanced tools."
-              },
-              {
-                step: "02",
-                title: "Detailed Review",
-                description: "Our experts manually review each aspect of your website."
-              },
-              {
-                step: "03",
-                title: "Issue Identification",
-                description: "We identify and categorize all issues and opportunities."
-              },
-              {
-                step: "04",
-                title: "Report & Recommendations",
-                description: "You receive a detailed report with actionable recommendations."
-              }
+              { icon: <DocumentMagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />, text: "Regularly updated, practical checklists" },
+              { icon: <ShieldCheckIcon className="w-6 h-6 text-[#e59500]" />, text: "Dedicated testing environment for safe improvements" },
+              { icon: <BuildingStorefrontIcon className="w-6 h-6 text-[#e59500]" />, text: "Based in Finland, serving clients throughout Europe" },
+              { icon: <UserGroupIcon className="w-6 h-6 text-[#e59500]" />, text: "Expert team including developers, UX/UI designers, and IT specialists" }
             ].map((item, index) => (
               <motion.div 
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 text-center"
+                className="flex items-start p-4 rounded-lg bg-white shadow-md hover:shadow-xl transition-shadow duration-300"
                 variants={fadeInUp}
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#e59500]">{item.step}</span>
+                <div className="w-10 h-10 bg-[#e59500]/10 rounded-lg flex items-center justify-center mr-4">
+                  {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <p className="text-gray-700">{item.text}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -294,7 +509,7 @@ export default function WebsiteAudits() {
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.5 }}
             >
-              Ready to Improve Your Website?
+              Request Your Audit Today
             </motion.h2>
             <motion.p 
               className="text-xl mb-8 max-w-2xl mx-auto"
@@ -303,7 +518,7 @@ export default function WebsiteAudits() {
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Get a comprehensive audit of your website and discover opportunities for improvement.
+              Discover clear, practical ways to enhance your website and grow your business.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -324,4 +539,4 @@ export default function WebsiteAudits() {
       </section>
     </div>
   );
-} 
+}

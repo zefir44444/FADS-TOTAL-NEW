@@ -99,7 +99,7 @@ export default function SeoOptimization() {
                 <VideoCameraIcon className="w-6 h-6 text-[#e59500]" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">SEO Audit</h3>
-              <p className="text-gray-600">Comprehensive analysis of your website's current SEO status, identifying issues and opportunities.</p>
+              <p className="text-gray-600">Comprehensive analysis of your website&apos;s current SEO status, identifying issues and opportunities.</p>
             </motion.div>
 
             <motion.div 
