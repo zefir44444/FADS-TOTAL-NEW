@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { 
-  CheckCircleIcon,
   MagnifyingGlassIcon,
   DocumentMagnifyingGlassIcon,
   ChartBarIcon,
@@ -138,12 +137,12 @@ export default function WebsiteAudits() {
               },
               {
                 title: "Technical Audit",
-                description: "Detailed review of technical issues affecting your website's performance and functionality.",
+                description: "Detailed review of technical issues affecting your website&apos;s performance and functionality.",
                 icon: <Cog6ToothIcon className="w-6 h-6 text-[#e59500]" />
               },
               {
                 title: "SEO Audit",
-                description: "Analysis of over 100 SEO factors to improve your site's search engine visibility.",
+                description: "Analysis of over 100 SEO factors to improve your site&apos;s search engine visibility.",
                 icon: <MagnifyingGlassIcon className="w-6 h-6 text-[#e59500]" />
               },
               {
@@ -176,7 +175,7 @@ export default function WebsiteAudits() {
       </section>
 
       {/* Detailed Audit Types Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             {/* Full Website Audit */}
@@ -189,7 +188,7 @@ export default function WebsiteAudits() {
             >
               <h2 className="text-3xl font-bold mb-6">Full Website Audit</h2>
               <p className="text-lg text-gray-700 mb-6">
-                We review your website's marketing effectiveness, technical health, SEO status, and advertising performance. You'll receive a clear, visual report highlighting the most important issues to fix, along with recommendations for improvement.
+                We review your website&apos;s marketing effectiveness, technical health, SEO status, and advertising performance. You&apos;ll receive a clear, visual report highlighting the most important issues to fix, along with recommendations for improvement.
               </p>
               
               <motion.div 
@@ -232,7 +231,7 @@ export default function WebsiteAudits() {
             >
               <h2 className="text-3xl font-bold mb-6">Technical Website Audit</h2>
               <p className="text-lg text-gray-700 mb-6">
-                We'll find technical issues that affect your website's performance, providing you with a clear report and practical solutions.
+                We&apos;ll find technical issues that affect your website&apos;s performance, providing you with a clear report and practical solutions.
               </p>
               
               <motion.div 
@@ -276,7 +275,7 @@ export default function WebsiteAudits() {
             >
               <h2 className="text-3xl font-bold mb-6">SEO Audit</h2>
               <p className="text-lg text-gray-700 mb-6">
-                We check over 100 SEO factors to identify key issues and opportunities. You'll receive a detailed report with clear recommendations on how to improve your site's visibility on search engines.
+                We check over 100 SEO factors to identify key issues and opportunities. You&apos;ll receive a detailed report with clear recommendations on how to improve your site&apos;s visibility on search engines.
               </p>
               
               <motion.div 
@@ -319,7 +318,7 @@ export default function WebsiteAudits() {
             >
               <h2 className="text-3xl font-bold mb-6">Google Ads Audit</h2>
               <p className="text-lg text-gray-700 mb-6">
-                We review your Google Ads campaigns by understanding your business goals, current challenges, and desired outcomes. You'll get practical recommendations to enhance campaign performance.
+                We review your Google Ads campaigns by understanding your business goals, current challenges, and desired outcomes. You&apos;ll get practical recommendations to enhance campaign performance.
               </p>
               
               <motion.div 
@@ -362,7 +361,7 @@ export default function WebsiteAudits() {
             >
               <h2 className="text-3xl font-bold mb-6">Marketing & Usability Audit</h2>
               <p className="text-lg text-gray-700 mb-6">
-                We help clarify your website's goals and analyze how your audience interacts with your site. We'll highlight important marketing and usability issues and give you actionable recommendations.
+                We help clarify your website&apos;s goals and analyze how your audience interacts with your site. We&apos;ll highlight important marketing and usability issues and give you actionable recommendations.
               </p>
               
               <motion.div 
@@ -446,7 +445,7 @@ export default function WebsiteAudits() {
       </section>
 
       {/* Why Work With Us Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <motion.div 
             className="max-w-3xl mx-auto text-center mb-12"
