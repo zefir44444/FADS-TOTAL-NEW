@@ -3,16 +3,6 @@
 import React from 'react';
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { 
-  CheckCircleIcon, 
-  BuildingOfficeIcon,
-  BriefcaseIcon,
-  MagnifyingGlassIcon,
-  Cog6ToothIcon,
-  BuildingStorefrontIcon,
-  RocketLaunchIcon,
-  GlobeAltIcon
-} from '@heroicons/react/24/outline';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -285,7 +275,7 @@ export default function GrowthEnginePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Let's Build a Smarter Growth System for Your Business
+              Let&apos;s Build a Smarter Growth System for Your Business
             </motion.h2>
             <motion.p 
               className="text-xl mb-8 max-w-2xl mx-auto"

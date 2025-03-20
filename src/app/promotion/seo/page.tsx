@@ -6,31 +6,8 @@ import { motion } from 'framer-motion';
 import { 
   VideoCameraIcon,
   UserGroupIcon,
-  PlayCircleIcon,
-  ChartBarIcon,
-  EyeIcon,
-  CursorArrowRaysIcon
+  PlayCircleIcon
 } from '@heroicons/react/24/outline';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const scaleIn = {
-  initial: { scale: 0.9, opacity: 0 },
-  animate: { scale: 1, opacity: 1 },
-  transition: { duration: 0.5 }
-};
 
 export default function SeoOptimization() {
   return (
@@ -252,7 +229,7 @@ export default function SeoOptimization() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              Get a professional SEO strategy tailored to your business goals and target audience. Let's help you achieve sustainable organic growth.
+              Get a professional SEO strategy tailored to your business goals and target audience. Let&apos;s help you achieve sustainable organic growth.
             </motion.p>
             <motion.div
               whileHover={{ scale: 1.05 }}

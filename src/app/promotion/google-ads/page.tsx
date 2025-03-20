@@ -8,7 +8,6 @@ import {
   UserGroupIcon,
   PlayCircleIcon,
   ChartBarIcon,
-  EyeIcon,
   CursorArrowRaysIcon
 } from '@heroicons/react/24/outline';
 
