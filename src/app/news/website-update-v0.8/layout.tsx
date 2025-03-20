@@ -51,14 +51,6 @@ export default function WebsiteUpdateLayout({
 }) {
   return (
     <>
-      <head>
-        <link
-          rel="preload"
-          href="/fads-black.svg"
-          as="image"
-          type="image/svg+xml"
-        />
-      </head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SocialShare from "@/components/SocialShare";
 
 export const metadata: Metadata = {
   title: "FADS Growth Engine | Smart Website & eCommerce Promotion",
@@ -25,7 +24,38 @@ export const metadata: Metadata = {
     emails: ["info@fads.fi"],
     phoneNumbers: ["+358 40 123 4567"],
     determiner: "the",
-    alternateLocale: ["en_FI"]
+    alternateLocale: ["en_FI"],
+    audio: [],
+    videos: [],
+    profile: "https://www.linkedin.com/company/fadsfi/",
+    article: {
+      publishedTime: new Date().toISOString(),
+      modifiedTime: new Date().toISOString(),
+      authors: ["FADS Team"],
+      tags: ["growth engine", "website promotion", "SEO", "digital marketing", "ecommerce"],
+      section: "Digital Marketing",
+    },
+    book: {
+      isbn: "",
+      releaseDate: "",
+      authors: [],
+      tags: [],
+    },
+    music: {
+      duration: 0,
+      album: "",
+      disc: 0,
+      track: 0,
+      musician: [],
+    },
+    video: {
+      duration: 0,
+      width: 0,
+      height: 0,
+      type: "",
+      url: "",
+      tags: [],
+    },
   },
   twitter: {
     card: "summary_large_image",
@@ -87,12 +117,5 @@ export default function GrowthEngineLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      {children}
-      <div className="fixed bottom-4 right-4 z-50">
-        <SocialShare />
-      </div>
-    </>
-  );
+  return children;
 } 

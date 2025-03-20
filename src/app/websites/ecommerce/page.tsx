@@ -51,8 +51,9 @@ export default function EcommerceWebsitesPage() {
           <motion.div 
             className="max-w-3xl mx-auto text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl font-bold mb-6">E-commerce Development in Finland</h2>
             <p className="text-xl text-gray-600">
@@ -64,7 +65,8 @@ export default function EcommerceWebsitesPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="initial"
-            animate="animate"
+            whileInView="animate"
+            viewport={{ once: true }}
           >
             <motion.div 
               className="bg-white p-6 rounded-xl shadow-sm"
