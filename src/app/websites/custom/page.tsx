@@ -251,7 +251,7 @@ export default function CustomWebsitesPage() {
             >
               <Link 
                 href="/contact" 
-                className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center"
+                className="inline-block bg-white text-[#e59500] px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
               >
                 Get Started
               </Link>

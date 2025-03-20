@@ -21,47 +21,70 @@ export default function GrowthEnginePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-30">
+      <motion.section 
+        className="py-20 md:py-28 bg-white relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        {/* Декоративные элементы фона */}
+        <motion.div 
+          className="absolute inset-0 z-0 opacity-30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.3 }}
+          transition={{ duration: 1 }}
+        >
           <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"></div>
-        </div>
+        </motion.div>
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               FADS Growth Engine
-            </h1>
-            <p className="text-xl max-w-3xl mx-auto text-gray-600">
+            </motion.h1>
+            <motion.p 
+              className="text-xl max-w-3xl mx-auto text-gray-600"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               Smart Website & eCommerce Promotion
-            </p>
-            <p className="text-lg max-w-3xl mx-auto text-gray-600 mt-4">
-              We don't just build websites—we make them work for your business. The FADS Growth Engine is a complete growth system that combines website development, SEO, paid ads, AI-driven optimization, and compliance with industry standards.
-            </p>
-            <motion.div
+            </motion.p>
+            <motion.p 
+              className="text-lg max-w-3xl mx-auto text-gray-600 mt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              We don't just build websites—we make them work for your business. The FADS Growth Engine is a complete growth system that combines website development, SEO, paid ads, AI-driven optimization, and compliance with industry standards.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               className="mt-8"
             >
               <Link 
                 href="/contact" 
-                className="inline-flex items-center gap-2 bg-[#e59500] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#840032] transition-colors"
+                className="gradient-button"
               >
                 Get Started
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
               </Link>
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* How It Works Section */}
       <section className="py-16">
