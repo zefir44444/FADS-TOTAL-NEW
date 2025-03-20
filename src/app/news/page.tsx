@@ -46,17 +46,20 @@ export default function NewsPage() {
               {/* News Card */}
               <div className="bg-white rounded-lg sm:rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
                 <div className="relative h-32 sm:h-40 w-full">
-                  <Image 
-                    src="/fads-black.svg" 
-                    alt="Website Update v0.8" 
-                    fill
-                    style={{ objectFit: "contain" }}
-                    className="transition-transform duration-500 hover:scale-105"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "/fads-black.svg";
-                    }}
-                  />
+                  <div className="absolute inset-0">
+                    <Image 
+                      src="/fads-black.svg" 
+                      alt="Website Update v0.8" 
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority
+                      className="transition-transform duration-500 hover:scale-105"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/fads-black.svg";
+                      }}
+                    />
+                  </div>
                 </div>
                 <div className="p-3 sm:p-4 md:p-6">
                   <div className="flex items-center mb-2">
