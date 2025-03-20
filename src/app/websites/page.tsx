@@ -27,19 +27,6 @@ const fadeInUp = {
   }
 };
 
-export default function WebsitesOverview() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  // Эффект для отслеживания прокрутки
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      setScrollPosition(scrolled);
-    };
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="flex flex-col">
