@@ -215,11 +215,12 @@ const Header = () => {
                   >
                     YouTube Advertising
                   </Link>
+             
                   <Link 
-                    href="/promotion/ai-optimization" 
+                    href="/growth-engine" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
-                    AI Optimization
+                    Growth Engine
                   </Link>
                 </div>
               </div>
@@ -514,12 +515,13 @@ const Header = () => {
                         >
                           YouTube Advertising
                         </Link>
+                      
                         <Link 
-                          href="/promotion/ai-optimization" 
+                          href="/growth-engine" 
                           className="text-sm hover:text-[#e59500] transition-colors duration-300"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          AI Optimization
+                          Growth Engine
                         </Link>
                       </motion.div>
                     )}

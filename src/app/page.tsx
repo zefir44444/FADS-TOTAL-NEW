@@ -646,7 +646,7 @@ export default function Home() {
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-[#0088cc]/5 to-[#e59500]/5 rounded-full blur-xl"></div>
                 <Link 
                   href="/contact" 
-                  className="floating-button text-lg relative z-10"
+                  className="gradient-button text-lg relative z-10"
                 >
                   Contact us
                 </Link>
@@ -1402,7 +1402,7 @@ export default function Home() {
               >
                 <Link 
                   href="/contact" 
-                  className="floating-button text-lg"
+                  className="gradient-button text-lg"
                 >
                   Ask your question
                 </Link>

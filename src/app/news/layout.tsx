@@ -41,6 +41,14 @@ export default function NewsLayout({
 }) {
   return (
     <>
+      <head>
+        <link
+          rel="preload"
+          href="/fads-black.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+      </head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -81,38 +89,38 @@ export default function NewsLayout({
                         title="FADS Digital Hub News"
                         text="Check out the latest news from FADS Digital Hub!"
                       />
-                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="text-center mt-6 sm:mt-8">
-                    <Link 
-                      href="/news" 
-                      className="inline-flex items-center text-[#e59500] font-medium hover:underline group text-sm sm:text-base"
+                <div className="text-center mt-6 sm:mt-8">
+                  <Link 
+                    href="/news" 
+                    className="inline-flex items-center text-[#e59500] font-medium hover:underline group text-sm sm:text-base"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="mr-1 transform transition-transform group-hover:-translate-x-1"
                     >
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="16" 
-                        height="16" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="mr-1 transform transition-transform group-hover:-translate-x-1"
-                      >
-                        <line x1="19" y1="12" x2="5" y2="12"></line>
-                        <polyline points="12 19 5 12 12 5"></polyline>
-                      </svg>
-                      Back to News
-                    </Link>
-                  </div>
+                      <line x1="19" y1="12" x2="5" y2="12"></line>
+                      <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to News
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
     </>
   );
 } 
