@@ -37,7 +37,7 @@ export default function AIOptimizationPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">AI-Compatible Content</h3>
-              <p className="text-gray-600">We don't just optimize content—we create a structure that AI systems easily understand and use.</p>
+              <p className="text-gray-600">We don&apos;t just optimize content—we create a structure that AI systems easily understand and use.</p>
               <ul className="mt-4 space-y-2 text-gray-600">
                 <li>• Intuitive structure for AI agents</li>
                 <li>• Clean, semantically rich content</li>
@@ -191,7 +191,7 @@ export default function AIOptimizationPage() {
           <div className="bg-[#e59500] rounded-2xl p-8 md:p-12 text-center text-white">
             <h2 className="text-3xl font-bold mb-4">Ready to Optimize for AI?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Let's create content that effectively works with AI systems and attracts your target audience.
+              Let&apos;s create content that effectively works with AI systems and attracts your target audience.
             </p>
             <Link 
               href="/contact" 

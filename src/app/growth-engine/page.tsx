@@ -67,7 +67,7 @@ export default function GrowthEnginePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              We don't just build websites—we make them work for your business. The FADS Growth Engine is a complete growth system that combines website development, SEO, paid ads, AI-driven optimization, and compliance with industry standards.
+              We&apos;re currently working on this page. Please check back later.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

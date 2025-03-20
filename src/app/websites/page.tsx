@@ -28,12 +28,13 @@ const fadeInUp = {
 };
 
 export default function WebsitesOverview() {
-  const [scrollY, setScrollY] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   // Эффект для отслеживания прокрутки
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      const scrolled = window.scrollY;
+      setScrollPosition(scrolled);
     };
     
     window.addEventListener("scroll", handleScroll, { passive: true });
