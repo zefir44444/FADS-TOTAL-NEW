@@ -66,8 +66,8 @@ export default function WebsiteAuditsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-white">
+   
       {children}
-    </div>
+ 
   );
 } 
