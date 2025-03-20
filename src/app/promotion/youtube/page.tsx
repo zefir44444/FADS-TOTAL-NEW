@@ -4,21 +4,12 @@ import React from 'react';
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { 
-  CheckCircleIcon,
   VideoCameraIcon,
   UserGroupIcon,
-  MegaphoneIcon,
   PlayCircleIcon,
   ChartBarIcon,
-  PresentationChartLineIcon,
-  FilmIcon,
-  CodeBracketIcon,
-  TagIcon,
-  AdjustmentsHorizontalIcon,
-  RocketLaunchIcon,
   EyeIcon,
-  CursorArrowRaysIcon,
-  CreditCardIcon
+  CursorArrowRaysIcon
 } from '@heroicons/react/24/outline';
 
 const fadeInUp = {
@@ -33,12 +24,6 @@ const staggerContainer = {
       staggerChildren: 0.1
     }
   }
-};
-
-const scaleIn = {
-  initial: { scale: 0.9, opacity: 0 },
-  animate: { scale: 1, opacity: 1 },
-  transition: { duration: 0.5 }
 };
 
 export default function YouTubeAdvertisingPage() {
@@ -318,7 +303,7 @@ export default function YouTubeAdvertisingPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              Get a custom YouTube advertising strategy designed to maximize your return on ad spend. Let our experts help you reach your ideal audience on the world's largest video platform.
+              Get a custom YouTube advertising strategy designed to maximize your return on ad spend. Let our experts help you reach your ideal audience on the world&apos;s largest video platform.
             </motion.p>
             <motion.div
               whileHover={{ scale: 1.05 }}

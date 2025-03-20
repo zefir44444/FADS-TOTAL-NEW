@@ -8,18 +8,11 @@ import {
   BuildingOfficeIcon,
   UserGroupIcon,
   BriefcaseIcon,
-  DocumentDuplicateIcon,
-  LightBulbIcon,
-  CodeBracketIcon,
   MagnifyingGlassIcon,
-  DevicePhoneMobileIcon,
-  ShieldCheckIcon,
-  PuzzlePieceIcon,
   Cog6ToothIcon,
   BuildingStorefrontIcon,
   RocketLaunchIcon,
-  GlobeAltIcon,
-  CommandLineIcon
+  GlobeAltIcon
 } from '@heroicons/react/24/outline';
 
 const fadeInUp = {
@@ -273,7 +266,7 @@ export default function GrowthEnginePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Let's Build a Smarter Growth System for Your Business
+              Let&apos;s Build a Smarter Growth System for Your Business
             </motion.h2>
             <motion.p 
               className="text-xl mb-8 max-w-2xl mx-auto"
