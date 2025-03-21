@@ -264,6 +264,7 @@ const SubscribeForm = () => {
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
             onChange={handleRecaptchaChange}
             size="normal"
+            asyncScriptOnLoad={() => console.log("reCAPTCHA script loaded")}
           />
         </div>
         
