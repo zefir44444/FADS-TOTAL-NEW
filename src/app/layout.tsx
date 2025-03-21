@@ -65,6 +65,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      {/* Google Tag Manager */}
+      <Script
+        id="google-tag-manager"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtm.js?id=GTM-K48CG77`}
+      />
+      <Script
+        id="gtm-init"
+        strategy="afterInteractive"
+      >
+        {`
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+          });
+        `}
+      </Script>
+      {/* End Google Tag Manager */}
         {/* HubSpot Tracking Code */}
         <Script
           id="hubspot-tracking"
