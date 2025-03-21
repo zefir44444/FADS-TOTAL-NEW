@@ -9,6 +9,8 @@ import CookieConsent from "@/components/CookieConsent";
 import Header from "@/components/Header";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GoogleTagManager } from '@next/third-parties/google'
+
 
 const tektur = Tektur({
   subsets: ["latin"],
@@ -64,26 +66,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-K48CG77" />
       <head>
-      {/* Google Tag Manager */}
-      <Script
-        id="google-tag-manager"
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtm.js?id=GTM-K48CG77`}
-      />
-      <Script
-        id="gtm-init"
-        strategy="afterInteractive"
-      >
-        {`
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-          });
-        `}
-      </Script>
-      {/* End Google Tag Manager */}
         {/* HubSpot Tracking Code */}
         <Script
           id="hubspot-tracking"
