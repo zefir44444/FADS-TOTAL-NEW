@@ -321,7 +321,7 @@ export default function Home() {
                 >
                   <h3 className="text-2xl font-bold mb-4 gradient-text">Initial Consultation and Task Discussion</h3>
                   <p className="text-lg">
-                    Website development cooperation begins with your inquiry. To utilize our services and order custom website development, submit a request through any form on our website, call us directly, or contact us via your preferred messenger. Upon receiving your request, we&apos;ll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we&apos;ll issue an invoice for an initial payment.
+                    Website development cooperation begins <Link href="/contact" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">with your inquiry</Link>. To utilize our services and order custom website development, submit a request through any form on our website or contact us via your preferred messenger. Upon receiving your request, we&apos;ll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we&apos;ll issue an invoice for an initial payment.
                   </p>
                 </motion.div>
               </motion.div>
@@ -399,7 +399,7 @@ export default function Home() {
                 >
                   <h3 className="text-2xl font-bold mb-4 gradient-text">Website Launch and Support</h3>
                   <p className="text-lg">
-                    Deployment of the website to a live server. Submission to search engines, setup of analytics, and integration of other required scripts. Training sessions on managing the admin panel, guaranteed 24-month support, and consultation on any website-related questions.
+                    Deployment of the website to a live server. Submission to search engines, setup of analytics, and integration of other required scripts. Training sessions on managing the admin panel, guaranteed 12-month support, and consultation on any website-related questions.
                   </p>
                 </motion.div>
               </motion.div>
@@ -423,9 +423,9 @@ export default function Home() {
                   whileHover={{ y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <h3 className="text-2xl font-bold mb-4 gradient-text">Website Launch and Support</h3>
+                  <h3 className="text-2xl font-bold mb-4 gradient-text">Ongoing Optimization and Marketing</h3>
                   <p className="text-lg">
-                    Deployment of the website to a live server. Submission to search engines, setup of analytics, and integration of other required scripts. Training sessions on managing the admin panel, guaranteed 24-month support, and consultation on any website-related questions.
+                    After the website launch, we focus on continuous improvement and marketing strategies. This includes SEO optimization, performance monitoring, traffic analysis, and implementing marketing campaigns to drive visitors to your site. We provide regular reports and recommendations for further website development based on user behavior and industry trends.
                   </p>
                 </motion.div>
               </motion.div>
@@ -522,7 +522,7 @@ export default function Home() {
                     transition={{ duration: 0.5 }}
                     variants={fadeInUp}
                   >
-                    Before starting any work, we create a Telegram working chat and add team leader and client in the project. This ensures immediate communication and quick resolution of any questions.
+                    Before starting any work, we create a Telegram or WhatsApp working chat and add team leader and client in the project. This ensures immediate communication and quick resolution of any questions.
                   </motion.p>
                   
                   <motion.div 
@@ -594,8 +594,7 @@ export default function Home() {
                     transition={{ duration: 0.5 }}
                     variants={fadeInUp}
                   >
-                    At any time, you can check the current status of the development. We provide regular updates and maintain complete transparency about progress, challenges, and solutions.
-                  </motion.p>
+You can check the current development status on the test domain at any time. We provide regular updates and maintain full transparency regarding progress, issues and solutions.                  </motion.p>
                   
                   <motion.div 
                     className="mt-6 pl-14 flex flex-col space-y-3"
@@ -735,6 +734,8 @@ export default function Home() {
                   <Link 
                     href="/websites/business" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
+                    title="Business Website Development Services - Professional Business Website Solutions"
+                    aria-label="Discover our business website development services - Create a professional online presence for your company"
                   >
                     <span className="flex items-center justify-center">
                       Learn more
@@ -1024,8 +1025,7 @@ export default function Home() {
                     className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 0 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <p className="text-gray-700">
-                      Our specialists work with various popular content management systems (CMS), such as WordPress, and we can consider other platforms based on your request. If necessary, we can also develop a custom solution tailored to your project&apos;s needs.
-                    </p>
+Our specialists work with the content management system (CMS) WordPress, and we can consider other platforms at your request. If necessary, we can also develop a custom solution on Next.js, adapted to the needs of your project.                    </p>
                   </div>
                 </motion.div>
                 
@@ -1154,7 +1154,7 @@ export default function Home() {
                     className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 4 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <p className="text-gray-700">
-                      The timeline depends on the project&apos;s complexity. On average, a new website takes 4 to 12 weeks to complete. More complex sites may require additional time.
+                      The timeline depends on the project&apos;s complexity. A <Link href="/websites/landing" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">quality landing page</Link> can be launched in about a week. On average, a new website takes 4 to 12 weeks to complete. More complex sites may require additional time.
                     </p>
                   </div>
                 </motion.div>
@@ -1226,9 +1226,9 @@ export default function Home() {
                     <ul className="list-disc pl-6 mt-2 space-y-1 text-gray-700">
                       <li>SEO optimization for better search engine visibility</li>
                       <li>Google Ads setup and management</li>
-                      <li>Traffic analytics and monitoring</li>
+                      <li>Traffic analytics and monitoring with Google Analytics</li>
                       <li>Content updates and website maintenance</li>
-                      <li>CRM and third-party integrations</li>
+                      <li>CRM and third-party integrations Hubspot, Kommo, GTM etc.</li>
                     </ul>
                     <p className="mt-3 text-gray-700">
                       We always recommend keeping your website modern and effective to enhance conversions and sales.
@@ -1261,7 +1261,7 @@ export default function Home() {
                     className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 7 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <p className="text-gray-700">
-                      We offer SEO optimization services to improve your site&apos;s visibility. However, no agency can guarantee first-page rankings, as search rankings depend on various factors, including competition in your niche and search engine algorithms. Our approach includes content optimization, technical improvements, and link-building strategies to increase your website&apos;s ranking.
+                      We offer <Link href="/promotion/seo" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">SEO optimization services</Link> to improve your site&apos;s visibility. However, no agency can guarantee first-page rankings, as search rankings depend on various factors, including competition in your niche and search engine algorithms. Our approach includes content optimization, technical improvements, and link-building strategies to increase your website&apos;s ranking.
                     </p>
                   </div>
                 </motion.div>
@@ -1325,7 +1325,7 @@ export default function Home() {
                     </p>
                     <ul className="list-disc pl-6 mt-2 space-y-1 text-gray-700">
                       <li>A basic website starts at €1,500.</li>
-                      <li>More advanced websites, such as e-commerce stores or business portals, start from €2,000+.</li>
+                      <li>More advanced websites, such as e-commerce stores or business portals, start from €3,000+.</li>
                     </ul>
                     <p className="mt-3 text-gray-700">
                       We&apos;ll discuss your requirements and offer the best solution within your budget.
@@ -1358,7 +1358,7 @@ export default function Home() {
                     className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 10 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <p className="text-gray-700">
-                      Yes, we continuously monitor and improve website loading speed at every stage of development. The code is optimized and tested to ensure fast performance. You can also participate in the process if you&apos;d like.
+                      Yes, we continuously monitor and improve website loading speed at every stage of development. The code is optimized and tested to ensure fast performance.
                     </p>
                   </div>
                 </motion.div>

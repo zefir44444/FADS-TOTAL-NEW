@@ -555,7 +555,7 @@ main {
 
 @keyframes wordChange {
   0% {
-    content: "Portfolio Website";
+    content: "Showcase Website";
     opacity: 0;
     transform: translateY(10px);
   }
@@ -570,11 +570,11 @@ main {
   15% {
     opacity: 0;
     transform: translateY(-10px);
-    content: "Portfolio Website";
+    content: "Showcase Website";
   }
   
   15.1% {
-    content: "Corporate Website";
+    content: "Business Website";
     opacity: 0;
     transform: translateY(10px);
   }
@@ -589,7 +589,7 @@ main {
   30% {
     opacity: 0;
     transform: translateY(-10px);
-    content: "Corporate Website";
+    content: "Business Website";
   }
   
   30.1% {
@@ -612,7 +612,7 @@ main {
   }
   
   45.1% {
-    content: "Catalog Website";
+    content: "Landing Page";
     opacity: 0;
     transform: translateY(10px);
   }
@@ -627,7 +627,7 @@ main {
   60% {
     opacity: 0;
     transform: translateY(-10px);
-    content: "Catalog Website";
+    content: "Landing Page";
   }
   
   60.1% {

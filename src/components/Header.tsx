@@ -116,7 +116,7 @@ const Header = () => {
                     href="/websites" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
-                    All Website Services
+                    All Development Services
                   </Link>
                   <div className="w-full h-px bg-gray-100 my-1"></div>
                   <Link 
