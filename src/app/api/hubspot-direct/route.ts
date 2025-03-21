@@ -39,17 +39,19 @@ export async function POST(req: NextRequest) {
     if (formData.phone) properties.phone = formData.phone;
     if (formData.message) properties.message = formData.message;
     if (formData.subject) properties.subject = formData.subject;
+    if (formData.source) properties.source = formData.source;
     
     // Добавляем уникальный идентификатор для предотвращения конфликтов
     const timestamp = new Date().getTime();
     const random = Math.floor(Math.random() * 10000);
     
     // Создаем уникальный email для предотвращения конфликтов
-    const uniqueEmail = `${formData.email.split('@')[0]}+${timestamp}.${random}@${formData.email.split('@')[1]}`;
+    const originalEmail = properties.email;
+    const uniqueEmail = `${originalEmail.split('@')[0]}+${timestamp}.${random}@${originalEmail.split('@')[1]}`;
     properties.email = uniqueEmail;
     
     // Сохраняем оригинальный email в дополнительном поле
-    properties.hs_additional_emails = formData.email;
+    properties.hs_additional_emails = originalEmail;
     
     // Отправляем запрос в HubSpot
     const response = await fetch(
@@ -69,21 +71,37 @@ export async function POST(req: NextRequest) {
     
     // Получаем ответ
     let responseData;
+    let responseText;
+    
     try {
-      responseData = await response.json();
+      // Сначала получаем текст ответа
+      responseText = await response.text();
+      console.log("HubSpot raw response:", responseText);
+      
+      // Затем пытаемся преобразовать его в JSON
+      try {
+        responseData = JSON.parse(responseText);
+      } catch (jsonError) {
+        console.error("Error parsing HubSpot response as JSON:", jsonError);
+        responseData = { rawResponse: responseText };
+      }
     } catch (error) {
-      console.error("Error parsing HubSpot response:", error);
+      console.error("Error getting HubSpot response:", error);
       return NextResponse.json(
-        { error: "Failed to parse HubSpot response" },
+        { error: "Failed to get HubSpot response", details: String(error) },
         { status: 500 }
       );
     }
     
     // Проверяем успешность запроса
     if (!response.ok) {
-      console.error("HubSpot API error:", responseData);
+      console.error("HubSpot API error:", responseData, "Status:", response.status, response.statusText);
       return NextResponse.json(
-        { error: `HubSpot API error: ${responseData.message || response.statusText}` },
+        { 
+          error: `HubSpot API error: ${responseData.message || response.statusText}`, 
+          status: response.status,
+          details: responseData
+        },
         { status: response.status }
       );
     }

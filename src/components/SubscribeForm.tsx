@@ -60,48 +60,81 @@ const SubscribeForm = () => {
       if (typeof window !== 'undefined') {
         console.log("Sending newsletter subscription...", formData);
         
-        let res = await fetch("/api/newsletter", {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: { "Content-Type": "application/json" },
-        });
-
-        // Если получаем ошибку конфликта (409), используем прямой API для HubSpot
-        if (res.status === 409) {
-          console.log("Received conflict error, trying direct HubSpot API...");
-          
-          // Отправляем данные через прямой API для HubSpot
-          res = await fetch("/api/hubspot-direct", {
+        try {
+          let res = await fetch("/api/newsletter", {
             method: "POST",
-            body: JSON.stringify({ 
-              ...formData,
-              source: "newsletter"
-            }),
+            body: JSON.stringify(formData),
             headers: { "Content-Type": "application/json" },
           });
+
+          console.log("Newsletter API response status:", res.status, res.statusText);
+          
+          // Получаем текст ответа для лучшей диагностики
+          const responseText = await res.text();
+          console.log("Response text:", responseText);
+          
+          // Пытаемся преобразовать текст в JSON
+          let data;
+          try {
+            data = JSON.parse(responseText);
+            console.log("Parsed response data:", data);
+          } catch (jsonError) {
+            console.error("Error parsing JSON response:", jsonError);
+            throw new Error(`Неверный формат ответа от сервера: ${responseText}`);
+          }
+
+          // Если получаем ошибку конфликта (409), используем прямой API для HubSpot
+          if (res.status === 409) {
+            console.log("Received conflict error, trying direct HubSpot API...");
+            
+            // Отправляем данные через прямой API для HubSpot
+            const directRes = await fetch("/api/hubspot-direct", {
+              method: "POST",
+              body: JSON.stringify({ 
+                ...formData,
+                source: "newsletter"
+              }),
+              headers: { "Content-Type": "application/json" },
+            });
+            
+            console.log("Direct HubSpot API response status:", directRes.status, directRes.statusText);
+            
+            // Получаем текст ответа
+            const directText = await directRes.text();
+            console.log("Direct API response text:", directText);
+            
+            // Пытаемся преобразовать текст в JSON
+            try {
+              data = JSON.parse(directText);
+              console.log("Parsed direct response data:", data);
+            } catch (jsonError) {
+              console.error("Error parsing direct JSON response:", jsonError);
+              throw new Error(`Неверный формат ответа от прямого API: ${directText}`);
+            }
+            
+            // Проверяем статус
+            if (!directRes.ok) {
+              throw new Error(`Failed to subscribe via direct API: ${directRes.status} ${directRes.statusText}. Details: ${JSON.stringify(data)}`);
+            }
+          } else if (!res.ok) {
+            throw new Error(`Failed to subscribe: ${res.status} ${res.statusText}. Details: ${JSON.stringify(data)}`);
+          }
+
+          if (!data.success) {
+            throw new Error(data.error || "Failed to subscribe");
+          }
+
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            consent: false
+          });
+          setSuccess(true);
+        } catch (fetchError) {
+          console.error("Error during fetch operation:", fetchError);
+          throw fetchError;
         }
-
-        // Проверяем статус ответа перед попыткой разобрать JSON
-        if (!res.ok) {
-          const errorText = await res.text();
-          console.error("Server error response:", errorText);
-          throw new Error(`Failed to subscribe: ${res.status} ${res.statusText}`);
-        }
-
-        const data = await res.json();
-        console.log("Server response:", data);
-
-        if (!data.success) {
-          throw new Error(data.error || "Failed to subscribe");
-        }
-
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          consent: false
-        });
-        setSuccess(true);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
