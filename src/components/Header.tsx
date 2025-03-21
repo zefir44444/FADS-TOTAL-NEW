@@ -23,10 +23,6 @@ const Header = () => {
       }
     };
     
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
-    
     handleResize(); // Инициализация при первой загрузке
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
