@@ -129,8 +129,8 @@ export default async function handler(
         }
 
         return res.status(200).json({ success: true });
-    } catch (error: any) {
-        console.error("API Error:", error.message);
-        return res.status(500).json({ success: false, error: error.message || 'Server error' });
+    } catch (error: unknown) {
+        console.error("API Error:", error instanceof Error ? error.message : 'Unknown error');
+        return res.status(500).json({ success: false, error: error instanceof Error ? error.message : 'Server error' });
     }
 }

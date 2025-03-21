@@ -154,10 +154,10 @@ export async function POST(req: NextRequest) {
 
         // Возвращаем успешный ответ
         return NextResponse.json({ success: true });
-    } catch (error: any) {
-        console.error("Direct API Error:", error.message);
+    } catch (error: unknown) {
+        console.error("Direct API Error:", error instanceof Error ? error.message : 'Unknown error');
         return NextResponse.json(
-            { success: false, error: error.message || 'Server error' },
+            { success: false, error: error instanceof Error ? error.message : 'Server error' },
             { status: 500 }
         );
     }

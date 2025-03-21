@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { saveFormToHubSpot } from "@/lib/hubspot";
 
 type NewsletterFormData = {
     firstName?: string;
@@ -128,10 +127,10 @@ export async function POST(req: NextRequest) {
         }
 
         return NextResponse.json({ success: true }, { status: 200 });
-    } catch (error: any) {
-        console.error("API Error:", error.message);
+    } catch (error: unknown) {
+        console.error("API Error:", error instanceof Error ? error.message : 'Unknown error');
         return NextResponse.json(
-            { success: false, error: error.message || 'Server error' },
+            { success: false, error: error instanceof Error ? error.message : 'Server error' },
             { status: 500 }
         );
     }
