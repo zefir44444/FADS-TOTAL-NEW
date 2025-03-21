@@ -163,6 +163,60 @@ const Header = () => {
             <div className="relative group">
               <button 
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                aria-label="Services"
+              >
+                Services
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="transition-transform duration-300 group-hover:rotate-180"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              
+              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-xl rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/20 
+                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                            transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
+                   style={{
+                     backdropFilter: "blur(12px)",
+                     WebkitBackdropFilter: "blur(12px)"
+                   }}
+              >
+                <div className="flex flex-col gap-2">
+                  <Link 
+                    href="/services" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    All Services
+                  </Link>
+                  <div className="w-full h-px bg-gray-100 my-1"></div>
+                  <Link 
+                    href="/services/maintenance" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Website Maintenance
+                  </Link>
+                  <Link 
+                    href="/services/website-audits" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    Website Audits
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <button 
+                className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
                 aria-label="Website Promotion"
               >
                 Promotion
@@ -191,12 +245,7 @@ const Header = () => {
                    }}
               >
                 <div className="flex flex-col gap-2">
-                  <Link 
-                    href="/promotion/website-audits" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Website Audits
-                  </Link>
+               
                   <Link 
                     href="/promotion/seo" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
@@ -443,6 +492,71 @@ const Header = () => {
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Custom Development
+                        </Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+                
+                {/* Services меню для мобильных */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, delay: 0.25 }}
+                  className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200"
+                >
+                  <button 
+                    className="text-sm font-medium text-center flex items-center justify-center gap-1"
+                    onClick={() => toggleMobileSubmenu('services')}
+                  >
+                    Services
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      animate={{ rotate: openMobileSubmenu === 'services' ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </motion.svg>
+                  </button>
+                  <AnimatePresence>
+                    {openMobileSubmenu === 'services' && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-2 items-center mt-2 overflow-hidden"
+                      >
+                        <Link 
+                          href="/services" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          All Services
+                        </Link>
+                        <div className="w-full h-px bg-gray-100 my-1"></div>
+                        <Link 
+                          href="/services/maintenance" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Website Maintenance
+                        </Link>
+                        <Link 
+                          href="/services/website-audits" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Website Audits
                         </Link>
                       </motion.div>
                     )}

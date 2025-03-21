@@ -130,7 +130,6 @@ export default function Footer() {
               <p className="text-sm">Mon-Fri: 9:00 AM - 6:00 PM</p>
               <p className="text-sm">Sat-Sun: Closed</p>
               <p className="text-sm mt-2"><strong>VAT ID:</strong> <span className="select-text cursor-text">FI33641998</span></p>
-              <p className="text-sm mt-2"><strong>Email:</strong> <a href="mailto:info@fads.fi" className="text-[#e59500] hover:text-[#840032] hover:underline transition-colors select-text cursor-pointer">info@fads.fi</a></p>
             </div>
           </div>
           

@@ -642,10 +642,10 @@ You can check the current development status on the test domain at any time. We 
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-              
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-[#0088cc]/5 to-[#e59500]/5 rounded-full blur-xl"></div>
                 <Link 
                   href="/contact" 
-                  className="gradient-button text-lg relative z-10"
+                  className="floating-button text-lg relative z-10"
                 >
                   Contact us
                 </Link>
@@ -734,8 +734,6 @@ You can check the current development status on the test domain at any time. We 
                   <Link 
                     href="/websites/business" 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
-                    title="Business Website Development Services - Professional Business Website Solutions"
-                    aria-label="Discover our business website development services - Create a professional online presence for your company"
                   >
                     <span className="flex items-center justify-center">
                       Learn more
@@ -1402,7 +1400,7 @@ Our specialists work with the content management system (CMS) WordPress, and we 
               >
                 <Link 
                   href="/contact" 
-                  className="gradient-button text-lg"
+                  className="floating-button text-lg"
                 >
                   Ask your question
                 </Link>
