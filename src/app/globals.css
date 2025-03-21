@@ -50,12 +50,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-tektur);
 }
 
-/* Header styles */
-header {
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-
 /* Main content padding for fixed header */
 main {
   flex: 1;
