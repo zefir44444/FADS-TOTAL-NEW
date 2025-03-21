@@ -60,7 +60,6 @@ export default function WebsitesLayout({
         }}
       />
       <section className="relative">
-        <div className="w-full max-w-[100vw] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="w-full">
             <div className="bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-sm">
               <div className="p-4 sm:p-6 md:p-8 w-full">
@@ -86,7 +85,6 @@ export default function WebsitesLayout({
               </div>
             </div>
           </div>
-        </div>
       </section>
     </>
   );

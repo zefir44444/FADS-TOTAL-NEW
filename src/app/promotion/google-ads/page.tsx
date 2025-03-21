@@ -278,47 +278,219 @@ export default function GoogleAds() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Pricing Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <motion.div 
-            className="bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 rounded-2xl p-8 md:p-12 text-center shadow-lg"
+            className="max-w-3xl mx-auto text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            whileHover={{ scale: 1.02, transition: { type: "spring", stiffness: 300 } }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
           >
-            <motion.h2 
-              className="text-3xl font-bold mb-4 text-black"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              Ready to Boost Your Digital Advertising?
-            </motion.h2>
-            <motion.p 
-              className="text-lg max-w-3xl mx-auto text-gray-600 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              Let&apos;s create a custom Google Ads strategy that maximizes your return on investment.
-            </motion.p>
+            <h2 className="text-3xl font-bold mb-6">Pricing</h2>
+            <p className="text-xl text-gray-600">
+              Choose the most suitable Google Ads management plan for your business
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {/* Basic Plan */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              variants={fadeInUp}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col"
+              whileHover={{ scale: 1.02 }}
             >
-              <Link 
-                href="/contact" 
-                className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center shadow-lg shadow-orange-200/50"
-              >
-                Start Your Campaign
-              </Link>
+              <div className="h-2 bg-[#e59500]"></div>
+              <div className="p-6 flex-grow">
+                <h3 className="text-2xl font-bold mb-2">Starter</h3>
+                <div className="text-4xl font-bold text-[#e59500] mb-4">€499<span className="text-lg text-gray-500">/mo</span></div>
+                <p className="text-gray-600 mb-6">Perfect for small businesses just getting started with Google Ads</p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#e59500] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Up to €2,500 monthly ad spend</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#e59500] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Search ads campaign setup</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#e59500] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Keyword research</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#e59500] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Monthly performance reports</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 bg-gray-50">
+                <Link 
+                  href="/contact?service=google-ads-starter" 
+                  className="block w-full text-center py-3 px-4 bg-[#e59500] text-white rounded-lg font-medium hover:bg-[#d48700] transition-colors duration-300"
+                >
+                  Select
+                </Link>
+              </div>
             </motion.div>
+
+            {/* Standard Plan */}
+            <motion.div
+              variants={fadeInUp}
+              className="bg-white rounded-xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 flex flex-col border-2 border-[#840032] relative"
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="absolute top-0 right-0 bg-[#840032] text-white px-4 py-1 rounded-bl-lg font-medium">
+                Popular
+              </div>
+              <div className="h-2 bg-gradient-to-r from-[#e59500] to-[#840032]"></div>
+              <div className="p-6 flex-grow">
+                <h3 className="text-2xl font-bold mb-2">Growth</h3>
+                <div className="text-4xl font-bold text-[#840032] mb-4">€799<span className="text-lg text-gray-500">/mo</span></div>
+                <p className="text-gray-600 mb-6">For businesses looking to grow and expand their digital presence</p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Up to €5,000 monthly ad spend</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Search and Display campaigns</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Competitor analysis</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>A/B testing of ad copy</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Bi-weekly optimization</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 bg-gray-50">
+                <Link 
+                  href="/contact?service=google-ads-growth" 
+                  className="block w-full text-center py-3 px-4 bg-gradient-to-r from-[#e59500] to-[#840032] text-white rounded-lg font-medium hover:shadow-lg hover:from-[#d48700] hover:to-[#730029] transition-all duration-300"
+                >
+                  Select
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Premium Plan */}
+            <motion.div
+              variants={fadeInUp}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="h-2 bg-[#840032]"></div>
+              <div className="p-6 flex-grow">
+                <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
+                <div className="text-4xl font-bold text-[#840032] mb-4">Contact for pricing</div>
+                <p className="text-gray-600 mb-6">Advanced solution for established businesses seeking maximum ROI</p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>€5,000+ monthly ad spend</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Full-funnel campaign strategy</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Shopping ads (if applicable)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Conversion rate optimization</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Weekly performance reviews</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-[#840032] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Dedicated account manager</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 bg-gray-50">
+                <Link 
+                  href="/contact?service=google-ads-enterprise" 
+                  className="block w-full text-center py-3 px-4 bg-[#840032] text-white rounded-lg font-medium hover:bg-[#730029] transition-colors duration-300"
+                >
+                  Select
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+          
+          {/* Custom option */}
+          <motion.div
+            className="mt-12 p-6 bg-white rounded-xl shadow-lg text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-xl font-bold mb-4">Need a custom solution?</h3>
+            <p className="mb-6 text-gray-600">Let's work together to design a personalized Google Ads strategy that perfectly matches your business goals and delivers remarkable results</p>
+            <Link 
+              href="/contact?service=google-ads-custom" 
+              className="inline-flex items-center text-[#e59500] hover:text-[#840032] font-medium transition-colors duration-300"
+            >
+              Contact us
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </motion.div>
         </div>
       </section>
+
+    
     </div>
   );
 } 
