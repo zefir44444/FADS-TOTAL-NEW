@@ -139,6 +139,31 @@ const ContactForm = () => {
                     throw new Error(data.error || data.message || "Failed to send message");
                 }
 
+                // Отправляем данные в Telegram
+                try {
+                    console.log("Sending data to Telegram...");
+                    const telegramRes = await fetch("/api/telegram", {
+                        method: "POST",
+                        body: JSON.stringify({
+                            ...formData,
+                            source,
+                            formType: "Contact Form"
+                        }),
+                        headers: { "Content-Type": "application/json" },
+                    });
+                    
+                    const telegramData = await telegramRes.json();
+                    console.log("Telegram API response:", telegramData);
+                    
+                    if (!telegramRes.ok) {
+                        console.error("Error sending to Telegram:", telegramData.error);
+                        // Не прерываем выполнение, если отправка в Telegram не удалась
+                    }
+                } catch (telegramError) {
+                    console.error("Error sending to Telegram:", telegramError);
+                    // Не прерываем выполнение, если отправка в Telegram не удалась
+                }
+
                 setSuccess(true);
                 setFormData({
                     firstName: "",

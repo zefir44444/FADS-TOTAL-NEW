@@ -124,6 +124,32 @@ const SubscribeForm = () => {
             throw new Error(data.error || "Failed to subscribe");
           }
 
+          // Отправляем данные в Telegram
+          try {
+            console.log("Sending newsletter subscription to Telegram...");
+            const telegramRes = await fetch("/api/telegram", {
+              method: "POST",
+              body: JSON.stringify({
+                ...formData,
+                formType: "Newsletter Subscription",
+                source: "newsletter",
+                message: `Подписка на новостную рассылку от ${formData.email}`
+              }),
+              headers: { "Content-Type": "application/json" },
+            });
+            
+            const telegramData = await telegramRes.json();
+            console.log("Telegram API response:", telegramData);
+            
+            if (!telegramRes.ok) {
+              console.error("Error sending to Telegram:", telegramData.error);
+              // Не прерываем выполнение, если отправка в Telegram не удалась
+            }
+          } catch (telegramError) {
+            console.error("Error sending to Telegram:", telegramError);
+            // Не прерываем выполнение, если отправка в Telegram не удалась
+          }
+
           setFormData({
             firstName: "",
             lastName: "",
