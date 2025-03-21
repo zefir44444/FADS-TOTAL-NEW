@@ -10,7 +10,6 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
 
   // Предотвращаем гидратацию
   useEffect(() => {
@@ -382,9 +381,6 @@ const Header = () => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="md:hidden mx-4 mt-2 bg-white rounded-2xl shadow-lg py-6 px-6 border border-gray-100 overflow-hidden" 
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 1)"
-              }}
             >
               <motion.nav 
                 initial={{ opacity: 0, y: -20 }}
