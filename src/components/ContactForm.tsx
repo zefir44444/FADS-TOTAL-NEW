@@ -2,10 +2,9 @@
 
 import React, { FormEvent, useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { useReCaptcha } from "./ReCaptchaProvider";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
-    const { executeReCaptcha, loaded } = useReCaptcha();
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -22,6 +21,8 @@ const ContactForm = () => {
     const [isCheckboxBlinking, setIsCheckboxBlinking] = useState(false);
     const checkboxRef = useRef<HTMLInputElement>(null);
     const [mounted, setMounted] = useState(false);
+    const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     // Предотвращаем гидратацию
     useEffect(() => {
@@ -58,11 +59,21 @@ const ContactForm = () => {
         }
     };
 
+    // Обработчик изменения reCAPTCHA
+    const handleCaptchaChange = (value: string | null) => {
+        setCaptchaValue(value);
+    };
+
     const onSubmit = async (e: FormEvent) => {
         e.preventDefault();
         
         if (!privacyAccepted) {
             highlightCheckbox();
+            return;
+        }
+
+        if (!captchaValue) {
+            setError("Please verify that you are not a robot");
             return;
         }
         
@@ -74,51 +85,13 @@ const ContactForm = () => {
             console.log("Sending contact form...", { ...formData, source });
             
             try {
-                // Проверяем загружена ли reCAPTCHA
-                if (!loaded) {
-                    console.warn("reCAPTCHA is not loaded yet, waiting for loading...");
-                    // Ждем 2 секунды для возможной загрузки reCAPTCHA
-                    await new Promise(resolve => setTimeout(resolve, 2000));
-                    // Если всё ещё не загружена, выбрасываем ошибку
-                    if (!loaded) {
-                        throw new Error("reCAPTCHA failed to load. Please refresh the page and try again.");
-                    }
-                }
-                
-                // Получаем токен reCAPTCHA
-                console.log("Verifying with reCAPTCHA...");
-                const token = await executeReCaptcha("contact_form");
-                
-                if (!token) {
-                    throw new Error("Failed to get reCAPTCHA token. Please refresh the page and try again.");
-                }
-                
-                // Проверяем токен через наш API
-                const recaptchaRes = await fetch("/api/recaptcha", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        token,
-                        action: "contact_form"
-                    }),
-                    headers: { "Content-Type": "application/json" },
-                });
-                
-                const recaptchaData = await recaptchaRes.json();
-                
-                if (!recaptchaRes.ok || !recaptchaData.success) {
-                    console.error("reCAPTCHA validation failed:", recaptchaData);
-                    throw new Error(recaptchaData.error || "reCAPTCHA verification failed. You may have been identified as a bot.");
-                }
-                
-                console.log("reCAPTCHA validation successful:", recaptchaData);
-                
-                // Продолжаем отправку формы
+                // Отправляем данные через наш API
                 const res = await fetch("/api/contact", {
                     method: "POST",
                     body: JSON.stringify({ 
                         ...formData,
                         source,
-                        recaptchaScore: recaptchaData.score
+                        recaptchaToken: captchaValue
                     }),
                     headers: { "Content-Type": "application/json" },
                 });
@@ -149,7 +122,7 @@ const ContactForm = () => {
                         body: JSON.stringify({ 
                             ...formData,
                             source,
-                            recaptchaScore: recaptchaData.score
+                            recaptchaToken: captchaValue
                         }),
                         headers: { "Content-Type": "application/json" },
                     });
@@ -189,8 +162,7 @@ const ContactForm = () => {
                         body: JSON.stringify({
                             ...formData,
                             source,
-                            formType: "Contact Form",
-                            recaptchaScore: recaptchaData.score
+                            formType: "Contact Form"
                         }),
                         headers: { "Content-Type": "application/json" },
                     });
@@ -216,6 +188,10 @@ const ContactForm = () => {
                     subject: "",
                     message: ""
                 });
+                
+                // Сбрасываем reCAPTCHA
+                recaptchaRef.current?.reset();
+                setCaptchaValue(null);
             } catch (fetchError) {
                 console.error("Error during fetch operation:", fetchError);
                 throw fetchError;
@@ -334,6 +310,15 @@ const ContactForm = () => {
                 </label>
             </div>
             
+            {/* Google reCAPTCHA */}
+            <div className="mt-4">
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+                    onChange={handleCaptchaChange}
+                />
+            </div>
+            
             {error && (
                 <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded-md text-sm">
                     {error}
@@ -342,8 +327,8 @@ const ContactForm = () => {
             
             <button
                 type="submit"
-                disabled={loading}
-                className={`mt-2 py-3 px-6 rounded-md font-medium transition-all duration-300 ease-out bg-[#e59500] text-white hover:bg-[#d48700] ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                disabled={loading || !captchaValue}
+                className={`mt-2 py-3 px-6 rounded-md font-medium transition-all duration-300 ease-out bg-[#e59500] text-white hover:bg-[#d48700] ${loading || !captchaValue ? "opacity-70 cursor-not-allowed" : ""}`}
             >
                 {loading ? "Sending..." : "Send Message"}
             </button>

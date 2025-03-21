@@ -1,6 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { saveFormToHubSpot } from "@/lib/hubspot";
 
+// Функция для проверки reCAPTCHA
+async function verifyRecaptcha(token: string) {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  
+  try {
+    const response = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`,
+      { method: "POST" }
+    );
+    
+    const data = await response.json();
+    return data.success;
+  } catch (error) {
+    console.error("Error verifying reCAPTCHA:", error);
+    return false;
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     console.log("Newsletter subscription request received");
@@ -19,8 +37,8 @@ export async function POST(req: NextRequest) {
     }
     
     // Деструктурируем данные из запроса
-    const { email, firstName = '', lastName = '' } = reqBody;
-    console.log("Newsletter request data:", { email, firstName, lastName });
+    const { email, firstName = '', lastName = '', consent, recaptchaToken } = reqBody;
+    console.log("Newsletter request data:", { email, firstName, lastName, consent, recaptchaToken });
 
     // Проверяем обязательные поля
     if (!email) {
@@ -31,12 +49,38 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (!consent) {
+      console.warn("Missing consent in newsletter subscription");
+      return NextResponse.json(
+        { error: "You must accept the privacy policy" },
+        { status: 400 }
+      );
+    }
+
     // Проверяем формат email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       console.warn(`Invalid email format in newsletter subscription: ${email}`);
       return NextResponse.json(
         { error: "Please enter a valid email address" },
+        { status: 400 }
+      );
+    }
+
+    // Проверка reCAPTCHA
+    if (!recaptchaToken) {
+      console.warn("Missing reCAPTCHA token in newsletter subscription");
+      return NextResponse.json(
+        { error: "reCAPTCHA verification is required" },
+        { status: 400 }
+      );
+    }
+
+    const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
+    if (!isRecaptchaValid) {
+      console.warn("reCAPTCHA verification failed");
+      return NextResponse.json(
+        { error: "reCAPTCHA verification failed" },
         { status: 400 }
       );
     }
