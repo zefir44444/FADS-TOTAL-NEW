@@ -58,11 +58,11 @@ const Header = () => {
         <div 
           className={`
             flex items-center justify-between 
-            bg-white/70 backdrop-blur-md
+            bg-white/80 backdrop-filter backdrop-blur-md
             rounded-full shadow-lg 
             py-2 px-4 md:px-6 
             transition-all duration-300 
-            border border-white/20
+            border border-white/30
             ${scrolled ? "mx-4 md:mx-8 lg:mx-16" : "mx-0"}
           `}
     
@@ -113,7 +113,7 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/7 backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[240px] border border-gray-100 
+              <div className="absolute top-full left-0 mt-2 bg-white/80 backdrop-filter backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[240px] border border-white/30 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
                   
@@ -189,7 +189,7 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/70 backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-gray-100 
+              <div className="absolute top-full left-0 mt-2 bg-white/80 backdrop-filter backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/30 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
             
@@ -240,7 +240,7 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/70 backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-gray-100 
+              <div className="absolute top-full left-0 mt-2 bg-white/80 backdrop-filter backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/30 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
               
@@ -384,7 +384,7 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden mx-4 mt-2 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg py-6 px-6 border border-gray-100 overflow-hidden" 
+              className="md:hidden mx-4 mt-2 bg-white/80 backdrop-filter backdrop-blur-md rounded-2xl shadow-lg py-6 px-6 border border-white/30 overflow-hidden" 
             >
               <motion.nav 
                 initial={{ opacity: 0, y: -20 }}
