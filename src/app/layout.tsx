@@ -114,14 +114,12 @@ export default function RootLayout({
         style={{ userSelect: 'none' }}
       >
          <Header />
-         <div className="pt-16 md:pt-26">
 
              <div className="max-w-7xl mx-auto">
                <Breadcrumbs />
                {children}
                <SpeedInsights />
              </div>
-           </div>
 
          <Footer />
          <CookieConsent />

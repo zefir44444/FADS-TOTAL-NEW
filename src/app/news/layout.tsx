@@ -62,7 +62,6 @@ export default function NewsLayout({
         }}
       />
       <section className="min-h-screen">
-        <div className="w-full max-w-[100vw] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-lg sm:rounded-xl overflow-hidden">
               <div className="p-4 sm:p-6 md:p-8">
@@ -111,7 +110,6 @@ export default function NewsLayout({
                 </div>
               </div>
             </div>
-          </div>
         </section>
     </>
   );
