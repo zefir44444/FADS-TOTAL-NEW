@@ -2,7 +2,8 @@
 
 import React, { FormEvent, useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import ReCAPTCHA from "react-google-recaptcha";
+import RecaptchaWrapper from "./RecaptchaWrapper";
+import type ReCAPTCHA from "react-google-recaptcha";
 
 const SubscribeForm = () => {
   const [formData, setFormData] = useState({
@@ -255,7 +256,7 @@ const SubscribeForm = () => {
         
         {/* Google reCAPTCHA */}
         <div className="mt-2">
-          <ReCAPTCHA
+          <RecaptchaWrapper
             ref={recaptchaRef}
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
             onChange={handleCaptchaChange}
