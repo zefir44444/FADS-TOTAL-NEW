@@ -17,7 +17,7 @@ const SubscribeForm = () => {
   const [isCheckboxBlinking, setIsCheckboxBlinking] = useState(false);
   const checkboxRef = useRef<HTMLInputElement>(null);
   const [mounted, setMounted] = useState(false);
-  const { executeReCaptcha } = useReCaptcha();
+  const { executeReCaptcha, loaded } = useReCaptcha();
 
   useEffect(() => {
     setMounted(true);
@@ -53,12 +53,23 @@ const SubscribeForm = () => {
     setError("");
     
     try {
+      // Проверяем загружена ли reCAPTCHA
+      if (!loaded) {
+        console.warn("reCAPTCHA is not loaded yet, waiting for loading...");
+        // Ждем 2 секунды для возможной загрузки reCAPTCHA
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        // Если всё ещё не загружена, выбрасываем ошибку
+        if (!loaded) {
+          throw new Error("reCAPTCHA failed to load. Please refresh the page and try again.");
+        }
+      }
+      
       // Получаем токен reCAPTCHA
       console.log("Verifying with reCAPTCHA...");
       const token = await executeReCaptcha("subscribe_form");
       
       if (!token) {
-        throw new Error("Не удалось получить токен reCAPTCHA. Пожалуйста, обновите страницу и попробуйте снова.");
+        throw new Error("Failed to get reCAPTCHA token. Please refresh the page and try again.");
       }
       
       // Проверяем токен через наш API
@@ -75,7 +86,7 @@ const SubscribeForm = () => {
       
       if (!recaptchaRes.ok || !recaptchaData.success) {
         console.error("reCAPTCHA validation failed:", recaptchaData);
-        throw new Error(recaptchaData.error || "Проверка reCAPTCHA не пройдена. Возможно, вы были определены как бот.");
+        throw new Error(recaptchaData.error || "reCAPTCHA verification failed. You may have been identified as a bot.");
       }
       
       console.log("reCAPTCHA validation successful:", recaptchaData);
@@ -96,7 +107,7 @@ const SubscribeForm = () => {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Ошибка при подписке на рассылку");
+        throw new Error(data.error || "Error subscribing to the newsletter");
       }
 
       if (data.success) {
@@ -134,7 +145,7 @@ const SubscribeForm = () => {
       }
     } catch (err) {
       console.error("Subscription error:", err);
-      setError(err instanceof Error ? err.message : "Произошла ошибка при подписке");
+      setError(err instanceof Error ? err.message : "An error occurred during subscription");
     } finally {
       setLoading(false);
     }
