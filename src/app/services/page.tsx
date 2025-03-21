@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from 'framer-motion';
 import { 
   ArrowRightIcon,
@@ -229,7 +228,7 @@ export default function ServicesOverview() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Customized Approach</h3>
-              <p className="text-gray-600">We don't believe in one-size-fits-all solutions. Every business is unique, and we carefully listen to your needs to create exactly the solution that will perfectly fit your company.</p>
+              <p className="text-gray-600">We don&apos;t believe in one-size-fits-all solutions. Every business is unique, and we carefully listen to your needs to create exactly the solution that will perfectly fit your company.</p>
             </motion.div>
 
             <motion.div 

@@ -166,7 +166,7 @@ const SubscribeForm = () => {
           />
           <label htmlFor="privacy-policy" className="text-xs">
             I agree to the processing of my personal data in accordance with the{" "}
-            <Link href="/privacy" className="text-[#d17800] font-medium hover:underline">
+            <Link href="/privacy" className="text-[#863800] font-semibold hover:underline">
               Privacy Policy
             </Link>
           </label>
