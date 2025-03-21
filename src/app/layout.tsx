@@ -132,13 +132,10 @@ export default function RootLayout({
           <Footer />
           <CookieConsent />
         </div>
-        
-        {/* HubSpot Embed Script */}
-        <Script
-          id="hubspot-script"
-          src="https://js.hs-scripts.com/49357637.js"
-          strategy="afterInteractive"
-        />
+            {/* -- Start of HubSpot Embed Code -- */}
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49357637.js"></script>
+{/* End of HubSpot Embed Code */}
+
       </body>
     </html>
   );

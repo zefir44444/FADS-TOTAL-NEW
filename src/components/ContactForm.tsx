@@ -2,8 +2,7 @@
 
 import React, { FormEvent, useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import RecaptchaWrapper from "./RecaptchaWrapper";
-import type ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -20,10 +19,10 @@ const ContactForm = () => {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
     const [isCheckboxBlinking, setIsCheckboxBlinking] = useState(false);
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
     const checkboxRef = useRef<HTMLInputElement>(null);
     const [mounted, setMounted] = useState(false);
-    const [captchaValue, setCaptchaValue] = useState<string | null>(null);
-    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     // Предотвращаем гидратацию
     useEffect(() => {
@@ -61,8 +60,14 @@ const ContactForm = () => {
     };
 
     // Обработчик изменения reCAPTCHA
-    const handleCaptchaChange = (value: string | null) => {
-        setCaptchaValue(value);
+    const handleRecaptchaChange = (token: string | null) => {
+        setRecaptchaToken(token);
+    };
+
+    // Сброс reCAPTCHA при ошибке
+    const resetRecaptcha = () => {
+        recaptchaRef.current?.reset();
+        setRecaptchaToken(null);
     };
 
     const onSubmit = async (e: FormEvent) => {
@@ -73,8 +78,8 @@ const ContactForm = () => {
             return;
         }
 
-        if (!captchaValue) {
-            setError("Please verify that you are not a robot");
+        if (!recaptchaToken) {
+            setError("Please complete the reCAPTCHA verification");
             return;
         }
         
@@ -83,7 +88,7 @@ const ContactForm = () => {
         setError("");
 
         try {
-            console.log("Sending contact form...", { ...formData, source });
+            console.log("Sending contact form...", { ...formData, source, recaptchaToken });
             
             try {
                 // Отправляем данные через наш API
@@ -92,7 +97,7 @@ const ContactForm = () => {
                     body: JSON.stringify({ 
                         ...formData,
                         source,
-                        recaptchaToken: captchaValue
+                        recaptchaToken
                     }),
                     headers: { "Content-Type": "application/json" },
                 });
@@ -113,6 +118,11 @@ const ContactForm = () => {
                     throw new Error(`Неверный формат ответа от сервера: ${responseText}`);
                 }
 
+                // Проверяем результат reCAPTCHA
+                if (data.recaptchaFailed) {
+                    throw new Error("reCAPTCHA verification failed. Please try again.");
+                }
+
                 // Если получаем ошибку конфликта (409), используем прямой API для HubSpot
                 if (res.status === 409) {
                     console.log("Received conflict error, trying direct HubSpot API...");
@@ -123,7 +133,7 @@ const ContactForm = () => {
                         body: JSON.stringify({ 
                             ...formData,
                             source,
-                            recaptchaToken: captchaValue
+                            recaptchaToken
                         }),
                         headers: { "Content-Type": "application/json" },
                     });
@@ -189,17 +199,16 @@ const ContactForm = () => {
                     subject: "",
                     message: ""
                 });
-                
-                // Сбрасываем reCAPTCHA
-                recaptchaRef.current?.reset();
-                setCaptchaValue(null);
+                resetRecaptcha();
             } catch (fetchError) {
                 console.error("Error during fetch operation:", fetchError);
+                resetRecaptcha();
                 throw fetchError;
             }
         } catch (err) {
             console.error("Form submission error:", err);
             setError(err instanceof Error ? err.message : "Something went wrong");
+            resetRecaptcha();
         }
 
         setLoading(false);
@@ -310,13 +319,14 @@ const ContactForm = () => {
                     </Link>
                 </label>
             </div>
-            
+
             {/* Google reCAPTCHA */}
             <div className="mt-4">
-                <RecaptchaWrapper
+                <ReCAPTCHA
                     ref={recaptchaRef}
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-                    onChange={handleCaptchaChange}
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                    onChange={handleRecaptchaChange}
+                    size="normal"
                 />
             </div>
             
@@ -328,8 +338,8 @@ const ContactForm = () => {
             
             <button
                 type="submit"
-                disabled={loading || !captchaValue}
-                className={`mt-2 py-3 px-6 rounded-md font-medium transition-all duration-300 ease-out bg-[#e59500] text-white hover:bg-[#d48700] ${loading || !captchaValue ? "opacity-70 cursor-not-allowed" : ""}`}
+                disabled={loading || !recaptchaToken}
+                className={`mt-2 py-3 px-6 rounded-md font-medium transition-all duration-300 ease-out bg-[#e59500] text-white hover:bg-[#d48700] ${(loading || !recaptchaToken) ? "opacity-70 cursor-not-allowed" : ""}`}
             >
                 {loading ? "Sending..." : "Send Message"}
             </button>

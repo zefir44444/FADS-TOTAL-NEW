@@ -1,162 +1,138 @@
 import { NextRequest, NextResponse } from "next/server";
 import { saveFormToHubSpot } from "@/lib/hubspot";
 
+type NewsletterFormData = {
+    firstName?: string;
+    lastName?: string;
+    email: string;
+    recaptchaToken?: string;
+};
+
 // Функция для проверки reCAPTCHA
-async function verifyRecaptcha(token: string) {
-  const secret = process.env.RECAPTCHA_SECRET_KEY;
-  
-  try {
-    const response = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`,
-      { method: "POST" }
-    );
+async function verifyRecaptcha(token: string): Promise<boolean> {
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
     
-    const data = await response.json();
-    return data.success;
-  } catch (error) {
-    console.error("Error verifying reCAPTCHA:", error);
-    return false;
-  }
+    if (!secretKey) {
+        console.error("RECAPTCHA_SECRET_KEY is not defined");
+        return false;
+    }
+
+    try {
+        const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `secret=${secretKey}&response=${token}`,
+        });
+
+        const data = await response.json();
+        return data.success;
+    } catch (error) {
+        console.error('reCAPTCHA verification error:', error);
+        return false;
+    }
 }
 
 export async function POST(req: NextRequest) {
-  try {
-    console.log("Newsletter subscription request received");
-    
-    let reqBody;
     try {
-      // Получаем данные из запроса
-      reqBody = await req.json();
-      console.log("Newsletter raw request body:", reqBody);
-    } catch (parseError) {
-      console.error("Error parsing request body:", parseError);
-      return NextResponse.json(
-        { error: "Invalid request body format", details: String(parseError) },
-        { status: 400 }
-      );
-    }
-    
-    // Деструктурируем данные из запроса
-    const { email, firstName = '', lastName = '', consent, recaptchaToken } = reqBody;
-    console.log("Newsletter request data:", { email, firstName, lastName, consent, recaptchaToken });
+        const body = await req.json();
+        const { firstName, lastName, email, recaptchaToken } = body as NewsletterFormData;
 
-    // Проверяем обязательные поля
-    if (!email) {
-      console.warn("Missing email in newsletter subscription");
-      return NextResponse.json(
-        { error: "Email is required" },
-        { status: 400 }
-      );
-    }
+        // Проверяем наличие обязательных полей
+        if (!email) {
+            return NextResponse.json({ success: false, error: 'Email is required' }, { status: 400 });
+        }
 
-    if (!consent) {
-      console.warn("Missing consent in newsletter subscription");
-      return NextResponse.json(
-        { error: "You must accept the privacy policy" },
-        { status: 400 }
-      );
-    }
+        // Проверяем reCAPTCHA, если токен предоставлен
+        if (!recaptchaToken) {
+            return NextResponse.json({ 
+                success: false, 
+                error: 'reCAPTCHA verification failed', 
+                recaptchaFailed: true 
+            }, { status: 400 });
+        }
 
-    // Проверяем формат email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      console.warn(`Invalid email format in newsletter subscription: ${email}`);
-      return NextResponse.json(
-        { error: "Please enter a valid email address" },
-        { status: 400 }
-      );
-    }
+        const isValidRecaptcha = await verifyRecaptcha(recaptchaToken);
+        
+        if (!isValidRecaptcha) {
+            return NextResponse.json({ 
+                success: false, 
+                error: 'reCAPTCHA verification failed', 
+                recaptchaFailed: true 
+            }, { status: 400 });
+        }
 
-    // Проверка reCAPTCHA
-    if (!recaptchaToken) {
-      console.warn("Missing reCAPTCHA token in newsletter subscription");
-      return NextResponse.json(
-        { error: "reCAPTCHA verification is required" },
-        { status: 400 }
-      );
-    }
+        // Получаем API-ключ HubSpot из переменных окружения
+        const hubspotKey = process.env.HUBSPOT_ACCESS_TOKEN;
+        const portalId = process.env.NEXT_HUBSPOT_PORTAL_ID;
+        const formId = process.env.NEXT_HUBSPOT_NEWSLETTER_FORM_ID;
 
-    const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
-    if (!isRecaptchaValid) {
-      console.warn("reCAPTCHA verification failed");
-      return NextResponse.json(
-        { error: "reCAPTCHA verification failed" },
-        { status: 400 }
-      );
-    }
+        if (!hubspotKey || !portalId || !formId) {
+            return NextResponse.json(
+                { success: false, error: 'Missing HubSpot configuration' },
+                { status: 500 }
+            );
+        }
 
-    console.log(`Processing newsletter subscription for: ${email}`);
+        // Формируем данные для отправки в HubSpot
+        const formData = {
+            fields: [
+                { name: 'email', value: email },
+            ],
+            context: {
+                hutk: req.cookies.get('hubspotutk')?.value || undefined,
+                pageUri: req.headers.get('referer') || 'unknown',
+                pageName: 'Newsletter Subscription'
+            }
+        };
 
-    // Логируем полученные данные
-    console.log("Form data to be sent to HubSpot:", { 
-      email, 
-      firstName: firstName || '(not provided)', 
-      lastName: lastName || '(not provided)'
-    });
+        // Добавляем имя и фамилию, если они предоставлены
+        if (firstName) {
+            formData.fields.push({ name: 'firstname', value: firstName });
+        }
 
-    // Сохраняем данные в HubSpot
-    let hubspotResult;
-    try {
-      hubspotResult = await saveFormToHubSpot('newsletter', {
-        email,
-        firstName,
-        lastName
-      });
-      
-      console.log(`HubSpot result for ${email}:`, hubspotResult);
-    } catch (hubspotError) {
-      console.error("Error during HubSpot API call:", hubspotError);
-      return NextResponse.json(
-        { 
-          error: "Failed to save subscription to HubSpot", 
-          details: hubspotError instanceof Error ? hubspotError.message : String(hubspotError)
-        },
-        { status: 500 }
-      );
-    }
-    
-    // Проверяем результат сохранения в HubSpot
-    if (!hubspotResult.success) {
-      console.warn(`HubSpot subscription failed for ${email}:`, hubspotResult.message);
-      
-      // Если это ошибка конфликта, возвращаем статус 409
-      if (hubspotResult.message && hubspotResult.message.includes("conflict")) {
+        if (lastName) {
+            formData.fields.push({ name: 'lastname', value: lastName });
+        }
+
+        console.log("Sending data to HubSpot:", JSON.stringify(formData));
+
+        // Отправляем данные в HubSpot
+        const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${hubspotKey}`
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const responseData = await response.json();
+        console.log("HubSpot response:", response.status, response.statusText);
+
+        // Проверяем успешность ответа
+        if (!response.ok) {
+            // Возвращаем 409, если контакт уже существует, для последующей обработки на стороне клиента
+            if (response.status === 409) {
+                return NextResponse.json(
+                    { success: false, error: responseData.message || 'Contact already exists' },
+                    { status: 409 }
+                );
+            }
+            
+            return NextResponse.json(
+                { success: false, error: responseData.message || 'Failed to subscribe' },
+                { status: response.status }
+            );
+        }
+
+        return NextResponse.json({ success: true }, { status: 200 });
+    } catch (error: any) {
+        console.error("API Error:", error.message);
         return NextResponse.json(
-          { 
-            error: "Conflict with existing contact", 
-            message: hubspotResult.message,
-            data: hubspotResult.data
-          },
-          { status: 409 }
+            { success: false, error: error.message || 'Server error' },
+            { status: 500 }
         );
-      }
-      
-      return NextResponse.json(
-        { 
-          error: "Failed to save subscription to HubSpot", 
-          message: hubspotResult.message,
-          data: hubspotResult.data
-        },
-        { status: 500 }
-      );
     }
-
-    // Возвращаем успешный ответ
-    console.log(`Subscription processed successfully for: ${email}`);
-    return NextResponse.json({
-      success: true,
-      message: "Thank you for subscribing to our newsletter!",
-      hubspot: hubspotResult.success,
-      data: hubspotResult.data
-    });
-  } catch (error) {
-    console.error("Error processing newsletter subscription:", error);
-    return NextResponse.json(
-      { 
-        error: "Failed to process your subscription", 
-        details: error instanceof Error ? error.message : String(error)
-      },
-      { status: 500 }
-    );
-  }
 } 
