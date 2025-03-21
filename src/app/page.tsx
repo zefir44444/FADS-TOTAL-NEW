@@ -178,7 +178,7 @@ export default function Home() {
               href="/contact" 
               className="gradient-button text-center px-8 py-3 text-lg min-w-[180px] inline-flex justify-center items-center hover:scale-105 transition-transform duration-300"
             >
-              Start now
+              Start your website project
             </Link>
           </motion.div>
           
@@ -321,7 +321,7 @@ export default function Home() {
                 >
                   <h3 className="text-2xl font-bold mb-4 gradient-text">Initial Consultation and Task Discussion</h3>
                   <p className="text-lg">
-                    Website development cooperation begins <Link href="/contact" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">with your inquiry</Link>. To utilize our services and order custom website development, submit a request through any form on our website or contact us via your preferred messenger. Upon receiving your request, we&apos;ll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we&apos;ll issue an invoice for an initial payment.
+                    Website development cooperation begins <Link href="/contact" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">with your initial consultation request</Link>. To utilize our services and order custom website development, submit a request through any form on our website or contact us via your preferred messenger. Upon receiving your request, we&apos;ll promptly review your project specifics. After completing the brief, discussing objectives, and signing the contract, we&apos;ll issue an invoice for an initial payment.
                   </p>
                 </motion.div>
               </motion.div>
@@ -637,17 +637,16 @@ You can check the current development status on the test domain at any time. We 
               </motion.div>
               
               <motion.div 
-                className="text-center mt-12 relative"
+                className="text-center mt-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-[#0088cc]/5 to-[#e59500]/5 rounded-full blur-xl"></div>
                 <Link 
                   href="/contact" 
-                  className="floating-button text-lg relative z-10"
+                  className="gradient-button text-lg"
                 >
-                  Contact us
+                  Ask a specific question about your project
                 </Link>
               </motion.div>
             </motion.div>
@@ -736,7 +735,7 @@ You can check the current development status on the test domain at any time. We 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
                     <span className="flex items-center justify-center">
-                      Learn more
+                      Explore business website solutions
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -769,7 +768,7 @@ You can check the current development status on the test domain at any time. We 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
                     <span className="flex items-center justify-center">
-                      Learn more
+                      Discover landing page options
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -802,7 +801,7 @@ You can check the current development status on the test domain at any time. We 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
                     <span className="flex items-center justify-center">
-                      Learn more
+                      View e-commerce website options
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -835,7 +834,7 @@ You can check the current development status on the test domain at any time. We 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
                     <span className="flex items-center justify-center">
-                      Learn more
+                      Browse showcase website examples
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -868,7 +867,7 @@ You can check the current development status on the test domain at any time. We 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
                     <span className="flex items-center justify-center">
-                      Learn more
+                      Explore blog website solutions
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -902,7 +901,7 @@ You can check the current development status on the test domain at any time. We 
                     className="block w-full py-2 px-4 bg-white border border-gray-300 rounded-full text-center text-gray-700 hover:bg-gradient-to-r hover:from-[#e59500]/10 hover:to-[#840032]/10 hover:border-[#e59500] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md group-hover:border-[#e59500]"
                   >
                     <span className="flex items-center justify-center">
-                      Learn more
+                      Discover custom development options
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -1152,7 +1151,7 @@ Our specialists work with the content management system (CMS) WordPress, and we 
                     className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 4 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <p className="text-gray-700">
-                      The timeline depends on the project&apos;s complexity. A <Link href="/websites/landing" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">quality landing page</Link> can be launched in about a week. On average, a new website takes 4 to 12 weeks to complete. More complex sites may require additional time.
+                      The timeline depends on the project&apos;s complexity. A <Link href="/websites/landing" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">quality landing page development</Link> can be launched in about a week. On average, a new website takes 4 to 12 weeks to complete. More complex sites may require additional time.
                     </p>
                   </div>
                 </motion.div>
@@ -1259,7 +1258,7 @@ Our specialists work with the content management system (CMS) WordPress, and we 
                     className={`px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 7 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <p className="text-gray-700">
-                      We offer <Link href="/promotion/seo" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">SEO optimization services</Link> to improve your site&apos;s visibility. However, no agency can guarantee first-page rankings, as search rankings depend on various factors, including competition in your niche and search engine algorithms. Our approach includes content optimization, technical improvements, and link-building strategies to increase your website&apos;s ranking.
+                      We offer <Link href="/promotion/seo" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">professional SEO optimization services</Link> to improve your site&apos;s visibility. However, no agency can guarantee first-page rankings, as search rankings depend on various factors, including competition in your niche and search engine algorithms. Our approach includes content optimization, technical improvements, and link-building strategies to increase your website&apos;s ranking.
                     </p>
                   </div>
                 </motion.div>
@@ -1400,9 +1399,9 @@ Our specialists work with the content management system (CMS) WordPress, and we 
               >
                 <Link 
                   href="/contact" 
-                  className="floating-button text-lg"
+                  className="gradient-button text-lg"
                 >
-                  Ask your question
+                  Ask a specific question about your project
                 </Link>
               </motion.div>
             </motion.div>

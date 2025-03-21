@@ -129,7 +129,7 @@ export default function ServicesOverview() {
                   href="/services/maintenance" 
                   className="flex items-center text-[#e59500] font-medium hover:text-[#840032] transition-colors duration-300 group"
                 >
-                  Learn more about maintenance
+                  Explore our website maintenance services
                   <ArrowRightIcon className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </div>
@@ -169,7 +169,7 @@ export default function ServicesOverview() {
                   href="/services/website-audits" 
                   className="flex items-center text-[#e59500] font-medium hover:text-[#840032] transition-colors duration-300 group"
                 >
-                  Learn more about website audits
+                  Discover our website audit services
                   <ArrowRightIcon className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </div>
@@ -273,7 +273,7 @@ export default function ServicesOverview() {
               href="/contact" 
               className="gradient-button text-center px-8 py-3 text-lg inline-flex justify-center items-center"
             >
-              Get in Touch
+              Schedule a services consultation
             </Link>
           </motion.div>
         </div>
