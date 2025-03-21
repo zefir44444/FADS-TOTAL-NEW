@@ -602,13 +602,6 @@ const Header = () => {
                         className="flex flex-col gap-2 items-center mt-2 overflow-hidden"
                       >
                         <Link 
-                          href="/promotion/website-audits" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Website Audits
-                        </Link>
-                        <Link 
                           href="/promotion/seo" 
                           className="text-sm hover:text-[#e59500] transition-colors duration-300"
                           onClick={() => setIsMenuOpen(false)}
