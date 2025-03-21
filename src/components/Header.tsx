@@ -55,18 +55,14 @@ const Header = () => {
         <div 
           className={`
             flex items-center justify-between 
-            bg-white md:bg-white/90
+            bg-white
             rounded-full shadow-lg 
             py-2 px-4 md:px-6 
             transition-all duration-300 
-            md:backdrop-blur-xl
             border border-white/20
             ${scrolled ? "mx-4 md:mx-8 lg:mx-16" : "mx-0"}
           `}
-          style={{
-            backdropFilter: isDesktop ? "blur(8px)" : "none",
-            WebkitBackdropFilter: isDesktop ? "blur(8px)" : "none",
-          }}
+    
         >
           {/* Логотип */}
           <Link href="/" className="flex items-center">
@@ -114,13 +110,10 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[240px] border border-gray-100 
+              <div className="absolute top-full left-0 mt-2 bg-white/100 rounded-xl shadow-lg py-3 px-4 z-50 min-w-[240px] border border-gray-100 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
-                   style={{
-                     backdropFilter: "blur(8px)",
-                     WebkitBackdropFilter: "blur(8px)"
-                   }}
+                  
               >
                 <div className="flex flex-col gap-2">
                   <Link 
@@ -193,13 +186,10 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-gray-100 
+              <div className="absolute top-full left-0 mt-2 bg-white/100 rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-gray-100 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
-                   style={{
-                     backdropFilter: "blur(8px)",
-                     WebkitBackdropFilter: "blur(8px)"
-                   }}
+            
               >
                 <div className="flex flex-col gap-2">
                   <Link 
@@ -247,13 +237,10 @@ const Header = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 bg-white/100 backdrop-blur-md rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-gray-100 
+              <div className="absolute top-full left-0 mt-2 bg-white/100 rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-gray-100 
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
-                   style={{
-                     backdropFilter: "blur(8px)",
-                     WebkitBackdropFilter: "blur(8px)"
-                   }}
+              
               >
                 <div className="flex flex-col gap-2">
                
