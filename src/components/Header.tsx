@@ -58,7 +58,7 @@ const Header = () => {
         <div 
           className={`
             flex items-center justify-between 
-            bg-white/80 backdrop-filter backdrop-blur-md
+            bg-white/70 backdrop-filter backdrop-blur-md
             rounded-full shadow-lg 
             py-2 px-4 md:px-6 
             transition-all duration-300 

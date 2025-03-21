@@ -15,12 +15,12 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com;
+              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://*.hs-scripts.com https://snap.licdn.com https://*.linkedin.com;
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-              img-src 'self' data: https://www.google-analytics.com;
+              img-src 'self' data: https://www.google-analytics.com https://*.linkedin.com https://px.ads.linkedin.com;
               font-src 'self' https://fonts.gstatic.com;
-              connect-src 'self' https://www.google-analytics.com;
-              frame-ancestors 'none';
+              connect-src 'self' https://www.google-analytics.com https://region1.analytics.google.com https://www.google.com https://*.hs-scripts.com https://*.linkedin.com;
+              frame-src 'self' https://www.googletagmanager.com;
               form-action 'self';
               base-uri 'self';
               object-src 'none';
