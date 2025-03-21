@@ -638,7 +638,7 @@ You can check the current development status on the test domain at any time. We 
               
               <motion.div 
                 className="text-center mt-12"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
@@ -1393,7 +1393,7 @@ Our specialists work with the content management system (CMS) WordPress, and we 
               
               <motion.div 
                 className="text-center mt-12"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >

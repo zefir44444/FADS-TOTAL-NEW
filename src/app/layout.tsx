@@ -73,6 +73,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <Analytics/>
         
@@ -108,6 +109,13 @@ export default function RootLayout({
             `
           }}
         />
+        
+        {/* HubSpot Script */}
+        <Script
+          id="hubspot-script"
+          src="//js.hs-scripts.com/49357637.js"
+          strategy="lazyOnload"
+        />
       </head>
       <body
         className={`${tektur.variable} ${spaceGrotesk.variable} antialiased overflow-y-auto`}
@@ -121,10 +129,12 @@ export default function RootLayout({
           
           <main className="flex-grow">
             <div className="max-w-7xl mx-auto pt-8 px-4 sm:px-6 lg:px-8">
-              <div className="mt-14 mb-6">
+              <div className="h-[30px] mt-14 mb-6">
                 <Breadcrumbs />
               </div>
-              {children}
+              <div className="min-h-screen">
+                {children}
+              </div>
               <SpeedInsights />
             </div>
           </main>
@@ -132,10 +142,6 @@ export default function RootLayout({
           <Footer />
           <CookieConsent />
         </div>
-            {/* -- Start of HubSpot Embed Code -- */}
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49357637.js"></script>
-{/* End of HubSpot Embed Code */}
-
       </body>
     </html>
   );
