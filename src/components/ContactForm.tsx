@@ -73,7 +73,7 @@ const ContactForm = () => {
             
             try {
                 // Отправляем данные через наш API
-                let res = await fetch("/api/contact", {
+                const res = await fetch("/api/contact", {
                     method: "POST",
                     body: JSON.stringify({ 
                         ...formData,

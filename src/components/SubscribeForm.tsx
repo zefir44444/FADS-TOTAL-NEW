@@ -61,7 +61,7 @@ const SubscribeForm = () => {
         console.log("Sending newsletter subscription...", formData);
         
         try {
-          let res = await fetch("/api/newsletter", {
+          const res = await fetch("/api/newsletter", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: { "Content-Type": "application/json" },
