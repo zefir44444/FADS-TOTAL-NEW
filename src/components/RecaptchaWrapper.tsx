@@ -1,6 +1,6 @@
 "use client";
 
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import Script from 'next/script';
 import ReCAPTCHAComponent from 'react-google-recaptcha';
 

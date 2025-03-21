@@ -94,8 +94,8 @@ export async function POST(req: NextRequest) {
         success: true,
         message: "Form submitted successfully!"
       });
-    } catch (error: any) {
-      console.error("Error saving to HubSpot:", error?.message || error);
+    } catch (error: Error | unknown) {
+      console.error("Error saving to HubSpot:", error instanceof Error ? error.message : String(error));
       
       if (error instanceof Error && error.message.includes("409")) {
         // Если контакт уже существует, это не ошибка для нас
