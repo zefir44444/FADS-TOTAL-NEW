@@ -18,7 +18,7 @@ const RecaptchaWrapper = forwardRef<ReCAPTCHAComponent, RecaptchaProps>(
     return (
       <>
         <Script
-          src="https://www.google.com/recaptcha/api.js"
+          src="https://www.recaptcha.net/recaptcha/api.js"
           strategy="lazyOnload"
           onLoad={() => setScriptLoaded(true)}
         />
