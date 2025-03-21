@@ -113,16 +113,24 @@ export default function RootLayout({
         className={`${tektur.variable} ${spaceGrotesk.variable} antialiased overflow-y-auto`}
         style={{ userSelect: 'none' }}
       >
-         <Header />
-
-             <div className="max-w-7xl mx-auto">
-               <Breadcrumbs />
-               {children}
-               <SpeedInsights />
-             </div>
-
-         <Footer />
-         <CookieConsent />
+        <div className="flex flex-col min-h-screen">
+          <div className="sticky top-0 z-50">
+            <Header />
+          </div>
+          
+          <main className="flex-grow">
+            <div className="max-w-7xl mx-auto pt-8 px-4 sm:px-6 lg:px-8">
+              <div className="mt-14 mb-6">
+                <Breadcrumbs />
+              </div>
+              {children}
+              <SpeedInsights />
+            </div>
+          </main>
+          
+          <Footer />
+          <CookieConsent />
+        </div>
       </body>
     </html>
   );
