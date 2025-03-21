@@ -122,7 +122,17 @@ main {
 
 /* Градиентная кнопка с анимацией */
 .gradient-button {
-  @apply inline-flex items-center gap-2 bg-[#e59500] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#840032] transition-colors;
+  @apply inline-flex items-center gap-2 text-white px-8 py-3 rounded-lg transition-colors;
+  font-weight: 600;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #d28800;
+  letter-spacing: 0.02em;
+}
+
+.gradient-button:hover {
+  background-color: #700029;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .gradient-button svg {
