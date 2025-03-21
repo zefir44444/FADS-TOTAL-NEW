@@ -86,7 +86,7 @@ const Header = () => {
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
                 aria-label="Websites"
               >
-                Websites
+                Development
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="12" 
@@ -165,7 +165,7 @@ const Header = () => {
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
                 aria-label="Website Promotion"
               >
-                Website Promotion
+                Promotion
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="12" 

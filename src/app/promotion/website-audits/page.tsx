@@ -21,7 +21,6 @@ import {
   DocumentTextIcon,
   BuildingOfficeIcon,
   ShoppingCartIcon,
-  PencilSquareIcon,
   MegaphoneIcon
 } from '@heroicons/react/24/outline';
 
