@@ -10,6 +10,8 @@ import Header from "@/components/Header";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GoogleTagManager } from '@next/third-parties/google'
+import { Inter } from "next/font/google";
+import { ReCaptchaProvider } from "@/components/ReCaptchaProvider";
 
 
 const tektur = Tektur({
@@ -24,6 +26,13 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -110,28 +119,29 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${tektur.variable} ${spaceGrotesk.variable} antialiased overflow-y-auto`}
+        className={`${tektur.variable} ${spaceGrotesk.variable} ${inter.variable} antialiased overflow-y-auto`}
         style={{ userSelect: 'none' }}
       >
-    
-        <div className="flex flex-col min-h-screen">
-          <div className="sticky top-0 z-50">
-            <Header />
-          </div>
-          
-          <main className="flex-grow">
-            <div className="max-w-7xl mx-auto pt-8 px-4 sm:px-6 lg:px-8">
-              <div className="mt-14 mb-6">
-                <Breadcrumbs />
-              </div>
-              {children}
-              <SpeedInsights />
+        <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
+          <div className="flex flex-col min-h-screen">
+            <div className="sticky top-0 z-50">
+              <Header />
             </div>
-          </main>
-          
-          <Footer />
-          <CookieConsent />
-        </div>
+            
+            <main className="flex-grow">
+              <div className="max-w-7xl mx-auto pt-8 px-4 sm:px-6 lg:px-8">
+                <div className="mt-14 mb-6">
+                  <Breadcrumbs />
+                </div>
+                {children}
+                <SpeedInsights />
+              </div>
+            </main>
+            
+            <Footer />
+            <CookieConsent />
+          </div>
+        </ReCaptchaProvider>
             {/* -- Start of HubSpot Embed Code -- */}
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49357637.js"></script>
 {/* End of HubSpot Embed Code */}

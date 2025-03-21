@@ -2,8 +2,10 @@
 
 import React, { FormEvent, useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useReCaptcha } from "./ReCaptchaProvider";
 
 const ContactForm = () => {
+    const { executeReCaptcha } = useReCaptcha();
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -72,12 +74,40 @@ const ContactForm = () => {
             console.log("Sending contact form...", { ...formData, source });
             
             try {
-                // Отправляем данные через наш API
+                // Получаем токен reCAPTCHA
+                console.log("Verifying with reCAPTCHA...");
+                const token = await executeReCaptcha("contact_form");
+                
+                if (!token) {
+                    throw new Error("Не удалось получить токен reCAPTCHA. Пожалуйста, обновите страницу и попробуйте снова.");
+                }
+                
+                // Проверяем токен через наш API
+                const recaptchaRes = await fetch("/api/recaptcha", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        token,
+                        action: "contact_form"
+                    }),
+                    headers: { "Content-Type": "application/json" },
+                });
+                
+                const recaptchaData = await recaptchaRes.json();
+                
+                if (!recaptchaRes.ok || !recaptchaData.success) {
+                    console.error("reCAPTCHA validation failed:", recaptchaData);
+                    throw new Error(recaptchaData.error || "Проверка reCAPTCHA не пройдена. Возможно, вы были определены как бот.");
+                }
+                
+                console.log("reCAPTCHA validation successful:", recaptchaData);
+                
+                // Продолжаем отправку формы
                 const res = await fetch("/api/contact", {
                     method: "POST",
                     body: JSON.stringify({ 
                         ...formData,
-                        source
+                        source,
+                        recaptchaScore: recaptchaData.score
                     }),
                     headers: { "Content-Type": "application/json" },
                 });
@@ -107,7 +137,8 @@ const ContactForm = () => {
                         method: "POST",
                         body: JSON.stringify({ 
                             ...formData,
-                            source
+                            source,
+                            recaptchaScore: recaptchaData.score
                         }),
                         headers: { "Content-Type": "application/json" },
                     });
@@ -147,7 +178,8 @@ const ContactForm = () => {
                         body: JSON.stringify({
                             ...formData,
                             source,
-                            formType: "Contact Form"
+                            formType: "Contact Form",
+                            recaptchaScore: recaptchaData.score
                         }),
                         headers: { "Content-Type": "application/json" },
                     });

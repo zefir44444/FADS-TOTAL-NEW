@@ -2,6 +2,7 @@
 
 import React, { FormEvent, useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { useReCaptcha } from "./ReCaptchaProvider";
 
 const SubscribeForm = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ const SubscribeForm = () => {
   const [isCheckboxBlinking, setIsCheckboxBlinking] = useState(false);
   const checkboxRef = useRef<HTMLInputElement>(null);
   const [mounted, setMounted] = useState(false);
+  const { executeReCaptcha } = useReCaptcha();
 
   useEffect(() => {
     setMounted(true);
@@ -38,16 +40,10 @@ const SubscribeForm = () => {
     }
   };
 
-  const onSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    if (!formData.email) {
-      setError("Please enter your email");
-      return;
-    }
-    
     if (!formData.consent) {
-      setError("Please agree to the privacy policy");
       highlightCheckbox();
       return;
     }
@@ -55,116 +51,90 @@ const SubscribeForm = () => {
     setLoading(true);
     setSuccess(false);
     setError("");
-
+    
     try {
-      if (typeof window !== 'undefined') {
-        console.log("Sending newsletter subscription...", formData);
-        
-        try {
-          const res = await fetch("/api/newsletter", {
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: { "Content-Type": "application/json" },
-          });
-
-          console.log("Newsletter API response status:", res.status, res.statusText);
-          
-          // Получаем текст ответа для лучшей диагностики
-          const responseText = await res.text();
-          console.log("Response text:", responseText);
-          
-          // Пытаемся преобразовать текст в JSON
-          let data;
-          try {
-            data = JSON.parse(responseText);
-            console.log("Parsed response data:", data);
-          } catch (jsonError) {
-            console.error("Error parsing JSON response:", jsonError);
-            throw new Error(`Неверный формат ответа от сервера: ${responseText}`);
-          }
-
-          // Если получаем ошибку конфликта (409), используем прямой API для HubSpot
-          if (res.status === 409) {
-            console.log("Received conflict error, trying direct HubSpot API...");
-            
-            // Отправляем данные через прямой API для HubSpot
-            const directRes = await fetch("/api/hubspot-direct", {
-              method: "POST",
-              body: JSON.stringify({ 
-                ...formData,
-                source: "newsletter"
-              }),
-              headers: { "Content-Type": "application/json" },
-            });
-            
-            console.log("Direct HubSpot API response status:", directRes.status, directRes.statusText);
-            
-            // Получаем текст ответа
-            const directText = await directRes.text();
-            console.log("Direct API response text:", directText);
-            
-            // Пытаемся преобразовать текст в JSON
-            try {
-              data = JSON.parse(directText);
-              console.log("Parsed direct response data:", data);
-            } catch (jsonError) {
-              console.error("Error parsing direct JSON response:", jsonError);
-              throw new Error(`Неверный формат ответа от прямого API: ${directText}`);
-            }
-            
-            // Проверяем статус
-            if (!directRes.ok) {
-              throw new Error(`Failed to subscribe via direct API: ${directRes.status} ${directRes.statusText}. Details: ${JSON.stringify(data)}`);
-            }
-          } else if (!res.ok) {
-            throw new Error(`Failed to subscribe: ${res.status} ${res.statusText}. Details: ${JSON.stringify(data)}`);
-          }
-
-          if (!data.success) {
-            throw new Error(data.error || "Failed to subscribe");
-          }
-
-          // Отправляем данные в Telegram
-          try {
-            console.log("Sending newsletter subscription to Telegram...");
-            const telegramRes = await fetch("/api/telegram", {
-              method: "POST",
-              body: JSON.stringify({
-                ...formData,
-                formType: "Newsletter Subscription",
-                source: "newsletter",
-                message: `Подписка на новостную рассылку от ${formData.email}`
-              }),
-              headers: { "Content-Type": "application/json" },
-            });
-            
-            const telegramData = await telegramRes.json();
-            console.log("Telegram API response:", telegramData);
-            
-            if (!telegramRes.ok) {
-              console.error("Error sending to Telegram:", telegramData.error);
-              // Не прерываем выполнение, если отправка в Telegram не удалась
-            }
-          } catch (telegramError) {
-            console.error("Error sending to Telegram:", telegramError);
-            // Не прерываем выполнение, если отправка в Telegram не удалась
-          }
-
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            consent: false
-          });
-          setSuccess(true);
-        } catch (fetchError) {
-          console.error("Error during fetch operation:", fetchError);
-          throw fetchError;
-        }
+      // Получаем токен reCAPTCHA
+      console.log("Verifying with reCAPTCHA...");
+      const token = await executeReCaptcha("subscribe_form");
+      
+      if (!token) {
+        throw new Error("Не удалось получить токен reCAPTCHA. Пожалуйста, обновите страницу и попробуйте снова.");
       }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setError(error instanceof Error ? error.message : "An unknown error occurred");
+      
+      // Проверяем токен через наш API
+      const recaptchaRes = await fetch("/api/recaptcha", {
+        method: "POST",
+        body: JSON.stringify({
+          token,
+          action: "subscribe_form"
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+      
+      const recaptchaData = await recaptchaRes.json();
+      
+      if (!recaptchaRes.ok || !recaptchaData.success) {
+        console.error("reCAPTCHA validation failed:", recaptchaData);
+        throw new Error(recaptchaData.error || "Проверка reCAPTCHA не пройдена. Возможно, вы были определены как бот.");
+      }
+      
+      console.log("reCAPTCHA validation successful:", recaptchaData);
+      
+      // Продолжаем отправку формы
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ 
+          email: formData.email, 
+          source: "newsletter", 
+          recaptchaScore: recaptchaData.score 
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Ошибка при подписке на рассылку");
+      }
+
+      if (data.success) {
+        console.log("Newsletter subscription successful");
+        setSuccess(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          consent: false
+        });
+        
+        // Отправляем данные в Telegram
+        try {
+          console.log("Sending subscription data to Telegram...");
+          await fetch("/api/telegram", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ 
+              email: formData.email, 
+              source: "newsletter", 
+              formType: "Newsletter Subscription",
+              recaptchaScore: recaptchaData.score
+            }),
+          });
+          console.log("Telegram notification sent");
+        } catch (telegramError) {
+          console.error("Error sending to Telegram:", telegramError);
+          // Не прерываем выполнение, если отправка в Telegram не удалась
+        }
+      } else {
+        throw new Error(data.error || "Не удалось подписаться на рассылку");
+      }
+    } catch (err) {
+      console.error("Subscription error:", err);
+      setError(err instanceof Error ? err.message : "Произошла ошибка при подписке");
     } finally {
       setLoading(false);
     }
@@ -179,7 +149,7 @@ const SubscribeForm = () => {
         Get the latest news and updates directly to your inbox
       </p>
       
-      <form onSubmit={onSubmit} className="space-y-3">
+      <form onSubmit={handleSubmit} className="space-y-3">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <input
             type="text"
