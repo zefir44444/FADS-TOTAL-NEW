@@ -33,9 +33,9 @@ export default function GoogleAds() {
         {/* Декоративные элементы фона */}
         <motion.div 
           className="absolute inset-0 z-0 opacity-30"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.3 }}
           animate={{ opacity: 0.3 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"></div>
@@ -44,31 +44,31 @@ export default function GoogleAds() {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           >
             <motion.div 
               className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm shadow-lg shadow-orange-100"
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 1, scale: 1 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.1 }}
             >
               Google Advertising
             </motion.div>
             <motion.h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.3 }}
             >
               Google Ads Setup & Management
             </motion.h1>
             <motion.p 
               className="text-xl max-w-3xl mx-auto text-gray-600"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.3 }}
             >
               Maximize your ROI with professionally managed Google Ads campaigns tailored to your business goals and target audience.
             </motion.p>
@@ -76,9 +76,9 @@ export default function GoogleAds() {
           
           <motion.div 
             className="mt-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -97,18 +97,18 @@ export default function GoogleAds() {
         <div className="container mx-auto px-6">
           <motion.h2 
             className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
           >
             Our Google Ads Services
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <motion.div 
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 1 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.3 }}
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
@@ -120,9 +120,9 @@ export default function GoogleAds() {
 
             <motion.div 
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 1 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.3 }}
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
@@ -134,9 +134,9 @@ export default function GoogleAds() {
 
             <motion.div 
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 1 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.3 }}
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-12 h-12 bg-[#e59500]/10 rounded-lg flex items-center justify-center mb-4">
@@ -154,9 +154,9 @@ export default function GoogleAds() {
         <div className="container mx-auto px-6">
           <motion.h2 
             className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
           >
             Our Google Ads Management Process
           </motion.h2>
@@ -164,9 +164,9 @@ export default function GoogleAds() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <motion.div 
               className="text-center"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.3 }}
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-100">
@@ -178,9 +178,9 @@ export default function GoogleAds() {
 
             <motion.div 
               className="text-center"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.3 }}
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-100">
@@ -192,9 +192,9 @@ export default function GoogleAds() {
 
             <motion.div 
               className="text-center"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.3 }}
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-100">
@@ -206,9 +206,9 @@ export default function GoogleAds() {
 
             <motion.div 
               className="text-center"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.3 }}
               whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
             >
               <div className="w-16 h-16 bg-[#e59500]/10 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-100">

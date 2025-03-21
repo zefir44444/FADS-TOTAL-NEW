@@ -26,6 +26,16 @@ body {
   flex-direction: column;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  font-display: swap;
+  text-rendering: optimizeSpeed;
+}
+
+/* Предотвращение смещения текста при загрузке шрифтов */
+html {
+  font-size: 16px;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Разрешаем выделение текста в полях ввода и текстовых областях */

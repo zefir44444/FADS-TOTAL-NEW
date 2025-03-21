@@ -118,11 +118,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${tektur.variable} ${spaceGrotesk.variable} antialiased overflow-y-auto`}
-        style={{ userSelect: 'none' }}
+        className={`${tektur.variable} ${spaceGrotesk.variable} font-sans antialiased overflow-y-auto`}
       >
     
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen select-none">
           <div className="sticky top-0 z-50">
             <Header />
           </div>
