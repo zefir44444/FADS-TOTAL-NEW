@@ -1,26 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ContactForm from "../../components/ContactForm";
 import { motion } from 'framer-motion';
 
-
 export default function ContactPage() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Предотвращаем гидратацию и ждем загрузки страницы
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <main className="container mx-auto px-4 py-12">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto min-h-[900px]">
         <motion.div 
-          className="mb-8"
-          initial={{ opacity: 0, y: 20 }}
+          className="mb-8 min-h-[600px]"
+          initial={{ opacity: isLoaded ? 0 : 1, y: isLoaded ? 20 : 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <ContactForm />
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[200px]">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            className="min-h-[150px]"
+            initial={{ opacity: isLoaded ? 0 : 1, y: isLoaded ? 20 : 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
@@ -39,7 +46,8 @@ export default function ContactPage() {
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            className="min-h-[150px]"
+            initial={{ opacity: isLoaded ? 0 : 1, y: isLoaded ? 20 : 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >

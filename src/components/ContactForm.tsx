@@ -185,13 +185,32 @@ const ContactForm = () => {
         setLoading(false);
     };
 
-    // Если компонент не смонтирован, возвращаем null
+    // Если компонент не смонтирован, возвращаем пустой скелет формы
     if (!mounted) {
-        return null;
+        return (
+            <div className="w-full flex flex-col gap-4 transition-all duration-300 ease-out bg-white p-6 rounded-lg min-h-[600px]">
+                <div className="mb-4">
+                    <div className="h-7 bg-gray-200 rounded w-3/4 mb-2"></div>
+                    <div className="h-5 bg-gray-200 rounded w-1/2"></div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="h-12 bg-gray-200 rounded"></div>
+                    <div className="h-12 bg-gray-200 rounded"></div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="h-12 bg-gray-200 rounded"></div>
+                    <div className="h-12 bg-gray-200 rounded"></div>
+                </div>
+                <div className="h-12 bg-gray-200 rounded"></div>
+                <div className="h-32 bg-gray-200 rounded"></div>
+                <div className="h-6 bg-gray-200 rounded w-full mt-2"></div>
+                <div className="h-12 bg-gray-200 rounded w-1/3 mt-2"></div>
+            </div>
+        );
     }
 
     return (
-        <form onSubmit={onSubmit} className="w-full flex flex-col gap-4 transition-all duration-300 ease-out bg-white p-6 rounded-lg" autoComplete="on">
+        <form onSubmit={onSubmit} className="w-full flex flex-col gap-4 transition-all duration-300 ease-out bg-white p-6 rounded-lg min-h-[600px]" autoComplete="on">
             <div className="mb-4">
                 <h3 className="text-xl font-bold mb-2 text-black">
                     Get in touch with us
