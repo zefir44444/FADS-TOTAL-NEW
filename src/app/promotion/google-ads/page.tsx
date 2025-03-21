@@ -476,7 +476,7 @@ export default function GoogleAds() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-xl font-bold mb-4">Need a custom solution?</h3>
-            <p className="mb-6 text-gray-600">Let's work together to design a personalized Google Ads strategy that perfectly matches your business goals and delivers remarkable results</p>
+            <p className="mb-6 text-gray-600">Let&apos;s work together to design a personalized Google Ads strategy that perfectly matches your business goals and delivers remarkable results</p>
             <Link 
               href="/contact?service=google-ads-custom" 
               className="inline-flex items-center text-[#e59500] hover:text-[#840032] font-medium transition-colors duration-300"
