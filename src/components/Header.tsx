@@ -23,6 +23,14 @@ const Header = () => {
       }
     };
     
+    const handleResize = () => {
+      // Проверка размера экрана и закрытие мобильного меню при ресайзе на десктоп
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        setIsMenuOpen(false);
+        setOpenMobileSubmenu(null);
+      }
+    };
+    
     handleResize(); // Инициализация при первой загрузке
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
@@ -31,7 +39,7 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
