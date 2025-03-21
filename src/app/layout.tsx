@@ -73,24 +73,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <Analytics/>
         
-        {/* HubSpot скрипт */}
-        <Script 
-          id="hubspot-script"
-          src="//js.hs-scripts.com/49357637.js"
-          strategy="lazyOnload"
-        />
-
-        {/* Google reCAPTCHA скрипт */}
-        <Script
-          id="recaptcha-script"
-          src="https://www.google.com/recaptcha/api.js"
-          strategy="lazyOnload"
-        />
-
         {/* Структурированные данные JSON-LD для организации */}
         <Script
           id="schema-org-organization"
@@ -147,6 +132,10 @@ export default function RootLayout({
           <Footer />
           <CookieConsent />
         </div>
+            {/* -- Start of HubSpot Embed Code -- */}
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49357637.js"></script>
+{/* End of HubSpot Embed Code */}
+
       </body>
     </html>
   );

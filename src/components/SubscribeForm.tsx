@@ -2,7 +2,6 @@
 
 import React, { FormEvent, useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const SubscribeForm = () => {
   const [formData, setFormData] = useState({
@@ -15,9 +14,7 @@ const SubscribeForm = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const [isCheckboxBlinking, setIsCheckboxBlinking] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const checkboxRef = useRef<HTMLInputElement>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -41,15 +38,6 @@ const SubscribeForm = () => {
     }
   };
 
-  const handleRecaptchaChange = (token: string | null) => {
-    setRecaptchaToken(token);
-  };
-
-  const resetRecaptcha = () => {
-    recaptchaRef.current?.reset();
-    setRecaptchaToken(null);
-  };
-
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
@@ -63,11 +51,6 @@ const SubscribeForm = () => {
       highlightCheckbox();
       return;
     }
-
-    if (!recaptchaToken) {
-      setError("Please complete the reCAPTCHA verification");
-      return;
-    }
     
     setLoading(true);
     setSuccess(false);
@@ -75,15 +58,12 @@ const SubscribeForm = () => {
 
     try {
       if (typeof window !== 'undefined') {
-        console.log("Sending newsletter subscription...", { ...formData, recaptchaToken });
+        console.log("Sending newsletter subscription...", formData);
         
         try {
           const res = await fetch("/api/newsletter", {
             method: "POST",
-            body: JSON.stringify({ 
-              ...formData,
-              recaptchaToken 
-            }),
+            body: JSON.stringify(formData),
             headers: { "Content-Type": "application/json" },
           });
 
@@ -103,11 +83,6 @@ const SubscribeForm = () => {
             throw new Error(`Неверный формат ответа от сервера: ${responseText}`);
           }
 
-          // Проверяем результат reCAPTCHA
-          if (data.recaptchaFailed) {
-            throw new Error("reCAPTCHA verification failed. Please try again.");
-          }
-
           // Если получаем ошибку конфликта (409), используем прямой API для HubSpot
           if (res.status === 409) {
             console.log("Received conflict error, trying direct HubSpot API...");
@@ -117,8 +92,7 @@ const SubscribeForm = () => {
               method: "POST",
               body: JSON.stringify({ 
                 ...formData,
-                formType: "newsletter",
-                recaptchaToken
+                source: "newsletter"
               }),
               headers: { "Content-Type": "application/json" },
             });
@@ -140,24 +114,26 @@ const SubscribeForm = () => {
             
             // Проверяем статус
             if (!directRes.ok) {
-              throw new Error(`Failed to send newsletter form via direct API: ${directRes.status} ${directRes.statusText}. Details: ${JSON.stringify(data)}`);
+              throw new Error(`Failed to subscribe via direct API: ${directRes.status} ${directRes.statusText}. Details: ${JSON.stringify(data)}`);
             }
           } else if (!res.ok) {
-            throw new Error(`Failed to send newsletter form: ${res.status} ${res.statusText}. Details: ${JSON.stringify(data)}`);
+            throw new Error(`Failed to subscribe: ${res.status} ${res.statusText}. Details: ${JSON.stringify(data)}`);
           }
 
           if (!data.success) {
-            throw new Error(data.error || data.message || "Failed to subscribe");
+            throw new Error(data.error || "Failed to subscribe");
           }
 
           // Отправляем данные в Telegram
           try {
-            console.log("Sending data to Telegram...");
+            console.log("Sending newsletter subscription to Telegram...");
             const telegramRes = await fetch("/api/telegram", {
               method: "POST",
               body: JSON.stringify({
                 ...formData,
-                formType: "Newsletter Subscription"
+                formType: "Newsletter Subscription",
+                source: "newsletter",
+                message: `Подписка на новостную рассылку от ${formData.email}`
               }),
               headers: { "Content-Type": "application/json" },
             });
@@ -181,17 +157,14 @@ const SubscribeForm = () => {
             consent: false
           });
           setSuccess(true);
-          resetRecaptcha();
         } catch (fetchError) {
           console.error("Error during fetch operation:", fetchError);
-          resetRecaptcha();
           throw fetchError;
         }
       }
-    } catch (err) {
-      console.error("Form submission error:", err);
-      setError(err instanceof Error ? err.message : "Something went wrong");
-      resetRecaptcha();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setError(error instanceof Error ? error.message : "An unknown error occurred");
     } finally {
       setLoading(false);
     }
@@ -258,19 +231,9 @@ const SubscribeForm = () => {
           </label>
         </div>
         
-        <div className="mb-4">
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-            onChange={handleRecaptchaChange}
-            size="normal"
-            asyncScriptOnLoad={() => console.log("reCAPTCHA script loaded")}
-          />
-        </div>
-        
         <button
           type="submit"
-          disabled={loading || !recaptchaToken}
+          disabled={loading}
           className="w-full bg-gradient-to-r from-[#e59500] to-[#d48700] text-white font-medium py-2 px-4 rounded-md hover:shadow-lg transition-all duration-300 border border-black active:translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {loading ? "Subscribing..." : "Subscribe"}
