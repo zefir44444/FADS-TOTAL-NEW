@@ -6,15 +6,11 @@ import { motion } from 'framer-motion';
 import { 
   CheckCircleIcon, 
   ShieldCheckIcon,
-  ArrowPathIcon,
-  WrenchScrewdriverIcon,
   BugAntIcon,
-  ClockIcon,
   MagnifyingGlassIcon,
   ServerStackIcon,
   CpuChipIcon,
   DocumentChartBarIcon,
-  CodeBracketIcon,
   LockClosedIcon
 } from '@heroicons/react/24/outline';
 
@@ -478,7 +474,7 @@ export default function WebsiteMaintenance() {
                 <span className="text-2xl font-bold text-[#e59500]">2</span>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">Maintenance Plan</h3>
-              <p className="text-gray-600">We create a custom maintenance schedule based on your website's specific needs</p>
+              <p className="text-gray-600">We create a custom maintenance schedule based on your website&apos;s specific needs</p>
             </motion.div>
 
             <motion.div 
@@ -527,7 +523,7 @@ export default function WebsiteMaintenance() {
           >
             <h2 className="text-3xl font-bold mb-4">Ready to Keep Your Website in Top Shape?</h2>
             <p className="text-lg mb-8">
-              Don't wait for your website to develop problems. Proactive maintenance is the key to a secure, fast, and effective online presence.
+              Don&apos;t wait for your website to develop problems. Proactive maintenance is the key to a secure, fast, and effective online presence.
             </p>
             <Link 
               href="/contact" 
