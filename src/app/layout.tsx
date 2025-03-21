@@ -113,10 +113,7 @@ export default function RootLayout({
         className={`${tektur.variable} ${spaceGrotesk.variable} antialiased overflow-y-auto`}
         style={{ userSelect: 'none' }}
       >
-        {/* -- Start of HubSpot Embed Code -- */}
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49357637.js"></script>
-{/* End of HubSpot Embed Code */}
-
+    
         <div className="flex flex-col min-h-screen">
           <div className="sticky top-0 z-50">
             <Header />
@@ -135,6 +132,10 @@ export default function RootLayout({
           <Footer />
           <CookieConsent />
         </div>
+            {/* -- Start of HubSpot Embed Code -- */}
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49357637.js"></script>
+{/* End of HubSpot Embed Code */}
+
       </body>
     </html>
   );
