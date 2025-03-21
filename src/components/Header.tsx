@@ -417,7 +417,7 @@ const Header = () => {
                     className="text-sm font-medium text-center flex items-center justify-center gap-1"
                     onClick={() => toggleMobileSubmenu('websites')}
                   >
-                    Websites
+                    Development
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       width="12" 
@@ -484,7 +484,7 @@ const Header = () => {
                           className="text-sm hover:text-[#e59500] transition-colors duration-300"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          E-commerce Website Development
+                          E-commerce Website
                         </Link>
                         <Link 
                           href="/websites/custom" 
@@ -575,7 +575,7 @@ const Header = () => {
                     className="text-sm font-medium text-center flex items-center justify-center gap-1"
                     onClick={() => toggleMobileSubmenu('promotion')}
                   >
-                    Website Promotion
+                    Promotion
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       width="12" 
