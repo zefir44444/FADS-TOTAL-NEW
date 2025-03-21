@@ -10,6 +10,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   // Предотвращаем гидратацию
   useEffect(() => {
@@ -23,8 +24,18 @@ const Header = () => {
       }
     };
     
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    
+    handleResize(); // Инициализация при первой загрузке
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -44,17 +55,17 @@ const Header = () => {
         <div 
           className={`
             flex items-center justify-between 
-            bg-white/90
+            bg-white md:bg-white/90
             rounded-full shadow-lg 
             py-2 px-4 md:px-6 
             transition-all duration-300 
-            backdrop-blur-md md:backdrop-blur-xl
+            md:backdrop-blur-xl
             border border-white/20
             ${scrolled ? "mx-4 md:mx-8 lg:mx-16" : "mx-0"}
           `}
           style={{
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)"
+            backdropFilter: isDesktop ? "blur(8px)" : "none",
+            WebkitBackdropFilter: isDesktop ? "blur(8px)" : "none",
           }}
         >
           {/* Логотип */}
@@ -344,7 +355,7 @@ const Header = () => {
 
           {/* Кнопка мобильного меню */}
           <button 
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/80 shadow-md backdrop-blur-xl" 
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md" 
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
