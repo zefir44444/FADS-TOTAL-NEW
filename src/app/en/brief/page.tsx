@@ -19,10 +19,10 @@ export default function BriefPage() {
               Website Development Brief
             </h1>
             <p className="text-left text-lg max-w-3xl mx-auto text-black">
-              If you need assistance filling out this brief, please contact us, and we'll be happy to help.
+              If you need assistance filling out this brief, please contact us, and we&apos;ll be happy to help.
             </p>
             <p className="text-left text-lg max-w-3xl mx-auto text-black mt-2">
-              You don't need to fill in all the fields if you don't have the information or aren't sure what you need. We'll contact you within 24 hours after you submit the brief using the contact details you provide.
+              You don&apos;t need to fill in all the fields if you don&apos;t have the information or aren&apos;t sure what you need. We&apos;ll contact you within 24 hours after you submit the brief using the contact details you provide.
             </p>
 
             <p className="text-left text-lg max-w-3xl mx-auto text-black mt-2">
