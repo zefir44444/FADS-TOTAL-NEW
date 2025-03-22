@@ -17,11 +17,11 @@ const nextConfig = {
               default-src 'self';
               script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://*.hs-scripts.com https://snap.licdn.com https://*.linkedin.com https://*.hs-banner.com https://*.hscollectedforms.net https://*.hs-analytics.net;
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-              img-src 'self' data: https://www.google-analytics.com https://*.linkedin.com https://px.ads.linkedin.com https://*.hubspot.com;
+              img-src 'self' data: https://www.google-analytics.com https://*.linkedin.com https://px.ads.linkedin.com https://*.hubspot.com https://*.hsforms.com;
               font-src 'self' https://fonts.gstatic.com;
-              connect-src 'self' https://www.google-analytics.com https://region1.analytics.google.com https://www.google.com https://*.hs-scripts.com https://*.linkedin.com https://*.hubspot.com https://*.hs-banner.com https://*.hscollectedforms.net https://*.hs-analytics.net;
-              frame-src 'self' https://www.googletagmanager.com https://*.hubspot.com;
-              form-action 'self' https://*.hubspot.com;
+              connect-src 'self' https://www.google-analytics.com https://region1.analytics.google.com https://www.google.com https://*.hs-scripts.com https://*.linkedin.com https://*.hubspot.com https://*.hs-banner.com https://*.hscollectedforms.net https://*.hs-analytics.net https://*.hsforms.com;
+              frame-src 'self' https://www.googletagmanager.com https://*.hubspot.com https://*.hsforms.com;
+              form-action 'self' https://*.hubspot.com https://*.hsforms.com;
               base-uri 'self';
               object-src 'none';
               upgrade-insecure-requests;
