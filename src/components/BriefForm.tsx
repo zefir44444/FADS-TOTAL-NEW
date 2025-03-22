@@ -340,8 +340,8 @@ export default function BriefForm() {
       case 'text':
         return (
           <div className="mb-4" key={field.name}>
-            <label className="block text-sm font-medium mb-1" htmlFor={field.name}>
-              {field.label} {field.description && <span className="text-gray-500 text-xs">({field.description})</span>}
+            <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
+              {field.label} {field.description && <span className="text-black text-xs">({field.description})</span>}
             </label>
             <input
               type="text"
@@ -349,15 +349,15 @@ export default function BriefForm() {
               name={field.name}
               value={formData[field.name] || ''}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500] bg-white text-black"
             />
           </div>
         );
       case 'email':
         return (
           <div className="mb-4" key={field.name}>
-            <label className="block text-sm font-medium mb-1" htmlFor={field.name}>
-              {field.label} {field.description && <span className="text-gray-500 text-xs">({field.description})</span>}
+            <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
+              {field.label} {field.description && <span className="text-black text-xs">({field.description})</span>}
             </label>
             <input
               type="email"
@@ -365,15 +365,15 @@ export default function BriefForm() {
               name={field.name}
               value={formData[field.name] || ''}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500] bg-white text-black"
             />
           </div>
         );
       case 'textarea':
         return (
           <div className="mb-4" key={field.name}>
-            <label className="block text-sm font-medium mb-1" htmlFor={field.name}>
-              {field.label} {field.description && <span className="text-gray-500 text-xs">({field.description})</span>}
+            <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
+              {field.label} {field.description && <span className="text-black text-xs">({field.description})</span>}
             </label>
             <textarea
               id={field.name}
@@ -381,22 +381,22 @@ export default function BriefForm() {
               value={formData[field.name] || ''}
               onChange={handleChange}
               rows={4}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500] bg-white text-black"
             ></textarea>
           </div>
         );
       case 'select':
         return (
           <div className="mb-4" key={field.name}>
-            <label className="block text-sm font-medium mb-1" htmlFor={field.name}>
-              {field.label} {field.description && <span className="text-gray-500 text-xs">({field.description})</span>}
+            <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
+              {field.label} {field.description && <span className="text-black text-xs">({field.description})</span>}
             </label>
             <select
               id={field.name}
               name={field.name}
               value={formData[field.name] || ''}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500] bg-white text-black"
             >
               <option value="">Выберите...</option>
               {field.options?.map((option: string) => (
@@ -407,8 +407,8 @@ export default function BriefForm() {
         );
       case 'group':
         return (
-          <div className="mb-4 p-4 border border-gray-200 rounded-md bg-gray-50" key={field.name}>
-            <h4 className="font-medium mb-3">{field.label}</h4>
+          <div className="mb-4 p-4 border border-gray-200 rounded-md bg-white" key={field.name}>
+            <h4 className="font-medium mb-3 text-black">{field.label}</h4>
             {field.subfields?.map((subfield: FormField) => renderField(subfield))}
           </div>
         );
@@ -419,7 +419,7 @@ export default function BriefForm() {
 
   return (
     <motion.div
-      className="w-full"
+      className="w-full text-black bg-white"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -431,8 +431,8 @@ export default function BriefForm() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold mb-2">Бриф успешно отправлен!</h3>
-          <p className="text-gray-600 mb-6">Спасибо за заполнение брифа. Мы свяжемся с вами в ближайшее время для обсуждения деталей проекта.</p>
+          <h3 className="text-2xl font-bold mb-2 text-black">Бриф успешно отправлен!</h3>
+          <p className="text-black mb-6">Спасибо за заполнение брифа. Мы свяжемся с вами в ближайшее время для обсуждения деталей проекта.</p>
           <button
             type="button"
             onClick={() => setSuccess(false)}
@@ -442,7 +442,7 @@ export default function BriefForm() {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="p-6 md:p-8">
+        <form onSubmit={handleSubmit} className="p-6 md:p-8 bg-white">
           {briefSections.map((section, index) => (
             <div 
               key={index}
@@ -450,10 +450,10 @@ export default function BriefForm() {
             >
               <button
                 type="button"
-                className={`w-full text-left p-4 bg-gray-50 flex justify-between items-center hover:bg-gray-100 transition-colors ${expandedSection === index ? 'text-[#e59500]' : ''}`}
+                className={`w-full text-left p-4 bg-white flex justify-between items-center hover:bg-gray-50 transition-colors ${expandedSection === index ? 'text-[#e59500]' : 'text-black'}`}
                 onClick={() => toggleSection(index)}
               >
-                <h3 className="text-lg font-semibold">{section.title}</h3>
+                <h3 className="text-lg font-semibold text-black">{section.title}</h3>
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   className={`h-5 w-5 transition-transform ${expandedSection === index ? 'transform rotate-180' : ''}`}
@@ -465,10 +465,10 @@ export default function BriefForm() {
                 </svg>
               </button>
               <div 
-                className={`p-4 transition-all duration-300 ease-in-out overflow-hidden ${expandedSection === index ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0 p-0'}`}
+                className={`p-4 transition-all duration-300 ease-in-out overflow-hidden bg-white ${expandedSection === index ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0 p-0'}`}
               >
                 {section.description && (
-                  <div className="mb-4 text-sm text-gray-600 bg-gray-50 p-3 rounded">
+                  <div className="mb-4 text-sm text-black bg-white p-3 rounded border border-gray-100">
                     {section.description}
                   </div>
                 )}
@@ -493,7 +493,7 @@ export default function BriefForm() {
               onChange={handlePrivacyChange}
               className="mt-1 h-4 w-4 cursor-pointer transition-all duration-300 ease-out accent-black"
             />
-            <label htmlFor="privacy" className="text-sm cursor-pointer">
+            <label htmlFor="privacy" className="text-sm cursor-pointer text-black">
               Я согласен на обработку моих персональных данных в соответствии с{" "}
               <Link 
                 href="/privacy" 
