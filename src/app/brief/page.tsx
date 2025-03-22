@@ -49,12 +49,10 @@ export default function BriefPage() {
       </section>
 
       {/* Brief Form Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
+      <section className="py-0">
+          <div className="mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
             <BriefForm />
           </div>
-        </div>
       </section>
     </div>
   );
