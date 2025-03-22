@@ -1,14 +1,5 @@
-import type { Metadata } from 'next';
 import BriefForm from '../../components/BriefForm';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'Бриф на разработку сайта | FADS',
-  description: 'Заполните бриф на разработку сайта и получите профессиональную оценку вашего проекта от наших специалистов',
-  alternates: {
-    canonical: 'https://fads.fi/brief',
-  },
-};
 
 export default function BriefPage() {
   return (
