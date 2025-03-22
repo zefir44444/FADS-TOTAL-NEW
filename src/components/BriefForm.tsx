@@ -401,7 +401,7 @@ export default function BriefForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {success ? (
+      {!mounted ? null : success ? (
         <div className="p-6 md:p-8 text-center">
           <div className="mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
