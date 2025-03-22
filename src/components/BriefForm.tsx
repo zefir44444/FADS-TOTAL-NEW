@@ -4,29 +4,6 @@ import React, { useState, FormEvent, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-// Варианты анимации для контейнеров с элементами
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-// Варианты анимации для элементов
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
-    y: 0,
-    transition: {
-      duration: 0.4
-    }
-  }
-};
-
 // Типы для полей формы
 interface FormField {
   label: string;
@@ -45,7 +22,7 @@ interface BriefSection {
 
 export default function BriefForm() {
   const [expandedSection, setExpandedSection] = useState<number | null>(null);
-  const [formData, setFormData] = useState<Record<string, any>>({});
+  const [formData, setFormData] = useState<Record<string, string>>({});
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -59,10 +36,10 @@ export default function BriefForm() {
 
   // Обработчик изменения полей формы
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target as HTMLInputElement;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+      [name]: value
     }));
   };
 
