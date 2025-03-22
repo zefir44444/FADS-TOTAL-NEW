@@ -21,7 +21,6 @@ interface BriefSection {
 }
 
 export default function BriefForm() {
-  const [expandedSection, setExpandedSection] = useState<number | null>(null);
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -119,22 +118,12 @@ export default function BriefForm() {
       // Очищаем форму после успешной отправки
       setFormData({});
       setPrivacyAccepted(false);
-      // Сворачиваем все разделы
-      setExpandedSection(null);
       
     } catch (err) {
       console.error("Ошибка отправки формы:", err);
       setError(err instanceof Error ? err.message : "Произошла ошибка при отправке формы");
     } finally {
       setIsSubmitting(false);
-    }
-  };
-
-  const toggleSection = (index: number) => {
-    if (expandedSection === index) {
-      setExpandedSection(null);
-    } else {
-      setExpandedSection(index);
     }
   };
 
@@ -423,33 +412,16 @@ export default function BriefForm() {
           {briefSections.map((section, index) => (
             <div 
               key={index}
-              className={`mb-8 border border-gray-200 rounded-lg overflow-hidden ${expandedSection === index ? 'shadow-md' : ''}`}
+              className="mb-8 border border-gray-200 rounded-lg overflow-hidden shadow-md"
             >
-              <button
-                type="button"
-                className={`w-full text-left p-4 bg-white flex justify-between items-center hover:bg-gray-50 transition-colors ${expandedSection === index ? 'text-[#e59500]' : 'text-black'}`}
-                onClick={() => toggleSection(index)}
-              >
+              <div className="p-4 bg-white">
                 <h3 className="text-lg font-semibold text-black">{section.title}</h3>
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className={`h-5 w-5 transition-transform ${expandedSection === index ? 'transform rotate-180' : ''}`}
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div 
-                className={`p-4 transition-all duration-300 ease-in-out overflow-hidden bg-white ${expandedSection === index ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0 p-0'}`}
-              >
                 {section.description && (
-                  <div className="mb-4 text-sm text-black bg-white p-3 rounded border border-gray-100">
+                  <div className="mt-2 mb-4 text-sm text-black bg-white p-3 rounded border border-gray-100">
                     {section.description}
                   </div>
                 )}
-                <div className="space-y-4">
+                <div className="space-y-4 mt-4">
                   {section.fields.map(field => renderField(field))}
                 </div>
               </div>
