@@ -12,6 +12,7 @@ interface FormField {
   description?: string;
   options?: string[];
   subfields?: FormField[];
+  colorOptions?: string[];
 }
 
 interface BriefSection {
@@ -164,8 +165,13 @@ export default function BriefForm() {
         { 
           label: "Основные цвета на сайте (набор из 2-3 цветов)", 
           name: "colors", 
-          type: "text",
-          description: "Если есть логотип, то цвета диктует он."
+          type: "color-picker",
+          description: "Если есть логотип, то цвета диктует он.",
+          colorOptions: [
+            "#e59500", "#840032", "#000000", "#FFFFFF", 
+            "#2563EB", "#16A34A", "#DC2626", "#7C3AED", 
+            "#D97706", "#0891B2", "#4B5563", "#EC4899"
+          ]
         },
         { 
           label: "Настроение и ассоциации, которые должен вызывать сайт", 
@@ -219,7 +225,7 @@ export default function BriefForm() {
       title: "4. Дополнительно",
       fields: [
         { 
-          label: "Есть ли у Вас элементы дизайна, которые могут быть использованы при создании дизайна сайта?", 
+          label: "Есть ли у Вас элементы дизайна, которые могут быть использованы при создании дизайна сайта (можно прикрепить ссылку на облако)?", 
           name: "designElements", 
           type: "text",
           description: "Логотип, фирменный стиль, цвета, шрифты, полиграфия, и т.д."
@@ -307,7 +313,10 @@ export default function BriefForm() {
         return (
           <div className="mb-4" key={field.name}>
             <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
-              {field.label} {field.description && <span className="text-black text-xs">({field.description})</span>}
+              {field.label}
+              {field.description && (
+                <div className="text-xs text-gray-500 mt-1">{field.description}</div>
+              )}
             </label>
             <input
               type="text"
@@ -319,11 +328,121 @@ export default function BriefForm() {
             />
           </div>
         );
+      case 'color-picker':
+        return (
+          <div className="mb-4" key={field.name}>
+            <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
+              {field.label}
+              {field.description && (
+                <div className="text-xs text-gray-500 mt-1">{field.description}</div>
+              )}
+            </label>
+            <div className="mt-2">
+              <input
+                type="text"
+                id={field.name}
+                name={field.name}
+                value={formData[field.name] || ''}
+                onChange={handleChange}
+                placeholder="Добавленные цвета появятся здесь"
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500] bg-white text-black mb-2"
+              />
+              
+              {/* Отображение выбранных цветов */}
+              {formData[field.name] && (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {formData[field.name].split(',').map((color, index) => (
+                    <div key={index} className="flex items-center gap-1 border border-gray-200 rounded-md px-2 py-1 bg-white">
+                      <div
+                        className="w-4 h-4 rounded-sm border border-gray-300"
+                        style={{ backgroundColor: color.trim() }}
+                      ></div>
+                      <span className="text-xs">{color.trim()}</span>
+                      <button
+                        type="button"
+                        className="ml-1 text-gray-400 hover:text-gray-600"
+                        onClick={() => {
+                          const colors = formData[field.name].split(',')
+                            .map(c => c.trim())
+                            .filter((_, i) => i !== index)
+                            .join(', ');
+                          setFormData(prev => ({ ...prev, [field.name]: colors }));
+                        }}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex items-center gap-2 mb-2">
+                  <input 
+                    type="color" 
+                    id={`${field.name}-picker`}
+                    className="w-10 h-10 cursor-pointer border-0"
+                  />
+                  <button
+                    type="button"
+                    className="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-sm rounded border border-gray-300 transition-colors"
+                    onClick={() => {
+                      const input = document.getElementById(`${field.name}-picker`) as HTMLInputElement;
+                      const color = input.value;
+                      const currentColors = formData[field.name] ? formData[field.name].split(',').map(c => c.trim()) : [];
+                      if (!currentColors.includes(color)) {
+                        const newColors = [...currentColors, color].join(', ');
+                        setFormData(prev => ({ ...prev, [field.name]: newColors }));
+                      }
+                    }}
+                  >
+                    Добавить цвет
+                  </button>
+                </div>
+                
+                <div className="w-full border-t border-gray-200 my-2"></div>
+                <div className="text-xs text-gray-500 w-full mb-1">Предустановленные цвета:</div>
+                
+                {field.colorOptions?.map((color) => (
+                  <button
+                    key={color}
+                    type="button"
+                    style={{ backgroundColor: color }}
+                    className="w-8 h-8 rounded-full border border-gray-300 cursor-pointer hover:scale-110 transition-transform"
+                    onClick={() => {
+                      const currentColors = formData[field.name] ? formData[field.name].split(',').map(c => c.trim()) : [];
+                      if (!currentColors.includes(color)) {
+                        const newColors = [...currentColors, color].join(', ');
+                        setFormData(prev => ({ ...prev, [field.name]: newColors }));
+                      }
+                    }}
+                    aria-label={`Выбрать цвет ${color}`}
+                  />
+                ))}
+                <button
+                  type="button"
+                  className="flex items-center justify-center w-8 h-8 rounded-full border border-gray-300 bg-white cursor-pointer hover:bg-gray-100"
+                  onClick={() => setFormData(prev => ({ ...prev, [field.name]: '' }))}
+                  aria-label="Сбросить выбранные цвета"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        );
       case 'email':
         return (
           <div className="mb-4" key={field.name}>
             <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
-              {field.label} {field.description && <span className="text-black text-xs">({field.description})</span>}
+              {field.label}
+              {field.description && (
+                <div className="text-xs text-gray-500 mt-1">{field.description}</div>
+              )}
             </label>
             <input
               type="email"
@@ -339,7 +458,10 @@ export default function BriefForm() {
         return (
           <div className="mb-4" key={field.name}>
             <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
-              {field.label} {field.description && <span className="text-black text-xs">({field.description})</span>}
+              {field.label}
+              {field.description && (
+                <div className="text-xs text-gray-500 mt-1">{field.description}</div>
+              )}
             </label>
             <textarea
               id={field.name}
@@ -355,7 +477,10 @@ export default function BriefForm() {
         return (
           <div className="mb-4" key={field.name}>
             <label className="block text-sm font-medium mb-1 text-black" htmlFor={field.name}>
-              {field.label} {field.description && <span className="text-black text-xs">({field.description})</span>}
+              {field.label}
+              {field.description && (
+                <div className="text-xs text-gray-500 mt-1">{field.description}</div>
+              )}
             </label>
             <select
               id={field.name}

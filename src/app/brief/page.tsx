@@ -26,10 +26,10 @@ export default function BriefPage() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Анкета на разработку сайта
             </h1>
-            <p className="text-lg max-w-3xl mx-auto text-gray-600">
+            <p className="text-lg max-w-3xl mx-auto text-black">
               Если Вам необходима помощь в заполнении брифа, свяжитесь с нами, и мы с радостью поможем.
             </p>
-            <p className="text-lg max-w-3xl mx-auto text-gray-600 mt-2">
+            <p className="text-lg max-w-3xl mx-auto text-black mt-2">
               Вы также можете оставить свои контактные данные через{" "}
               <Link href="/contact" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">
                 форму обратной связи
@@ -41,6 +41,7 @@ export default function BriefPage() {
               >
                 info@fads.fi
               </a>
+              <p className="text-lg max-w-3xl mx-auto text-black mt-2">Не обязательно заполнять все поля, если у вас нет информации или вы не знаете, что именно вам нужно. Мы свяжемся с вами в течение 24 часов после отправки брифа по указанным вами контактам.</p>
             </p>
           </div>
         </div>
