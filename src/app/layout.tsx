@@ -66,7 +66,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="GTM-K48CG77" />
+      <GoogleTagManager 
+        gtmId="GTM-K48CG77" 
+        dataLayer={{
+          'gtm.allowlist': ['google'],
+          'gtm.blocklist': ['adm', 'awct', 'sp', 'fls'],
+          'cookieConsent.analytics': 'denied',
+          'cookieConsent.marketing': 'denied',
+          'cookieConsent.preferences': 'denied'
+        }}
+      />
       <head>
         
         {/* Мета-теги для корректного отображения на мобильных устройствах */}

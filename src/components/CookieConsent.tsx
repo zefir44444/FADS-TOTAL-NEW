@@ -4,6 +4,15 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from "framer-motion";
 
+// Объявление типа для Google Tag Manager
+declare global {
+  interface Window {
+    dataLayer?: any[];
+    gtag?: (...args: any[]) => void;
+    _hsq?: any[];
+  }
+}
+
 // Типы cookie для управления согласием
 type CookieTypes = {
   essential: boolean;
@@ -69,6 +78,9 @@ const CookieConsent = () => {
         setCookiePreferences(consentData.preferences);
         setConsentGiven(true);
         
+        // Применяем сохраненные настройки при загрузке
+        applyConsentSettings(consentData.preferences);
+        
         // Если согласие было дано более 30 дней назад, показываем баннер снова
         const thirtyDaysInMs = 30 * 24 * 60 * 60 * 1000;
         if (Date.now() - consentData.timestamp > thirtyDaysInMs) {
@@ -91,42 +103,97 @@ const CookieConsent = () => {
       // Если согласие еще не было дано, показываем баннер
       setIsVisible(true);
       setShowMinimized(false);
+      
+      // По умолчанию отключаем все аналитические и маркетинговые cookie
+      // пока пользователь не даст согласие
+      disableAllNonEssentialCookies();
     }
   }, [mounted]);
   
+  // Функция для отключения всех неосновных cookie
+  const disableAllNonEssentialCookies = () => {
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'cookie_consent_update',
+        'cookie_consent': {
+          'analytics': 'denied',
+          'marketing': 'denied',
+          'preferences': 'denied',
+          'essential': 'granted'
+        }
+      });
+    }
+  };
+  
   // Функция для применения настроек согласия
   const applyConsentSettings = (preferences: CookieTypes) => {
-    // Здесь можно добавить логику для включения/отключения различных трекеров
+    // Подготавливаем объект состояния согласия для Google Tag Manager
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      // Отправляем детальную информацию о согласии в GTM
+      window.dataLayer.push({
+        'event': 'cookie_consent_update',
+        'cookie_consent': {
+          'analytics': preferences.analytics ? 'granted' : 'denied',
+          'marketing': preferences.marketing ? 'granted' : 'denied',
+          'preferences': preferences.preferences ? 'granted' : 'denied',
+          'essential': 'granted' // Всегда включены
+        }
+      });
+      
+      // Дополнительно отправляем событие для обновления согласия Google Analytics 4
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          'analytics_storage': preferences.analytics ? 'granted' : 'denied',
+          'ad_storage': preferences.marketing ? 'granted' : 'denied',
+          'functionality_storage': preferences.preferences ? 'granted' : 'denied',
+          'security_storage': 'granted' // Для основных функций безопасности
+        });
+      }
+    }
     
     // Google Analytics
     if (preferences.analytics) {
       // Включаем Google Analytics
       console.log('Google Analytics enabled');
-      // window.gtag && window.gtag('consent', 'update', { analytics_storage: 'granted' });
+      
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        window.gtag('set', 'ads_data_redaction', false);
+      }
     } else {
       // Отключаем Google Analytics
       console.log('Google Analytics disabled');
-      // window.gtag && window.gtag('consent', 'update', { analytics_storage: 'denied' });
+      
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { 'analytics_storage': 'denied' });
+        window.gtag('set', 'ads_data_redaction', true);
+      }
     }
     
     // Google Tag Manager
     if (preferences.analytics) {
       console.log('Google Tag Manager enabled');
-      // Включаем Google Tag Manager
+      // GTM управляется через dataLayer выше
     } else {
       console.log('Google Tag Manager disabled');
-      // Отключаем Google Tag Manager
+      // GTM управляется через dataLayer выше
     }
     
     // HubSpot
     if (preferences.marketing) {
       console.log('HubSpot tracking enabled');
       // Включаем HubSpot трекинг
-      // window._hsq && window._hsq.push(['setPrivacyConsent', true]);
+      if (typeof window !== 'undefined' && '_hsq' in window) {
+        // @ts-ignore - глобальный _hsq может быть не определен в TypeScript
+        window._hsq.push(['setPrivacyConsent', true]);
+      }
     } else {
       console.log('HubSpot tracking disabled');
       // Отключаем HubSpot трекинг
-      // window._hsq && window._hsq.push(['setPrivacyConsent', false]);
+      if (typeof window !== 'undefined' && '_hsq' in window) {
+        // @ts-ignore - глобальный _hsq может быть не определен в TypeScript
+        window._hsq.push(['setPrivacyConsent', false]);
+      }
     }
     
     // Stripe (обычно относится к essential cookies, так как необходим для обработки платежей)
@@ -166,6 +233,14 @@ const CookieConsent = () => {
     
     // Применяем настройки согласия
     applyConsentSettings(preferences);
+    
+    // Отправляем событие в GTM о решении пользователя
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        'event': accepted ? 'cookie_consent_accepted' : 'cookie_consent_declined',
+        'cookie_consent_method': showPreferences ? 'preferences' : (accepted ? 'accept_all' : 'decline_all')
+      });
+    }
   };
   
   const acceptAllCookies = () => {
@@ -209,6 +284,13 @@ const CookieConsent = () => {
     setShowMinimized(false);
     setIsVisible(true);
     setShowPreferences(true);
+    
+    // Отправляем событие в GTM
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'cookie_settings_opened'
+      });
+    }
   };
   
   // Функция для анимации тумблера Essential Cookies
