@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 // Объявление типа для Google Tag Manager
 declare global {
   interface Window {
-    dataLayer?: any[];
-    gtag?: (...args: any[]) => void;
-    _hsq?: any[];
+    dataLayer?: Array<Record<string, unknown>>;
+    gtag?: (...args: unknown[]) => void;
+    _hsq?: Array<unknown>;
   }
 }
 
@@ -184,14 +184,14 @@ const CookieConsent = () => {
       console.log('HubSpot tracking enabled');
       // Включаем HubSpot трекинг
       if (typeof window !== 'undefined' && '_hsq' in window) {
-        // @ts-ignore - глобальный _hsq может быть не определен в TypeScript
+        // @ts-expect-error - глобальный _hsq может быть не определен в TypeScript
         window._hsq.push(['setPrivacyConsent', true]);
       }
     } else {
       console.log('HubSpot tracking disabled');
       // Отключаем HubSpot трекинг
       if (typeof window !== 'undefined' && '_hsq' in window) {
-        // @ts-ignore - глобальный _hsq может быть не определен в TypeScript
+        // @ts-expect-error - глобальный _hsq может быть не определен в TypeScript
         window._hsq.push(['setPrivacyConsent', false]);
       }
     }
