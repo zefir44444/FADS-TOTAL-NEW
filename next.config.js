@@ -15,12 +15,12 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://*.hs-scripts.com https://snap.licdn.com https://*.linkedin.com https://*.hs-banner.com https://*.hscollectedforms.net https://*.hs-analytics.net;
+              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://*.hs-scripts.com https://snap.licdn.com https://*.linkedin.com https://*.hs-banner.com https://*.hscollectedforms.net https://*.hs-analytics.net https://ssl.google-analytics.com https://googleads.g.doubleclick.net https://*.googlesyndication.com https://www.googleadservices.com;
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com;
-              img-src 'self' data: https://www.google-analytics.com https://*.linkedin.com https://px.ads.linkedin.com https://*.hubspot.com https://*.hsforms.com https://www.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com;
+              img-src 'self' data: https://www.google-analytics.com https://*.linkedin.com https://px.ads.linkedin.com https://*.hubspot.com https://*.hsforms.com https://www.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://stats.g.doubleclick.net https://googleads.g.doubleclick.net https://www.google.com https://www.google.fi https://www.google.co.uk https://www.google.de https://*.googlesyndication.com;
               font-src 'self' https://fonts.gstatic.com;
-              connect-src 'self' https://www.google-analytics.com https://region1.analytics.google.com https://www.google.com https://*.hs-scripts.com https://*.linkedin.com https://*.hubspot.com https://*.hs-banner.com https://*.hscollectedforms.net https://*.hs-analytics.net https://*.hsforms.com;
-              frame-src 'self' https://www.googletagmanager.com https://*.hubspot.com https://*.hsforms.com;
+              connect-src 'self' https://www.google-analytics.com https://region1.analytics.google.com https://www.google.com https://*.hs-scripts.com https://*.linkedin.com https://*.hubspot.com https://*.hs-banner.com https://*.hscollectedforms.net https://*.hs-analytics.net https://*.hsforms.com https://stats.g.doubleclick.net https://*.doubleclick.net https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+              frame-src 'self' https://www.googletagmanager.com https://*.hubspot.com https://*.hsforms.com https://bid.g.doubleclick.net https://*.googlesyndication.com https://*.google.com;
               form-action 'self' https://*.hubspot.com https://*.hsforms.com;
               base-uri 'self';
               object-src 'none';
