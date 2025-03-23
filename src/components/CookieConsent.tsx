@@ -115,12 +115,10 @@ const CookieConsent = () => {
     if (typeof window !== 'undefined' && window.dataLayer) {
       window.dataLayer.push({
         'event': 'cookie_consent_update',
-        'cookie_consent': {
-          'analytics': 'denied',
-          'marketing': 'denied',
-          'preferences': 'denied',
-          'essential': 'granted'
-        }
+        'cookieConsent.analytics': 'denied',
+        'cookieConsent.marketing': 'denied',
+        'cookieConsent.preferences': 'denied',
+        'cookieConsent.essential': 'granted'
       });
     }
   };
@@ -132,12 +130,10 @@ const CookieConsent = () => {
       // Отправляем детальную информацию о согласии в GTM
       window.dataLayer.push({
         'event': 'cookie_consent_update',
-        'cookie_consent': {
-          'analytics': preferences.analytics ? 'granted' : 'denied',
-          'marketing': preferences.marketing ? 'granted' : 'denied',
-          'preferences': preferences.preferences ? 'granted' : 'denied',
-          'essential': 'granted' // Всегда включены
-        }
+        'cookieConsent.analytics': preferences.analytics ? 'granted' : 'denied',
+        'cookieConsent.marketing': preferences.marketing ? 'granted' : 'denied',
+        'cookieConsent.preferences': preferences.preferences ? 'granted' : 'denied',
+        'cookieConsent.essential': 'granted' // Всегда включены
       });
       
       // Дополнительно отправляем событие для обновления согласия Google Analytics 4
@@ -238,7 +234,10 @@ const CookieConsent = () => {
     if (typeof window !== 'undefined' && window.dataLayer) {
       window.dataLayer.push({
         'event': accepted ? 'cookie_consent_accepted' : 'cookie_consent_declined',
-        'cookie_consent_method': showPreferences ? 'preferences' : (accepted ? 'accept_all' : 'decline_all')
+        'cookie_consent_method': showPreferences ? 'preferences' : (accepted ? 'accept_all' : 'decline_all'),
+        'cookieConsent.analytics': preferences.analytics ? 'granted' : 'denied',
+        'cookieConsent.marketing': preferences.marketing ? 'granted' : 'denied',
+        'cookieConsent.preferences': preferences.preferences ? 'granted' : 'denied'
       });
     }
   };
