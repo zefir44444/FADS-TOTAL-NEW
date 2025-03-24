@@ -151,7 +151,7 @@ export default function PortfolioPage() {
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4">
-                  A website for a specialized Volkswagen service center that has distinguished itself in the automotive repair industry in Finland. With our team's support, the business achieved outstanding search engine rankings (SEO) and generated a substantial number of high-quality leads through Google Ads campaigns. The site features multilingual support, custom design, automation systems and integrated email marketing tools for customer retention.
+                  A website for a specialized Volkswagen service center that has distinguished itself in the automotive repair industry in Finland. With our team&apos;s support, the business achieved outstanding search engine rankings (SEO) and generated a substantial number of high-quality leads through Google Ads campaigns. The site features multilingual support, custom design, automation systems and integrated email marketing tools for customer retention.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Mobile-First</span>
@@ -213,7 +213,7 @@ export default function PortfolioPage() {
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4">
-                  Professional website for a BMW service center in Finland. The site features a clean, modern design with a user-friendly contact form and service request functionality. We've implemented a responsive layout that highlights key business statistics, showcasing over 2,200 satisfied customers, 6,300+ parts replaced, and 2,600+ repaired vehicles.
+                  Professional website for a BMW service center in Finland. The site features a clean, modern design with a user-friendly contact form and service request functionality. We&apos;ve implemented a responsive layout that highlights key business statistics, showcasing over 2,200 satisfied customers, 6,300+ parts replaced, and 2,600+ repaired vehicles.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Premium Design</span>
@@ -393,7 +393,7 @@ export default function PortfolioPage() {
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4">
-                  Premium equestrian clothing brand based in the UAE. We implemented digital marketing strategies including Google Ads campaigns, SEO optimization, and Google Shopping for their exclusive product line. Our efforts significantly increased the brand's visibility and lead generation across the EU and Middle East regions.
+                  Premium equestrian clothing brand based in the UAE. We implemented digital marketing strategies including Google Ads campaigns, SEO optimization, and Google Shopping for their exclusive product line. Our efforts significantly increased the brand&apos;s visibility and lead generation across the EU and Middle East regions.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Luxury Brand</span>
