@@ -414,28 +414,220 @@ const Header = () => {
                   Digital Hub
                 </Link>
                 
-                <div className="w-full flex flex-col gap-2 mt-4 pt-4 border-t border-gray-200">
-                  <Link 
-                    href="/websites" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                    onClick={() => setIsMenuOpen(false)}
+                {/* Development подменю */}
+                <div className="w-full">
+                  <button 
+                    className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
+                    onClick={() => toggleMobileSubmenu('development')}
                   >
                     Development
-                  </Link>
-                  <Link 
-                    href="/services" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                    onClick={() => setIsMenuOpen(false)}
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      animate={{ rotate: openMobileSubmenu === 'development' ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </motion.svg>
+                  </button>
+                  <AnimatePresence>
+                    {openMobileSubmenu === 'development' && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-2 mt-2 overflow-hidden"
+                      >
+                        <Link 
+                          href="/websites" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          All Development Services
+                        </Link>
+                        <Link 
+                          href="/websites/business" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Business Websites
+                        </Link>
+                        <Link 
+                          href="/websites/landing" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Landing Page
+                        </Link>
+                        <Link 
+                          href="/websites/showcases" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Showcases
+                        </Link>
+                        <Link 
+                          href="/websites/blogs" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Blogs
+                        </Link>
+                        <Link 
+                          href="/websites/ecommerce" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          E-commerce Websites
+                        </Link>
+                        <Link 
+                          href="/websites/custom" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Custom Development
+                        </Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Services подменю */}
+                <div className="w-full">
+                  <button 
+                    className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
+                    onClick={() => toggleMobileSubmenu('services')}
                   >
                     Services
-                  </Link>
-                  <Link 
-                    href="/promotion" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                    onClick={() => setIsMenuOpen(false)}
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      animate={{ rotate: openMobileSubmenu === 'services' ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </motion.svg>
+                  </button>
+                  <AnimatePresence>
+                    {openMobileSubmenu === 'services' && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-2 mt-2 overflow-hidden"
+                      >
+                        <Link 
+                          href="/services" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          All Services
+                        </Link>
+                        <Link 
+                          href="/services/maintenance" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Website Maintenance
+                        </Link>
+                        <Link 
+                          href="/services/website-audits" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Website Audits
+                        </Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Promotion подменю */}
+                <div className="w-full">
+                  <button 
+                    className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
+                    onClick={() => toggleMobileSubmenu('promotion')}
                   >
                     Promotion
-                  </Link>
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      animate={{ rotate: openMobileSubmenu === 'promotion' ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </motion.svg>
+                  </button>
+                  <AnimatePresence>
+                    {openMobileSubmenu === 'promotion' && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-2 mt-2 overflow-hidden"
+                      >
+                        <Link 
+                          href="/promotion" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          All Promotion Services
+                        </Link>
+                        <Link 
+                          href="/promotion/seo" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          SEO Optimization & Promotion
+                        </Link>
+                        <Link 
+                          href="/promotion/google-ads" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Google Ads Setup & Management
+                        </Link>
+                        <Link 
+                          href="/promotion/youtube" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          YouTube Advertising
+                        </Link>
+                        <Link 
+                          href="/promotion/growth-engine" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Growth Engine
+                        </Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
                 
                 <Link 
