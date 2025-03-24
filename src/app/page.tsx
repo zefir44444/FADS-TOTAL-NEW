@@ -154,7 +154,7 @@ export default function Home() {
           >
             Website<br />
             <span className="gradient-text text-[#e59500] relative inline-block">
-              Development and Creation
+            Website design & development
             </span><br />
             in Finland
           </motion.h1>
