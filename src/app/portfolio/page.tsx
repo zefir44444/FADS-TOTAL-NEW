@@ -491,6 +491,67 @@ export default function PortfolioPage() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Finnmode */}
+            <motion.div 
+              className="bg-white rounded-xl shadow-lg overflow-hidden group"
+              variants={fadeInUp}
+              whileHover={{ y: -10, transition: { type: "spring", stiffness: 300 } }}
+            >
+              <div className="relative h-64 md:h-80 overflow-hidden">
+                <Image 
+                  src="/pictures/portfolio/Finnmode/Finnmode.png" 
+                  alt="Finnmode Beauty Salon Website" 
+                  width={700} 
+                  height={450}
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                  <div className="p-6">
+                    <span className="px-3 py-1 bg-[#e59500] text-white text-xs font-medium rounded-full">Beauty & Wellness</span>
+                    <h3 className="text-2xl font-bold text-white mt-2">Finnmode</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-600 mb-4">
+                  A premium beauty salon in Helsinki offering advanced cosmetic treatments including Morpheus8, Diolaze XL, and other specialized services. We provided comprehensive digital marketing consultations and implemented targeted advertising strategies to enhance their online presence. Our work included developing a structured advertising approach, SEO optimization, and performance analysis to increase client bookings for their premium beauty services.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Digital Marketing</span>
+                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Beauty Industry</span>
+                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Advertising Strategy</span>
+                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">SEO</span>
+                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Performance Marketing</span>
+                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Lead Generation</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <a 
+                    href="https://www.finnmode.fi/"
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center text-[#e59500] font-medium hover:underline group"
+                  >
+                    Visit Website
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="ml-1 transform transition-transform group-hover:translate-x-1"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
