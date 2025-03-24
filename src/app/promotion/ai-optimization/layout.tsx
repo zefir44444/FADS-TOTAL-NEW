@@ -1,22 +1,21 @@
-import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'FADS Digital Hub | Growth Engine',
-  description: 'Accelerate your business growth with our comprehensive Growth Engine solution. Combining strategic website development, SEO, paid advertising, and AI-driven optimization.',
-  keywords: ['growth engine', 'business growth', 'digital strategy', 'online growth', 'website optimization', 'traffic growth', 'conversion optimization', 'GDPR compliance', 'WAI compliance'],
+  title: 'FADS Digital Hub | AI Search & Agent Optimization',
+  description: 'Optimize your content for AI search engines and AI agents. Future-proof your digital presence with our specialized AI optimization services.',
+  keywords: ['AI optimization', 'AI search', 'AI agents', 'content optimization', 'AI visibility', 'semantic search', 'AI-ready content', 'machine learning'],
   openGraph: {
-    title: 'FADS Digital Hub | Growth Engine',
-    description: 'Accelerate your business growth with our comprehensive Growth Engine solution. Combining strategic website development, SEO, paid advertising, and AI-driven optimization.',
-    url: 'https://fads.fi/promotion/growth-engine',
+    title: 'FADS Digital Hub | AI Search & Agent Optimization',
+    description: 'Optimize your content for AI search engines and AI agents. Future-proof your digital presence with our specialized AI optimization services.',
+    url: 'https://fads.fi/promotion/ai-optimization',
     siteName: 'FADS Digital Hub',
     images: [
       {
         url: 'https://fads.fi/fads-black.svg',
         width: 1200,
         height: 630,
-        alt: 'FADS Digital Hub Growth Engine',
+        alt: 'FADS Digital Hub AI Search & Agent Optimization',
       },
     ],
     locale: 'en_US',
@@ -24,16 +23,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FADS Digital Hub | Growth Engine',
-    description: 'Accelerate your business growth with our comprehensive Growth Engine solution. Combining strategic website development, SEO, paid advertising, and AI-driven optimization.',
+    title: 'FADS Digital Hub | AI Search & Agent Optimization',
+    description: 'Optimize your content for AI search engines and AI agents. Future-proof your digital presence with our specialized AI optimization services.',
     images: ['https://fads.fi/fads-black.svg'],
   },
   alternates: {
-    canonical: 'https://fads.fi/promotion/growth-engine',
+    canonical: 'https://fads.fi/promotion/ai-optimization',
   },
 };
 
-export default function GrowthEngineLayout({
+export default function AiOptimizationLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -46,9 +45,9 @@ export default function GrowthEngineLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Growth Engine",
-            "description": "Accelerate your business growth with our comprehensive Growth Engine solution. Combining strategic website development, SEO, paid advertising, and AI-driven optimization.",
-            "url": "https://fads.fi/promotion/growth-engine",
+            "name": "AI Search & Agent Optimization",
+            "description": "Optimize your content for AI search engines and AI agents. Future-proof your digital presence with our specialized AI optimization services.",
+            "url": "https://fads.fi/promotion/ai-optimization",
             "provider": {
               "@type": "Organization",
               "name": "FADS Digital Hub",

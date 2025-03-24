@@ -246,7 +246,13 @@ const Header = () => {
               
               >
                 <div className="flex flex-col gap-2">
-               
+                  <Link 
+                    href="/promotion" 
+                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  >
+                    All Promotion Services
+                  </Link>
+                  <div className="w-full h-px bg-gray-100 my-1"></div>
                   <Link 
                     href="/promotion/seo" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
@@ -597,6 +603,14 @@ const Header = () => {
                         transition={{ duration: 0.3 }}
                         className="flex flex-col gap-2 items-center mt-2 overflow-hidden"
                       >
+                        <Link 
+                          href="/promotion" 
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          All Promotion Services
+                        </Link>
+                        <div className="w-full h-px bg-gray-100 my-1"></div>
                         <Link 
                           href="/promotion/seo" 
                           className="text-sm hover:text-[#e59500] transition-colors duration-300"
