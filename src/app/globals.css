@@ -778,3 +778,25 @@ html {
   color: #ffc970;
   text-decoration: underline;
 }
+
+/* Отключение анимаций для мобильных устройств */
+@media (max-width: 768px) {
+  /* Отключаем анимации плавающих элементов и фоновых эффектов в Hero Section */
+  .min-h-screen .animate-float-slow,
+  .min-h-screen .animate-float-medium,
+  .min-h-screen .animate-float-fast {
+    animation: none !important;
+  }
+  
+  /* Отключаем анимации градиентов в Hero Section */
+  .min-h-screen .gradient-text {
+    animation: none !important;
+    background-position: 0 !important;
+  }
+  
+  /* Убираем параллакс-эффекты */
+  .parallax-line {
+    transform: none !important;
+    animation: none !important;
+  }
+}

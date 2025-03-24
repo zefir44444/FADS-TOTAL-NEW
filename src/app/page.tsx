@@ -21,13 +21,35 @@ const staggerContainer = {
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  // Проверка размера экрана при загрузке и изменении размера окна
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Проверяем при монтировании
+    checkMobile();
+    
+    // Устанавливаем слушатель событий
+    window.addEventListener('resize', checkMobile);
+    
+    // Убираем слушатель при размонтировании
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
   // Добавляем эффект параллакса при прокрутке с оптимизацией производительности
   useEffect(() => {
+    // Если мобильное устройство, не добавляем эффект параллакса
+    if (isMobile) return;
+    
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const parallaxElements = document.querySelectorAll('.parallax-line');
@@ -45,7 +67,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -56,29 +78,29 @@ export default function Home() {
           className="absolute inset-0 z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: isMobile ? 0 : 1 }}
         >
           <motion.div 
             className="absolute top-20 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[#e59500]/10 to-[#840032]/10 blur-3xl"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: isMobile ? 0 : 1, delay: isMobile ? 0 : 0.2 }}
           ></motion.div>
           <motion.div 
             className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-[#840032]/10 to-[#e59500]/10 blur-3xl"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            transition={{ duration: isMobile ? 0 : 1, delay: isMobile ? 0 : 0.4 }}
           ></motion.div>
           
-          {/* Плавающие геометрические фигуры */}
+          {/* Плавающие геометрические фигуры - отключаем анимации на мобильных */}
           <motion.div 
             className="absolute top-1/4 left-1/4 w-12 h-12 border-2 border-[#e59500] rounded-lg opacity-30"
-            animate={{ 
+            animate={isMobile ? {} : { 
               y: [0, -20, 0],
               rotate: [0, 5, 0]
             }}
-            transition={{ 
+            transition={isMobile ? {} : { 
               duration: 4,
               repeat: Infinity,
               ease: "easeInOut"
@@ -86,11 +108,11 @@ export default function Home() {
           ></motion.div>
           <motion.div 
             className="absolute top-1/3 right-1/4 w-8 h-8 border-2 border-[#840032] rounded-full opacity-30"
-            animate={{ 
+            animate={isMobile ? {} : { 
               y: [0, 20, 0],
               rotate: [0, -5, 0]
             }}
-            transition={{ 
+            transition={isMobile ? {} : { 
               duration: 5,
               repeat: Infinity,
               ease: "easeInOut"
@@ -98,11 +120,11 @@ export default function Home() {
           ></motion.div>
           <motion.div 
             className="absolute bottom-1/4 left-1/3 w-16 h-16 border-2 border-[#e59500] rounded-full opacity-30"
-            animate={{ 
+            animate={isMobile ? {} : { 
               y: [0, -15, 0],
               rotate: [0, 3, 0]
             }}
-            transition={{ 
+            transition={isMobile ? {} : { 
               duration: 6,
               repeat: Infinity,
               ease: "easeInOut"
@@ -110,11 +132,11 @@ export default function Home() {
           ></motion.div>
           <motion.div 
             className="absolute top-2/3 right-1/3 w-10 h-10 border-2 border-[#840032] rounded-lg opacity-30"
-            animate={{ 
+            animate={isMobile ? {} : { 
               y: [0, 15, 0],
               rotate: [0, -3, 0]
             }}
-            transition={{ 
+            transition={isMobile ? {} : { 
               duration: 4.5,
               repeat: Infinity,
               ease: "easeInOut"
@@ -126,13 +148,13 @@ export default function Home() {
             className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#e59500]/20 to-transparent"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: isMobile ? 0 : 1, delay: isMobile ? 0 : 0.6 }}
           ></motion.div>
           <motion.div 
             className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#840032]/20 to-transparent"
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: isMobile ? 0 : 1, delay: isMobile ? 0 : 0.8 }}
           ></motion.div>
         </motion.div>
         
@@ -141,7 +163,7 @@ export default function Home() {
             className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: isMobile ? 0.2 : 0.5 }}
           >
             Professional Web Development
           </motion.div>
@@ -150,7 +172,7 @@ export default function Home() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0.1 : 0.2 }}
           >
             Website<br />
             <span className="gradient-text text-[#e59500] relative inline-block">
@@ -163,7 +185,7 @@ export default function Home() {
             className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0.2 : 0.4 }}
           >
             We build websites that help your business grow, achieve high search rankings, and include all the necessary features for effective promotion.
           </motion.p>
@@ -172,7 +194,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0.3 : 0.6 }}
           >
             <Link 
               href="/contact" 
@@ -187,7 +209,7 @@ export default function Home() {
             className="mt-16 pt-8 border-t border-gray-200"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0.4 : 0.8 }}
           >
             <p className="text-sm text-gray-500 mb-4">Trusted by brands in Finland</p>
             <motion.div 
@@ -205,8 +227,8 @@ export default function Home() {
                   key={index}
                   className="w-48 h-16 flex items-center justify-center"
                   variants={fadeInUp}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  whileHover={isMobile ? {} : { scale: 1.05 }}
+                  transition={isMobile ? {} : { type: "spring", stiffness: 300 }}
                 >
                   <Image 
                     src={client.src}
