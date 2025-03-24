@@ -91,6 +91,13 @@ const Header = () => {
               Digital Hub
             </Link>
             
+            <Link 
+              href="/portfolio" 
+              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+            >
+              Portfolio
+            </Link>
+            
             <div className="relative group">
               <button 
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
@@ -405,6 +412,14 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Digital Hub
+                </Link>
+                
+                <Link 
+                  href="/portfolio" 
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Portfolio
                 </Link>
                 
                 {/* Websites меню для мобильных */}
