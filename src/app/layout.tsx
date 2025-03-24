@@ -9,7 +9,6 @@ import CookieConsent from "@/components/CookieConsent";
 import Header from "@/components/Header";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { GoogleTagManager } from '@next/third-parties/google'
 
 
 const tektur = Tektur({
@@ -66,16 +65,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager 
-        gtmId="GTM-K48CG77" 
-        dataLayer={{
-          'gtm.allowlist': ['google'],
-          'gtm.blocklist': ['adm', 'awct', 'sp', 'fls'],
-          'cookieConsent.analytics': 'denied',
-          'cookieConsent.marketing': 'denied',
-          'cookieConsent.preferences': 'denied'
-        }}
-      />
       <head>
         
         {/* Мета-теги для корректного отображения на мобильных устройствах */}
