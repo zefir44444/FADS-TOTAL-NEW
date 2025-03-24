@@ -8,9 +8,9 @@ import { GoogleTagManager } from '@next/third-parties/google';
 // Объявление типа для Google Tag Manager
 declare global {
   interface Window {
-    dataLayer?: object[];
     gtag?: (...args: unknown[]) => void;
     _hsq?: Array<unknown>;
+    dataLayer?: Object[] | undefined;
   }
 }
 
