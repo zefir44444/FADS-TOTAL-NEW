@@ -22,6 +22,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.5,
     },
+    // News section
+    {
+      url: `${baseUrl}/news`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
     // Portfolio section
     {
       url: `${baseUrl}/portfolio`,
@@ -118,6 +125,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/promotion/youtube`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/promotion/growth-engine`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
