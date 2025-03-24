@@ -168,7 +168,7 @@ export default function PromotionServicesPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">YouTube Advertising</h3>
-              <p className="text-gray-600 mb-6">Engage your audience with compelling video ads on the world's largest video platform to build brand awareness.</p>
+              <p className="text-gray-600 mb-6">Engage your audience with compelling video ads on the world&apos;s largest video platform to build brand awareness.</p>
               <Link 
                 href="/promotion/youtube" 
                 className="inline-flex items-center text-[#e59500] font-medium hover:underline group"
@@ -326,7 +326,7 @@ export default function PromotionServicesPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              Let's create a promotion strategy for your business goals. Contact us today to get started.
+              Let&apos;s create a promotion strategy for your business goals. Contact us today to get started.
             </motion.p>
             <motion.div
               whileHover={{ scale: 1.05 }}
