@@ -515,13 +515,12 @@ export default function PortfolioPage() {
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4">
-                  A premium beauty salon in Helsinki offering advanced cosmetic treatments including Morpheus8, Diolaze XL, and other specialized services. We provided comprehensive digital marketing consultations and implemented targeted advertising strategies to enhance their online presence. Our work included developing a structured advertising approach, SEO optimization, and performance analysis to increase client bookings for their premium beauty services.
+                  A premium beauty salon in Helsinki offering advanced cosmetic treatments including Morpheus8, Diolaze XL, and other specialized services. We provided extensive digital marketing consultations and implemented targeted advertising strategies to boost their online presence. Our work included developing a structured advertising approach, SEO optimization, and performance analysis to increase client bookings for their premium beauty services.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Digital Marketing</span>
                   <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Beauty Industry</span>
                   <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Advertising Strategy</span>
-                  <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">SEO</span>
                   <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Performance Marketing</span>
                   <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Lead Generation</span>
                 </div>
