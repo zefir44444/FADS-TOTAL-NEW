@@ -56,7 +56,7 @@ const jsonLd = {
     name: 'FADS Digital Agency',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://fads.fi/logo.png'
+      url: 'https://fads.fi/fads-black.svg'
     }
   },
   inLanguage: 'en-US',

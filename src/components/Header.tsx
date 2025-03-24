@@ -91,6 +91,8 @@ const Header = () => {
               Digital Hub
             </Link>
             
+            <div className="w-px h-4 bg-gray-200"></div>
+            
             <div className="relative group">
               <button 
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
@@ -281,7 +283,8 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            
+            <div className="w-px h-4 bg-gray-200"></div>
+
             <Link 
               href="/portfolio" 
               className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
@@ -640,7 +643,7 @@ const Header = () => {
                 
                 <Link 
                   href="/news" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200 w-full flex justify-center"
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   News
@@ -648,7 +651,7 @@ const Header = () => {
                 
                 <Link 
                   href="/contact" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200 w-full flex justify-center"
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact us

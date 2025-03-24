@@ -40,7 +40,7 @@ export default function BriefPage() {
       </section>
 
       {/* Brief Form Section */}
-      <section className="py-0">
+      <section className="py-">
           <div className="mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
             <BriefForm />
           </div>

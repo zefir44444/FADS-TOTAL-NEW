@@ -99,7 +99,7 @@ export default function PortfolioPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Explore our successful projects and discover how we&apos;ve helped businesses achieve their digital goals
+      Explore projects where we&apos;ve helped businesses like yours get online and attract more customers.
             </motion.p>
           </motion.div>
         </div>
