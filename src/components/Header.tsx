@@ -404,7 +404,7 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
-                className="flex flex-col space-y-4"
+                className="flex flex-col space-y-4 items-center"
               >
                 <Link 
                   href="/" 
@@ -414,9 +414,9 @@ const Header = () => {
                   Digital Hub
                 </Link>
                 
-                <div className="relative group">
+                <div className="relative group text-center">
                   <button 
-                    className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                    className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 mx-auto"
                     aria-label="Websites"
                   >
                     Development
@@ -490,9 +490,9 @@ const Header = () => {
                   </div>
                 </div>
                 
-                <div className="relative group">
+                <div className="relative group text-center">
                   <button 
-                    className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                    className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 mx-auto"
                     aria-label="Services"
                   >
                     Services
@@ -547,10 +547,10 @@ const Header = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3, delay: 0.3 }}
-                  className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200"
+                  className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200 items-center w-full"
                 >
                   <button 
-                    className="text-sm font-medium text-center flex items-center justify-center gap-1"
+                    className="text-sm font-medium text-center flex items-center justify-center gap-1 mx-auto"
                     onClick={() => toggleMobileSubmenu('promotion')}
                   >
                     Promotion
@@ -577,11 +577,11 @@ const Header = () => {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="flex flex-col gap-2 items-center mt-2 overflow-hidden"
+                        className="flex flex-col gap-2 items-center mt-2 overflow-hidden w-full text-center"
                       >
                         <Link 
                           href="/promotion" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 w-full text-center"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           All Promotion Services
@@ -589,21 +589,21 @@ const Header = () => {
                         <div className="w-full h-px bg-gray-100 my-1"></div>
                         <Link 
                           href="/promotion/seo" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 w-full text-center"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           SEO Optimization & Promotion
                         </Link>
                         <Link 
                           href="/promotion/google-ads" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 w-full text-center"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Google Ads Setup & Management
                         </Link>
                         <Link 
                           href="/promotion/youtube" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 w-full text-center"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           YouTube Advertising
@@ -611,7 +611,7 @@ const Header = () => {
                       
                         <Link 
                           href="/promotion/growth-engine" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                          className="text-sm hover:text-[#e59500] transition-colors duration-300 w-full text-center"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Growth Engine
@@ -623,7 +623,7 @@ const Header = () => {
                 
                 <Link 
                   href="/portfolio" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200"
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200 w-full flex justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Portfolio
@@ -631,7 +631,7 @@ const Header = () => {
                 
                 <Link 
                   href="/news" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200"
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200 w-full flex justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   News
@@ -639,7 +639,7 @@ const Header = () => {
                 
                 <Link 
                   href="/contact" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200"
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200 w-full flex justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact us
