@@ -198,7 +198,7 @@ export default function PortfolioPage() {
             >
               <div className="relative h-64 md:h-80 overflow-hidden">
                 <Image 
-                  src="/pictures/portfolio/bemuhuolto.jpg" 
+                  src="/pictures/portfolio/Bemuhuolto/BemuHuolto.jpg" 
                   alt="BEMU Huolto Website" 
                   width={700} 
                   height={450}
