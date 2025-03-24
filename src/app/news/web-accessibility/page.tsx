@@ -42,7 +42,7 @@ export default function WebAccessibilityPage() {
       </div>
 
       <p className="lead text-xl text-gray-700 mb-8 leading-relaxed">
-        In today's digital world, web accessibility is no longer just a recommendation but a crucial requirement, especially for projects in Europe and the government sector. Let's explore why it's important and how to properly implement accessibility on your web resources.
+        In today&apos;s digital world, web accessibility is no longer just a recommendation but a crucial requirement, especially for projects in Europe and the government sector. Let&apos;s explore why it&apos;s important and how to properly implement accessibility on your web resources.
       </p>
       
       <div className="bg-gray-50 p-6 rounded-xl mb-8">
@@ -240,7 +240,7 @@ export default function WebAccessibilityPage() {
 
       <h2 className="text-3xl font-bold mt-12 mb-6 text-gray-900">Start Implementing Web Accessibility Now</h2>
       <p className="text-gray-700 mb-6">
-        Don't wait until web accessibility becomes mandatory for your project. Start implementing it now to ensure equal access to your digital resources for all users. <Link href="/contact" className="text-[#e59500] hover:underline font-medium">Contact us</Link> for a consultation or to conduct an accessibility audit of your website.
+        Don&apos;t wait until web accessibility becomes mandatory for your project. Start implementing it now to ensure equal access to your digital resources for all users. <Link href="/contact" className="text-[#e59500] hover:underline font-medium">Contact us</Link> for a consultation or to conduct an accessibility audit of your website.
       </p>
     </div>
   );
