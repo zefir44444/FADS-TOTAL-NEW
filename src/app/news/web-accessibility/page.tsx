@@ -32,14 +32,13 @@ export default function WebAccessibilityPage() {
           src="/news/web-accessibility/users.jpg" 
           alt="Web Accessibility Illustration" 
           fill
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "cover", objectPosition: "center" }}
           className="transition-transform duration-500 group-hover:scale-105"
           onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
             const target = e.target as HTMLImageElement;
             target.src = "/fads-black.svg";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
 
       <p className="lead text-xl text-gray-700 mb-8 leading-relaxed">

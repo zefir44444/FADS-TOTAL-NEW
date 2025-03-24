@@ -50,7 +50,7 @@ export default function NewsPage() {
                     src="/news/web-accessibility/users.jpg" 
                     alt="Web Accessibility" 
                     fill
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                     className="transition-transform duration-500 hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
