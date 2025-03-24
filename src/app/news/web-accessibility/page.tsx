@@ -84,25 +84,25 @@ export default function WebAccessibilityPage() {
             <svg className="w-5 h-5 text-[#e59500] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <Link href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj/eng" className="hover:text-[#e59500] transition-colors" target="_blank" rel="noopener noreferrer">
+            <Link href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj/eng" className="text-[#863800] hover:text-[#e59500] transition-colors" target="_blank" rel="noopener noreferrer">
               EU Directive 2016/2102
-            </Link> on website accessibility
+            </Link>{' '}on website accessibility
           </li>
           <li className="flex items-center">
             <svg className="w-5 h-5 text-[#e59500] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <Link href="https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation" className="hover:text-[#e59500] transition-colors" target="_blank" rel="noopener noreferrer">
+            <Link href="https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation" className="text-[#863800] hover:text-[#e59500] transition-colors" target="_blank" rel="noopener noreferrer">
               EN 301 549 standard
-            </Link> for public procurement
+            </Link>{' '}for public procurement
           </li>
           <li className="flex items-center">
             <svg className="w-5 h-5 text-[#e59500] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <Link href="https://www.w3.org/TR/WCAG21/" className="hover:text-[#e59500] transition-colors" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.w3.org/TR/WCAG21/" className="text-[#863800] hover:text-[#e59500] transition-colors" target="_blank" rel="noopener noreferrer">
               WCAG 2.1
-            </Link> Level AA requirements
+            </Link>{' '}Level AA requirements
           </li>
         </ul>
       </div>
