@@ -5,7 +5,6 @@ import "./globals.css";
 import Script from "next/script";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/components/Footer";
-import CookieConsent from "@/components/CookieConsent";
 import Header from "@/components/Header";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
