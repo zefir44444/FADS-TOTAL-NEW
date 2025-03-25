@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
   MagnifyingGlassIcon,
@@ -57,6 +58,26 @@ export default function SEOArticle() {
           <span>10 min read</span>
         </div>
       </motion.header>
+
+      {/* Featured Image */}
+      <motion.div 
+        className="relative h-64 md:h-96 w-full group mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        <Image 
+          src="/news/What is SEO/Grow Online Business.png" 
+          alt="SEO for Business Growth" 
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          className="transition-transform duration-500 group-hover:scale-105"
+          onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "/fads-black.svg";
+          }}
+        />
+      </motion.div>
 
       {/* Main Content */}
       <motion.div 
@@ -313,7 +334,7 @@ export default function SEOArticle() {
             Search engines change, but SEO remains one of the most powerful digital tools for long-term growth. When done right, SEO brings in consistent traffic, higher conversions, and a stronger brand.
           </p>
           <p className="text-lg mb-6">
-            If you don't have time to keep up with algorithms and strategies — we do.
+            If you don&apos;t have time to keep up with algorithms and strategies — we do.
           </p>
           <div className="bg-[#e59500]/10 p-6 rounded-xl">
             <p className="text-lg font-bold mb-4">

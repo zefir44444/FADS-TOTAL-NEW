@@ -32,7 +32,7 @@ export default function WebsiteUpdatePage() {
           src="/fads-black.svg" 
           alt="Website Update v0.8" 
           fill
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "cover", objectPosition: "center" }}
           className="transition-transform duration-500 group-hover:scale-105"
           onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
             const target = e.target as HTMLImageElement;

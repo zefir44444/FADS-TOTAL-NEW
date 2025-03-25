@@ -47,10 +47,10 @@ export default function NewsPage() {
               <div className="bg-white rounded-lg sm:rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
                 <div className="relative h-32 sm:h-40 w-full">
                   <Image 
-                    src="/fads-black.svg" 
+                    src="/news/What is SEO/Grow Online Business.png" 
                     alt="SEO Guide" 
                     fill
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                     className="transition-transform duration-500 hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -70,7 +70,7 @@ export default function NewsPage() {
                     </Link>
                   </h2>
                   <p className="text-sm sm:text-base text-gray-600 mb-3">
-                    Learn about SEO fundamentals, its evolution, and why it's crucial for European businesses. Discover modern SEO strategies, AI integration, and cost-effective approaches.
+                    Learn about SEO fundamentals, its evolution, and why it&apos;s crucial for European businesses. Discover modern SEO strategies, AI integration, and cost-effective approaches.
                   </p>
                   <Link 
                     href="/news/what-is-seo" 
