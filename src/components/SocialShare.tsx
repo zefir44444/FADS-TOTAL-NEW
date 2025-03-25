@@ -32,13 +32,24 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Установка URL
-      const pageUrl = url || window.location.href;
+      // Получаем полный URL страницы
+      let pageUrl = '';
+      
+      if (url) {
+        // Если URL передан через пропсы
+        pageUrl = url;
+      } else {
+        // Получаем абсолютный URL текущей страницы
+        pageUrl = window.location.origin + window.location.pathname;
+      }
+      
+      console.log('ShareUrl определён как:', pageUrl);
       setShareUrl(pageUrl);
       
       // Установка заголовка
       const pageTitle = title || document.title;
       setShareTitle(pageTitle);
+      console.log('ShareTitle определён как:', pageTitle);
       
       // Установка описания
       const metaDescription = document.querySelector('meta[name="description"]');
@@ -49,6 +60,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         pageTitle;
       
       setShareText(description);
+      console.log('ShareText определён как:', description);
     }
   }, [url, title, text]);
 
@@ -56,11 +68,15 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
   const copyToClipboard = () => {
     if (navigator.clipboard && shareUrl) {
       navigator.clipboard.writeText(shareUrl)
-        .then(() => alert('Ссылка скопирована в буфер обмена'))
+        .then(() => alert('Ссылка скопирована в буфер обмена: ' + shareUrl))
         .catch(err => console.error('Ошибка при копировании: ', err));
     } else {
       alert('Пожалуйста, скопируйте эту ссылку вручную: ' + shareUrl);
     }
+  };
+
+  const handleShareClick = (name: string) => {
+    console.log(`Делимся через ${name}. URL: ${shareUrl}`);
   };
 
   return (
@@ -69,6 +85,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         url={shareUrl}
         hashtag="#fads"
         className="focus:outline-none"
+        onClick={() => handleShareClick('Facebook')}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaFacebook size={20} />
@@ -79,6 +96,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         url={shareUrl}
         title={shareText}
         className="focus:outline-none"
+        onClick={() => handleShareClick('Twitter')}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaTwitter size={20} />
@@ -89,6 +107,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         url={shareUrl}
         title={shareTitle}
         className="focus:outline-none"
+        onClick={() => handleShareClick('LinkedIn')}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaLinkedin size={20} />
@@ -99,6 +118,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         url={shareUrl}
         title={shareText}
         className="focus:outline-none"
+        onClick={() => handleShareClick('Telegram')}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaTelegram size={20} />
@@ -110,6 +130,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         title={shareText}
         separator=" — "
         className="focus:outline-none"
+        onClick={() => handleShareClick('WhatsApp')}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaWhatsapp size={20} />
@@ -121,6 +142,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         subject={shareTitle}
         body={shareText}
         className="focus:outline-none"
+        onClick={() => handleShareClick('Email')}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaEnvelope size={20} />
