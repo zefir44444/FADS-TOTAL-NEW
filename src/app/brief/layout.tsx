@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         alt: 'FADS Бриф на разработку сайта',
       },
     ],
-    locale: 'ru_RU',
+    locale: 'ru_FI',
     type: 'website',
   },
   twitter: {
