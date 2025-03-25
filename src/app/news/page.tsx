@@ -43,59 +43,6 @@ export default function NewsPage() {
         <div className="w-full max-w-[100vw] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-              {/* SEO News Card */}
-              <div className="bg-white rounded-lg sm:rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <div className="relative h-32 sm:h-40 w-full">
-                  <Image 
-                    src="/news/What is SEO/Grow Online Business.png" 
-                    alt="SEO Guide" 
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "center" }}
-                    className="transition-transform duration-500 hover:scale-105"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "/fads-black.svg";
-                    }}
-                  />
-                </div>
-                <div className="p-3 sm:p-4 md:p-6">
-                  <div className="flex items-center mb-2">
-                    <span className="text-xs text-gray-500">25-03-2024</span>
-                    <span className="mx-2 text-gray-300">•</span>
-                    <span className="text-xs text-[#e59500]">Digital Marketing</span>
-                  </div>
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 hover:text-[#e59500] transition-colors">
-                    <Link href="/news/what-is-seo">
-                      What Is SEO and Why It Matters for Businesses in Europe
-                    </Link>
-                  </h2>
-                  <p className="text-sm sm:text-base text-gray-600 mb-3">
-                    Learn about SEO fundamentals, its evolution, and why it&apos;s crucial for European businesses. Discover modern SEO strategies, AI integration, and cost-effective approaches.
-                  </p>
-                  <Link 
-                    href="/news/what-is-seo" 
-                    className="text-[#e59500] font-medium hover:underline inline-flex items-center text-sm"
-                  >
-                    Read more
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="16" 
-                      height="16" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      className="ml-1"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
               {/* Web Accessibility News Card */}
               <div className="bg-white rounded-lg sm:rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
                 <div className="relative h-32 sm:h-40 w-full">
