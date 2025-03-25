@@ -15,7 +15,8 @@ import {
   FaLinkedin, 
   FaTelegram, 
   FaWhatsapp,
-  FaShareAlt
+  FaShareAlt,
+  FaEnvelope
 } from 'react-icons/fa';
 
 interface SocialShareProps {
@@ -114,6 +115,17 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
           <FaWhatsapp size={20} />
         </div>
       </WhatsappShareButton>
+      
+      <EmailShareButton
+        url={shareUrl}
+        subject={shareTitle}
+        body={shareText}
+        className="focus:outline-none"
+      >
+        <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
+          <FaEnvelope size={20} />
+        </div>
+      </EmailShareButton>
       
       <button 
         onClick={copyToClipboard} 
