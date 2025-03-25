@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         alt: 'FADS Digital Hub AI Search & Agent Optimization',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_FI',
     type: 'website',
   },
   twitter: {

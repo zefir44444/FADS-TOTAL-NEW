@@ -44,7 +44,7 @@ export const metadata: Metadata = {
         alt: "FADS - Digital Solutions",
       },
     ],
-    locale: "en_US",
+    locale: "en_FI",
     type: "website",
   },
   twitter: {

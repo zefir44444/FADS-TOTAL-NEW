@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         alt: 'FADS Digital Hub Website Update v0.8',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_FI',
     type: 'article',
     publishedTime: '2025-03-17T10:00:00Z',
   },

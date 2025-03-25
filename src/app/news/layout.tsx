@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         alt: 'FADS Digital Hub News',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_FI',
     type: 'website',
   },
   twitter: {

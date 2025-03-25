@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'FADS Digital Hub | Business Website Development',
-  description: 'Professional business website development services. We create modern, functional websites that help businesses establish a strong online presence.',
+  description: 'Custom business websites for small and medium-sized companies. We build fast, functional, SEO-optimized sites that drive conversions and support growth.',
   keywords: ['business websites', 'corporate websites', 'company websites', 'professional web development', 'business web design'],
   openGraph: {
     title: 'FADS Digital Hub | Business Website Development',
-    description: 'Professional business website development services. We create modern, functional websites that help businesses establish a strong online presence.',
+    description: 'Custom business websites for small and medium-sized companies. We build fast, functional, SEO-optimized sites that drive conversions and support growth.',
     url: 'https://fads.fi/websites/business',
     siteName: 'FADS Digital Hub',
     images: [
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
         alt: 'FADS Digital Hub Business Website Development',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_FI',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FADS Digital Hub | Business Website Development',
-    description: 'Professional business website development services. We create modern, functional websites that help businesses establish a strong online presence.',
+    description: 'Custom business websites for small and medium-sized companies. We build fast, functional, SEO-optimized sites that drive conversions and support growth.',
     images: ['https://fads.fi/fads-black.svg'],
   },
   alternates: {
@@ -46,7 +46,7 @@ export default function BusinessWebsitesLayout({
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Business Website Development",
-            "description": "Professional business website development services. We create modern, functional websites that help businesses establish a strong online presence.",
+            "description": "Custom business websites for small and medium-sized companies. We build fast, functional, SEO-optimized sites that drive conversions and support growth.",
             "url": "https://fads.fi/websites/business",
             "provider": {
               "@type": "Organization",

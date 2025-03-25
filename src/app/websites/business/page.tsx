@@ -451,7 +451,7 @@ export default function BusinessWebsites() {
               viewport={{ once: true, margin: "-100px 0px" }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold mb-6">Get a Personalized Business Website Solution</h2>
+              <h2 className="text-3xl font-bold mb-6 text-center">Get a Personalized Business Website Solution</h2>
               
               <p className="text-lg text-gray-700 mb-8 text-center">
                 Every business has unique requirements. Contact us to discuss your project and receive a tailored proposal that meets your specific needs and objectives.

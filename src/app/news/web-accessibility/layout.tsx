@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         alt: 'Web Accessibility - FADS Digital Hub',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_FI',
     type: 'article',
     publishedTime: '2024-03-24T09:00:00Z',
   },
