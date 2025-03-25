@@ -420,7 +420,7 @@ export default function SeoPage() {
         </p>
         
         <p className="text-black font-semibold text-center my-6">
-          <span className="text-[#e59500]">Let FADS handle your SEO, so you can focus on your business.</span>
+          <span className="text-black">Let FADS handle your SEO, so you can focus on your business.</span>
         </p>
         
         <div className="text-center mt-6">
