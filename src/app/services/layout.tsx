@@ -73,23 +73,29 @@ export default function ServicesLayout({
           })
         }}
       />
-      <section>
- 
+      <section className="min-h-screen">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white rounded-lg sm:rounded-xl overflow-hidden">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="min-h-[200px]">
                 {children}
-            
+              </div>
               
               <div className="mt-6 sm:mt-8 md:mt-10 pt-6 sm:pt-8 border-t border-gray-100">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
                   <div className="flex items-center">
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="gradient-text text-gray-600">Share:</span>
+                    <span className="gradient-text text-gray-600">Поделиться:</span>
                     <SocialShare />
                   </div>
                 </div>
               </div>
-        
-        </section>
+
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
