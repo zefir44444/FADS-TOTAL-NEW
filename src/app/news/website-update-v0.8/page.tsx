@@ -16,13 +16,13 @@ export default function WebsiteUpdatePage() {
   return (
     <div className="prose prose-lg max-w-none">
       <div className="text-center mb-12">
-        <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
+        <div className="inline-block mb-4 px-4 py-1 rounded-full text-[#e59500] font-medium text-sm">
           16 March 2025
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#e59500] to-[#840032]">
           Website Update v0.8
         </h1>
-        <p className="text-xl max-w-3xl mx-auto text-gray-600">
+        <p className="text-xl max-w-3xl mx-auto text-black">
           Major improvements in website structure and user experience. Enhanced navigation, improved accessibility, and updated content organization.
         </p>
       </div>
@@ -41,15 +41,15 @@ export default function WebsiteUpdatePage() {
         />
       </div>
 
-      <p className="lead text-xl text-gray-700 mb-8 leading-relaxed">
+      <p className="lead text-xl text-black mb-8 leading-relaxed">
         We&apos;re excited to announce the release of version 0.8 of our website, featuring significant improvements to enhance your browsing experience and make our services more accessible.
       </p>
       
       <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s New in v0.8</h2>
       
-      <div className="bg-gray-50 p-6 rounded-xl">
+      <div className="p-6 rounded-xl">
         <h3 className="text-2xl font-semibold mb-4 text-[#e59500]">Redesigned Navigation</h3>
-        <p className="text-gray-700 mb-4">
+        <p className="text-black mb-4">
           We&apos;ve completely revamped our navigation system to make it more intuitive and user-friendly. The new menu structure provides clearer pathways to our services and resources, helping you find exactly what you&apos;re looking for with fewer clicks.
         </p>
         
@@ -81,9 +81,9 @@ export default function WebsiteUpdatePage() {
         </ul>
       </div>
 
-      <div className="bg-gray-50 p-6 rounded-xl">
+      <div className="p-6 rounded-xl">
         <h3 className="text-2xl font-semibold mb-4 text-[#e59500]">Enhanced Website Services Section</h3>
-        <p className="text-gray-700 mb-4">
+        <p className="text-black mb-4">
           Our website services section has been reorganized to better showcase our offerings. Each service now has a dedicated page with detailed information, examples, and clear pricing options.
         </p>
         
@@ -110,9 +110,9 @@ export default function WebsiteUpdatePage() {
         </ul>
       </div>
 
-      <div className="bg-gray-50 p-6 rounded-xl">
+      <div className="p-6 rounded-xl">
         <h3 className="text-2xl font-semibold mb-4 text-[#e59500]">Improved Performance</h3>
-        <p className="text-gray-700 mb-4">
+        <p className="text-black mb-4">
           We&apos;ve made significant behind-the-scenes improvements to enhance the website&apos;s performance:
         </p>
         
@@ -144,9 +144,9 @@ export default function WebsiteUpdatePage() {
         </ul>
       </div>
 
-      <div className="bg-gray-50 p-6 rounded-xl">
+      <div className="p-6 rounded-xl">
         <h3 className="text-2xl font-semibold mb-4 text-[#e59500]">New Content and Resources</h3>
-        <p className="text-gray-700 mb-4">
+        <p className="text-black mb-4">
           We&apos;ve added new content to provide more value to our visitors:
         </p>
         
@@ -173,7 +173,7 @@ export default function WebsiteUpdatePage() {
       </div>
    
       <h2 className="text-3xl font-bold mt-12 mb-6 text-gray-900">What&apos;s Coming Next</h2>
-      <p className="text-gray-700 mb-6">
+      <p className="text-black mb-6">
         This update lays the groundwork for even more exciting features in the future. Here&apos;s a sneak peek at what we&apos;re working on for upcoming releases:
       </p>
       
@@ -205,7 +205,7 @@ export default function WebsiteUpdatePage() {
       </div>
       
       <h2 className="text-3xl font-bold mt-12 mb-6 text-gray-900">Your Feedback Matters</h2>
-      <p className="text-gray-700 mb-6">
+      <p className="text-black mb-6">
         We value your input and would love to hear your thoughts on our website update. If you have any feedback, suggestions, or encounter any issues, please don&apos;t hesitate to <Link href="/contact" className="text-[#e59500] hover:underline font-medium">contact us</Link>.
       </p>
     </div>

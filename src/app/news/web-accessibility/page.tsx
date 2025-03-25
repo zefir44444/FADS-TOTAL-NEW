@@ -16,13 +16,13 @@ export default function WebAccessibilityPage() {
   return (
     <div className="prose prose-lg max-w-none">
       <div className="text-center mb-12">
-        <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#e59500]/10 text-[#e59500] font-medium text-sm">
+        <div className="inline-block mb-4 px-4 py-1 rounded-full text-[#e59500] font-medium text-sm">
           March 24, 2024
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#e59500] to-[#840032]">
           What is Web Accessibility and Why Should You Care Now?
         </h1>
-        <p className="text-xl max-w-3xl mx-auto text-gray-600">
+        <p className="text-xl max-w-3xl mx-auto text-black">
           Learn about web accessibility essentials, key requirements for European and B2G projects, and practical steps for implementation.
         </p>
       </div>
@@ -41,13 +41,13 @@ export default function WebAccessibilityPage() {
         />
       </div>
 
-      <p className="lead text-xl text-gray-700 mb-8 leading-relaxed">
+      <p className="lead text-xl text-black mb-8 leading-relaxed">
         In today&apos;s digital world, web accessibility is no longer just a recommendation but a crucial requirement, especially for projects in Europe and the government sector. Let&apos;s explore why it&apos;s important and how to properly implement accessibility on your web resources.
       </p>
       
-      <div className="bg-gray-50 p-6 rounded-xl mb-8">
+      <div className="p-6 rounded-xl mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-[#e59500]">What is Web Accessibility?</h2>
-        <p className="text-gray-700 mb-4">
+        <p className="text-black mb-4">
           Web Accessibility is the principle of creating websites and applications that can be used by everyone, regardless of their physical abilities, technical limitations, or information perception characteristics.
         </p>
         
@@ -73,9 +73,9 @@ export default function WebAccessibilityPage() {
         </ul>
       </div>
 
-      <div className="bg-gray-50 p-6 rounded-xl mb-8">
+      <div className="p-6 rounded-xl mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-[#e59500]">Legislative Requirements in Europe</h2>
-        <p className="text-gray-700 mb-4">
+        <p className="text-black mb-4">
           The European Union has strict requirements for digital resource accessibility, especially in the public sector:
         </p>
         
@@ -104,9 +104,9 @@ export default function WebAccessibilityPage() {
         </ul>
       </div>
 
-      <div className="bg-gray-50 p-6 rounded-xl mb-8">
+      <div className="p-6 rounded-xl mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-[#e59500]">Key Aspects of Web Accessibility</h2>
-        <p className="text-gray-700 mb-4">
+        <p className="text-black mb-4">
           When developing accessible web resources, consider the following aspects:
         </p>
         
@@ -138,9 +138,9 @@ export default function WebAccessibilityPage() {
         </ul>
       </div>
 
-      <div className="bg-gray-50 p-6 rounded-xl mb-8">
+      <div className="p-6 rounded-xl mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-[#e59500]">Practical Recommendations</h2>
-        <p className="text-gray-700 mb-4">
+        <p className="text-black mb-4">
           Key steps for implementing web accessibility in your project:
         </p>
         
@@ -181,25 +181,25 @@ export default function WebAccessibilityPage() {
       <h2 className="text-3xl font-bold mt-12 mb-6 text-gray-900">Benefits of Implementing Web Accessibility</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        <div className="bg-gray-50 p-4 rounded-lg flex items-center">
+        <div className="p-4 rounded-lg flex items-center">
           <svg className="w-6 h-6 text-[#e59500] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
           </svg>
           <span>Expanding user audience</span>
         </div>
-        <div className="bg-gray-50 p-4 rounded-lg flex items-center">
+        <div className="p-4 rounded-lg flex items-center">
           <svg className="w-6 h-6 text-[#e59500] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
           <span>Compliance with legal requirements</span>
         </div>
-        <div className="bg-gray-50 p-4 rounded-lg flex items-center">
+        <div className="p-4 rounded-lg flex items-center">
           <svg className="w-6 h-6 text-[#e59500] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
           <span>Improved SEO and performance</span>
         </div>
-        <div className="bg-gray-50 p-4 rounded-lg flex items-center">
+        <div className="p-4 rounded-lg flex items-center">
           <svg className="w-6 h-6 text-[#e59500] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
           </svg>
@@ -207,9 +207,9 @@ export default function WebAccessibilityPage() {
         </div>
       </div>
       
-      <div className="bg-gray-50 p-6 rounded-xl mb-8">
+      <div className="p-6 rounded-xl mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-[#e59500]">How We Can Help</h2>
-        <p className="text-gray-700 mb-6">
+        <p className="text-black mb-6">
           FADS Digital Hub offers comprehensive solutions for implementing web accessibility:
         </p>
         
@@ -236,7 +236,7 @@ export default function WebAccessibilityPage() {
       </div>
 
       <h2 className="text-3xl font-bold mt-12 mb-6 text-gray-900">Start Implementing Web Accessibility Now</h2>
-      <p className="text-gray-700 mb-6">
+      <p className="text-black mb-6">
         Don&apos;t wait until web accessibility becomes mandatory for your project. Start implementing it now to ensure equal access to your digital resources for all users. <Link href="/contact" className="text-[#e59500] hover:underline font-medium">Contact us</Link> for a consultation or to conduct an accessibility audit of your website.
       </p>
     </div>
