@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { 
-  EmailShareButton, 
-  FacebookShareButton, 
-  TwitterShareButton, 
-  LinkedinShareButton, 
-  TelegramShareButton, 
-  WhatsappShareButton
-} from 'react-share';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import {
+  FacebookShareButton,
+  TelegramShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  LinkedinShareButton,
+  EmailShareButton
+} from 'next-share';
 import { 
   FaFacebook, 
   FaTwitter, 
@@ -26,32 +27,28 @@ interface SocialShareProps {
 }
 
 export default function SocialShare({ url, title, text }: SocialShareProps) {
+  const pathname = usePathname();
   const [shareUrl, setShareUrl] = useState<string>('');
   const [shareTitle, setShareTitle] = useState<string>('');
   const [shareText, setShareText] = useState<string>('');
-
+  
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Получаем полный URL страницы
-      let pageUrl = '';
+      // Building the complete URL from host and current path
+      const baseUrl = window.location.origin;
+      const currentPath = url || pathname || window.location.pathname;
+      const fullUrl = `${baseUrl}${currentPath}`;
       
-      if (url) {
-        // Если URL передан через пропсы
-        pageUrl = url;
-      } else {
-        // Получаем абсолютный URL текущей страницы
-        pageUrl = window.location.origin + window.location.pathname;
-      }
+      console.log('Current path (pathname):', pathname);
+      console.log('Full URL for sharing:', fullUrl);
       
-      console.log('ShareUrl определён как:', pageUrl);
-      setShareUrl(pageUrl);
+      setShareUrl(fullUrl);
       
-      // Установка заголовка
+      // Page title
       const pageTitle = title || document.title;
       setShareTitle(pageTitle);
-      console.log('ShareTitle определён как:', pageTitle);
       
-      // Установка описания
+      // Page description
       const metaDescription = document.querySelector('meta[name="description"]');
       const ogDescription = document.querySelector('meta[property="og:description"]');
       const description = text || 
@@ -60,32 +57,28 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         pageTitle;
       
       setShareText(description);
-      console.log('ShareText определён как:', description);
     }
-  }, [url, title, text]);
+  }, [pathname, url, title, text]);
 
-  // Копирование ссылки в буфер обмена
+  // Copy to clipboard function
   const copyToClipboard = () => {
     if (navigator.clipboard && shareUrl) {
       navigator.clipboard.writeText(shareUrl)
-        .then(() => alert('Ссылка скопирована в буфер обмена: ' + shareUrl))
-        .catch(err => console.error('Ошибка при копировании: ', err));
+        .then(() => {
+          console.log('URL copied:', shareUrl);
+          alert('Link copied: ' + shareUrl);
+        })
+        .catch(err => console.error('Error copying:', err));
     } else {
-      alert('Пожалуйста, скопируйте эту ссылку вручную: ' + shareUrl);
+      alert('Please copy this link manually: ' + shareUrl);
     }
-  };
-
-  const handleShareClick = (name: string) => {
-    console.log(`Делимся через ${name}. URL: ${shareUrl}`);
   };
 
   return (
     <div className="flex items-center gap-2">
       <FacebookShareButton 
         url={shareUrl}
-        hashtag="#fads"
-        className="focus:outline-none"
-        onClick={() => handleShareClick('Facebook')}
+        blankTarget={true}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaFacebook size={20} />
@@ -94,9 +87,8 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
 
       <TwitterShareButton 
         url={shareUrl}
-        title={shareText}
-        className="focus:outline-none"
-        onClick={() => handleShareClick('Twitter')}
+        title={shareTitle}
+        blankTarget={true}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaTwitter size={20} />
@@ -105,9 +97,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
 
       <LinkedinShareButton 
         url={shareUrl}
-        title={shareTitle}
-        className="focus:outline-none"
-        onClick={() => handleShareClick('LinkedIn')}
+        blankTarget={true}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaLinkedin size={20} />
@@ -116,9 +106,8 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
 
       <TelegramShareButton 
         url={shareUrl}
-        title={shareText}
-        className="focus:outline-none"
-        onClick={() => handleShareClick('Telegram')}
+        title={shareTitle}
+        blankTarget={true}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaTelegram size={20} />
@@ -127,10 +116,9 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
 
       <WhatsappShareButton 
         url={shareUrl}
-        title={shareText}
+        title={shareTitle}
         separator=" — "
-        className="focus:outline-none"
-        onClick={() => handleShareClick('WhatsApp')}
+        blankTarget={true}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaWhatsapp size={20} />
@@ -140,9 +128,8 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
       <EmailShareButton
         url={shareUrl}
         subject={shareTitle}
-        body={shareText}
-        className="focus:outline-none"
-        onClick={() => handleShareClick('Email')}
+        body={`${shareText}\n\n${shareUrl}`}
+        blankTarget={true}
       >
         <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaEnvelope size={20} />
@@ -152,7 +139,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
       <button 
         onClick={copyToClipboard} 
         className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full focus:outline-none"
-        aria-label="Копировать ссылку"
+        aria-label="Copy link"
       >
         <FaShareAlt size={20} />
       </button>
