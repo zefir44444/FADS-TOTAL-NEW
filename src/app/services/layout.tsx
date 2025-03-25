@@ -86,7 +86,7 @@ export default function ServicesLayout({
                   <div className="flex items-center">
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="gradient-text text-gray-600">Поделиться:</span>
+                    <span className="gradient-text text-gray-600">Share:</span>
                     <SocialShare />
                   </div>
                 </div>
