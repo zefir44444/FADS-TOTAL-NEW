@@ -74,7 +74,7 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
                         setPhoneError("Please enter a valid phone number");
                     }
                 }
-            } catch (_) {
+            } catch {
                 // Сохраняем введенное значение, но показываем ошибку
                 setFormData(prev => ({ ...prev, phone: value }));
                 setPhoneError("Please enter a valid phone number");
@@ -113,7 +113,7 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
                     setPhoneError("Please enter a valid phone number");
                     return;
                 }
-            } catch (_) {
+            } catch {
                 setPhoneError("Please enter a valid phone number");
                 return;
             }
