@@ -30,10 +30,10 @@ export default function WebsitePerformanceChecklist() {
       }
     };
 
-    window.addEventListener('beforeprint', handleBeforePrint as any);
+    window.addEventListener('beforeprint', handleBeforePrint as unknown as EventListener);
 
     return () => {
-      window.removeEventListener('beforeprint', handleBeforePrint as any);
+      window.removeEventListener('beforeprint', handleBeforePrint as unknown as EventListener);
     };
   }, [contactSubmitted]);
 
