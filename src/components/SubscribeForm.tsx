@@ -179,56 +179,77 @@ const SubscribeForm = () => {
         Get the latest news and updates directly to your inbox
       </p>
       
-      <form onSubmit={onSubmit} className="space-y-3">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <input
-            type="text"
-            placeholder="First Name"
-            value={formData.firstName}
-            onChange={handleChange}
-            name="firstName"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]/50"
-            required
-          />
+      <form onSubmit={onSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="form__group w-full">
+            <input
+              type="text"
+              placeholder="First Name"
+              value={formData.firstName}
+              onChange={handleChange}
+              name="firstName"
+              className="form__field w-full"
+              required
+              id="subscribe-firstName"
+            />
+            <label htmlFor="subscribe-firstName" className="form__label">First Name</label>
+          </div>
           
-          <input
-            type="text"
-            placeholder="Last Name"
-            value={formData.lastName}
-            onChange={handleChange}
-            name="lastName"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]/50"
-            required
-          />
+          <div className="form__group w-full">
+            <input
+              type="text"
+              placeholder="Last Name"
+              value={formData.lastName}
+              onChange={handleChange}
+              name="lastName"
+              className="form__field w-full"
+              required
+              id="subscribe-lastName"
+            />
+            <label htmlFor="subscribe-lastName" className="form__label">Last Name</label>
+          </div>
         </div>
         
-        <input
-          type="email"
-          placeholder="Your email"
-          value={formData.email}
-          onChange={handleChange}
-          name="email"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e59500]/50"
-          required
-        />
-        
-        <div className="flex items-start mt-2">
+        <div className="form__group w-full">
           <input
-            type="checkbox"
-            id="privacy-policy"
-            ref={checkboxRef}
-            checked={formData.consent}
+            type="email"
+            placeholder="Your email"
+            value={formData.email}
             onChange={handleChange}
-            name="consent"
-            className={`mt-1 mr-2 ${isCheckboxBlinking ? 'checkbox-blink' : ''}`}
+            name="email"
+            className="form__field w-full"
             required
+            id="subscribe-email"
           />
-          <label htmlFor="privacy-policy" className="text-xs">
-            I agree to the processing of my personal data in accordance with the{" "}
-            <Link href="/privacy" className="text-[#863800] font-semibold hover:underline">
-              Privacy Policy
-            </Link>
-          </label>
+          <label htmlFor="subscribe-email" className="form__label">Your Email</label>
+        </div>
+        
+        <div className="flex items-start gap-2">
+          <div className="checkbox-wrapper-46">
+            <input
+              type="checkbox"
+              id="privacy-policy"
+              ref={checkboxRef}
+              checked={formData.consent}
+              onChange={handleChange}
+              name="consent"
+              className="inp-cbx"
+              required
+            />
+            <label htmlFor="privacy-policy" className="cbx flex items-center">
+              <span className="flex-shrink-0">
+                <svg width="12px" height="10px">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg>
+              </span>
+              <span className="text-xs leading-tight">
+                I agree to the processing of my personal data in accordance with the{" "}
+                <Link href="/privacy" className="text-[#863800] font-semibold hover:text-[#e59500] transition-colors duration-300">
+                  Privacy Policy
+                </Link>
+              </span>
+            </label>
+          </div>
         </div>
         
         <button

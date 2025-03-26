@@ -43,6 +43,59 @@ export default function NewsPage() {
         <div className="w-full max-w-[100vw] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+              {/* Google Search Ads Guide News Card */}
+              <div className="bg-white rounded-lg sm:rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                <div className="relative h-32 sm:h-60 w-full">
+                  <Image 
+                    src="/news/google-search-ads-guide/ppc-marketing.jpg" 
+                    alt="Google Search Ads Guide" 
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                    className="transition-transform duration-500 hover:scale-105"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/fads-black.svg";
+                    }}
+                  />
+                </div>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <div className="flex items-center mb-2">
+                    <span className="text-xs text-gray-500">27-03-2024</span>
+                    <span className="mx-2 text-gray-300">•</span>
+                    <span className="text-xs text-[#e59500]">PPC</span>
+                  </div>
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 hover:text-[#e59500] transition-colors">
+                    <Link href="/news/google-search-ads-guide">
+                      Google Search Ads: Complete Guide to Basics, Best Practices & Pricing (2025)
+                    </Link>
+                  </h2>
+                  <p className="text-sm sm:text-base text-gray-600 mb-3">
+                    Comprehensive guide to Google Search Ads in 2025. Learn about PPC basics, best practices, pricing, and how to optimize your campaigns for maximum ROI.
+                  </p>
+                  <Link 
+                    href="/news/google-search-ads-guide" 
+                    className="text-[#e59500] font-medium hover:underline inline-flex items-center text-sm"
+                  >
+                    Read more
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="ml-1"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+
               {/* SEO News Card */}
               <div className="bg-white rounded-lg sm:rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
                 <div className="relative h-32 sm:h-60 w-full">
@@ -199,33 +252,6 @@ export default function NewsPage() {
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </Link>
-                </div>
-              </div>
-              
-              {/* Placeholder for future news */}
-              <div className="bg-white/50 rounded-lg sm:rounded-xl border border-dashed border-gray-200 flex items-center justify-center p-4 sm:p-6">
-                <div className="text-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-2 sm:mb-3">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="16" 
-                      height="16" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      className="text-gray-400"
-                    >
-                      <line x1="12" y1="5" x2="12" y2="19"></line>
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                    </svg>
-                  </div>
-                  <h3 className="text-base sm:text-lg font-medium text-gray-400 mb-1 sm:mb-2">More News Coming Soon</h3>
-                  <p className="text-xs sm:text-sm text-gray-500">
-                    Stay tuned for more updates and announcements from our team.
-                  </p>
                 </div>
               </div>
             </div>

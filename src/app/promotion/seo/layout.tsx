@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Improve your search rankings with our comprehensive SEO services designed for sustainable organic growth.',
   keywords: ['SEO', 'search engine optimization', 'organic traffic', 'keyword research', 'content optimization', 'link building', 'on-page SEO'],
   openGraph: {
-    title: 'FADS Digital Hub | SEO Optimization',
+    title: 'SEO Optimization',
     description: 'Improve your search rankings with our comprehensive SEO services designed for sustainable organic growth.',
     url: 'https://fads.fi/promotion/seo',
     siteName: 'FADS Digital Hub',

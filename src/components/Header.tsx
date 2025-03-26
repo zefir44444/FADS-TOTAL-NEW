@@ -96,7 +96,7 @@ const Header = () => {
             <div className="relative group">
               <button 
                 className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-                aria-label="Websites"
+                aria-label="Development"
               >
                 Development
                 <svg 
@@ -259,13 +259,13 @@ const Header = () => {
                     href="/promotion/seo" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
-                    SEO Optimization & Promotion
+                    SEO
                   </Link>
                   <Link 
                     href="/promotion/google-ads" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
                   >
-                    Google Ads Setup & Management
+                    Google Ads
                   </Link>
                   <Link 
                     href="/promotion/youtube" 
@@ -273,7 +273,6 @@ const Header = () => {
                   >
                     YouTube Advertising
                   </Link>
-             
                   <Link 
                     href="/promotion/growth-engine" 
                     className="text-sm hover:text-[#e59500] transition-colors duration-300"
@@ -283,8 +282,16 @@ const Header = () => {
                 </div>
               </div>
             </div>
+            
             <div className="w-px h-4 bg-gray-200"></div>
 
+            <Link 
+              href="/knowledge-base" 
+              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+            >
+              Knowledge Base
+            </Link>
+            
             <Link 
               href="/portfolio" 
               className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
@@ -421,7 +428,7 @@ const Header = () => {
                 <div className="w-full">
                   <button 
                     className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
-                    onClick={() => toggleMobileSubmenu('development')}
+                    onClick={() => toggleMobileSubmenu('websites')}
                   >
                     Development
                     <motion.svg 
@@ -434,14 +441,14 @@ const Header = () => {
                       strokeWidth="2" 
                       strokeLinecap="round" 
                       strokeLinejoin="round"
-                      animate={{ rotate: openMobileSubmenu === 'development' ? 180 : 0 }}
+                      animate={{ rotate: openMobileSubmenu === 'websites' ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </motion.svg>
                   </button>
                   <AnimatePresence>
-                    {openMobileSubmenu === 'development' && (
+                    {openMobileSubmenu === 'websites' && (
                       <motion.div 
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
@@ -605,21 +612,21 @@ const Header = () => {
                           className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          SEO Optimization & Promotion
+                          SEO
                         </Link>
                         <Link 
                           href="/promotion/google-ads" 
                           className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          Google Ads Setup & Management
+                          Google Ads
                         </Link>
                         <Link 
                           href="/promotion/youtube" 
                           className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          YouTube Advertising
+                          YouTube
                         </Link>
                         <Link 
                           href="/promotion/growth-engine" 
@@ -632,6 +639,13 @@ const Header = () => {
                     )}
                   </AnimatePresence>
                 </div>
+                  <Link 
+                  href="/knowledge-base" 
+                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Knowledge Base
+                </Link>
                 
                 <Link 
                   href="/portfolio" 
@@ -641,6 +655,7 @@ const Header = () => {
                   Portfolio
                 </Link>
                 
+              
                 <Link 
                   href="/news" 
                   className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"

@@ -2,8 +2,13 @@
 
 import React, { FormEvent, useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { parsePhoneNumber, isValidPhoneNumber } from 'libphonenumber-js';
 
-const ContactForm = () => {
+interface ContactFormProps {
+    onSuccess?: () => void;
+}
+
+const ContactForm = ({ onSuccess }: ContactFormProps) => {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -20,6 +25,7 @@ const ContactForm = () => {
     const [isCheckboxBlinking, setIsCheckboxBlinking] = useState(false);
     const checkboxRef = useRef<HTMLInputElement>(null);
     const [mounted, setMounted] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
 
     // Предотвращаем гидратацию
     useEffect(() => {
@@ -40,10 +46,45 @@ const ContactForm = () => {
     // Обработчик изменения полей формы
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
+        
+        if (name === 'phone') {
+            // Очищаем предыдущую ошибку при изменении
+            setPhoneError("");
+            
+            // Пропускаем пустое значение, так как телефон опционален
+            if (!value) {
+                setFormData(prev => ({ ...prev, phone: "" }));
+                return;
+            }
+
+            try {
+                // Пытаемся распарсить номер телефона
+                // Если код страны не указан, предполагаем Финляндию
+                const phoneNumber = parsePhoneNumber(value, 'FI');
+                
+                if (phoneNumber) {
+                    // Проверяем валидность номера
+                    if (isValidPhoneNumber(phoneNumber.number)) {
+                        // Сохраняем в международном формате
+                        setFormData(prev => ({
+                            ...prev,
+                            phone: phoneNumber.format('INTERNATIONAL')
+                        }));
+                    } else {
+                        setPhoneError("Please enter a valid phone number");
+                    }
+                }
+            } catch (error) {
+                // Сохраняем введенное значение, но показываем ошибку
+                setFormData(prev => ({ ...prev, phone: value }));
+                setPhoneError("Please enter a valid phone number");
+            }
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [name]: value
+            }));
+        }
     };
 
     // Функция для подсветки чекбокса
@@ -62,6 +103,20 @@ const ContactForm = () => {
         if (!privacyAccepted) {
             highlightCheckbox();
             return;
+        }
+
+        // Дополнительная проверка телефона перед отправкой
+        if (formData.phone) {
+            try {
+                const phoneNumber = parsePhoneNumber(formData.phone, 'FI');
+                if (!phoneNumber || !isValidPhoneNumber(phoneNumber.number)) {
+                    setPhoneError("Please enter a valid phone number");
+                    return;
+                }
+            } catch (error) {
+                setPhoneError("Please enter a valid phone number");
+                return;
+            }
         }
         
         setLoading(true);
@@ -173,6 +228,7 @@ const ContactForm = () => {
                     subject: "",
                     message: ""
                 });
+                onSuccess?.();
             } catch (fetchError) {
                 console.error("Error during fetch operation:", fetchError);
                 throw fetchError;
@@ -219,95 +275,133 @@ const ContactForm = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                    className="p-3 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    type="text"
-                    name="firstName"
-                    placeholder="First Name"
-                    autoComplete="given-name"
-                    required
-                />
-                <input
-                    className="p-3 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    type="text"
-                    name="lastName"
-                    placeholder="Last Name"
-                    autoComplete="family-name"
-                    required
-                />
+                <div className="form__group">
+                    <input
+                        className="form__field"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        type="text"
+                        name="firstName"
+                        placeholder="First Name"
+                        autoComplete="given-name"
+                        required
+                        id="firstName"
+                    />
+                    <label htmlFor="firstName" className="form__label">First Name</label>
+                </div>
+                <div className="form__group">
+                    <input
+                        className="form__field"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        type="text"
+                        name="lastName"
+                        placeholder="Last Name"
+                        autoComplete="family-name"
+                        required
+                        id="lastName"
+                    />
+                    <label htmlFor="lastName" className="form__label">Last Name</label>
+                </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                    className="p-3 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
-                    value={formData.email}
-                    onChange={handleChange}
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    autoComplete="email"
-                    required
-                />
-                <input
-                    className="p-3 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    type="tel"
-                    name="phone"
-                    placeholder="Your Phone (optional)"
-                    autoComplete="tel"
-                />
+                <div className="form__group">
+                    <input
+                        className="form__field"
+                        value={formData.email}
+                        onChange={handleChange}
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        autoComplete="email"
+                        required
+                        id="email"
+                    />
+                    <label htmlFor="email" className="form__label">Your Email</label>
+                </div>
+                <div className="form__group">
+                    <input
+                        className={`form__field ${phoneError ? 'border-red-500' : ''}`}
+                        value={formData.phone}
+                        onChange={handleChange}
+                        type="tel"
+                        name="phone"
+                        placeholder="Your Phone (optional)"
+                        autoComplete="tel"
+                        id="phone"
+                    />
+                    <label htmlFor="phone" className="form__label">Your Phone (optional)</label>
+                    {phoneError && (
+                        <div className="absolute -bottom-6 left-0 text-red-500 text-sm">
+                            {phoneError}
+                        </div>
+                    )}
+                </div>
             </div>
             
-            <input
-                className="p-3 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
-                value={formData.subject}
-                onChange={handleChange}
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-            />
+            <div className="form__group">
+                <input
+                    className="form__field"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    required
+                    id="subject"
+                />
+                <label htmlFor="subject" className="form__label">Subject</label>
+            </div>
             
-            <textarea
-                className="p-3 border rounded-md focus:outline-none focus:ring-2 h-32 transition-all duration-300 ease-out bg-white text-black border-gray-400 focus:ring-black"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Your Message"
-                name="message"
-                autoComplete="off"
-                required
-            />
+            <div className="form__group">
+                <textarea
+                    className="form__field h-32 resize-none"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your Message"
+                    name="message"
+                    autoComplete="off"
+                    required
+                    id="message"
+                />
+                <label htmlFor="message" className="form__label">Your Message</label>
+            </div>
             
             {/* Скрытое поле для источника обращения */}
             <input type="hidden" name="source" value={source} />
             
             <div className={`flex items-start gap-2 mt-1 ${isCheckboxBlinking ? 'animate-pulse' : ''}`}>
-                <input
-                    ref={checkboxRef}
-                    type="checkbox"
-                    id="privacy"
-                    checked={privacyAccepted}
-                    onChange={() => {
-                        setPrivacyAccepted(!privacyAccepted);
-                        setError("");
-                    }}
-                    className={`mt-1 h-4 w-4 cursor-pointer transition-all duration-300 ease-out accent-black ${isCheckboxBlinking ? 'checkbox-blink' : ''}`}
-                />
-                <label htmlFor="privacy" className={`text-xs cursor-pointer text-black ${isCheckboxBlinking ? 'text-red-500 font-semibold' : ''}`}>
-                    I agree to the processing of my personal data in accordance with the{" "}
-                    <Link 
-                        href="/privacy" 
-                        className="font-semibold relative text-[#840032] hover:text-[#e59500] transition-colors duration-300 no-underline"
-                        target="_blank"
-                    >
-                        Privacy Policy
-                    </Link>
-                </label>
+                <div className="checkbox-wrapper-46">
+                    <input
+                        ref={checkboxRef}
+                        type="checkbox"
+                        id="privacy"
+                        checked={privacyAccepted}
+                        onChange={() => {
+                            setPrivacyAccepted(!privacyAccepted);
+                            setError("");
+                        }}
+                        className="inp-cbx"
+                    />
+                    <label htmlFor="privacy" className="cbx">
+                        <span>
+                            <svg width="12px" height="10px">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </svg>
+                        </span>
+                        <span className={`text-xs ${isCheckboxBlinking ? 'text-red-500 font-semibold' : 'text-black'}`}>
+                            I agree to the processing of my personal data in accordance with the{" "}
+                            <Link 
+                                href="/privacy" 
+                                className="font-semibold relative text-[#840032] hover:text-[#e59500] transition-colors duration-300 no-underline"
+                                target="_blank"
+                            >
+                                Privacy Policy
+                            </Link>
+                        </span>
+                    </label>
+                </div>
             </div>
             
             {error && (

@@ -47,6 +47,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/news/google-search-ads-guide`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    // Knowledge Base section
+    {
+      url: `${baseUrl}/knowledge-base/website-performance-checklist`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     // Portfolio section
     {
       url: `${baseUrl}/portfolio`,
