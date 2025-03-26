@@ -52,7 +52,7 @@ export default function GoogleSearchAdsGuide() {
       <div className="p-6 rounded-xl mb-8 bg-gray-50 border-l-4 border-[#e59500] shadow-sm">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">What Are Google Search Ads?</h2>
         <p className="text-black mb-4">
-          Google Search Ads are keyword-driven pay-per-click (PPC) ads that appear at the top or bottom of Google's search results pages (SERPs). They immediately connect your business with users actively searching for products or services you offer.
+          Google Search Ads are keyword-driven pay-per-click (PPC) ads that appear at the top or bottom of Google&apos;s search results pages (SERPs). They immediately connect your business with users actively searching for products or services you offer.
         </p>
       </div>
 
@@ -215,7 +215,7 @@ export default function GoogleSearchAdsGuide() {
       <div className="p-6 rounded-xl mb-8 bg-gray-50 border-l-4 border-[#840032] shadow-sm">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">Common Mistakes to Avoid</h2>
         <p className="text-black mb-4">
-          Avoid common pitfalls such as poor keyword selection, which can attract irrelevant traffic and waste ad spend. Weak ad copy can also fail to engage potential customers—always ensure your messaging is clear, concise, and persuasive. Additionally, inadequate budgets can restrict performance; it's crucial to test and incrementally scale your spending based on performance insights. Proper targeting and the use of ad extensions further ensure your ads reach the most receptive audiences effectively.
+          Avoid common pitfalls such as poor keyword selection, which can attract irrelevant traffic and waste ad spend. Weak ad copy can also fail to engage potential customers—always ensure your messaging is clear, concise, and persuasive. Additionally, inadequate budgets can restrict performance; it&apos;s crucial to test and incrementally scale your spending based on performance insights. Proper targeting and the use of ad extensions further ensure your ads reach the most receptive audiences effectively.
         </p>
       </div>
 
