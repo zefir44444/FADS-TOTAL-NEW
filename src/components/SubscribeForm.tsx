@@ -13,6 +13,7 @@ const SubscribeForm = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [isCheckboxBlinking, setIsCheckboxBlinking] = useState(false);
   const checkboxRef = useRef<HTMLInputElement>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -30,6 +31,8 @@ const SubscribeForm = () => {
 
   const highlightCheckbox = () => {
     if (!formData.consent) {
+      setIsCheckboxBlinking(true);
+      setTimeout(() => setIsCheckboxBlinking(false), 2000);
       checkboxRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setError("You must accept the Privacy Policy to subscribe");
     }

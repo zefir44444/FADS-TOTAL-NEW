@@ -21,7 +21,7 @@ export default function KnowledgeBase() {
             <div className="text-sm font-medium text-[#e59500] mb-2">Website Performance</div>
             <h2 className="text-xl font-bold mb-3">Website Performance Checklist</h2>
             <p className="text-gray-600 mb-4">
-              A comprehensive guide to optimize your website's speed, improve user experience, and boost SEO rankings
+              A comprehensive guide to optimize your website&apos;s speed, improve user experience, and boost SEO rankings
             </p>
             <div className="flex items-center text-sm text-gray-500">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-1">

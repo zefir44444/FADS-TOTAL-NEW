@@ -22,17 +22,18 @@ export default function WebsitePerformanceChecklist() {
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
   useEffect(() => {
-    const handleBeforePrint = (e: Event) => {
+    const handleBeforePrint = (e: BeforeUnloadEvent) => {
       if (!contactSubmitted) {
         e.preventDefault();
         setShowContactForm(true);
+        return false;
       }
     };
 
-    window.addEventListener('beforeprint', handleBeforePrint);
+    window.addEventListener('beforeprint', handleBeforePrint as any);
 
     return () => {
-      window.removeEventListener('beforeprint', handleBeforePrint);
+      window.removeEventListener('beforeprint', handleBeforePrint as any);
     };
   }, [contactSubmitted]);
 
@@ -184,7 +185,7 @@ export default function WebsitePerformanceChecklist() {
         <h2 className="text-2xl font-bold mb-4">{categoryIndex + 1}. {category}</h2>
         
         {category === 'Core Web Vitals' && (
-          <p className="mb-4">Google's Core Web Vitals are a set of specific factors that Google considers important in a webpage's overall user experience:</p>
+          <p className="mb-4">Google&apos;s Core Web Vitals are a set of specific factors that Google considers important in a webpage&apos;s overall user experience:</p>
         )}
         
         {Object.entries(subcategories).map(([subcategory, items]) => (
@@ -358,7 +359,7 @@ export default function WebsitePerformanceChecklist() {
           Website Performance Checklist
         </h1>
         <p className="text-lg text-black">
-          A guide to optimize your website's speed and performance
+          A guide to optimize your website&apos;s speed and performance
         </p>
       </header>
 
