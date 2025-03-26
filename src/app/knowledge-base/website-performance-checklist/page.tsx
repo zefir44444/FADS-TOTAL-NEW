@@ -22,18 +22,17 @@ export default function WebsitePerformanceChecklist() {
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
   useEffect(() => {
-    const handleBeforePrint = (e: BeforeUnloadEvent) => {
+    const handleBeforePrint = (e: Event) => {
       if (!contactSubmitted) {
         e.preventDefault();
         setShowContactForm(true);
-        return false;
       }
     };
 
-    window.addEventListener('beforeprint', handleBeforePrint as any);
+    window.addEventListener('beforeprint', handleBeforePrint);
 
     return () => {
-      window.removeEventListener('beforeprint', handleBeforePrint as any);
+      window.removeEventListener('beforeprint', handleBeforePrint);
     };
   }, [contactSubmitted]);
 
@@ -66,7 +65,7 @@ export default function WebsitePerformanceChecklist() {
     { id: 'img-8', text: 'Add width and height attributes to prevent layout shifts', checked: false, category: 'Image Optimization' },
     
     { id: 'js-1', text: 'Minify and compress JavaScript files', checked: false, category: 'Code Optimization', subcategory: 'JavaScript' },
-    { id: 'js-2', text: 'Use code splitting to load only what\'s needed', checked: false, category: 'Code Optimization', subcategory: 'JavaScript' },
+    { id: 'js-2', text: 'Use code splitting to load only what&apos;s needed', checked: false, category: 'Code Optimization', subcategory: 'JavaScript' },
     { id: 'js-3', text: 'Defer non-critical JavaScript', checked: false, category: 'Code Optimization', subcategory: 'JavaScript' },
     { id: 'js-4', text: 'Reduce JavaScript bundle size', checked: false, category: 'Code Optimization', subcategory: 'JavaScript' },
     { id: 'js-5', text: 'Use tree shaking to eliminate dead code', checked: false, category: 'Code Optimization', subcategory: 'JavaScript' },
