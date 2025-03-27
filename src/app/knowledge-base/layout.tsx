@@ -17,7 +17,7 @@ export default function KnowledgeBaseLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {children}
       <div className="mt-6 sm:mt-8 md:mt-10 pt-6 sm:pt-8 border-t border-gray-100">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
