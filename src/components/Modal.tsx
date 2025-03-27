@@ -43,7 +43,7 @@ const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
       />
       
       <div 
-        className={`bg-white rounded-lg w-[500px] relative z-10 ${
+        className={`bg-white rounded-lg w-full max-w-[90%] md:max-w-[600px] lg:max-w-[700px] relative z-10 ${
           isOpen 
             ? 'opacity-100 translate-y-0 transition-all duration-300' 
             : 'opacity-0 translate-y-4 transition-all duration-300'
@@ -57,8 +57,8 @@ const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <div className="p-8">
-          <h2 className="text-2xl font-bold mb-6">{title}</h2>
+        <div className="p-6 md:p-8">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 break-words">{title}</h2>
           {children}
         </div>
       </div>

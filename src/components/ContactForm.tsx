@@ -267,12 +267,7 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
 
     return (
         <form onSubmit={onSubmit} className="w-full flex flex-col gap-4 transition-all duration-300 ease-out bg-white p-6 rounded-lg min-h-[600px]" autoComplete="on">
-            <div className="mb-4">
-                <h3 className="text-xl font-bold mb-2 text-black">
-                    Get in touch with us
-                </h3>
-                <p className="text-sm opacity-80 text-black">Fill out the form and we&apos;ll get back to you soon</p>
-            </div>
+     
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="form__group">

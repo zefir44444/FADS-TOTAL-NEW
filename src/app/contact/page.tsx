@@ -15,6 +15,12 @@ export default function ContactPage() {
   return (
     <main className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto min-h-[900px]">
+      <div className="mb-4">
+                <h1 className="text-4xl font-bold mb-2 text-black">
+                    Get in touch with us
+                </h1>
+                <p className="text-sm opacity-80 text-black">Fill out the form and we&apos;ll get back to you soon</p>
+            </div>
         <motion.div 
           className="mb-8 min-h-[600px]"
           initial={{ opacity: isLoaded ? 0 : 1, y: isLoaded ? 20 : 0 }}
