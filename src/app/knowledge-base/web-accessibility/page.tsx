@@ -210,7 +210,7 @@ export default function WebAccessibilityPage() {
           <div className="bg-white p-5 rounded-lg shadow-sm">
             <h3 className="font-medium mb-3 text-[#e59500]">Social Responsibility</h3>
             <p className="text-sm text-black">
-              Demonstrate your organization's commitment to inclusion and equal access.
+              Demonstrate your organization&apos;s commitment to inclusion and equal access.
             </p>
           </div>
         </div>

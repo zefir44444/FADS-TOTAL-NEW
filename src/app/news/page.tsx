@@ -126,7 +126,7 @@ export default function NewsPage() {
                     More News Coming Soon
                   </h2>
                   <p className="text-sm sm:text-base text-gray-400 mb-3">
-                    We're working on more exciting updates and insights. Check back regularly for new content about digital marketing, SEO, and web development.
+                    We&apos;re working on more exciting updates and insights. Check back regularly for new content about digital marketing, SEO, and web development.
                   </p>
                   <div className="flex items-center">
                     <div className="relative flex items-center">
