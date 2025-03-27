@@ -229,22 +229,17 @@ export default function GoogleSearchAdsGuide() {
         </p>
       </div>
 
-      <div className="p-8 rounded-xl mb-8 bg-gradient-to-br from-[#e59500]/20 to-[#840032]/20 shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 opacity-20">
-          <svg width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 8v8m-4-4h8"></path>
-          </svg>
-        </div>
+      <div className="p-8 rounded-xl mb-8 bg-white shadow-sm relative overflow-hidden">
+    
         
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">Why Work with a Google Ads Agency?</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-black">Why Work with a Google Ads Agency?</h2>
         <p className="text-black mb-6">
           Hiring a specialized Google Ads agency provides access to expert knowledge, advanced tools, and strategic insights that can dramatically improve your campaign outcomes. Agencies help optimize budget allocation, enhance ad performance, and free up valuable internal resources, allowing you to focus on core business functions. Their proven track records in delivering successful PPC campaigns offer a reliable path to achieving your marketing goals.
         </p>
         
         <div className="bg-white p-4 rounded-lg inline-block">
-          <Link href="/contact" className="text-[#e59500] hover:text-[#840032] font-medium transition-colors">
-            Get expert advice from FADS → 
+          <Link href="/contact" className="gradient-button">
+            Get expert advice from FADS
           </Link>
         </div>
       </div>
