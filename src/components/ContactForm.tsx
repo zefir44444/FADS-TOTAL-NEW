@@ -366,35 +366,43 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
             {/* Скрытое поле для источника обращения */}
             <input type="hidden" name="source" value={source} />
             
-            <div className={`flex items-start gap-2 mt-1 ${isCheckboxBlinking ? 'animate-pulse' : ''}`}>
-                <div className="checkbox-wrapper-46">
-                    <input
-                        ref={checkboxRef}
-                        type="checkbox"
-                        id="privacy"
-                        checked={privacyAccepted}
-                        onChange={() => {
-                            setPrivacyAccepted(!privacyAccepted);
-                            setError("");
-                        }}
-                        className="inp-cbx"
-                    />
-                    <label htmlFor="privacy" className="cbx">
-                        <span>
-                            <svg width="12px" height="10px">
-                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                            </svg>
-                        </span>
-                        <span className={`text-xs ${isCheckboxBlinking ? 'text-red-500 font-semibold' : 'text-black'}`}>
-                            I agree to the processing of my personal data in accordance with the{" "}
-                            <Link 
-                                href="/privacy" 
-                                className="font-semibold relative text-[#840032] hover:text-[#e59500] transition-colors duration-300 no-underline"
-                                target="_blank"
-                            >
-                                Privacy Policy
-                            </Link>
-                        </span>
+            <div className={`mt-1 ${isCheckboxBlinking ? 'animate-pulse' : ''}`}>
+                <div className="flex items-start">
+                    <div className="mt-1 mr-2">
+                        <input
+                            ref={checkboxRef}
+                            type="checkbox"
+                            id="privacy"
+                            checked={privacyAccepted}
+                            onChange={() => {
+                                setPrivacyAccepted(!privacyAccepted);
+                                setError("");
+                            }}
+                            className="w-4 h-4 accent-[#e59500] border-gray-300 rounded-md focus:ring-[#e59500] focus:ring-1 focus:ring-offset-1"
+                            style={{ 
+                                accentColor: '#e59500',
+                                borderRadius: '0.25rem',
+                                appearance: 'none',
+                                backgroundColor: privacyAccepted ? '#e59500' : 'white',
+                                backgroundImage: privacyAccepted ? "url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\")" : 'none',
+                                backgroundSize: '100% 100%',
+                                backgroundPosition: 'center',
+                                border: privacyAccepted ? '1px solid #e59500' : '1px solid #d1d5db'
+                            }}
+                        />
+                    </div>
+                    <label 
+                        htmlFor="privacy" 
+                        className={`text-xs block ${isCheckboxBlinking ? 'text-red-500 font-semibold' : 'text-black'}`}
+                    >
+                        I agree to the processing of my personal data in accordance with the{" "}
+                        <Link 
+                            href="/privacy" 
+                            className="font-semibold relative text-[#840032] hover:text-[#e59500] transition-colors duration-300 no-underline"
+                            target="_blank"
+                        >
+                            Privacy Policy
+                        </Link>
                     </label>
                 </div>
             </div>
