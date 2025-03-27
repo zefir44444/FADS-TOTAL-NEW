@@ -6,6 +6,7 @@ import Script from "next/script";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import UnviewedPages from "@/components/UnviewedPages";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -151,11 +152,13 @@ export default function RootLayout({
               </div>
               <div className="min-h-screen">
                 {children}
+                <UnviewedPages />
               </div>
               <SpeedInsights />
+            
             </div>
           </main>
-          
+
           <Footer />
         </div>
       </body>

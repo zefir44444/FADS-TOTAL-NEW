@@ -39,10 +39,6 @@ export default function GoogleSearchAdsGuide() {
             target.src = "/fads-black.svg";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
-        <div className="absolute bottom-0 left-0 p-4 md:p-6 text-white">
-          <span className="text-sm md:text-base font-medium">Google Search Ads: Your Gateway to Targeted Marketing</span>
-        </div>
       </div>
 
       <p className="lead text-xl text-black mb-8 leading-relaxed">
