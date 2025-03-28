@@ -84,286 +84,337 @@ const Header = () => {
         
           {/* Выпадающее меню */}
           <div className="hidden md:flex items-center space-x-8 ml-auto">
-            <Link 
-              href="/" 
-              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-            >
-              Digital Hub
-            </Link>
-            
-            <div className="w-px h-4 bg-gray-200"></div>
-            
-            <div className="relative group">
-              <button 
-                className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-                aria-label="Development"
-              >
-                Development
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="12" 
-                  height="12" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  className="transition-transform duration-300 group-hover:rotate-180"
+            <ul className="flex items-center space-x-8">
+              <li>
+                <Link 
+                  href="/" 
+                  className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
+                  Digital Hub
+                </Link>
+              </li>
               
-              <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-3 px-4 z-50 min-w-[240px] border border-white/30 
-                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                            transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
-                  
-              >
-                <div className="flex flex-col gap-2">
-                  <Link 
-                    href="/websites" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    All Development Services
-                  </Link>
-                  <div className="w-full h-px bg-gray-100 my-1"></div>
-                  <Link 
-                    href="/websites/business" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Business Websites
-                  </Link>
-                  <Link 
-                    href="/websites/landing" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Landing Page
-                  </Link>
-                  <Link 
-                    href="/websites/showcases" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Showcases
-                  </Link>
-                  <Link 
-                    href="/websites/blogs" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Blogs
-                  </Link>
-                  <Link 
-                    href="/websites/ecommerce" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    E-commerce Websites
-                  </Link>
-                  <Link 
-                    href="/websites/custom" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Custom Development
-                  </Link>
-                 
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative group">
-              <button 
-                className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-                aria-label="Services"
-              >
-                Services
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="12" 
-                  height="12" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  className="transition-transform duration-300 group-hover:rotate-180"
+              <li className="w-px h-4 bg-gray-200"></li>
+              
+              <li className="relative group">
+                <button 
+                  className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                  aria-label="Development"
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              
-              <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/30 
-                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                            transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
-            
-              >
-                <div className="flex flex-col gap-2">
-                  <Link 
-                    href="/services" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                  Development
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className="transition-transform duration-300 group-hover:rotate-180"
                   >
-                    All Services
-                  </Link>
-                  <div className="w-full h-px bg-gray-100 my-1"></div>
-                  <Link 
-                    href="/services/maintenance" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Website Maintenance
-                  </Link>
-                  <Link 
-                    href="/services/website-audits" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Website Audits
-                  </Link>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative group">
-              <button 
-                className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-                aria-label="Website Promotion"
-              >
-                Promotion
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="12" 
-                  height="12" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  className="transition-transform duration-300 group-hover:rotate-180"
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                
+                <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-3 px-4 z-50 min-w-[240px] border border-white/30 
+                              opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                              transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
+                    
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              
-              <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/30 
-                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                            transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
-              
-              >
-                <div className="flex flex-col gap-2">
-                  <Link 
-                    href="/promotion" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    All Promotion Services
-                  </Link>
-                  <div className="w-full h-px bg-gray-100 my-1"></div>
-                  <Link 
-                    href="/promotion/seo" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    SEO
-                  </Link>
-                  <Link 
-                    href="/promotion/google-ads" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Google Ads
-                  </Link>
-                  <Link 
-                    href="/promotion/youtube" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    YouTube Advertising
-                  </Link>
-                  <Link 
-                    href="/promotion/growth-engine" 
-                    className="text-sm hover:text-[#e59500] transition-colors duration-300"
-                  >
-                    Growth Engine
-                  </Link>
+                  <ul className="flex flex-col gap-2">
+                    <li>
+                      <Link 
+                        href="/websites" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        All Development Services
+                      </Link>
+                    </li>
+                    <li className="w-full h-px bg-gray-100 my-1"></li>
+                    <li>
+                      <Link 
+                        href="/websites/business" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Business Websites
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/websites/landing" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Landing Page
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/websites/showcases" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Showcases
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/websites/blogs" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Blogs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/websites/ecommerce" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        E-commerce Websites
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/websites/custom" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Custom Development
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-            </div>
-            
-            <div className="w-px h-4 bg-gray-200"></div>
+              </li>
+              
+              <li className="relative group">
+                <button 
+                  className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                  aria-label="Services"
+                >
+                  Services
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className="transition-transform duration-300 group-hover:rotate-180"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                
+                <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/30 
+                              opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                              transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
+              
+                >
+                  <ul className="flex flex-col gap-2">
+                    <li>
+                      <Link 
+                        href="/services" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        All Services
+                      </Link>
+                    </li>
+                    <li className="w-full h-px bg-gray-100 my-1"></li>
+                    <li>
+                      <Link 
+                        href="/services/maintenance" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Website Maintenance
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/services/website-audits" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Website Audits
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              
+              <li className="relative group">
+                <button 
+                  className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                  aria-label="Website Promotion"
+                >
+                  Promotion
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className="transition-transform duration-300 group-hover:rotate-180"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                
+                <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-3 px-4 z-50 min-w-[220px] border border-white/30 
+                              opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                              transition-all duration-300 transform origin-top scale-95 group-hover:scale-100"
+                
+                >
+                  <ul className="flex flex-col gap-2">
+                    <li>
+                      <Link 
+                        href="/promotion" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        All Promotion Services
+                      </Link>
+                    </li>
+                    <li className="w-full h-px bg-gray-100 my-1"></li>
+                    <li>
+                      <Link 
+                        href="/promotion/seo" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        SEO
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/promotion/google-ads" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Google Ads
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/promotion/youtube" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        YouTube Advertising
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/promotion/growth-engine" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Growth Engine
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              
+              <li className="w-px h-4 bg-gray-200"></li>
 
-            <Link 
-              href="/knowledge-base" 
-              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-            >
-              Knowledge Base
-            </Link>
-            
-            <Link 
-              href="/portfolio" 
-              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-            >
-              Portfolio
-            </Link>
-            
-            <Link 
-              href="/news" 
-              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-            >
-              News
-            </Link>
-            
-            <Link 
-              href="/contact" 
-              className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
-            >
-              Contact us
-            </Link>
+              <li>
+                <Link 
+                  href="/knowledge-base" 
+                  className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                >
+                  Knowledge Base
+                </Link>
+              </li>
+              
+              <li>
+                <Link 
+                  href="/portfolio" 
+                  className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                >
+                  Portfolio
+                </Link>
+              </li>
+              
+              <li>
+                <Link 
+                  href="/news" 
+                  className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                >
+                  News
+                </Link>
+              </li>
+              
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="text-sm flex items-center gap-1 hover:text-[#e59500] transition-colors duration-300"
+                >
+                  Contact us
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Социальные ссылки */}
           <div className="hidden md:flex items-center gap-4 ml-4 mr-0">
-            <a 
-              href="https://www.linkedin.com/in/denisfateev/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-              aria-label="LinkedIn"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
-            <a 
-              href="https://www.youtube.com/@fadsmarketing" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-              aria-label="YouTube"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-              </svg>
-            </a>
-            <a 
-              href="https://t.me/zeisch" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-              aria-label="Telegram"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
-              </svg>
-            </a>
-            <a 
-              href="mailto:info@fads.fi" 
-              className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-              aria-label="Email"
-            >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-              >
-                <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
-              </svg>
-            </a>
+            <ul className="flex items-center gap-4">
+              <li>
+                <a 
+                  href="https://www.linkedin.com/company/fadsfi/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                  aria-label="LinkedIn"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.youtube.com/@fadsmarketing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                  aria-label="YouTube"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://t.me/zeisch" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                  aria-label="Telegram"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="mailto:info@fads.fi" 
+                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                  aria-label="Email"
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="currentColor"
+                  >
+                    <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Кнопка мобильного меню */}
@@ -416,261 +467,308 @@ const Header = () => {
                 transition={{ duration: 0.3, delay: 0.1 }}
                 className="flex flex-col space-y-4 items-center"
               >
-                <Link 
-                  href="/" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Digital Hub
-                </Link>
-                
-                {/* Development подменю */}
-                <div className="w-full">
-                  <button 
-                    className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
-                    onClick={() => toggleMobileSubmenu('websites')}
-                  >
-                    Development
-                    <motion.svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="12" 
-                      height="12" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      animate={{ rotate: openMobileSubmenu === 'websites' ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                <ul className="flex flex-col space-y-4 items-center w-full">
+                  <li className="w-full text-center">
+                    <Link 
+                      href="/" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                      onClick={() => setIsMenuOpen(false)}
                     >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </motion.svg>
-                  </button>
-                  <AnimatePresence>
-                    {openMobileSubmenu === 'websites' && (
-                      <motion.div 
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
+                      Digital Hub
+                    </Link>
+                  </li>
+                  
+                  {/* Development подменю */}
+                  <li className="w-full">
+                    <button 
+                      className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
+                      onClick={() => toggleMobileSubmenu('websites')}
+                    >
+                      Development
+                      <motion.svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="12" 
+                        height="12" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                        animate={{ rotate: openMobileSubmenu === 'websites' ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className="flex flex-col gap-2 mt-2 overflow-hidden"
                       >
-                        <Link 
-                          href="/websites" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </motion.svg>
+                    </button>
+                    <AnimatePresence>
+                      {openMobileSubmenu === 'websites' && (
+                        <motion.div 
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex flex-col gap-2 mt-2 overflow-hidden"
                         >
-                          All Development Services
-                        </Link>
-                        <Link 
-                          href="/websites/business" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Business Websites
-                        </Link>
-                        <Link 
-                          href="/websites/landing" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Landing Page
-                        </Link>
-                        <Link 
-                          href="/websites/showcases" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Showcases
-                        </Link>
-                        <Link 
-                          href="/websites/blogs" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Blogs
-                        </Link>
-                        <Link 
-                          href="/websites/ecommerce" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          E-commerce Websites
-                        </Link>
-                        <Link 
-                          href="/websites/custom" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Custom Development
-                        </Link>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                          <ul className="flex flex-col gap-2">
+                            <li>
+                              <Link 
+                                href="/websites" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                All Development Services
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/websites/business" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Business Websites
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/websites/landing" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Landing Page
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/websites/showcases" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Showcases
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/websites/blogs" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Blogs
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/websites/ecommerce" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                E-commerce Websites
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/websites/custom" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Custom Development
+                              </Link>
+                            </li>
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </li>
 
-                {/* Services подменю */}
-                <div className="w-full">
-                  <button 
-                    className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
-                    onClick={() => toggleMobileSubmenu('services')}
-                  >
-                    Services
-                    <motion.svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="12" 
-                      height="12" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      animate={{ rotate: openMobileSubmenu === 'services' ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                  {/* Services подменю */}
+                  <li className="w-full">
+                    <button 
+                      className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
+                      onClick={() => toggleMobileSubmenu('services')}
                     >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </motion.svg>
-                  </button>
-                  <AnimatePresence>
-                    {openMobileSubmenu === 'services' && (
-                      <motion.div 
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
+                      Services
+                      <motion.svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="12" 
+                        height="12" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                        animate={{ rotate: openMobileSubmenu === 'services' ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className="flex flex-col gap-2 mt-2 overflow-hidden"
                       >
-                        <Link 
-                          href="/services" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </motion.svg>
+                    </button>
+                    <AnimatePresence>
+                      {openMobileSubmenu === 'services' && (
+                        <motion.div 
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex flex-col gap-2 mt-2 overflow-hidden"
                         >
-                          All Services
-                        </Link>
-                        <Link 
-                          href="/services/maintenance" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Website Maintenance
-                        </Link>
-                        <Link 
-                          href="/services/website-audits" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Website Audits
-                        </Link>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                          <ul className="flex flex-col gap-2">
+                            <li>
+                              <Link 
+                                href="/services" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                All Services
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/services/maintenance" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Website Maintenance
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/services/website-audits" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Website Audits
+                              </Link>
+                            </li>
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </li>
 
-                {/* Promotion подменю */}
-                <div className="w-full">
-                  <button 
-                    className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
-                    onClick={() => toggleMobileSubmenu('promotion')}
-                  >
-                    Promotion
-                    <motion.svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="12" 
-                      height="12" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      animate={{ rotate: openMobileSubmenu === 'promotion' ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                  {/* Promotion подменю */}
+                  <li className="w-full">
+                    <button 
+                      className="text-sm flex items-center justify-center gap-1 hover:text-[#e59500] transition-colors duration-300 w-full"
+                      onClick={() => toggleMobileSubmenu('promotion')}
                     >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </motion.svg>
-                  </button>
-                  <AnimatePresence>
-                    {openMobileSubmenu === 'promotion' && (
-                      <motion.div 
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
+                      Promotion
+                      <motion.svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="12" 
+                        height="12" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                        animate={{ rotate: openMobileSubmenu === 'promotion' ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className="flex flex-col gap-2 mt-2 overflow-hidden"
                       >
-                        <Link 
-                          href="/promotion" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </motion.svg>
+                    </button>
+                    <AnimatePresence>
+                      {openMobileSubmenu === 'promotion' && (
+                        <motion.div 
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex flex-col gap-2 mt-2 overflow-hidden"
                         >
-                          All Promotion Services
-                        </Link>
-                        <Link 
-                          href="/promotion/seo" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          SEO
-                        </Link>
-                        <Link 
-                          href="/promotion/google-ads" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Google Ads
-                        </Link>
-                        <Link 
-                          href="/promotion/youtube" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          YouTube
-                        </Link>
-                        <Link 
-                          href="/promotion/growth-engine" 
-                          className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Growth Engine
-                        </Link>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-                  <Link 
-                  href="/knowledge-base" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Knowledge Base
-                </Link>
-                
-                <Link 
-                  href="/portfolio" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center mt-4 pt-4 border-t border-gray-200 w-full flex justify-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Portfolio
-                </Link>
-                
-              
-                <Link 
-                  href="/news" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  News
-                </Link>
-                
-                <Link 
-                  href="/contact" 
-                  className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact us
-                </Link>
+                          <ul className="flex flex-col gap-2">
+                            <li>
+                              <Link 
+                                href="/promotion" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                All Promotion Services
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/promotion/seo" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                SEO
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/promotion/google-ads" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Google Ads
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/promotion/youtube" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                YouTube
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/promotion/growth-engine" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Growth Engine
+                              </Link>
+                            </li>
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                  <li className="w-full text-center">
+                    <Link 
+                      href="/knowledge-base" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Knowledge Base
+                    </Link>
+                  </li>
+                  
+                  <li className="w-full text-center mt-4 pt-4 border-t border-gray-200">
+                    <Link 
+                      href="/portfolio" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Portfolio
+                    </Link>
+                  </li>
+                  
+                  <li className="w-full text-center">
+                    <Link 
+                      href="/news" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      News
+                    </Link>
+                  </li>
+                  
+                  <li className="w-full text-center">
+                    <Link 
+                      href="/contact" 
+                      className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center w-full flex justify-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Contact us
+                    </Link>
+                  </li>
+                </ul>
               </motion.nav>
               
               {/* Социальные сети в мобильном меню */}
@@ -681,58 +779,68 @@ const Header = () => {
                 transition={{ duration: 0.3, delay: 0.4 }}
                 className="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-gray-200"
               >
-                <a 
-                  href="https://www.linkedin.com/in/denisfateev/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                  aria-label="LinkedIn"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                </a>
-                <a 
-                  href="https://www.youtube.com/@fadsmarketing" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                  aria-label="YouTube"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                  </svg>
-                </a>
-                <a 
-                  href="https://t.me/zeisch" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                  aria-label="Telegram"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                    <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
-                  </svg>
-                </a>
-                <a 
-                  href="mailto:info@fads.fi" 
-                  className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
-                  aria-label="Email"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="20" 
-                    height="20" 
-                    viewBox="0 0 24 24" 
-                    fill="currentColor"
-                  >
-                    <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
-                  </svg>
-                </a>
+                <ul className="flex items-center justify-center gap-6">
+                  <li>
+                    <a 
+                      href="https://www.linkedin.com/company/fadsfi/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                      aria-label="LinkedIn"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://www.youtube.com/@fadsmarketing" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                      aria-label="YouTube"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://t.me/zeisch" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                      aria-label="Telegram"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="mailto:info@fads.fi" 
+                      className="text-black hover:text-[#e59500] transition-all duration-300 transform hover:scale-110"
+                      aria-label="Email"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="20" 
+                        height="20" 
+                        viewBox="0 0 24 24" 
+                        fill="currentColor"
+                      >
+                        <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
               </motion.div>
             </motion.div>
           )}

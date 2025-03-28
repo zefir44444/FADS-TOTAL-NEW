@@ -176,7 +176,8 @@ const SubscribeForm = () => {
         Get the latest news and updates directly to your inbox
       </p>
       
-      <form onSubmit={onSubmit} className="space-y-6">
+      <form onSubmit={onSubmit} className="space-y-6" aria-labelledby="newsletter-heading" role="form">
+        <div id="newsletter-heading" className="sr-only">Newsletter subscription form</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="form__group w-full">
             <input
@@ -188,6 +189,9 @@ const SubscribeForm = () => {
               className="form__field w-full"
               required
               id="subscribe-firstName"
+              autoComplete="given-name"
+              aria-required="true"
+              aria-label="First Name"
             />
             <label htmlFor="subscribe-firstName" className="form__label">First Name</label>
           </div>
@@ -202,6 +206,9 @@ const SubscribeForm = () => {
               className="form__field w-full"
               required
               id="subscribe-lastName"
+              autoComplete="family-name"
+              aria-required="true"
+              aria-label="Last Name"
             />
             <label htmlFor="subscribe-lastName" className="form__label">Last Name</label>
           </div>
@@ -217,6 +224,9 @@ const SubscribeForm = () => {
             className="form__field w-full"
             required
             id="subscribe-email"
+            autoComplete="email"
+            aria-required="true"
+            aria-label="Email Address"
           />
           <label htmlFor="subscribe-email" className="form__label">Your Email</label>
         </div>
@@ -232,16 +242,18 @@ const SubscribeForm = () => {
               name="consent"
               className="inp-cbx"
               required
+              aria-required="true"
+              aria-describedby="privacy-policy-desc"
             />
             <label htmlFor="privacy-policy" className="cbx flex items-center">
               <span className="flex-shrink-0">
-                <svg width="12px" height="10px">
+                <svg width="12px" height="10px" aria-hidden="true">
                   <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                 </svg>
               </span>
-              <span className="text-xs leading-tight">
+              <span className="text-xs leading-tight" id="privacy-policy-desc">
                 I agree to the processing of my personal data in accordance with the{" "}
-                <Link href="/privacy" className="text-[#863800] font-semibold hover:text-[#e59500] transition-colors duration-300">
+                <Link href="/privacy" className="text-[#840032] font-semibold hover:text-[#6d0029] transition-colors duration-300">
                   Privacy Policy
                 </Link>
               </span>
@@ -252,19 +264,20 @@ const SubscribeForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-gradient-to-r from-[#e59500] to-[#d48700] text-white font-medium py-2 px-4 rounded-md hover:shadow-lg transition-all duration-300 border border-black active:translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full bg-[#840032] text-white font-medium py-2 px-4 rounded-md hover:bg-[#6d0029] transition-all duration-300 shadow-md hover:shadow-lg active:translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+          aria-label={loading ? "Subscribing..." : "Subscribe to newsletter"}
         >
           {loading ? "Subscribing..." : "Subscribe"}
         </button>
         
         {success && (
-          <p className="text-green-600 text-sm">
+          <p className="text-green-600 text-sm" role="status" aria-live="polite">
             Thank you for subscribing! We&apos;ll keep you updated with our latest news.
           </p>
         )}
         
         {error && (
-          <p className="text-red-600 text-sm">
+          <p className="text-red-600 text-sm" role="alert" aria-live="assertive">
             {error}
           </p>
         )}

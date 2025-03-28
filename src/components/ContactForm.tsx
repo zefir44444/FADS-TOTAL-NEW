@@ -378,17 +378,7 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
                                 setPrivacyAccepted(!privacyAccepted);
                                 setError("");
                             }}
-                            className="w-4 h-4 accent-[#e59500] border-gray-300 rounded-md focus:ring-[#e59500] focus:ring-1 focus:ring-offset-1"
-                            style={{ 
-                                accentColor: '#e59500',
-                                borderRadius: '0.25rem',
-                                appearance: 'none',
-                                backgroundColor: privacyAccepted ? '#e59500' : 'white',
-                                backgroundImage: privacyAccepted ? "url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\")" : 'none',
-                                backgroundSize: '100% 100%',
-                                backgroundPosition: 'center',
-                                border: privacyAccepted ? '1px solid #e59500' : '1px solid #d1d5db'
-                            }}
+                            className="w-4 h-4 text-[#e59500] bg-white border-gray-300 rounded focus:ring-[#e59500]"
                         />
                     </div>
                     <label 
@@ -398,8 +388,9 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
                         I agree to the processing of my personal data in accordance with the{" "}
                         <Link 
                             href="/privacy" 
-                            className="font-semibold relative text-[#840032] hover:text-[#e59500] transition-colors duration-300 no-underline"
+                            className="font-semibold relative text-[#840032] hover:text-[#6d0029] transition-colors duration-300 no-underline"
                             target="_blank"
+                            aria-label="Privacy Policy (opens in new tab)"
                         >
                             Privacy Policy
                         </Link>
@@ -416,7 +407,8 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
             <button
                 type="submit"
                 disabled={loading}
-                className={`mt-2 py-3 px-6 rounded-md font-medium transition-all duration-300 ease-out bg-[#e59500] text-white hover:bg-[#d48700] ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                className={`mt-2 py-3 px-6 rounded-md font-medium transition-all duration-300 ease-out bg-[#840032] text-white hover:bg-[#6d0029] ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                aria-label={loading ? "Sending message..." : "Send message"}
             >
                 {loading ? "Sending..." : "Send Message"}
             </button>

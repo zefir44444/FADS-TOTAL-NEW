@@ -139,14 +139,27 @@ const ALL_PAGES: Page[] = [
 const UnviewedPages: React.FC = () => {
   const pathname = usePathname();
   const [recommendedPages, setRecommendedPages] = useState<Page[]>([]);
+  const [isClient, setIsClient] = useState(false);
   
+  // Эффект, который выполняется только один раз при монтировании компонента
   useEffect(() => {
-    // Простой алгоритм выбора рекомендаций: исключаем текущую страницу
-    // и выбираем 3 случайные страницы
-    const availablePages = ALL_PAGES.filter(page => page.path !== pathname);
-    const randomThree = getRandomItems(availablePages, 3);
-    setRecommendedPages(randomThree);
-  }, [pathname]);
+    setIsClient(true);
+  }, []);
+  
+  // Эффект, который зависит от pathname и isClient
+  useEffect(() => {
+    if (isClient) {
+      // Выбираем рекомендации только на клиенте
+      const availablePages = ALL_PAGES.filter(page => page.path !== pathname);
+      const randomThree = getRandomItems(availablePages, 3);
+      setRecommendedPages(randomThree);
+    } else {
+      // При серверном рендеринге используем детерминированный выбор
+      // (первые 3 страницы, которые не совпадают с текущим путем)
+      const availablePages = ALL_PAGES.filter(page => page.path !== pathname);
+      setRecommendedPages(availablePages.slice(0, 3));
+    }
+  }, [pathname, isClient]);
   
   // Если нет рекомендаций, ничего не показываем
   if (recommendedPages.length === 0) {
@@ -176,19 +189,20 @@ const UnviewedPages: React.FC = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {recommendedPages.map((page) => (
-              <Link
-                key={page.path}
-                href={page.path}
-                prefetch={true}
-                className="p-3 rounded border border-gray-100 hover:border-[#e59500] hover:shadow-sm block"
-              >
-                <h4 className="font-medium text-base text-black mb-1">{page.title}</h4>
-                <p className="text-sm text-gray-600">{page.description}</p>
-              </Link>
+              <li key={page.path}>
+                <Link
+                  href={page.path}
+                  prefetch={true}
+                  className="p-3 rounded border border-gray-100 hover:border-[#840032] hover:shadow-sm block"
+                >
+                  <h4 className="font-medium text-base text-black mb-1">{page.title}</h4>
+                  <p className="text-sm text-gray-600">{page.description}</p>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>

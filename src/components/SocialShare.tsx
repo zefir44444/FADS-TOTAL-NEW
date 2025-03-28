@@ -28,6 +28,7 @@ interface SocialShareProps {
 
 export default function SocialShare({ url, title, text }: SocialShareProps) {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
   const [shareData, setShareData] = useState({
     url: '',
     title: '',
@@ -35,18 +36,19 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
   });
   const [copied, setCopied] = useState(false);
   
-  // Оптимизированный useEffect - устанавливает все значения за один раз
+  // Установка mounted после рендеринга на клиенте
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    setMounted(true);
+  }, []);
+  
+  // Установка данных после рендеринга на клиенте
+  useEffect(() => {
+    if (mounted) {
       const baseUrl = window.location.origin;
       const currentPath = url || window.location.pathname || '';
       const fullUrl = `${baseUrl}${currentPath}`;
       const pageTitle = title || document.title || '';
       const pageText = text || pageTitle;
-      
-      console.log('Current window path:', window.location.pathname);
-      console.log('Current Next.js pathname:', pathname);
-      console.log('Generated URL:', fullUrl);
       
       setShareData({
         url: fullUrl,
@@ -54,11 +56,11 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         text: pageText
       });
     }
-  }, [pathname, url, title, text]);
+  }, [pathname, url, title, text, mounted]);
 
-  // Оптимизированный копирование без alert
+  // Копирование без alert
   const copyToClipboard = () => {
-    if (navigator.clipboard && shareData.url) {
+    if (mounted && navigator.clipboard && shareData.url) {
       navigator.clipboard.writeText(shareData.url)
         .then(() => {
           setCopied(true);
@@ -68,7 +70,12 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
     }
   };
 
-  // Если данных нет, не рендерим компонент
+  // Рендерим компонент только на клиенте
+  if (!mounted) {
+    return null;
+  }
+
+  // Рендерим кнопки только если у нас есть URL для шаринга
   if (!shareData.url) {
     return null;
   }
@@ -79,7 +86,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         url={shareData.url}
         blankTarget={true}
       >
-        <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
+        <div className="text-gray-500 hover:text-[#840032] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaFacebook size={20} />
         </div>
       </FacebookShareButton>
@@ -89,7 +96,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         title={shareData.title}
         blankTarget={true}
       >
-        <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
+        <div className="text-gray-500 hover:text-[#840032] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaTwitter size={20} />
         </div>
       </TwitterShareButton>
@@ -98,7 +105,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         url={shareData.url}
         blankTarget={true}
       >
-        <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
+        <div className="text-gray-500 hover:text-[#840032] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaLinkedin size={20} />
         </div>
       </LinkedinShareButton>
@@ -108,7 +115,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         title={shareData.title}
         blankTarget={true}
       >
-        <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
+        <div className="text-gray-500 hover:text-[#840032] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaTelegram size={20} />
         </div>
       </TelegramShareButton>
@@ -119,7 +126,7 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         separator=" — "
         blankTarget={true}
       >
-        <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
+        <div className="text-gray-500 hover:text-[#840032] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaWhatsapp size={20} />
         </div>
       </WhatsappShareButton>
@@ -130,14 +137,14 @@ export default function SocialShare({ url, title, text }: SocialShareProps) {
         body={`${shareData.text}\n\n${shareData.url}`}
         blankTarget={true}
       >
-        <div className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full">
+        <div className="text-gray-500 hover:text-[#840032] transition-colors p-2 hover:bg-gray-100 rounded-full">
           <FaEnvelope size={20} />
         </div>
       </EmailShareButton>
       
       <button 
         onClick={copyToClipboard} 
-        className="text-gray-500 hover:text-[#e59500] transition-colors p-2 hover:bg-gray-100 rounded-full focus:outline-none"
+        className="text-gray-500 hover:text-[#840032] transition-colors p-2 hover:bg-gray-100 rounded-full focus:outline-none"
         aria-label="Copy link"
       >
         <FaShareAlt size={20} />

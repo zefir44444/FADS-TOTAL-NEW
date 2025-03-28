@@ -130,12 +130,12 @@ main {
   font-weight: 600;
   text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: #d28800;
+  background-color: #840032;
   letter-spacing: 0.02em;
 }
 
 .gradient-button:hover {
-  background-color: #700029;
+  background-color: #6d0029;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -727,7 +727,7 @@ html {
 
 /* Стили для ссылок с хорошей контрастностью */
 .link-accessible {
-  color: #863800; /* Темный оранжево-коричневый с высокой контрастностью на белом фоне */
+  color: #840032; /* Темный бордовый с высокой контрастностью на белом фоне */
   font-weight: 600;
   text-decoration: none;
   position: relative;
@@ -735,7 +735,7 @@ html {
 
 .link-accessible:hover {
   text-decoration: underline;
-  color: #6a2d00; /* Еще темнее при наведении */
+  color: #6d0029; /* Еще темнее при наведении */
 }
 
 .link-accessible::after {
@@ -758,12 +758,12 @@ html {
 
 /* Для светлых фонов */
 .link-accessible-light {
-  color: #863800;
+  color: #840032;
   font-weight: 600;
 }
 
 .link-accessible-light:hover {
-  color: #6a2d00;
+  color: #6d0029;
   text-decoration: underline;
 }
 
@@ -851,7 +851,7 @@ html {
   content: "";
   width: 100%;
   height: 100%;
-  background: #e59500;
+  background: #840032;
   display: block;
   transform: scale(0);
   opacity: 1;
@@ -863,12 +863,12 @@ html {
 }
 
 .checkbox-wrapper-46 .cbx:hover span:first-child {
-  border-color: #e59500;
+  border-color: #840032;
 }
 
 .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
-  background: #e59500;
-  border-color: #e59500;
+  background: #840032;
+  border-color: #840032;
   animation: wave-46 0.4s ease;
 }
 
@@ -898,14 +898,14 @@ html {
 .form__field {
   font-family: inherit;
   width: 100%;
-  border: none;
-  border-bottom: 2px solid #9b9b9b;
+  border: 2px solid #767676; /* Одна толстая граница вместо двух */
   outline: 0;
   font-size: 17px;
   color: #171717;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
+  padding: 8px 10px; /* Добавляем внутренние отступы для лучшей видимости */
+  background: #f8f8f8; /* Светло-серый фон для контраста с белым фоном */
+  transition: border-color 0.2s, background-color 0.2s;
+  border-radius: 4px; /* Добавляем скругление углов для лучшего визуального отделения */
 }
 
 .form__field::placeholder {
@@ -915,38 +915,121 @@ html {
 .form__field:placeholder-shown ~ .form__label {
   font-size: 17px;
   cursor: text;
-  top: 20px;
+  top: 28px; /* Настроено из-за нового padding */
+  left: 10px; /* Горизонтальное смещение с учетом padding */
 }
 
 .form__label {
   position: absolute;
   top: 0;
+  left: 0;
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: #9b9b9b;
+  color: #5a5a5a; /* Темнее для лучшего контраста */
   pointer-events: none;
 }
 
+/* Стили для фокуса полей формы */
 .form__field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #e59500, #840032);
-  border-image-slice: 1;
+  border-color: #840032;
+  background-color: #ffffff;
+  outline: none;
+  box-shadow: none;
+  font-weight: 600;
 }
 
 .form__field:focus ~ .form__label {
   position: absolute;
   top: 0;
+  left: 0;
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: #e59500;
+  color: #840032;
   font-weight: 700;
 }
 
 /* reset input */
 .form__field:required, .form__field:invalid {
   box-shadow: none;
+}
+
+/* Переопределение общих стилей фокуса для полей формы */
+input.form__field:focus, 
+textarea.form__field:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Улучшения для мобильной доступности */
+@media (max-width: 768px) {
+  .form__field {
+    font-size: 16px; /* Предотвращает автоматический зум на iOS */
+    padding: 10px 12px; /* Больше размер сенсорной области */
+  }
+  
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 16px;
+    top: 30px;
+  }
+  
+  .form__label {
+    font-size: 16px;
+  }
+  
+  /* Улучшаем размер сенсорной области для доступности */
+  input[type="checkbox"] {
+    min-width: 20px;
+    min-height: 20px;
+  }
+}
+
+/* Фокусный стиль для всех интерактивных элементов */
+a:focus-visible, button:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid #840032;
+  outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible), 
+button:focus:not(:focus-visible), 
+select:focus:not(:focus-visible), 
+[tabindex]:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Специальный стиль для полей ввода с фокусом */
+input:focus:not(.form__field), 
+textarea:focus:not(.form__field) {
+  outline: none; /* Убираем стандартный outline */
+  border-color: #840032; /* Цвет бренда */
+  border-width: 2px;
+  background-color: #fff;
+}
+
+/* Стиль для пропуска навигации (accessibility) */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content:focus {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  width: auto;
+  height: auto;
+  padding: 15px 23px;
+  background: #e59500;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 100;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
