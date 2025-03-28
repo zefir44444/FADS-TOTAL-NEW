@@ -402,6 +402,46 @@ export default function WebsitePerformanceChecklist() {
           </p>
         </div>
 
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">Not seeing the results you expected from your website?</h2>
+          <p className="text-lg mb-6">
+            You've spent time, energy, and resources building a site that looks great. The content is live, the design is polished, and everything seems to be in place — but performance? Not quite there.
+          </p>
+          
+          <div className="bg-gray-50 p-6 rounded-lg mb-8">
+            <p className="text-lg font-semibold mb-4">Low traffic, high bounce rates, slow load times, weak conversions… sound familiar?</p>
+            <p className="text-lg">
+              The truth is, a good-looking website isn't always a high-performing one.
+              Without a clear optimization strategy, even the most beautifully designed site can fall short of its potential.
+            </p>
+          </div>
+
+          <p className="text-lg mb-6">
+            That's why we've created this comprehensive website optimization checklist — a practical guide to help you review, refine, and rework your site at every level:
+          </p>
+
+          <ul className="list-disc pl-6 space-y-3 mb-8">
+            <li className="text-lg">Improve page speed and loading times</li>
+            <li className="text-lg">Optimize for search engine visibility</li>
+            <li className="text-lg">Create a smooth, user-friendly experience</li>
+            <li className="text-lg">Fix technical issues before they cost you conversions</li>
+            <li className="text-lg">Understand what users actually want — and deliver it</li>
+          </ul>
+
+          <p className="text-lg mb-6">
+            Whether you're launching a new site or want to improve an existing one, this checklist will help you take a structured, results-oriented approach to web performance.
+          </p>
+
+          <div className="bg-[#e59500]/10 p-6 rounded-lg">
+            <p className="text-xl font-bold text-[#e59500]">
+              Better UX. Better SEO. Better results.
+            </p>
+            <p className="text-lg mt-2">
+              Let's get started.
+            </p>
+          </div>
+        </div>
+
         {renderCategories()}
 
         <section className="mb-12 print:break-before-page">
