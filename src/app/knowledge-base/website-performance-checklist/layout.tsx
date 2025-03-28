@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Website Performance Checklist | FADS Digital Agency',

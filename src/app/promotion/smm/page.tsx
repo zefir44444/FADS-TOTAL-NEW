@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from "next/link";
 import { motion } from 'framer-motion';
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaPinterest, FaTumblr, FaGoogle, FaTelegram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaPinterest, FaTumblr } from 'react-icons/fa';
 import { SiTiktok, SiX, SiThreads, SiBluesky } from 'react-icons/si';
 import { 
   ChartBarIcon,
@@ -222,7 +222,7 @@ const SMMPromotion = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              In a world full of content, likes, and algorithms — it's easy to feel lost. We help brands cut through the noise and build a real, lasting connection with their audience.
+              In a world full of content, likes, and algorithms — it&apos;s easy to feel lost. We help brands cut through the noise and build a real, lasting connection with their audience.
             </motion.p>
           </motion.div>
           
@@ -480,7 +480,7 @@ const SMMPromotion = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              Whether you're launching a new brand, entering a new market, or want to improve your current performance — we're here to help. Let's build something that connects, engages, and grows.
+              Whether you&apos;re launching a new brand, entering a new market, or want to improve your current performance — we&apos;re here to help. Let&apos;s build something that connects, engages, and grows.
             </motion.p>
             <motion.div
               whileHover={{ scale: 1.05 }}
