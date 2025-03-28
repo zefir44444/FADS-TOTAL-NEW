@@ -388,9 +388,8 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
                         I agree to the processing of my personal data in accordance with the{" "}
                         <Link 
                             href="/privacy" 
-                            className="font-semibold relative text-[#840032] hover:text-[#6d0029] transition-colors duration-300 no-underline"
+                            className="font-semibold relative text-[#840032] hover:text-[#e59500] transition-colors duration-300 no-underline"
                             target="_blank"
-                            aria-label="Privacy Policy (opens in new tab)"
                         >
                             Privacy Policy
                         </Link>

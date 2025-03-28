@@ -300,7 +300,15 @@ const Header = () => {
                         href="/promotion/youtube" 
                         className="text-sm hover:text-[#e59500] transition-colors duration-300"
                       >
-                        YouTube Advertising
+                        YouTube
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/promotion/smm" 
+                        className="text-sm hover:text-[#e59500] transition-colors duration-300"
+                      >
+                        Social Media Marketing
                       </Link>
                     </li>
                     <li>
@@ -713,6 +721,15 @@ const Header = () => {
                                 onClick={() => setIsMenuOpen(false)}
                               >
                                 YouTube
+                              </Link>
+                            </li>
+                            <li>
+                              <Link 
+                                href="/promotion/smm" 
+                                className="text-sm hover:text-[#e59500] transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                Social Media Marketing
                               </Link>
                             </li>
                             <li>
